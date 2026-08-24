@@ -1,6 +1,6 @@
 {
   "updatedAt": "2026-08-24",
-  "sourceNote": "編成に必要な基本データ。肖像は外部参照、戦法は日本語の概要を表示します。",
+  "sourceNote": "編成に必要な基本データ。肖像は外部参照。戦法効果は参照データを基にした日本語機械翻訳。",
   "heroes": [
     {
       "id": "hero-001",
@@ -15,12 +15,12 @@
       "teachableSkill": "縦橫馳突",
       "assemblySkill": "別働奇襲",
       "stats": {
-        "charisma": 106,
-        "intelligence": 140,
         "leadership": 169,
+        "valor": 224,
+        "intelligence": 140,
         "politics": 108,
-        "speed": 162,
-        "valor": 224
+        "charisma": 106,
+        "speed": 162
       },
       "traits": [
         {
@@ -69,12 +69,12 @@
       "teachableSkill": "智者楽水",
       "assemblySkill": "包囲戦術",
       "stats": {
-        "charisma": 150,
-        "intelligence": 229,
         "leadership": 167,
+        "valor": 114,
+        "intelligence": 229,
         "politics": 158,
-        "speed": 68,
-        "valor": 114
+        "charisma": 150,
+        "speed": 68
       },
       "traits": [
         {
@@ -123,12 +123,12 @@
       "teachableSkill": "紅蓮之炎",
       "assemblySkill": "",
       "stats": {
-        "charisma": 177,
-        "intelligence": 175,
         "leadership": 232,
+        "valor": 162,
+        "intelligence": 175,
         "politics": 247,
-        "speed": 110,
-        "valor": 162
+        "charisma": 177,
+        "speed": 110
       },
       "traits": [
         {
@@ -177,12 +177,12 @@
       "teachableSkill": "御旗盾無",
       "assemblySkill": "甲州法度次第",
       "stats": {
-        "charisma": 163,
-        "intelligence": 195,
         "leadership": 203,
+        "valor": 191,
+        "intelligence": 195,
         "politics": 194,
-        "speed": 139,
-        "valor": 191
+        "charisma": 163,
+        "speed": 139
       },
       "traits": [
         {
@@ -231,12 +231,12 @@
       "teachableSkill": "磐石眈眈",
       "assemblySkill": "",
       "stats": {
-        "charisma": 181,
-        "intelligence": 169,
         "leadership": 232,
+        "valor": 156,
+        "intelligence": 169,
         "politics": 230,
-        "speed": 62,
-        "valor": 156
+        "charisma": 181,
+        "speed": 62
       },
       "traits": [
         {
@@ -286,12 +286,12 @@
       "teachableSkill": "運勝之鼻",
       "assemblySkill": "百万一心の家訓",
       "stats": {
-        "charisma": 181,
-        "intelligence": 247,
         "leadership": 181,
+        "valor": 111,
+        "intelligence": 247,
         "politics": 210,
-        "speed": 63,
-        "valor": 111
+        "charisma": 181,
+        "speed": 63
       },
       "traits": [
         {
@@ -340,12 +340,12 @@
       "teachableSkill": "水攻乾計",
       "assemblySkill": "",
       "stats": {
-        "charisma": 207,
-        "intelligence": 229,
         "leadership": 181,
+        "valor": 111,
+        "intelligence": 229,
         "politics": 227,
-        "speed": 82,
-        "valor": 111
+        "charisma": 207,
+        "speed": 82
       },
       "traits": [
         {
@@ -400,12 +400,12 @@
       "teachableSkill": "七十二欺計",
       "assemblySkill": "桔梗の政",
       "stats": {
-        "charisma": 209,
-        "intelligence": 221,
         "leadership": 184,
+        "valor": 140,
+        "intelligence": 221,
         "politics": 227,
-        "speed": 116,
-        "valor": 140
+        "charisma": 209,
+        "speed": 116
       },
       "traits": [
         {
@@ -454,12 +454,12 @@
       "teachableSkill": "毘沙門天",
       "assemblySkill": "",
       "stats": {
-        "charisma": 156,
-        "intelligence": 124,
         "leadership": 187,
+        "valor": 247,
+        "intelligence": 124,
         "politics": 179,
-        "speed": 139,
-        "valor": 247
+        "charisma": 156,
+        "speed": 139
       },
       "traits": [
         {
@@ -508,12 +508,12 @@
       "teachableSkill": "獨立獨步",
       "assemblySkill": "",
       "stats": {
-        "charisma": 223,
-        "intelligence": 178,
         "leadership": 194,
+        "valor": 175,
+        "intelligence": 178,
         "politics": 212,
-        "speed": 133,
-        "valor": 175
+        "charisma": 223,
+        "speed": 133
       },
       "traits": [
         {
@@ -562,12 +562,12 @@
       "teachableSkill": "一領具足",
       "assemblySkill": "",
       "stats": {
-        "charisma": 181,
-        "intelligence": 167,
         "leadership": 190,
+        "valor": 188,
+        "intelligence": 167,
         "politics": 189,
-        "speed": 97,
-        "valor": 188
+        "charisma": 181,
+        "speed": 97
       },
       "traits": [
         {
@@ -616,12 +616,12 @@
       "teachableSkill": "霹靂一撃",
       "assemblySkill": "",
       "stats": {
-        "charisma": 134,
-        "intelligence": 149,
         "leadership": 174,
+        "valor": 194,
+        "intelligence": 149,
         "politics": 152,
-        "speed": 121,
-        "valor": 194
+        "charisma": 134,
+        "speed": 121
       },
       "traits": [
         {
@@ -670,12 +670,12 @@
       "teachableSkill": "一行三昧",
       "assemblySkill": "茶器の政略",
       "stats": {
-        "charisma": 150,
-        "intelligence": 223,
         "leadership": 173,
+        "valor": 114,
+        "intelligence": 223,
         "politics": 190,
-        "speed": 111,
-        "valor": 114
+        "charisma": 150,
+        "speed": 111
       },
       "traits": [
         {
@@ -724,12 +724,12 @@
       "teachableSkill": "千軍辟易",
       "assemblySkill": "",
       "stats": {
-        "charisma": 136,
-        "intelligence": 155,
         "leadership": 165,
+        "valor": 225,
+        "intelligence": 155,
         "politics": 119,
-        "speed": 154,
-        "valor": 225
+        "charisma": 136,
+        "speed": 154
       },
       "traits": [
         {
@@ -778,12 +778,12 @@
       "teachableSkill": "一行三昧",
       "assemblySkill": "",
       "stats": {
-        "charisma": 206,
-        "intelligence": 181,
         "leadership": 183,
+        "valor": 120,
+        "intelligence": 181,
         "politics": 210,
-        "speed": 78,
-        "valor": 120
+        "charisma": 206,
+        "speed": 78
       },
       "traits": [
         {
@@ -833,12 +833,12 @@
       "teachableSkill": "浴血奮戰",
       "assemblySkill": "",
       "stats": {
-        "charisma": 115,
-        "intelligence": 116,
         "leadership": 169,
+        "valor": 230,
+        "intelligence": 116,
         "politics": 101,
-        "speed": 82,
-        "valor": 230
+        "charisma": 115,
+        "speed": 82
       },
       "traits": [
         {
@@ -892,12 +892,12 @@
       "teachableSkill": "理非曲直",
       "assemblySkill": "",
       "stats": {
-        "charisma": 112,
-        "intelligence": 149,
         "leadership": 166,
+        "valor": 186,
+        "intelligence": 149,
         "politics": 123,
-        "speed": 86,
-        "valor": 186
+        "charisma": 112,
+        "speed": 86
       },
       "traits": [
         {
@@ -946,12 +946,12 @@
       "teachableSkill": "三河弓兵隊",
       "assemblySkill": "夜間強行",
       "stats": {
-        "charisma": 74,
-        "intelligence": 153,
         "leadership": 187,
+        "valor": 187,
+        "intelligence": 153,
         "politics": 90,
-        "speed": 119,
-        "valor": 187
+        "charisma": 74,
+        "speed": 119
       },
       "traits": [
         {
@@ -1000,12 +1000,12 @@
       "teachableSkill": "惠風和雨",
       "assemblySkill": "姬武者同心",
       "stats": {
-        "charisma": 139,
-        "intelligence": 137,
         "leadership": 163,
+        "valor": 201,
+        "intelligence": 137,
         "politics": 110,
-        "speed": 111,
-        "valor": 201
+        "charisma": 139,
+        "speed": 111
       },
       "traits": [
         {
@@ -1055,12 +1055,12 @@
       "teachableSkill": "瞬息万變",
       "assemblySkill": "六文錢之誓",
       "stats": {
-        "charisma": 228,
-        "intelligence": 232,
         "leadership": 176,
+        "valor": 106,
+        "intelligence": 232,
         "politics": 144,
-        "speed": 76,
-        "valor": 106
+        "charisma": 228,
+        "speed": 76
       },
       "traits": [
         {
@@ -1110,12 +1110,12 @@
       "teachableSkill": "勇猛無前",
       "assemblySkill": "先銳突撃",
       "stats": {
-        "charisma": 106,
-        "intelligence": 138,
         "leadership": 157,
+        "valor": 223,
+        "intelligence": 138,
         "politics": 111,
-        "speed": 136,
-        "valor": 223
+        "charisma": 106,
+        "speed": 136
       },
       "traits": [
         {
@@ -1164,12 +1164,12 @@
       "teachableSkill": "竜騎兵",
       "assemblySkill": "",
       "stats": {
-        "charisma": 171,
-        "intelligence": 187,
         "leadership": 190,
+        "valor": 186.5,
+        "intelligence": 187,
         "politics": 200.5,
-        "speed": 118,
-        "valor": 186.5
+        "charisma": 171,
+        "speed": 118
       },
       "traits": [
         {
@@ -1213,12 +1213,12 @@
       "teachableSkill": "戮力同心",
       "assemblySkill": "",
       "stats": {
-        "charisma": 115,
-        "intelligence": 193.5,
         "leadership": 193.5,
+        "valor": 145.5,
+        "intelligence": 193.5,
         "politics": 94,
-        "speed": 71,
-        "valor": 145.5
+        "charisma": 115,
+        "speed": 71
       },
       "traits": [
         {
@@ -1268,12 +1268,12 @@
       "teachableSkill": "威風凜凜",
       "assemblySkill": "",
       "stats": {
-        "charisma": 191.5,
-        "intelligence": 151.5,
         "leadership": 172,
+        "valor": 203.5,
+        "intelligence": 151.5,
         "politics": 172,
-        "speed": 108,
-        "valor": 203.5
+        "charisma": 191.5,
+        "speed": 108
       },
       "traits": [
         {
@@ -1323,12 +1323,12 @@
       "teachableSkill": "攻其不備",
       "assemblySkill": "内助の功",
       "stats": {
-        "charisma": 155,
-        "intelligence": 170,
         "leadership": 154,
+        "valor": 66,
+        "intelligence": 170,
         "politics": 149,
-        "speed": 72,
-        "valor": 66
+        "charisma": 155,
+        "speed": 72
       },
       "traits": [
         {
@@ -1372,12 +1372,12 @@
       "teachableSkill": "攻其不備",
       "assemblySkill": "内助の功",
       "stats": {
-        "charisma": 153,
-        "intelligence": 171,
         "leadership": 144,
+        "valor": 63,
+        "intelligence": 171,
         "politics": 157,
-        "speed": 69,
-        "valor": 63
+        "charisma": 153,
+        "speed": 69
       },
       "traits": [
         {
@@ -1427,12 +1427,12 @@
       "teachableSkill": "靜動自在",
       "assemblySkill": "銀産拡張",
       "stats": {
-        "charisma": 152,
-        "intelligence": 151,
         "leadership": 172,
+        "valor": 79,
+        "intelligence": 151,
         "politics": 180,
-        "speed": 74,
-        "valor": 79
+        "charisma": 152,
+        "speed": 74
       },
       "traits": [
         {
@@ -1481,12 +1481,12 @@
       "teachableSkill": "亂世戰華",
       "assemblySkill": "長駆突撃",
       "stats": {
-        "charisma": 105,
-        "intelligence": 169,
         "leadership": 184,
+        "valor": 190,
+        "intelligence": 169,
         "politics": 97,
-        "speed": 108,
-        "valor": 190
+        "charisma": 105,
+        "speed": 108
       },
       "traits": [
         {
@@ -1536,12 +1536,12 @@
       "teachableSkill": "亂世戰華",
       "assemblySkill": "夜間強行",
       "stats": {
-        "charisma": 86,
-        "intelligence": 132,
         "leadership": 127,
+        "valor": 207,
+        "intelligence": 132,
         "politics": 52,
-        "speed": 123,
-        "valor": 207
+        "charisma": 86,
+        "speed": 123
       },
       "traits": [
         {
@@ -1591,12 +1591,12 @@
       "teachableSkill": "所領役帳",
       "assemblySkill": "五箇条の訓戒",
       "stats": {
-        "charisma": 166,
-        "intelligence": 188,
         "leadership": 183,
+        "valor": 137,
+        "intelligence": 188,
         "politics": 224,
-        "speed": 100,
-        "valor": 137
+        "charisma": 166,
+        "speed": 100
       },
       "traits": [
         {
@@ -1645,12 +1645,12 @@
       "teachableSkill": "以戰養戰",
       "assemblySkill": "兵役増強",
       "stats": {
-        "charisma": 122,
-        "intelligence": 171,
         "leadership": 203,
+        "valor": 162,
+        "intelligence": 171,
         "politics": 114,
-        "speed": 102,
-        "valor": 162
+        "charisma": 122,
+        "speed": 102
       },
       "traits": [
         {
@@ -1699,12 +1699,12 @@
       "teachableSkill": "浴血奮戰",
       "assemblySkill": "",
       "stats": {
-        "charisma": 129,
-        "intelligence": 139,
         "leadership": 162,
+        "valor": 209,
+        "intelligence": 139,
         "politics": 121,
-        "speed": 168,
-        "valor": 209
+        "charisma": 129,
+        "speed": 168
       },
       "traits": [
         {
@@ -1753,12 +1753,12 @@
       "teachableSkill": "一力當先",
       "assemblySkill": "兵糧増産",
       "stats": {
-        "charisma": 145,
-        "intelligence": 133,
         "leadership": 157,
+        "valor": 181,
+        "intelligence": 133,
         "politics": 167,
-        "speed": 112,
-        "valor": 181
+        "charisma": 145,
+        "speed": 112
       },
       "traits": [
         {
@@ -1808,12 +1808,12 @@
       "teachableSkill": "母衣武者",
       "assemblySkill": "",
       "stats": {
-        "charisma": 147,
-        "intelligence": 121,
         "leadership": 159,
+        "valor": 186,
+        "intelligence": 121,
         "politics": 174,
-        "speed": 115,
-        "valor": 186
+        "charisma": 147,
+        "speed": 115
       },
       "traits": [
         {
@@ -1863,12 +1863,12 @@
       "teachableSkill": "所向披靡",
       "assemblySkill": "",
       "stats": {
-        "charisma": 97,
-        "intelligence": 125,
         "leadership": 159,
+        "valor": 192,
+        "intelligence": 125,
         "politics": 133,
-        "speed": 117,
-        "valor": 192
+        "charisma": 97,
+        "speed": 117
       },
       "traits": [
         {
@@ -1917,12 +1917,12 @@
       "teachableSkill": "気勢沖天",
       "assemblySkill": "兵役増強",
       "stats": {
-        "charisma": 80,
-        "intelligence": 140,
         "leadership": 155,
+        "valor": 182,
+        "intelligence": 140,
         "politics": 109,
-        "speed": 151,
-        "valor": 182
+        "charisma": 80,
+        "speed": 151
       },
       "traits": [
         {
@@ -1971,12 +1971,12 @@
       "teachableSkill": "草木皆兵",
       "assemblySkill": "別働奇襲",
       "stats": {
-        "charisma": 113,
-        "intelligence": 225,
         "leadership": 155,
+        "valor": 103,
+        "intelligence": 225,
         "politics": 97,
-        "speed": 117,
-        "valor": 103
+        "charisma": 113,
+        "speed": 117
       },
       "traits": [
         {
@@ -2026,12 +2026,12 @@
       "teachableSkill": "回天轉運",
       "assemblySkill": "",
       "stats": {
-        "charisma": 83,
-        "intelligence": 190,
         "leadership": 155,
+        "valor": 101,
+        "intelligence": 190,
         "politics": 104,
-        "speed": 68,
-        "valor": 101
+        "charisma": 83,
+        "speed": 68
       },
       "traits": [
         {
@@ -2080,12 +2080,12 @@
       "teachableSkill": "大智不智",
       "assemblySkill": "強攻戦術",
       "stats": {
-        "charisma": 158,
-        "intelligence": 231,
         "leadership": 160,
+        "valor": 89,
+        "intelligence": 231,
         "politics": 95,
-        "speed": 76,
-        "valor": 89
+        "charisma": 158,
+        "speed": 76
       },
       "traits": [
         {
@@ -2134,12 +2134,12 @@
       "teachableSkill": "前後夾撃",
       "assemblySkill": "城塁固守",
       "stats": {
-        "charisma": 143,
-        "intelligence": 118,
         "leadership": 146,
+        "valor": 165,
+        "intelligence": 118,
         "politics": 97,
-        "speed": 118,
-        "valor": 165
+        "charisma": 143,
+        "speed": 118
       },
       "traits": [
         {
@@ -2189,12 +2189,12 @@
       "teachableSkill": "沉魚落雁",
       "assemblySkill": "茶器の政略",
       "stats": {
-        "charisma": 151,
-        "intelligence": 178,
         "leadership": 152,
+        "valor": 58,
+        "intelligence": 178,
         "politics": 152,
-        "speed": 62,
-        "valor": 58
+        "charisma": 151,
+        "speed": 62
       },
       "traits": [
         {
@@ -2243,12 +2243,12 @@
       "teachableSkill": "五里霧中",
       "assemblySkill": "",
       "stats": {
-        "charisma": 202,
-        "intelligence": 178,
         "leadership": 162,
+        "valor": 99,
+        "intelligence": 178,
         "politics": 123,
-        "speed": 139,
-        "valor": 99
+        "charisma": 202,
+        "speed": 139
       },
       "traits": [
         {
@@ -2297,12 +2297,12 @@
       "teachableSkill": "深謀遠慮",
       "assemblySkill": "",
       "stats": {
-        "charisma": 126,
-        "intelligence": 209,
         "leadership": 153,
+        "valor": 113,
+        "intelligence": 209,
         "politics": 132,
-        "speed": 104,
-        "valor": 113
+        "charisma": 126,
+        "speed": 104
       },
       "traits": [
         {
@@ -2357,12 +2357,12 @@
       "teachableSkill": "乘勝追撃",
       "assemblySkill": "鉄砲教練",
       "stats": {
-        "charisma": 117,
-        "intelligence": 151,
         "leadership": 148,
+        "valor": 186,
+        "intelligence": 151,
         "politics": 88,
-        "speed": 95,
-        "valor": 186
+        "charisma": 117,
+        "speed": 95
       },
       "traits": [
         {
@@ -2411,12 +2411,12 @@
       "teachableSkill": "百戰磨煉",
       "assemblySkill": "城塁固守",
       "stats": {
-        "charisma": 62,
-        "intelligence": 141,
         "leadership": 160,
+        "valor": 180,
+        "intelligence": 141,
         "politics": 83,
-        "speed": 156,
-        "valor": 180
+        "charisma": 62,
+        "speed": 156
       },
       "traits": [
         {
@@ -2465,12 +2465,12 @@
       "teachableSkill": "奇謀獨斷",
       "assemblySkill": "鉄鉱増産",
       "stats": {
-        "charisma": 130,
-        "intelligence": 176,
         "leadership": 165,
+        "valor": 89,
+        "intelligence": 176,
         "politics": 125,
-        "speed": 47,
-        "valor": 89
+        "charisma": 130,
+        "speed": 47
       },
       "traits": [
         {
@@ -2519,12 +2519,12 @@
       "teachableSkill": "剛毅果斷",
       "assemblySkill": "騎馬教練",
       "stats": {
-        "charisma": 79,
-        "intelligence": 95,
         "leadership": 163,
+        "valor": 176,
+        "intelligence": 95,
         "politics": 84,
-        "speed": 59,
-        "valor": 176
+        "charisma": 79,
+        "speed": 59
       },
       "traits": [
         {
@@ -2573,12 +2573,12 @@
       "teachableSkill": "赤備隊",
       "assemblySkill": "軍事重視",
       "stats": {
-        "charisma": 63,
-        "intelligence": 95,
         "leadership": 137,
+        "valor": 203,
+        "intelligence": 95,
         "politics": 65,
-        "speed": 109,
-        "valor": 203
+        "charisma": 63,
+        "speed": 109
       },
       "traits": [
         {
@@ -2627,12 +2627,12 @@
       "teachableSkill": "罵詈雜言",
       "assemblySkill": "騎馬教練",
       "stats": {
-        "charisma": 52,
-        "intelligence": 161,
         "leadership": 174,
+        "valor": 95,
+        "intelligence": 161,
         "politics": 92,
-        "speed": 86,
-        "valor": 95
+        "charisma": 52,
+        "speed": 86
       },
       "traits": [
         {
@@ -2681,12 +2681,12 @@
       "teachableSkill": "戰意消沉",
       "assemblySkill": "市利偏重",
       "stats": {
-        "charisma": 53,
-        "intelligence": 186,
         "leadership": 159,
+        "valor": 91,
+        "intelligence": 186,
         "politics": 112,
-        "speed": 64,
-        "valor": 91
+        "charisma": 53,
+        "speed": 64
       },
       "traits": [
         {
@@ -2735,12 +2735,12 @@
       "teachableSkill": "死中求活",
       "assemblySkill": "鉄砲教練",
       "stats": {
-        "charisma": 118,
-        "intelligence": 182,
         "leadership": 148,
+        "valor": 130,
+        "intelligence": 182,
         "politics": 73,
-        "speed": 61,
-        "valor": 130
+        "charisma": 118,
+        "speed": 61
       },
       "traits": [
         {
@@ -2789,12 +2789,12 @@
       "teachableSkill": "振旅凱歌",
       "assemblySkill": "",
       "stats": {
-        "charisma": 156,
-        "intelligence": 183,
         "leadership": 116,
+        "valor": 55,
+        "intelligence": 183,
         "politics": 168,
-        "speed": 60,
-        "valor": 55
+        "charisma": 156,
+        "speed": 60
       },
       "traits": [
         {
@@ -2843,12 +2843,12 @@
       "teachableSkill": "所向披靡",
       "assemblySkill": "",
       "stats": {
-        "charisma": 72,
-        "intelligence": 121,
         "leadership": 151,
+        "valor": 207,
+        "intelligence": 121,
         "politics": 91,
-        "speed": 117,
-        "valor": 207
+        "charisma": 72,
+        "speed": 117
       },
       "traits": [
         {
@@ -2902,12 +2902,12 @@
       "teachableSkill": "一力當先",
       "assemblySkill": "弓兵教練",
       "stats": {
-        "charisma": 162,
-        "intelligence": 131,
         "leadership": 161,
+        "valor": 179,
+        "intelligence": 131,
         "politics": 82,
-        "speed": 142,
-        "valor": 179
+        "charisma": 162,
+        "speed": 142
       },
       "traits": [
         {
@@ -2956,12 +2956,12 @@
       "teachableSkill": "大智不智",
       "assemblySkill": "",
       "stats": {
-        "charisma": 139,
-        "intelligence": 183,
         "leadership": 149,
+        "valor": 35,
+        "intelligence": 183,
         "politics": 177,
-        "speed": 34,
-        "valor": 35
+        "charisma": 139,
+        "speed": 34
       },
       "traits": [
         {
@@ -3010,12 +3010,12 @@
       "teachableSkill": "戰意消沉",
       "assemblySkill": "年功加俸",
       "stats": {
-        "charisma": 63,
-        "intelligence": 142,
         "leadership": 144,
+        "valor": 171,
+        "intelligence": 142,
         "politics": 55,
-        "speed": 75,
-        "valor": 171
+        "charisma": 63,
+        "speed": 75
       },
       "traits": [
         {
@@ -3065,12 +3065,12 @@
       "teachableSkill": "金鼓連天",
       "assemblySkill": "",
       "stats": {
-        "charisma": 122,
-        "intelligence": 129,
         "leadership": 161,
+        "valor": 184,
+        "intelligence": 129,
         "politics": 85,
-        "speed": 124,
-        "valor": 184
+        "charisma": 122,
+        "speed": 124
       },
       "traits": [
         {
@@ -3120,12 +3120,12 @@
       "teachableSkill": "薩摩鉄炮隊",
       "assemblySkill": "鉄砲補給",
       "stats": {
-        "charisma": 149,
-        "intelligence": 178,
         "leadership": 161,
+        "valor": 100,
+        "intelligence": 178,
         "politics": 175,
-        "speed": 84,
-        "valor": 100
+        "charisma": 149,
+        "speed": 84
       },
       "traits": [
         {
@@ -3174,12 +3174,12 @@
       "teachableSkill": "大太刀力士隊",
       "assemblySkill": "兵器強化",
       "stats": {
-        "charisma": 57,
-        "intelligence": 113,
         "leadership": 109,
+        "valor": 202,
+        "intelligence": 113,
         "politics": 33,
-        "speed": 70,
-        "valor": 202
+        "charisma": 57,
+        "speed": 70
       },
       "traits": [
         {
@@ -3228,12 +3228,12 @@
       "teachableSkill": "僧兵隊",
       "assemblySkill": "木産拡張",
       "stats": {
-        "charisma": 117,
-        "intelligence": 199,
         "leadership": 153,
+        "valor": 72,
+        "intelligence": 199,
         "politics": 108,
-        "speed": 78,
-        "valor": 72
+        "charisma": 117,
+        "speed": 78
       },
       "traits": [
         {
@@ -3288,12 +3288,12 @@
       "teachableSkill": "電光石火",
       "assemblySkill": "",
       "stats": {
-        "charisma": 150,
-        "intelligence": 157,
         "leadership": 152,
+        "valor": 180,
+        "intelligence": 157,
         "politics": 100,
-        "speed": 104,
-        "valor": 180
+        "charisma": 150,
+        "speed": 104
       },
       "traits": [
         {
@@ -3342,12 +3342,12 @@
       "teachableSkill": "奇策縦橫",
       "assemblySkill": "姬武者同心",
       "stats": {
-        "charisma": 147,
-        "intelligence": 167,
         "leadership": 158,
+        "valor": 71,
+        "intelligence": 167,
         "politics": 196,
-        "speed": 65,
-        "valor": 71
+        "charisma": 147,
+        "speed": 65
       },
       "traits": [
         {
@@ -3397,12 +3397,12 @@
       "teachableSkill": "威風凜凜",
       "assemblySkill": "",
       "stats": {
-        "charisma": 176,
-        "intelligence": 189.5,
         "leadership": 164.5,
+        "valor": 117,
+        "intelligence": 189.5,
         "politics": 170.5,
-        "speed": 76,
-        "valor": 117
+        "charisma": 176,
+        "speed": 76
       },
       "traits": [
         {
@@ -3446,12 +3446,12 @@
       "teachableSkill": "靜動自在",
       "assemblySkill": "",
       "stats": {
-        "charisma": 116,
-        "intelligence": 144,
         "leadership": 139,
+        "valor": 46,
+        "intelligence": 144,
         "politics": 134,
-        "speed": 78,
-        "valor": 46
+        "charisma": 116,
+        "speed": 78
       },
       "traits": [
         {
@@ -3505,12 +3505,12 @@
       "teachableSkill": "境目奮戰",
       "assemblySkill": "成果加俸",
       "stats": {
-        "charisma": 96,
-        "intelligence": 98,
         "leadership": 156,
+        "valor": 166,
+        "intelligence": 98,
         "politics": 106,
-        "speed": 107,
-        "valor": 166
+        "charisma": 96,
+        "speed": 107
       },
       "traits": [
         {
@@ -3559,12 +3559,12 @@
       "teachableSkill": "文武雙全",
       "assemblySkill": "内治重視",
       "stats": {
-        "charisma": 151,
-        "intelligence": 175,
         "leadership": 175,
+        "valor": 111,
+        "intelligence": 175,
         "politics": 178,
-        "speed": 71,
-        "valor": 111
+        "charisma": 151,
+        "speed": 71
       },
       "traits": [
         {
@@ -3613,12 +3613,12 @@
       "teachableSkill": "草木皆兵",
       "assemblySkill": "内治重視",
       "stats": {
-        "charisma": 171,
-        "intelligence": 166,
         "leadership": 166,
+        "valor": 93,
+        "intelligence": 166,
         "politics": 169,
-        "speed": 56,
-        "valor": 93
+        "charisma": 171,
+        "speed": 56
       },
       "traits": [
         {
@@ -3667,12 +3667,12 @@
       "teachableSkill": "振旅凱歌",
       "assemblySkill": "",
       "stats": {
-        "charisma": 204,
-        "intelligence": 192,
         "leadership": 83,
+        "valor": 43,
+        "intelligence": 192,
         "politics": 207,
-        "speed": 86,
-        "valor": 43
+        "charisma": 204,
+        "speed": 86
       },
       "traits": [
         {
@@ -3721,12 +3721,12 @@
       "teachableSkill": "戰意崩壞",
       "assemblySkill": "内政倹約",
       "stats": {
-        "charisma": 134,
-        "intelligence": 141,
         "leadership": 148,
+        "valor": 67,
+        "intelligence": 141,
         "politics": 127,
-        "speed": 95,
-        "valor": 67
+        "charisma": 134,
+        "speed": 95
       },
       "traits": [
         {
@@ -3775,12 +3775,12 @@
       "teachableSkill": "按甲休兵",
       "assemblySkill": "木材増産",
       "stats": {
-        "charisma": 121,
-        "intelligence": 106,
         "leadership": 165,
+        "valor": 162,
+        "intelligence": 106,
         "politics": 116,
-        "speed": 96,
-        "valor": 162
+        "charisma": 121,
+        "speed": 96
       },
       "traits": [
         {
@@ -3829,12 +3829,12 @@
       "teachableSkill": "奇謀獨斷",
       "assemblySkill": "木産拡張",
       "stats": {
-        "charisma": 110,
-        "intelligence": 166,
         "leadership": 139,
+        "valor": 90,
+        "intelligence": 166,
         "politics": 115,
-        "speed": 123,
-        "valor": 90
+        "charisma": 110,
+        "speed": 123
       },
       "traits": [
         {
@@ -3878,12 +3878,12 @@
       "teachableSkill": "剛毅果斷",
       "assemblySkill": "足軽教練",
       "stats": {
-        "charisma": 88,
-        "intelligence": 57,
         "leadership": 105,
+        "valor": 193,
+        "intelligence": 57,
         "politics": 35,
-        "speed": 106,
-        "valor": 193
+        "charisma": 88,
+        "speed": 106
       },
       "traits": [
         {
@@ -3932,12 +3932,12 @@
       "teachableSkill": "甲斐弓騎兵",
       "assemblySkill": "石材増産",
       "stats": {
-        "charisma": 128,
-        "intelligence": 125,
         "leadership": 153,
+        "valor": 157,
+        "intelligence": 125,
         "politics": 121,
-        "speed": 90,
-        "valor": 157
+        "charisma": 128,
+        "speed": 90
       },
       "traits": [
         {
@@ -3986,12 +3986,12 @@
       "teachableSkill": "気炎万丈",
       "assemblySkill": "市利偏重",
       "stats": {
-        "charisma": 138,
-        "intelligence": 179,
         "leadership": 131,
+        "valor": 134,
+        "intelligence": 179,
         "politics": 72,
-        "speed": 63,
-        "valor": 134
+        "charisma": 138,
+        "speed": 63
       },
       "traits": [
         {
@@ -4035,12 +4035,12 @@
       "teachableSkill": "罵詈雜言",
       "assemblySkill": "石材増産",
       "stats": {
-        "charisma": 62,
-        "intelligence": 96,
         "leadership": 109,
+        "valor": 185,
+        "intelligence": 96,
         "politics": 38,
-        "speed": 69,
-        "valor": 185
+        "charisma": 62,
+        "speed": 69
       },
       "traits": [
         {
@@ -4084,12 +4084,12 @@
       "teachableSkill": "陣型崩毀",
       "assemblySkill": "鉄鉱増産",
       "stats": {
-        "charisma": 105,
-        "intelligence": 150,
         "leadership": 176,
+        "valor": 102,
+        "intelligence": 150,
         "politics": 102,
-        "speed": 57,
-        "valor": 102
+        "charisma": 105,
+        "speed": 57
       },
       "traits": [
         {
@@ -4138,12 +4138,12 @@
       "teachableSkill": "陣型崩毀",
       "assemblySkill": "兵器強化",
       "stats": {
-        "charisma": 78,
-        "intelligence": 112,
         "leadership": 146,
+        "valor": 189,
+        "intelligence": 112,
         "politics": 71,
-        "speed": 125,
-        "valor": 189
+        "charisma": 78,
+        "speed": 125
       },
       "traits": [
         {
@@ -4197,12 +4197,12 @@
       "teachableSkill": "囊沙之計",
       "assemblySkill": "弓兵教練",
       "stats": {
-        "charisma": 112,
-        "intelligence": 173,
         "leadership": 127,
+        "valor": 166,
+        "intelligence": 173,
         "politics": 122,
-        "speed": 80,
-        "valor": 166
+        "charisma": 112,
+        "speed": 80
       },
       "traits": [
         {
@@ -4252,12 +4252,12 @@
       "teachableSkill": "囊沙之計",
       "assemblySkill": "木材増産",
       "stats": {
-        "charisma": 133,
-        "intelligence": 149,
         "leadership": 180,
+        "valor": 105,
+        "intelligence": 149,
         "politics": 128,
-        "speed": 77,
-        "valor": 105
+        "charisma": 133,
+        "speed": 77
       },
       "traits": [
         {
@@ -4307,12 +4307,12 @@
       "teachableSkill": "気炎万丈",
       "assemblySkill": "軍備倹約",
       "stats": {
-        "charisma": 111,
-        "intelligence": 162,
         "leadership": 163,
+        "valor": 121,
+        "intelligence": 162,
         "politics": 136,
-        "speed": 59,
-        "valor": 121
+        "charisma": 111,
+        "speed": 59
       },
       "traits": [
         {
@@ -4361,12 +4361,12 @@
       "teachableSkill": "理非曲直",
       "assemblySkill": "",
       "stats": {
-        "charisma": 101,
-        "intelligence": 143,
         "leadership": 165,
+        "valor": 164,
+        "intelligence": 143,
         "politics": 135,
-        "speed": 108,
-        "valor": 164
+        "charisma": 101,
+        "speed": 108
       },
       "traits": [
         {
@@ -4415,12 +4415,12 @@
       "teachableSkill": "百戰磨煉",
       "assemblySkill": "軍事重視",
       "stats": {
-        "charisma": 153,
-        "intelligence": 80,
         "leadership": 165,
+        "valor": 169,
+        "intelligence": 80,
         "politics": 103,
-        "speed": 152,
-        "valor": 169
+        "charisma": 153,
+        "speed": 152
       },
       "traits": [
         {
@@ -4469,12 +4469,12 @@
       "teachableSkill": "前後夾撃",
       "assemblySkill": "足軽教練",
       "stats": {
-        "charisma": 48,
-        "intelligence": 105,
         "leadership": 124,
+        "valor": 206,
+        "intelligence": 105,
         "politics": 55,
-        "speed": 106,
-        "valor": 206
+        "charisma": 48,
+        "speed": 106
       },
       "traits": [
         {
@@ -4523,12 +4523,12 @@
       "teachableSkill": "鉄炮僧兵隊",
       "assemblySkill": "鉄砲補給",
       "stats": {
-        "charisma": 146,
-        "intelligence": 146,
         "leadership": 146,
+        "valor": 157,
+        "intelligence": 146,
         "politics": 106,
-        "speed": 94,
-        "valor": 157
+        "charisma": 146,
+        "speed": 94
       },
       "traits": [
         {
@@ -4577,12 +4577,12 @@
       "teachableSkill": "金城湯池",
       "assemblySkill": "調遣民夫優",
       "stats": {
-        "charisma": 121,
-        "intelligence": 162,
         "leadership": 145,
+        "valor": 72,
+        "intelligence": 162,
         "politics": 143,
-        "speed": 84,
-        "valor": 72
+        "charisma": 121,
+        "speed": 84
       },
       "traits": [
         {
@@ -4631,12 +4631,12 @@
       "teachableSkill": "金城湯池",
       "assemblySkill": "擴張石產優",
       "stats": {
-        "charisma": 142,
-        "intelligence": 134,
         "leadership": 154,
+        "valor": 81,
+        "intelligence": 134,
         "politics": 155,
-        "speed": 89,
-        "valor": 81
+        "charisma": 142,
+        "speed": 89
       },
       "traits": [
         {
@@ -4686,12 +4686,12 @@
       "teachableSkill": "伊賀忍者",
       "assemblySkill": "",
       "stats": {
-        "charisma": 97.5,
-        "intelligence": 144.5,
         "leadership": 85,
+        "valor": 161,
+        "intelligence": 144.5,
         "politics": 13,
-        "speed": 122,
-        "valor": 161
+        "charisma": 97.5,
+        "speed": 122
       },
       "traits": [
         {
@@ -4741,12 +4741,12 @@
       "teachableSkill": "",
       "assemblySkill": "重農主義",
       "stats": {
-        "charisma": 160.5,
-        "intelligence": 156,
         "leadership": 101.5,
+        "valor": 33,
+        "intelligence": 156,
         "politics": 191.5,
-        "speed": 114,
-        "valor": 33
+        "charisma": 160.5,
+        "speed": 114
       },
       "traits": [
         {
@@ -4790,12 +4790,12 @@
       "teachableSkill": "荷馱崩",
       "assemblySkill": "",
       "stats": {
-        "charisma": 150.5,
-        "intelligence": 173,
         "leadership": 153,
+        "valor": 101.5,
+        "intelligence": 173,
         "politics": 178,
-        "speed": 51.5,
-        "valor": 101.5
+        "charisma": 150.5,
+        "speed": 51.5
       },
       "traits": [
         {
@@ -4845,12 +4845,12 @@
       "teachableSkill": "境目奮戰",
       "assemblySkill": "成果加俸",
       "stats": {
-        "charisma": 86,
-        "intelligence": 166,
         "leadership": 166,
+        "valor": 107,
+        "intelligence": 166,
         "politics": 100,
-        "speed": 81,
-        "valor": 107
+        "charisma": 86,
+        "speed": 81
       },
       "traits": [
         {
@@ -4900,12 +4900,12 @@
       "teachableSkill": "金鼓連天",
       "assemblySkill": "内政倹約",
       "stats": {
-        "charisma": 115,
-        "intelligence": 167,
         "leadership": 147,
+        "valor": 70,
+        "intelligence": 167,
         "politics": 166,
-        "speed": 127,
-        "valor": 70
+        "charisma": 115,
+        "speed": 127
       },
       "traits": [
         {
@@ -4954,12 +4954,12 @@
       "teachableSkill": "戰意崩壞",
       "assemblySkill": "兵糧増産",
       "stats": {
-        "charisma": 82,
-        "intelligence": 146,
         "leadership": 144,
+        "valor": 75,
+        "intelligence": 146,
         "politics": 62,
-        "speed": 100,
-        "valor": 75
+        "charisma": 82,
+        "speed": 100
       },
       "traits": [
         {
@@ -5008,12 +5008,12 @@
       "teachableSkill": "死中求活",
       "assemblySkill": "軍備倹約",
       "stats": {
-        "charisma": 116,
-        "intelligence": 105,
         "leadership": 98,
+        "valor": 184,
+        "intelligence": 105,
         "politics": 32,
-        "speed": 95,
-        "valor": 184
+        "charisma": 116,
+        "speed": 95
       },
       "traits": [
         {
@@ -5062,12 +5062,12 @@
       "teachableSkill": "按甲休兵",
       "assemblySkill": "年功加俸",
       "stats": {
-        "charisma": 130,
-        "intelligence": 112,
         "leadership": 111,
+        "valor": 54,
+        "intelligence": 112,
         "politics": 121,
-        "speed": 159,
-        "valor": 54
+        "charisma": 130,
+        "speed": 159
       },
       "traits": [
         {
@@ -5111,12 +5111,12 @@
       "teachableSkill": "荷馱崩",
       "assemblySkill": "",
       "stats": {
-        "charisma": 105,
-        "intelligence": 153,
         "leadership": 111,
+        "valor": 121,
+        "intelligence": 153,
         "politics": 100.5,
-        "speed": 77.5,
-        "valor": 121
+        "charisma": 105,
+        "speed": 77.5
       },
       "traits": [
         {
@@ -5165,12 +5165,12 @@
       "teachableSkill": "沉魚落雁",
       "assemblySkill": "",
       "stats": {
-        "charisma": 207,
-        "intelligence": 157,
         "leadership": 129,
+        "valor": 64,
+        "intelligence": 157,
         "politics": 98,
-        "speed": 98,
-        "valor": 64
+        "charisma": 207,
+        "speed": 98
       },
       "traits": [
         {
@@ -5229,12 +5229,12 @@
       "teachableSkill": "電光石火",
       "assemblySkill": "擴張石產・優",
       "stats": {
-        "charisma": 112,
-        "intelligence": 149,
         "leadership": 135,
+        "valor": 147,
+        "intelligence": 149,
         "politics": 96,
-        "speed": 99,
-        "valor": 147
+        "charisma": 112,
+        "speed": 99
       },
       "traits": [
         {
@@ -5284,12 +5284,12 @@
       "teachableSkill": "一念亂志",
       "assemblySkill": "軍備倹約",
       "stats": {
-        "charisma": 95,
-        "intelligence": 111,
         "leadership": 144,
+        "valor": 181,
+        "intelligence": 111,
         "politics": 68,
-        "speed": 101,
-        "valor": 181
+        "charisma": 95,
+        "speed": 101
       },
       "traits": [
         {
@@ -5333,12 +5333,12 @@
       "teachableSkill": "鉄炮猛撃",
       "assemblySkill": "鉄砲教練",
       "stats": {
-        "charisma": 65,
-        "intelligence": 173,
         "leadership": 149,
+        "valor": 146,
+        "intelligence": 173,
         "politics": 54,
-        "speed": 82,
-        "valor": 146
+        "charisma": 65,
+        "speed": 82
       },
       "traits": [
         {
@@ -5386,12 +5386,12 @@
       "teachableSkill": "竭力而戰",
       "assemblySkill": "石産拡張",
       "stats": {
-        "charisma": 74,
-        "intelligence": 133,
         "leadership": 153,
+        "valor": 167,
+        "intelligence": 133,
         "politics": 71,
-        "speed": 85,
-        "valor": 167
+        "charisma": 74,
+        "speed": 85
       },
       "traits": [
         {
@@ -5434,12 +5434,12 @@
       "teachableSkill": "奮鬥",
       "assemblySkill": "農産拡張",
       "stats": {
-        "charisma": 53,
-        "intelligence": 107,
         "leadership": 128,
+        "valor": 181,
+        "intelligence": 107,
         "politics": 53,
-        "speed": 108,
-        "valor": 181
+        "charisma": 53,
+        "speed": 108
       },
       "traits": [
         {
@@ -5482,12 +5482,12 @@
       "teachableSkill": "生死一顧",
       "assemblySkill": "軍事重視",
       "stats": {
-        "charisma": 125,
-        "intelligence": 172,
         "leadership": 167,
+        "valor": 117,
+        "intelligence": 172,
         "politics": 67,
-        "speed": 68,
-        "valor": 117
+        "charisma": 125,
+        "speed": 68
       },
       "traits": [
         {
@@ -5530,12 +5530,12 @@
       "teachableSkill": "先陣之勇",
       "assemblySkill": "木産拡張",
       "stats": {
-        "charisma": 55,
-        "intelligence": 65,
         "leadership": 157,
+        "valor": 176,
+        "intelligence": 65,
         "politics": 33,
-        "speed": 77,
-        "valor": 176
+        "charisma": 55,
+        "speed": 77
       },
       "traits": [
         {
@@ -5578,12 +5578,12 @@
       "teachableSkill": "祓除",
       "assemblySkill": "年功加俸",
       "stats": {
-        "charisma": 126,
-        "intelligence": 126,
         "leadership": 147,
+        "valor": 102,
+        "intelligence": 126,
         "politics": 126,
-        "speed": 47,
-        "valor": 102
+        "charisma": 126,
+        "speed": 47
       },
       "traits": [
         {
@@ -5626,12 +5626,12 @@
       "teachableSkill": "暗討",
       "assemblySkill": "石産拡張",
       "stats": {
-        "charisma": 91,
-        "intelligence": 134,
         "leadership": 129,
+        "valor": 179,
+        "intelligence": 134,
         "politics": 36,
-        "speed": 128,
-        "valor": 179
+        "charisma": 91,
+        "speed": 128
       },
       "traits": [
         {
@@ -5674,12 +5674,12 @@
       "teachableSkill": "奮鬥",
       "assemblySkill": "弓兵教練",
       "stats": {
-        "charisma": 146,
-        "intelligence": 119,
         "leadership": 112,
+        "valor": 178,
+        "intelligence": 119,
         "politics": 130,
-        "speed": 63,
-        "valor": 178
+        "charisma": 146,
+        "speed": 63
       },
       "traits": [
         {
@@ -5722,12 +5722,12 @@
       "teachableSkill": "岐阜侍從",
       "assemblySkill": "市利偏重",
       "stats": {
-        "charisma": 58,
-        "intelligence": 160,
         "leadership": 119,
+        "valor": 160,
+        "intelligence": 160,
         "politics": 129,
-        "speed": 100,
-        "valor": 160
+        "charisma": 58,
+        "speed": 100
       },
       "traits": [
         {
@@ -5770,12 +5770,12 @@
       "teachableSkill": "奪気",
       "assemblySkill": "年功加俸",
       "stats": {
-        "charisma": 70,
-        "intelligence": 104,
         "leadership": 107,
+        "valor": 181,
+        "intelligence": 104,
         "politics": 49,
-        "speed": 166,
-        "valor": 181
+        "charisma": 70,
+        "speed": 166
       },
       "traits": [
         {
@@ -5818,12 +5818,12 @@
       "teachableSkill": "槍彈正",
       "assemblySkill": "足軽教練",
       "stats": {
-        "charisma": 73,
-        "intelligence": 106,
         "leadership": 113,
+        "valor": 164,
+        "intelligence": 106,
         "politics": 69,
-        "speed": 99,
-        "valor": 164
+        "charisma": 73,
+        "speed": 99
       },
       "traits": [
         {
@@ -5866,12 +5866,12 @@
       "teachableSkill": "殿軍奮戰",
       "assemblySkill": "市利偏重",
       "stats": {
-        "charisma": 103,
-        "intelligence": 94,
         "leadership": 148,
+        "valor": 151,
+        "intelligence": 94,
         "politics": 71,
-        "speed": 79,
-        "valor": 151
+        "charisma": 103,
+        "speed": 79
       },
       "traits": [
         {
@@ -5909,12 +5909,12 @@
       "teachableSkill": "先制先登",
       "assemblySkill": "鉄産拡張",
       "stats": {
-        "charisma": 72,
-        "intelligence": 51,
         "leadership": 139,
+        "valor": 175,
+        "intelligence": 51,
         "politics": 86,
-        "speed": 89,
-        "valor": 175
+        "charisma": 72,
+        "speed": 89
       },
       "traits": [
         {
@@ -5957,12 +5957,12 @@
       "teachableSkill": "一上一下",
       "assemblySkill": "内政倹約",
       "stats": {
-        "charisma": 81,
-        "intelligence": 160,
         "leadership": 114,
+        "valor": 63,
+        "intelligence": 160,
         "politics": 91,
-        "speed": 82,
-        "valor": 63
+        "charisma": 81,
+        "speed": 82
       },
       "traits": [
         {
@@ -6005,12 +6005,12 @@
       "teachableSkill": "鬼玄番",
       "assemblySkill": "騎馬教練",
       "stats": {
-        "charisma": 103,
-        "intelligence": 83,
         "leadership": 126,
+        "valor": 185,
+        "intelligence": 83,
         "politics": 60,
-        "speed": 94,
-        "valor": 185
+        "charisma": 103,
+        "speed": 94
       },
       "traits": [
         {
@@ -6053,12 +6053,12 @@
       "teachableSkill": "掩護射撃",
       "assemblySkill": "農産拡張",
       "stats": {
-        "charisma": 64,
-        "intelligence": 80,
         "leadership": 168,
+        "valor": 151,
+        "intelligence": 80,
         "politics": 59,
-        "speed": 108,
-        "valor": 151
+        "charisma": 64,
+        "speed": 108
       },
       "traits": [
         {
@@ -6106,12 +6106,12 @@
       "teachableSkill": "百煉成鋼",
       "assemblySkill": "城塁固守",
       "stats": {
-        "charisma": 69,
-        "intelligence": 133,
         "leadership": 152,
+        "valor": 142,
+        "intelligence": 133,
         "politics": 52,
-        "speed": 108,
-        "valor": 142
+        "charisma": 69,
+        "speed": 108
       },
       "traits": [
         {
@@ -6154,12 +6154,12 @@
       "teachableSkill": "一刀兩斷",
       "assemblySkill": "",
       "stats": {
-        "charisma": 40,
-        "intelligence": 107,
         "leadership": 123,
+        "valor": 156,
+        "intelligence": 107,
         "politics": 99,
-        "speed": 117,
-        "valor": 156
+        "charisma": 40,
+        "speed": 117
       },
       "traits": [
         {
@@ -6207,12 +6207,12 @@
       "teachableSkill": "休養",
       "assemblySkill": "内治重視",
       "stats": {
-        "charisma": 77,
-        "intelligence": 163,
         "leadership": 147,
+        "valor": 95,
+        "intelligence": 163,
         "politics": 81,
-        "speed": 74,
-        "valor": 95
+        "charisma": 77,
+        "speed": 74
       },
       "traits": [
         {
@@ -6255,12 +6255,12 @@
       "teachableSkill": "矢石飛交",
       "assemblySkill": "鉄産拡張",
       "stats": {
-        "charisma": 104,
-        "intelligence": 123,
         "leadership": 121,
+        "valor": 164,
+        "intelligence": 123,
         "politics": 74,
-        "speed": 100,
-        "valor": 164
+        "charisma": 104,
+        "speed": 100
       },
       "traits": [
         {
@@ -6308,12 +6308,12 @@
       "teachableSkill": "融通無礙",
       "assemblySkill": "木材増産",
       "stats": {
-        "charisma": 164,
-        "intelligence": 166,
         "leadership": 127,
+        "valor": 76,
+        "intelligence": 166,
         "politics": 153,
-        "speed": 81,
-        "valor": 76
+        "charisma": 164,
+        "speed": 81
       },
       "traits": [
         {
@@ -6356,12 +6356,12 @@
       "teachableSkill": "秋水一色",
       "assemblySkill": "鉄鉱増産",
       "stats": {
-        "charisma": 106,
-        "intelligence": 173,
         "leadership": 120,
+        "valor": 119,
+        "intelligence": 173,
         "politics": 122,
-        "speed": 76,
-        "valor": 119
+        "charisma": 106,
+        "speed": 76
       },
       "traits": [
         {
@@ -6404,12 +6404,12 @@
       "teachableSkill": "槍之鈴",
       "assemblySkill": "石材増産",
       "stats": {
-        "charisma": 117,
-        "intelligence": 74,
         "leadership": 118,
+        "valor": 157,
+        "intelligence": 74,
         "politics": 155,
-        "speed": 101,
-        "valor": 157
+        "charisma": 117,
+        "speed": 101
       },
       "traits": [
         {
@@ -6457,12 +6457,12 @@
       "teachableSkill": "妖怪退治",
       "assemblySkill": "弓兵教練",
       "stats": {
-        "charisma": 62,
-        "intelligence": 108,
         "leadership": 112,
+        "valor": 159,
+        "intelligence": 108,
         "politics": 49,
-        "speed": 108,
-        "valor": 159
+        "charisma": 62,
+        "speed": 108
       },
       "traits": [
         {
@@ -6515,12 +6515,12 @@
       "teachableSkill": "腹中鱗甲",
       "assemblySkill": "",
       "stats": {
-        "charisma": 36,
-        "intelligence": 67,
         "leadership": 157,
+        "valor": 175,
+        "intelligence": 67,
         "politics": 93,
-        "speed": 104,
-        "valor": 175
+        "charisma": 36,
+        "speed": 104
       },
       "traits": [
         {
@@ -6564,12 +6564,12 @@
       "teachableSkill": "敵陣攪亂",
       "assemblySkill": "木産拡張",
       "stats": {
-        "charisma": 121,
-        "intelligence": 167,
         "leadership": 121,
+        "valor": 120,
+        "intelligence": 167,
         "politics": 68,
-        "speed": 91,
-        "valor": 120
+        "charisma": 121,
+        "speed": 91
       },
       "traits": [
         {
@@ -6612,12 +6612,12 @@
       "teachableSkill": "驍勇善戰",
       "assemblySkill": "軍備倹約",
       "stats": {
-        "charisma": 31,
-        "intelligence": 88,
         "leadership": 116,
+        "valor": 165,
+        "intelligence": 88,
         "politics": 41,
-        "speed": 115,
-        "valor": 165
+        "charisma": 31,
+        "speed": 115
       },
       "traits": [
         {
@@ -6660,12 +6660,12 @@
       "teachableSkill": "甲州流軍學",
       "assemblySkill": "内治重視",
       "stats": {
-        "charisma": 113,
-        "intelligence": 173,
         "leadership": 148,
+        "valor": 98,
+        "intelligence": 173,
         "politics": 97,
-        "speed": 82,
-        "valor": 98
+        "charisma": 113,
+        "speed": 82
       },
       "traits": [
         {
@@ -6708,12 +6708,12 @@
       "teachableSkill": "警戒備至",
       "assemblySkill": "城塁固守",
       "stats": {
-        "charisma": 75,
-        "intelligence": 121,
         "leadership": 157,
+        "valor": 132,
+        "intelligence": 121,
         "politics": 84,
-        "speed": 100,
-        "valor": 132
+        "charisma": 75,
+        "speed": 100
       },
       "traits": [
         {
@@ -6756,12 +6756,12 @@
       "teachableSkill": "休養",
       "assemblySkill": "内政倹約",
       "stats": {
-        "charisma": 66,
-        "intelligence": 163,
         "leadership": 143,
+        "valor": 73,
+        "intelligence": 163,
         "politics": 160,
-        "speed": 73,
-        "valor": 73
+        "charisma": 66,
+        "speed": 73
       },
       "traits": [
         {
@@ -6804,12 +6804,12 @@
       "teachableSkill": "忠勤勵行",
       "assemblySkill": "兵糧増産",
       "stats": {
-        "charisma": 53,
-        "intelligence": 110,
         "leadership": 134,
+        "valor": 170,
+        "intelligence": 110,
         "politics": 56,
-        "speed": 104,
-        "valor": 170
+        "charisma": 53,
+        "speed": 104
       },
       "traits": [
         {
@@ -6852,12 +6852,12 @@
       "teachableSkill": "出其不意",
       "assemblySkill": "鉄砲教練",
       "stats": {
-        "charisma": 83,
-        "intelligence": 118,
         "leadership": 102,
+        "valor": 135,
+        "intelligence": 118,
         "politics": 70,
-        "speed": 111,
-        "valor": 135
+        "charisma": 83,
+        "speed": 111
       },
       "traits": [
         {
@@ -6905,12 +6905,12 @@
       "teachableSkill": "有備無患",
       "assemblySkill": "木材増産",
       "stats": {
-        "charisma": 126,
-        "intelligence": 159,
         "leadership": 111,
+        "valor": 61,
+        "intelligence": 159,
         "politics": 130,
-        "speed": 66,
-        "valor": 61
+        "charisma": 126,
+        "speed": 66
       },
       "traits": [
         {
@@ -6953,12 +6953,12 @@
       "teachableSkill": "一觸即發",
       "assemblySkill": "騎馬教練",
       "stats": {
-        "charisma": 68,
-        "intelligence": 87,
         "leadership": 112,
+        "valor": 159,
+        "intelligence": 87,
         "politics": 67,
-        "speed": 129,
-        "valor": 159
+        "charisma": 68,
+        "speed": 129
       },
       "traits": [
         {
@@ -7001,12 +7001,12 @@
       "teachableSkill": "弓調馬服",
       "assemblySkill": "鉄鉱増産",
       "stats": {
-        "charisma": 43,
-        "intelligence": 100,
         "leadership": 116,
+        "valor": 155,
+        "intelligence": 100,
         "politics": 86,
-        "speed": 115,
-        "valor": 155
+        "charisma": 43,
+        "speed": 115
       },
       "traits": [
         {
@@ -7049,12 +7049,12 @@
       "teachableSkill": "一六勝負",
       "assemblySkill": "兵糧増産",
       "stats": {
-        "charisma": 51,
-        "intelligence": 163,
         "leadership": 99,
+        "valor": 120,
+        "intelligence": 163,
         "politics": 93,
-        "speed": 79,
-        "valor": 120
+        "charisma": 51,
+        "speed": 79
       },
       "traits": [
         {
@@ -7092,12 +7092,12 @@
       "teachableSkill": "回山倒海",
       "assemblySkill": "足軽教練",
       "stats": {
-        "charisma": 34,
-        "intelligence": 64,
         "leadership": 118,
+        "valor": 154,
+        "intelligence": 64,
         "politics": 58,
-        "speed": 85,
-        "valor": 154
+        "charisma": 34,
+        "speed": 85
       },
       "traits": [
         {
@@ -7145,12 +7145,12 @@
       "teachableSkill": "攻守兼備",
       "assemblySkill": "石材増産",
       "stats": {
-        "charisma": 61,
-        "intelligence": 126,
         "leadership": 106,
+        "valor": 142,
+        "intelligence": 126,
         "politics": 66,
-        "speed": 94,
-        "valor": 142
+        "charisma": 61,
+        "speed": 94
       },
       "traits": [
         {
@@ -7193,12 +7193,12 @@
       "teachableSkill": "參謀助言",
       "assemblySkill": "軍事重視",
       "stats": {
-        "charisma": 75,
-        "intelligence": 84,
         "leadership": 147,
+        "valor": 116,
+        "intelligence": 84,
         "politics": 60,
-        "speed": 80,
-        "valor": 116
+        "charisma": 75,
+        "speed": 80
       },
       "traits": [
         {
@@ -7246,12 +7246,12 @@
       "teachableSkill": "不退轉",
       "assemblySkill": "軍事重視",
       "stats": {
-        "charisma": 68,
-        "intelligence": 69,
         "leadership": 108,
+        "valor": 134,
+        "intelligence": 69,
         "politics": 59,
-        "speed": 58,
-        "valor": 134
+        "charisma": 68,
+        "speed": 58
       },
       "traits": [
         {
@@ -7288,12 +7288,12 @@
       "teachableSkill": "揮砍",
       "assemblySkill": "農産拡張",
       "stats": {
-        "charisma": 95,
-        "intelligence": 92,
         "leadership": 96,
+        "valor": 104,
+        "intelligence": 92,
         "politics": 95,
-        "speed": 77,
-        "valor": 104
+        "charisma": 95,
+        "speed": 77
       },
       "traits": [
         {
@@ -7330,12 +7330,12 @@
       "teachableSkill": "嘲罵",
       "assemblySkill": "足軽教練",
       "stats": {
-        "charisma": 69,
-        "intelligence": 78,
         "leadership": 122,
+        "valor": 96,
+        "intelligence": 78,
         "politics": 69,
-        "speed": 77,
-        "valor": 96
+        "charisma": 69,
+        "speed": 77
       },
       "traits": [
         {
@@ -7372,12 +7372,12 @@
       "teachableSkill": "刺突",
       "assemblySkill": "木材増産",
       "stats": {
-        "charisma": 78,
-        "intelligence": 87,
         "leadership": 97,
+        "valor": 100,
+        "intelligence": 87,
         "politics": 90,
-        "speed": 75,
-        "valor": 100
+        "charisma": 78,
+        "speed": 75
       },
       "traits": [
         {
@@ -7414,12 +7414,12 @@
       "teachableSkill": "同討",
       "assemblySkill": "鉄産拡張",
       "stats": {
-        "charisma": 89,
-        "intelligence": 61,
         "leadership": 75,
+        "valor": 81,
+        "intelligence": 61,
         "politics": 81,
-        "speed": 60,
-        "valor": 81
+        "charisma": 89,
+        "speed": 60
       },
       "traits": [
         {
@@ -7456,12 +7456,12 @@
       "teachableSkill": "對話",
       "assemblySkill": "市利偏重",
       "stats": {
-        "charisma": 90,
-        "intelligence": 124,
         "leadership": 80,
+        "valor": 64,
+        "intelligence": 124,
         "politics": 81,
-        "speed": 58,
-        "valor": 64
+        "charisma": 90,
+        "speed": 58
       },
       "traits": [
         {
@@ -7498,12 +7498,12 @@
       "teachableSkill": "救援",
       "assemblySkill": "軍備倹約",
       "stats": {
-        "charisma": 108,
-        "intelligence": 112,
         "leadership": 115,
+        "valor": 81,
+        "intelligence": 112,
         "politics": 78,
-        "speed": 56,
-        "valor": 81
+        "charisma": 108,
+        "speed": 56
       },
       "traits": [
         {
@@ -7540,12 +7540,12 @@
       "teachableSkill": "水計",
       "assemblySkill": "内政倹約",
       "stats": {
-        "charisma": 78,
-        "intelligence": 119,
         "leadership": 117,
+        "valor": 72,
+        "intelligence": 119,
         "politics": 93,
-        "speed": 71,
-        "valor": 72
+        "charisma": 78,
+        "speed": 71
       },
       "traits": [
         {
@@ -7582,12 +7582,12 @@
       "teachableSkill": "猛撃",
       "assemblySkill": "石材増産",
       "stats": {
-        "charisma": 24,
-        "intelligence": 56,
         "leadership": 97,
+        "valor": 125,
+        "intelligence": 56,
         "politics": 47,
-        "speed": 75,
-        "valor": 125
+        "charisma": 24,
+        "speed": 75
       },
       "traits": [
         {
@@ -7624,12 +7624,12 @@
       "teachableSkill": "連戰",
       "assemblySkill": "鉄砲教練",
       "stats": {
-        "charisma": 78,
-        "intelligence": 71,
         "leadership": 117,
+        "valor": 129,
+        "intelligence": 71,
         "politics": 76,
-        "speed": 75,
-        "valor": 129
+        "charisma": 78,
+        "speed": 75
       },
       "traits": [
         {
@@ -7666,12 +7666,12 @@
       "teachableSkill": "識破",
       "assemblySkill": "石産拡張",
       "stats": {
-        "charisma": 34,
-        "intelligence": 98,
         "leadership": 110,
+        "valor": 129,
+        "intelligence": 98,
         "politics": 94,
-        "speed": 88,
-        "valor": 129
+        "charisma": 34,
+        "speed": 88
       },
       "traits": [
         {
@@ -7708,12 +7708,12 @@
       "teachableSkill": "火計",
       "assemblySkill": "内治重視",
       "stats": {
-        "charisma": 22,
-        "intelligence": 135,
         "leadership": 63,
+        "valor": 55,
+        "intelligence": 135,
         "politics": 105,
-        "speed": 57,
-        "valor": 55
+        "charisma": 22,
+        "speed": 57
       },
       "traits": [
         {
@@ -7750,12 +7750,12 @@
       "teachableSkill": "奮發",
       "assemblySkill": "兵糧増産",
       "stats": {
-        "charisma": 97,
-        "intelligence": 62,
         "leadership": 99,
+        "valor": 100,
+        "intelligence": 62,
         "politics": 57,
-        "speed": 71,
-        "valor": 100
+        "charisma": 97,
+        "speed": 71
       },
       "traits": [
         {
@@ -7792,12 +7792,12 @@
       "teachableSkill": "殿後",
       "assemblySkill": "騎馬教練",
       "stats": {
-        "charisma": 73,
-        "intelligence": 112,
         "leadership": 78,
+        "valor": 57,
+        "intelligence": 112,
         "politics": 113,
-        "speed": 57,
-        "valor": 57
+        "charisma": 73,
+        "speed": 57
       },
       "traits": [
         {
@@ -7834,12 +7834,12 @@
       "teachableSkill": "破甲",
       "assemblySkill": "弓兵教練",
       "stats": {
-        "charisma": 86,
-        "intelligence": 102,
         "leadership": 103,
+        "valor": 101,
+        "intelligence": 102,
         "politics": 85,
-        "speed": 82,
-        "valor": 101
+        "charisma": 86,
+        "speed": 82
       },
       "traits": [
         {
@@ -7876,12 +7876,12 @@
       "teachableSkill": "火攻",
       "assemblySkill": "木産拡張",
       "stats": {
-        "charisma": 111,
-        "intelligence": 143,
         "leadership": 89,
+        "valor": 54,
+        "intelligence": 143,
         "politics": 107,
-        "speed": 54,
-        "valor": 54
+        "charisma": 111,
+        "speed": 54
       },
       "traits": [
         {
@@ -7918,12 +7918,12 @@
       "teachableSkill": "威壓",
       "assemblySkill": "鉄鉱増産",
       "stats": {
-        "charisma": 91,
-        "intelligence": 118,
         "leadership": 82,
+        "valor": 80,
+        "intelligence": 118,
         "politics": 104,
-        "speed": 92,
-        "valor": 80
+        "charisma": 91,
+        "speed": 92
       },
       "traits": [
         {
@@ -7960,12 +7960,12 @@
       "teachableSkill": "反撃",
       "assemblySkill": "",
       "stats": {
-        "charisma": 99,
-        "intelligence": 78,
         "leadership": 100,
+        "valor": 120,
+        "intelligence": 78,
         "politics": 35,
-        "speed": 72,
-        "valor": 120
+        "charisma": 99,
+        "speed": 72
       },
       "traits": [
         {
@@ -7999,7 +7999,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "山県昌景",
       "tags": [
@@ -8011,7 +8010,8 @@
         "条件発動",
         "大将技"
       ],
-      "summary": "受動戦法。対象：敵軍単体。発動率：100%。山県昌景の固有戦法。効果分類：武勇ダメージ・単体攻撃・弱体化・受動発動・武勇系・条件発動・大将技。"
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。山県昌景の固有戦法。",
+      "effect": "戦闘中，獲得10%～20%【会心】。 毎ターン行動後，有13%～25%（（武勇に応じて））確率発動赤備衝撃：敵に敵軍単体与え0.69～1.38兵刃ダメージ，さらに其統率低下8%～15%，持続2ターン。 もし此ターン与え会心ダメージ，額外增加13%～25%確率"
     },
     {
       "id": "tactic-002",
@@ -8021,7 +8021,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "20%→40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8030,7 +8029,8 @@
         "状態耐性",
         "能動発動"
       ],
-      "summary": "能動戦法。対象：自己。発動率：20%→40%。習得可能な戦法。効果分類：強化・状態付与・状態耐性・能動発動。"
+      "summary": "能動戦法。対象：自己。発動率：20%→40%。習得可能な戦法。",
+      "effect": "付与自身【連撃】状態並獲得【封撃】耐性，持続1ターン。"
     },
     {
       "id": "tactic-003",
@@ -8040,7 +8040,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "黒田官兵衛",
       "tags": [
@@ -8053,7 +8052,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "受動戦法。対象：敵軍単体。発動率：100%。黒田官兵衛の固有戦法。効果分類：智略ダメージ・単体攻撃・多段傷害・強化・状態付与・受動発動・智略系・大将技。"
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。黒田官兵衛の固有戦法。",
+      "effect": "毎ターン行動前及初次受ける戰法回復時，有24%～48%（（智略に応じて））確率獲得3%～5%【奇謀】状態，最大重複8段階。 毎ターン行動前，有30%～60%（（智略に応じて））確率敵に敵軍単体与え44%～88%謀略ダメージ（1～2ターン），（智略に応じて）"
     },
     {
       "id": "tactic-004",
@@ -8063,7 +8063,6 @@
       "rarity": "S",
       "target": "我軍群体(2-3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8073,7 +8072,8 @@
         "統率系",
         "大将技"
       ],
-      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。習得可能な戦法。効果分類：強化・弱体化・指揮效果・統率系・大将技。"
+      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘開始後的3ターン内，味方範囲（2人）受ける的兵刃と謀略ダメージ各低下9%～12%～9%～12%（（統率に応じて），もし味方中智略者更多なら兵刃ダメージ軽減率提升，否なら謀略ダメージ軽減率提升）。 同時自身的与えるダメージ低下5%"
     },
     {
       "id": "tactic-005",
@@ -8083,7 +8083,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "織田信長",
       "tags": [
@@ -8095,7 +8094,8 @@
         "条件発動",
         "大将技"
       ],
-      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。織田信長の固有戦法。効果分類：強化・提升屬性・回復・指揮效果・統率系・条件発動・大将技。"
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。織田信長の固有戦法。",
+      "effect": "戦闘中，味方複數（2人）的与えるダメージ增加7%～14%（（統率に応じて））"
     },
     {
       "id": "tactic-006",
@@ -8105,7 +8105,6 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8115,7 +8114,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。習得可能な戦法。",
+      "effect": "經過1ターン準備後，敵に敵軍全体与え0.52～1.04謀略ダメージ（（智略に応じて）），並施加【火傷】状態，持続2ターン，毎ターン与え37%～74%持続ダメージ（（智略に応じて））。"
     },
     {
       "id": "tactic-007",
@@ -8125,7 +8125,6 @@
       "rarity": "S",
       "target": "雙方全体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "武田信玄",
       "tags": [
@@ -8140,7 +8139,8 @@
         "統率系",
         "大将技"
       ],
-      "summary": "指揮戦法。対象：雙方全体。発動率：100%。武田信玄の固有戦法。効果分類：武勇ダメージ・智略ダメージ・範囲攻撃・単体攻撃・多段傷害・強化・弱体化・指揮效果・統率系・大将技。"
+      "summary": "指揮戦法。対象：雙方全体。発動率：100%。武田信玄の固有戦法。",
+      "effect": "戦闘中，每2ターン按風、林、火、山順序発動旗效果。首個旗由自身最高屬性決定（速度=風、智略=林、武勇=火、統率=山）。 風：味方複數（2～3人）兵刃ダメージ增加11%～22%（（速度に応じて））。 林：敵軍複數（2～3人）受謀略ダメージ46%～92%（（智略に応じて））。 火：敵軍単体受兵刃ダメージ0.78～1.56（1～2ターン）。 山：味方複數（2～3人）兵刃ダメージ減少11%～22%（（統率に応じて））"
     },
     {
       "id": "tactic-008",
@@ -8150,7 +8150,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8160,7 +8159,8 @@
         "受動発動",
         "武勇系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：武勇ダメージ・単体攻撃・強化・受動発動・武勇系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身受けるダメージ時，有20%～40%（（武勇に応じて））確率使此次ダメージ低下20%～40%（（智略に応じて））。 自身受ける普通攻撃時，有20%～40%（（統率に応じて））確率使味方単体敵に攻撃者与え47%～94%兵刃ダメージ。"
     },
     {
       "id": "tactic-009",
@@ -8170,7 +8170,6 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "徳川家康",
       "tags": [
@@ -8181,7 +8180,8 @@
         "条件発動",
         "大将技"
       ],
-      "summary": "指揮戦法。対象：敵軍全体(3人)。発動率：100%。徳川家康の固有戦法。効果分類：降低屬性・援護・指揮效果・統率系・条件発動・大将技。"
+      "summary": "指揮戦法。対象：敵軍全体(3人)。発動率：100%。徳川家康の固有戦法。",
+      "effect": "味方複數（2人）受ける普通攻撃時，敵に攻撃者全屬性施加1%～3%（（統率に応じて））低下效果，最大重複8段階"
     },
     {
       "id": "tactic-010",
@@ -8191,7 +8191,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8199,7 +8198,8 @@
         "受動発動",
         "統率系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・受動発動・統率系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身受ける的ダメージ低下5%～9%（（統率に応じて））。 毎ターン效果增加2%～4%（（統率に応じて），可重複）。"
     },
     {
       "id": "tactic-011",
@@ -8209,7 +8209,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "毛利元就",
       "tags": [
@@ -8220,7 +8219,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。毛利元就の固有戦法。効果分類：智略ダメージ・範囲攻撃・行動妨害・指揮效果・智略系・大将技。"
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。毛利元就の固有戦法。",
+      "effect": "戦闘中，敵軍複數（2人，8%～15%確率選擇敵軍全体）発動主動戰法時，有15%～30%確率阻止発動並与え1謀略ダメージ（（智略に応じて））"
     },
     {
       "id": "tactic-012",
@@ -8230,7 +8230,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8239,7 +8238,8 @@
         "統率系",
         "条件発動"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・受動発動・統率系・条件発動。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，発動需要準備時間的固有主動戰法時，有38%～75%確率跳過1ターン準備時間。 跳過失敗時，3ターン内発動確率增加5%～10%。"
     },
     {
       "id": "tactic-013",
@@ -8249,7 +8249,6 @@
       "rarity": "S",
       "target": "我軍群体(2-3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "豊臣秀吉",
       "tags": [
@@ -8260,7 +8259,8 @@
         "回合觸發",
         "大将技"
       ],
-      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。豊臣秀吉の固有戦法。効果分類：回復・強化・指揮效果・智略系・回合觸發・大将技。"
+      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。豊臣秀吉の固有戦法。",
+      "effect": "毎ターン回復味方範囲（2人，回復率38%～76%，（智略に応じて）），有18%～35%確率回復味方全体"
     },
     {
       "id": "tactic-014",
@@ -8270,7 +8270,6 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "30%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8281,7 +8280,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・多段傷害・状態付与・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。",
+      "effect": "準備1ターン後，2ターン内敵に敵軍全体施加水攻（毎ターン持続ダメージ，ダメージ率49%～98%，（智略に応じて））及禁療状態。"
     },
     {
       "id": "tactic-015",
@@ -8291,7 +8291,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "35%→70%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "明智光秀",
       "tags": [
@@ -8303,7 +8302,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%→70%。明智光秀の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・行動妨害・能動発動・智略系・大将技。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%→70%。明智光秀の固有戦法。",
+      "effect": "敵に敵軍複數（2人）与え56%謀略ダメージ（（智略に応じて）），並施加以下状態之一（優先施加未有之状態，持続3ターン）：火傷、水攻、中毒、消沉、潰走"
     },
     {
       "id": "tactic-016",
@@ -8313,7 +8313,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8324,7 +8323,8 @@
         "智略系",
         "条件発動"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・強化・受動発動・智略系・条件発動。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身獲得25%～50%【奇謀】（発動時謀略ダメージ增加50%），さらに奇謀ダメージ率增加15%～30%。 与え7次奇謀ダメージ後，追加敵に敵軍全体与え0.6～1.2謀略ダメージ（（智略に応じて））。"
     },
     {
       "id": "tactic-017",
@@ -8334,7 +8334,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "上杉謙信",
       "tags": [
@@ -8344,7 +8343,8 @@
         "条件発動",
         "大将技"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。上杉謙信の固有戦法。効果分類：強化・受動発動・武勇系・条件発動・大将技。"
+      "summary": "受動戦法。対象：自己。発動率：100%。上杉謙信の固有戦法。",
+      "effect": "戦闘中，自身無法獲得【亂舞】。味方範囲（2人）発動普通攻撃、主動戰法或突撃戰法時，有30%～60%確率（（武勇に応じて））自身獲得堆棧：普通攻撃ダメージ增加5%～10%（（武勇に応じて）），最大堆棧12段階。堆棧滿時，普通攻撃ダメージ增加0.7～1.4（（武勇に応じて））。普通攻撃後堆棧清空"
     },
     {
       "id": "tactic-018",
@@ -8354,7 +8354,6 @@
       "rarity": "S",
       "target": "我軍群体(2-3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8365,7 +8364,8 @@
         "武勇系",
         "回合觸發"
       ],
-      "summary": "受動戦法。対象：我軍群体(2-3人)。発動率：100%。習得可能な戦法。効果分類：回復・強化・弱体化・受動発動・武勇系・回合觸發。"
+      "summary": "受動戦法。対象：我軍群体(2-3人)。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身行動結束時，有20%～40%確率（（武勇に応じて））回復味方範囲（2～3人，回復率27%～54%，（武勇に応じて））。 同時1ターン内敵軍範囲（2～3人）与えダメージ低下5%～9%（雙方武勇之差）。"
     },
     {
       "id": "tactic-019",
@@ -8375,7 +8375,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%→70%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "今川義元",
       "tags": [
@@ -8387,7 +8386,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：35%→70%。今川義元の固有戦法。効果分類：武勇ダメージ・智略ダメージ・多段傷害・強化・突撃觸發・智略系・大将技。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%→70%。今川義元の固有戦法。",
+      "effect": "普通攻撃後進行2次遠程攻撃，各敵に隨機敵軍単体与え1.34兵刃ダメージ及1.34謀略ダメージ（（智略に応じて））。 每次攻撃後自身統率低下6%～6%（最大8段階，無法解除），低下量轉化為武勇及智略增加"
     },
     {
       "id": "tactic-020",
@@ -8397,7 +8397,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8405,7 +8404,8 @@
         "受動発動",
         "武勇系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・受動発動・武勇系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身突撃戰法発動確率增加9%～17%。"
     },
     {
       "id": "tactic-021",
@@ -8415,7 +8415,6 @@
       "rarity": "S",
       "target": "我軍群体(2-3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "長宗我部元親",
       "tags": [
@@ -8426,7 +8425,8 @@
         "統率系",
         "大将技"
       ],
-      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。長宗我部元親の固有戦法。効果分類：強化・状態付与・提升屬性・指揮效果・統率系・大将技。"
+      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。長宗我部元親の固有戦法。",
+      "effect": "戦闘中4ターン内，味方範囲（2～3人）獲得25%～50%【連撃】， 統率增加9～18點（（統率に応じて））"
     },
     {
       "id": "tactic-022",
@@ -8436,7 +8436,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8446,7 +8445,8 @@
         "統率系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・指揮效果・武勇系・統率系・回合觸發。"
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "最初2ターン，味方全体受ける的兵力損害低下6%～12%（（武勇に応じて））。 第3～4ターン，自身行動前，味方全体獲得3ターン持続的傭兵（追加部隊兵力，獲得率48%～96%，（統率に応じて））。"
     },
     {
       "id": "tactic-023",
@@ -8456,7 +8456,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "30%→65%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "立花道雪",
       "tags": [
@@ -8469,7 +8468,8 @@
         "武勇系",
         "大将技"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：30%→65%。立花道雪の固有戦法。効果分類：武勇ダメージ・範囲攻撃・単体攻撃・状態付与・行動妨害・突撃觸發・武勇系・大将技。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：30%→65%。立花道雪の固有戦法。",
+      "effect": "敵に普攻目標和隨機敵軍単体施加【麻痺】（2ターン，毎ターン有30%確率行動不能）。 もし目標已有【麻痺】，觸發雷鳴（敵に敵軍全体与え52%～52%兵刃ダメージ）， 並敵に未有【麻痺】的敵軍単体施加【麻痺】。此戰法毎ターン最大発動1次。"
     },
     {
       "id": "tactic-024",
@@ -8479,7 +8479,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8492,7 +8491,8 @@
         "武勇系",
         "条件発動"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・強化・能動発動・武勇系・条件発動。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。",
+      "effect": "敵に敵軍単体与え1.14～2.28兵刃ダメージ，並施加【麻痺】状態，持続2ターン（毎ターン30%確率行動不能）。 もし目標已處於【麻痺】状態，自身額外獲得25%～50%【会心】，持続2ターン。"
     },
     {
       "id": "tactic-025",
@@ -8502,7 +8502,6 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "松永久秀",
       "tags": [
@@ -8514,7 +8513,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。松永久秀の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・降低屬性・能動発動・智略系・大将技。"
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。松永久秀の固有戦法。",
+      "effect": "準備1ターン後，敵に敵軍複數（2～3人）与え0.64～1.28謀略ダメージ（（智略に応じて））。有55%確率施加【中毒】と【火傷】状態，持続2ターン（もし目標已處於【中毒】状態，なら改為施加【疲弊】；各状態個別判定）。第5ターン起発動時，有50%確率使自身智略提升25%，但戰鬥終了前獲得【混亂】。"
     },
     {
       "id": "tactic-026",
@@ -8524,14 +8524,14 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
         "強化",
         "受動発動"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・受動発動。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身主動戰法的発動確率增加7%～14%。"
     },
     {
       "id": "tactic-027",
@@ -8541,7 +8541,6 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "北条綱成",
       "tags": [
@@ -8552,7 +8551,8 @@
         "能動発動",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。北条綱成の固有戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・行動妨害・能動発動・大将技。"
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。北条綱成の固有戦法。",
+      "effect": "準備1ターン後，敵に敵軍全体与え0.87～1.74兵刃ダメージ。 有18%～36%確率（（武勇に応じて））敵に目標施加【封撃】和【無策】状態，持続1ターン（敵に象分別判定）"
     },
     {
       "id": "tactic-028",
@@ -8562,7 +8562,6 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8572,7 +8571,8 @@
         "行動妨害",
         "能動発動"
       ],
-      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。習得可能な戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・行動妨害・能動発動。"
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。習得可能な戦法。",
+      "effect": "敵に敵軍全体与え0.53～1.06兵刃ダメージ。 もし目標處於【封撃】或【無策】状態中，有18%～35%確率施加【威壓】状態（行動不能），持続1ターン。"
     },
     {
       "id": "tactic-029",
@@ -8582,7 +8582,6 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "本願寺顕如",
       "tags": [
@@ -8597,7 +8596,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "受動戦法。対象：敵軍群体(2-3人)。発動率：100%。本願寺顕如の固有戦法。効果分類：真実傷害・範囲攻撃・状態付与・回復・受動発動・条件発動・回合觸發・武勇系・智略系・大将技。"
+      "summary": "受動戦法。対象：敵軍群体(2-3人)。発動率：100%。本願寺顕如の固有戦法。",
+      "effect": "戦闘中，第2ターン起，毎ターン有30%～70%（毎ターン觸發確率增加40%）確率発動一揆。 一揆発動後的1ターン内，自身每次行動時，有80%～90%確率敵に敵軍複數（2～3人）施加一揆， 与え36%～72%防御無視ダメージ（受武勇と智略中較高者影響）。 回復味方雜賀本願寺全体，回復量為ダメージ量的13%～25%"
     },
     {
       "id": "tactic-030",
@@ -8607,7 +8607,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "本多忠勝",
       "tags": [
@@ -8619,7 +8618,8 @@
         "武勇系",
         "大将技"
       ],
-      "summary": "受動戦法。対象：敵軍単体。発動率：100%。本多忠勝の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・状態付与・受動発動・武勇系・大将技。"
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。本多忠勝の固有戦法。",
+      "effect": "戦闘中，受ける敵軍普通攻撃時，有24%～48%確率敵に攻撃者与え35%～70%兵刃ダメージ（可発動普通攻撃效果と突撃）， 並獲得2%～4%【離反】（最大疊8次）"
     },
     {
       "id": "tactic-031",
@@ -8629,7 +8629,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8638,7 +8637,8 @@
         "受動発動",
         "武勇系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・受動発動・武勇系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身受回復效果提升30%～60%， 並額外獲得20%～40%【会心】。"
     },
     {
       "id": "tactic-032",
@@ -8648,7 +8648,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "陶晴賢",
       "tags": [
@@ -8658,7 +8657,8 @@
         "能動発動",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。陶晴賢の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・能動発動・大将技。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。陶晴賢の固有戦法。",
+      "effect": "敵に敵軍複數（2人）与え0.71～1.42兵刃ダメージ， ダメージ額外受敵に象兵力損失率影響（最高增加25%～50%）。 もし敵に象兵力於50%以下，なら4ターン内自身主動戰法発動確率增加10%～10%（最大重複2次）。"
     },
     {
       "id": "tactic-033",
@@ -8668,7 +8668,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "25%→35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8679,7 +8678,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：25%→35%。習得可能な戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：25%→35%。習得可能な戦法。",
+      "effect": "通常攻撃後，敵に目標再次与え1.92～1.92兵刃ダメージ， 並施加1ターン【混亂】状態（隨機選擇攻撃及戰法目標）。"
     },
     {
       "id": "tactic-034",
@@ -8689,7 +8689,6 @@
       "rarity": "S",
       "target": "我軍群体(2人)",
       "activationRate": "50%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "酒井忠次",
       "tags": [
@@ -8700,7 +8699,8 @@
         "能動発動",
         "大将技"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：50%。酒井忠次の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・能動発動・大将技。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：50%。酒井忠次の固有戦法。",
+      "effect": "本ターン内，自身と武勇最高的味方単体獲得22%～44%（（武勇に応じて））【破陣】。 自身本ターン普通攻撃時，敵に目標追加与え1.01～2.02兵刃ダメージ。 下ターン後可重新発動。"
     },
     {
       "id": "tactic-035",
@@ -8710,7 +8710,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8720,7 +8719,8 @@
         "提升屬性",
         "統率系"
       ],
-      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：回復・強化・状態付与・提升屬性・統率系。"
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "弓兵進化為百發百中的三河弓兵隊。味方全体統率增加10～20點。 前3ターン内，味方獲得回生效果，受けるダメージ時有18%～35%確率恢復33%～65%（（統率に応じて））兵力。 酒井忠次裝備時，発動確率額外受統率影響提升。"
     },
     {
       "id": "tactic-036",
@@ -8730,7 +8730,6 @@
       "rarity": "S",
       "target": "我軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "大内義隆",
       "tags": [
@@ -8742,7 +8741,8 @@
         "指揮效果",
         "統率系"
       ],
-      "summary": "指揮戦法。対象：我軍単体。発動率：100%。大内義隆の固有戦法。効果分類：智略ダメージ・強化・弱体化・状態付与・降低屬性・指揮效果・統率系。"
+      "summary": "指揮戦法。対象：我軍単体。発動率：100%。大内義隆の固有戦法。",
+      "effect": "戦闘中，智略最高的味方武将謀略ダメージ增加7%～14%（（統率に応じて））， 並獲得7%～14%（（統率に応じて））【攻心】状態。 同時低下武勇最高的味方武将武勇10%～10%"
     },
     {
       "id": "tactic-037",
@@ -8752,7 +8752,6 @@
       "rarity": "S",
       "target": "我軍単体",
       "activationRate": "15%→30%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8762,7 +8761,8 @@
         "智略系",
         "速度系"
       ],
-      "summary": "能動戦法。対象：我軍単体。発動率：15%→30%。習得可能な戦法。効果分類：強化・状態付与・能動発動・智略系・速度系。"
+      "summary": "能動戦法。対象：我軍単体。発動率：15%→30%。習得可能な戦法。",
+      "effect": "選擇行動順序比自身靠後的味方単体，施加2ターン【洞察】及【先攻】状態。 もし自身行動順序最靠後，なら改為敵に自身施加2ターン【洞察】及【先攻】状態。"
     },
     {
       "id": "tactic-038",
@@ -8772,7 +8772,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "高橋紹運",
       "tags": [
@@ -8784,7 +8783,8 @@
         "統率系",
         "大将技"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。高橋紹運の固有戦法。効果分類：強化・状態付与・受動発動・武勇系・智略系・統率系・大将技。"
+      "summary": "受動戦法。対象：自己。発動率：100%。高橋紹運の固有戦法。",
+      "effect": "戦闘中，自身獲得【洞察】状態，並根據自身最高屬性進行強化： 武勇：兵刃ダメージ增加6%～12%（（武勇に応じて））； 智略：謀略ダメージ增加6%～12%（（智略に応じて））； 統率：主動戰法発動率增加3%～6%（（統率に応じて））"
     },
     {
       "id": "tactic-039",
@@ -8794,7 +8794,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8805,7 +8804,8 @@
         "突撃觸發",
         "智略系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：40%。習得可能な戦法。効果分類：武勇ダメージ・智略ダメージ・単体攻撃・多段傷害・突撃觸發・智略系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：40%。習得可能な戦法。",
+      "effect": "通常攻撃後，敵に目標再次与え0.79～1.58兵刃ダメージ及0.79～1.58謀略ダメージ（（智略に応じて））。 此ダメージ受雙方屬性差影響（兵刃ダメージ受武勇、統率影響；謀略ダメージ受智略、速度影響）。"
     },
     {
       "id": "tactic-040",
@@ -8815,7 +8815,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%→65%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "前田慶次",
       "tags": [
@@ -8827,7 +8826,8 @@
         "武勇系",
         "条件発動"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：35%→65%。前田慶次の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・突撃觸發・武勇系・条件発動。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%→65%。前田慶次の固有戦法。",
+      "effect": "通常攻撃後，敵に目標追加与え1.88～1.88兵刃ダメージ。 もし撃中敵軍大将，施加2ターン【混亂】状態（攻撃及戰法目標無差別化）。 もし敵軍大将已處於混亂状態，なら吸收其30～30（（武勇に応じて））主要屬性，於戰鬥終結前可重複重複。"
     },
     {
       "id": "tactic-041",
@@ -8837,7 +8837,6 @@
       "rarity": "S",
       "target": "我軍群体(2-3人)",
       "activationRate": "45%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "北条氏康",
       "tags": [
@@ -8849,7 +8848,8 @@
         "大将技",
         "智略系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：45%。北条氏康の固有戦法。効果分類：智略ダメージ・単体攻撃・強化・回復・能動発動・大将技・智略系。"
+      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：45%。北条氏康の固有戦法。",
+      "effect": "2ターン内，味方範囲（2-3人）獲得43%～85%（（智略に応じて））鉄壁状態，可觸發2次。 敵に象已處於鉄壁状態時，改為敵に敵軍単体与え0.89～1.78謀略ダメージ（（智略に応じて））"
     },
     {
       "id": "tactic-042",
@@ -8859,7 +8859,6 @@
       "rarity": "S",
       "target": "友軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8869,7 +8868,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：友軍単体。発動率：35%。習得可能な戦法。効果分類：回復・強化・状態付与・能動発動・智略系。"
+      "summary": "能動戦法。対象：友軍単体。発動率：35%。習得可能な戦法。",
+      "effect": "敵に隨機味方単体進行回復（回復率1.06～2.12，（智略に応じて））。 2ターン内，敵に兵力最少的味方単体施加【休養】状態， 每當其受けるダメージ時，有25%～50%確率額外回復（回復率33%～66%，（智略に応じて））。"
     },
     {
       "id": "tactic-043",
@@ -8879,7 +8879,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "馬場信春",
       "tags": [
@@ -8890,7 +8889,8 @@
         "統率系",
         "条件発動"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。馬場信春の固有戦法。効果分類：回復・強化・移除狀態・受動発動・統率系・条件発動。"
+      "summary": "受動戦法。対象：自己。発動率：100%。馬場信春の固有戦法。",
+      "effect": "戦闘中，自身受けるダメージ時，有18%～35%確率浄化自身的減益状態， 並回復自身（回復率0.56～1.12，（統率に応じて））。"
     },
     {
       "id": "tactic-044",
@@ -8900,7 +8900,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8911,7 +8910,8 @@
         "条件発動",
         "回合觸發"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・受動発動・武勇系・条件発動・回合觸發。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身獲得13%～25%【離反】（兵刃ダメージ觸發時，按ダメージ量比例恢復兵力）。 第5ターン時，額外獲得13%～25%【離反】。 自身兵力低於50%時，額外獲得13%～25%【会心】。"
     },
     {
       "id": "tactic-045",
@@ -8921,7 +8921,6 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "50%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "柴田勝家",
       "tags": [
@@ -8932,7 +8931,8 @@
         "大将技",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：50%。柴田勝家の固有戦法。効果分類：武勇ダメージ・範囲攻撃・移除狀態・能動発動・大将技・武勇系。"
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：50%。柴田勝家の固有戦法。",
+      "effect": "浄化自身2個減益状態，敵に敵軍全体（3人）与え0.77～1.54兵刃ダメージ。 1ターン後可再次発動"
     },
     {
       "id": "tactic-046",
@@ -8942,7 +8942,6 @@
       "rarity": "S",
       "target": "我軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "伊達晴宗",
       "tags": [
@@ -8952,7 +8951,8 @@
         "武勇系",
         "大将技"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。伊達晴宗の固有戦法。効果分類：強化・状態付与・能動発動・武勇系・大将技。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。伊達晴宗の固有戦法。",
+      "effect": "2ターン内，自身と味方単体獲得39%～78%【亂舞】。 第5ターン起，額外2ターン内，雙方速度提升10%～20%。 優先敵に武勇較高的味方単体発動。"
     },
     {
       "id": "tactic-047",
@@ -8962,7 +8962,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -8973,7 +8972,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。効果分類：武勇ダメージ・強化・状態付与・提升屬性・能動発動・武勇系。"
+      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。",
+      "effect": "持続2ターン内，自身普通攻撃ダメージ上昇25%～50%， 並獲得【亂舞】状態（普通攻撃時，敵に目標部隊的其他武将与えダメージ，ダメージ率35%～70%）。"
     },
     {
       "id": "tactic-048",
@@ -8983,7 +8983,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "前田利家",
       "tags": [
@@ -8993,7 +8992,8 @@
         "武勇系",
         "大将技"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。前田利家の固有戦法。効果分類：強化・状態付与・受動発動・武勇系・大将技。"
+      "summary": "受動戦法。対象：自己。発動率：100%。前田利家の固有戦法。",
+      "effect": "戦闘中，每次発動主動戰法時，有45%～90%確率獲得1段階【抵禦】（已由本戰法施加なら段階數增加）。 抵禦獲得判定每達成2次，強化自身下次普通攻撃：普通攻撃ダメージ提升50%，攻撃敵に象變更為敵軍全体。"
     },
     {
       "id": "tactic-049",
@@ -9003,7 +9003,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9013,7 +9012,8 @@
         "速度系",
         "兵種"
       ],
-      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・能動発動・速度系・兵種。"
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "騎兵進化為剛勇無雙的母衣武者。味方全体速度增加10～20點， 每次普通攻撃後，目標受ダメージ增加2%～3%（（速度に応じて）），最大疊5段階。 前田利家裝備時，受ダメージ增加率變更為2%～4%（（速度に応じて））。"
     },
     {
       "id": "tactic-050",
@@ -9023,7 +9023,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "加藤清正",
       "tags": [
@@ -9033,7 +9032,8 @@
         "武勇系",
         "条件発動"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。加藤清正の固有戦法。効果分類：強化・状態付与・受動発動・武勇系・条件発動。"
+      "summary": "受動戦法。対象：自己。発動率：100%。加藤清正の固有戦法。",
+      "effect": "戦闘中，自身獲得35%～70%【会心】，会心ダメージ率增加15%～30%。 与え会心ダメージ時，自身会心ダメージ增加3%～5%（最初1次除外，最大重複10次）。"
     },
     {
       "id": "tactic-051",
@@ -9043,7 +9043,6 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "30%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9052,7 +9051,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。効果分類：武勇ダメージ・範囲攻撃・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。",
+      "effect": "準備1ターン，敵に敵軍全体与え1.27～2.54兵刃ダメージ（（武勇に応じて））。"
     },
     {
       "id": "tactic-052",
@@ -9062,7 +9062,6 @@
       "rarity": "S",
       "target": "敵軍群体(1-2人)",
       "activationRate": "60%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "榊原康政",
       "tags": [
@@ -9073,7 +9072,8 @@
         "武勇系",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍群体(1-2人)。発動率：60%。榊原康政の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・能動発動・武勇系・大将技。"
+      "summary": "能動戦法。対象：敵軍群体(1-2人)。発動率：60%。榊原康政の固有戦法。",
+      "effect": "敵に敵軍複數（1～2人）与え0.51～1.02兵刃ダメージ。 2ターン内，自身兵刃ダメージ提升25%～50%。 自身先行行動的敵方武将每增加1人，兵刃ダメージ提升效果低下5%～10%。"
     },
     {
       "id": "tactic-053",
@@ -9083,7 +9083,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9093,7 +9092,8 @@
         "武勇系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。効果分類：弱体化・降低屬性・指揮效果・武勇系・回合觸發。"
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，前4ターン，自身行動時有80%確率使武勇最高敵方武将兵刃ダメージ低下15%～30%（（武勇に応じて））、智略最高敵方武将謀略ダメージ低下15%～30%（（武勇に応じて）），持続1ターン。"
     },
     {
       "id": "tactic-054",
@@ -9103,7 +9103,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "山本勘助",
       "tags": [
@@ -9115,7 +9114,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：40%。山本勘助の固有戦法。効果分類：智略ダメージ・武勇ダメージ・範囲攻撃・状態付与・能動発動・智略系・大将技。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。山本勘助の固有戦法。",
+      "effect": "敵に敵軍単体与え0.78～1.56謀略ダメージ（（智略に応じて））。 武勇最高味方武将敵に同一目標与え0.8～1.6兵刃ダメージ（（武勇に応じて）、（速度に応じて））。 1ターン内，有18%～35%確率（（速度に応じて））施加【威壓】状態。"
     },
     {
       "id": "tactic-055",
@@ -9125,7 +9125,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "50%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9135,7 +9134,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：50%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・回復・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：50%。習得可能な戦法。",
+      "effect": "經過1ターン準備後，敵に敵軍複數（2人）与え0.71～1.42謀略ダメージ，回復味方範囲（2人）（回復率0.53～1.06，（智略に応じて））。"
     },
     {
       "id": "tactic-056",
@@ -9145,7 +9145,6 @@
       "rarity": "S",
       "target": "我軍単体",
       "activationRate": "45%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "内藤昌豊",
       "tags": [
@@ -9154,7 +9153,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：我軍単体。発動率：45%。内藤昌豊の固有戦法。効果分類：回復・強化・能動発動・智略系。"
+      "summary": "能動戦法。対象：我軍単体。発動率：45%。内藤昌豊の固有戦法。",
+      "effect": "回復兵力最少味方単体（回復率1.38～2.76，（智略に応じて））。 1ターン内，低下目標被ダメージ9%～18%（（智略に応じて））。 もし回復超出，額外回復自身（回復率0.54～1.08，（智略に応じて））。"
     },
     {
       "id": "tactic-057",
@@ -9164,7 +9164,6 @@
       "rarity": "S",
       "target": "我軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9174,7 +9173,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：我軍単体。発動率：40%。習得可能な戦法。効果分類：回復・強化・移除狀態・能動発動・智略系。"
+      "summary": "能動戦法。対象：我軍単体。発動率：40%。習得可能な戦法。",
+      "effect": "浄化兵力損失最大味方単体2個弱体化效果，回復其兵力（回復率1.3～2.6，（智略に応じて））。"
     },
     {
       "id": "tactic-058",
@@ -9184,7 +9184,6 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "竹中半兵衛",
       "tags": [
@@ -9195,7 +9194,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。竹中半兵衛の固有戦法。効果分類：智略ダメージ・範囲攻撃・弱体化・能動発動・智略系・大将技。"
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。竹中半兵衛の固有戦法。",
+      "effect": "經過1ターン準備後，2ターン内敵軍全体被ダメージ提升9%～18%（（智略に応じて））。 隨後敵に全体与え0.69～1.38謀略ダメージ（（智略に応じて））。"
     },
     {
       "id": "tactic-059",
@@ -9205,7 +9205,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "30%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9217,7 +9216,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：30%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・行動妨害・弱体化・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：30%。習得可能な戦法。",
+      "effect": "施加【消沉】於敵軍複數（2人）。 2ターン内，毎ターン敵に目標与え0.52～1.04持続ダメージ（（智略に応じて））， 並提升其兵刃被ダメージ10%～20%。"
     },
     {
       "id": "tactic-060",
@@ -9227,7 +9227,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "成田甲斐",
       "tags": [
@@ -9236,7 +9235,8 @@
         "受動発動",
         "武勇系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。成田甲斐の固有戦法。効果分類：強化・状態付与・受動発動・武勇系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。成田甲斐の固有戦法。",
+      "effect": "戦闘中，自身獲得【連撃】（毎ターン進行2次普通攻撃），武勇提升3～30點。"
     },
     {
       "id": "tactic-061",
@@ -9246,7 +9246,6 @@
       "rarity": "S",
       "target": "我軍群体(2人)",
       "activationRate": "25%→35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9255,7 +9254,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：25%→35%。習得可能な戦法。効果分類：強化・状態付与・能動発動・武勇系。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：25%→35%。習得可能な戦法。",
+      "effect": "1ターン内，自身と味方単体獲得【連撃】状態（1ターン内進行2次普通攻撃）。"
     },
     {
       "id": "tactic-062",
@@ -9265,7 +9265,6 @@
       "rarity": "S",
       "target": "我軍大将",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "ねね",
       "tags": [
@@ -9275,7 +9274,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：我軍大将。発動率：100%。ねねの固有戦法。効果分類：智略ダメージ・範囲攻撃・指揮效果・智略系・回合觸發。"
+      "summary": "指揮戦法。対象：我軍大将。発動率：100%。ねねの固有戦法。",
+      "effect": "戦闘中，味方全体施加回復時，蓄積該回復量的75%。 大将行動結束時，有40%～80%確率敵に敵軍複數（1～2人）与え46%～92%謀略ダメージ（（智略に応じて），受蓄積回復量影響），並重置蓄積。"
     },
     {
       "id": "tactic-063",
@@ -9285,7 +9285,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9295,7 +9294,8 @@
         "魅力系",
         "条件発動"
       ],
-      "summary": "受動戦法。対象：敵軍単体。発動率：100%。習得可能な戦法。効果分類：状態付与・行動妨害・受動発動・魅力系・条件発動。"
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。習得可能な戦法。",
+      "effect": "自身受ける敵軍普通攻撃時，有18%～36%確率敵に攻撃者施加下列状態之一（持続1ターン）： 【混亂】（普通攻撃と戰法目標隨機選擇）、【無策】（主動戰法無法発動）、【疲弱】（与えダメージ無效）。 もし自身為女性角色，なら発動確率額外上昇0%～0%（（魅力に応じて））。"
     },
     {
       "id": "tactic-064",
@@ -9305,7 +9305,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "帰蝶",
       "tags": [
@@ -9316,7 +9315,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "受動戦法。対象：敵軍群体(2人)。発動率：100%。帰蝶の固有戦法。効果分類：弱体化・状態付与・行動妨害・受動発動・智略系・回合觸發。"
+      "summary": "受動戦法。対象：敵軍群体(2人)。発動率：100%。帰蝶の固有戦法。",
+      "effect": "戦闘中，奇數ターン時，有20%～40%確率（（智略に応じて））使敵軍複數（2人）統率と智略低下11%～22%，持続1ターン。 偶數ターン時，有19%～38%確率（（智略に応じて））使敵軍複數（2人）施加【混亂】状態。"
     },
     {
       "id": "tactic-065",
@@ -9326,7 +9326,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "20%→35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9337,7 +9336,8 @@
         "能動発動",
         "条件発動"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：20%→35%。習得可能な戦法。効果分類：状態付与・行動妨害・範囲攻撃・弱体化・能動発動・条件発動。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：20%→35%。習得可能な戦法。",
+      "effect": "準備1ターン後，敵に敵軍複數（2人）施加【混亂】状態，持続2ターン （混亂時攻撃と戰法発動目標隨機選擇）。 もし自身為女性，額外使目標受ダメージ提升6%～6%。"
     },
     {
       "id": "tactic-066",
@@ -9347,7 +9347,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "宇佐美定満",
       "tags": [
@@ -9357,7 +9356,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。宇佐美定満の固有戦法。効果分類：強化・状態付与・指揮效果・智略系・回合觸發。"
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。宇佐美定満の固有戦法。",
+      "effect": "戦闘中，使自身主動戰法発動確率增加10%～20%。 每次発動主動戰法時，有25%～50%確率（（智略に応じて））敵に味方全体隨機施加【封撃】、【無策】、【威壓】、【疲弱】其中一個状態的耐性，持続2ターン（未獲得状態優先）。"
     },
     {
       "id": "tactic-067",
@@ -9367,7 +9367,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9375,7 +9374,8 @@
         "指揮效果",
         "智略系"
       ],
-      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。効果分類：弱体化・指揮效果・智略系。"
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。",
+      "effect": "戰鬥最初3ターン，敵軍複數（2人）的与えダメージ低下14%～28%（（智略に応じて））。"
     },
     {
       "id": "tactic-068",
@@ -9385,7 +9385,6 @@
       "rarity": "S",
       "target": "我軍群体(2人)",
       "activationRate": "40%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "甘粕景持",
       "tags": [
@@ -9395,7 +9394,8 @@
         "状態付与",
         "能動発動"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：40%。甘粕景持の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・能動発動。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：40%。甘粕景持の固有戦法。",
+      "effect": "敵に敵軍複數（2人）与え0.51～1.02兵刃ダメージ。 2ターン内，自身と味方単体獲得23%～45%【会心】。"
     },
     {
       "id": "tactic-069",
@@ -9405,7 +9405,6 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "30%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9414,7 +9413,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。効果分類：武勇ダメージ・範囲攻撃・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。",
+      "effect": "普通攻撃後，敵に敵軍全体与え0.68～1.36兵刃ダメージ。"
     },
     {
       "id": "tactic-070",
@@ -9424,7 +9424,6 @@
       "rarity": "S",
       "target": "我軍群体(2-3人)",
       "activationRate": "25%→45%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "太田資正",
       "tags": [
@@ -9435,7 +9434,8 @@
         "能動発動",
         "速度系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：25%→45%。太田資正の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・状態付与・能動発動・速度系。"
+      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：25%→45%。太田資正の固有戦法。",
+      "effect": "1ターン内，味方範囲（2～3人）獲得【先攻】と【必中】状態， 並敵に速度最高的敵軍単体施加標記。 被標記敵に象行動時，獲得強化的味方敵に其与え1.46兵刃ダメージ。 1ターン後可重新発動。"
     },
     {
       "id": "tactic-071",
@@ -9445,7 +9445,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9454,7 +9453,8 @@
         "受動発動",
         "武勇系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・受動発動・武勇系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身的武勇、智略、統率、速度各增加21～42點。"
     },
     {
       "id": "tactic-072",
@@ -9464,7 +9464,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "板垣信方",
       "tags": [
@@ -9475,7 +9474,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。板垣信方の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・弱体化・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。板垣信方の固有戦法。",
+      "effect": "敵に敵軍複數（2人）与え0.67～1.34謀略ダメージ（（智略に応じて））， さらに其下次受ける的主動戰法ダメージ增加26%～52%，持続2ターン。"
     },
     {
       "id": "tactic-073",
@@ -9485,7 +9485,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "25%→35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9495,7 +9494,8 @@
         "智略系",
         "条件発動"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：25%→35%。習得可能な戦法。効果分類：行動妨害・状態付与・能動発動・智略系・条件発動。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：25%→35%。習得可能な戦法。",
+      "effect": "經過1ターン準備後，在2ターン内，敵に敵軍複數（2人）施加【無策】状態（主動戰法無法発動）。"
     },
     {
       "id": "tactic-074",
@@ -9505,7 +9505,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "甘利虎泰",
       "tags": [
@@ -9516,7 +9515,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。甘利虎泰の固有戦法。効果分類：武勇ダメージ・単体攻撃・弱体化・降低屬性・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。甘利虎泰の固有戦法。",
+      "effect": "通常攻撃後，敵に攻撃敵に象与え1.23～2.46兵刃ダメージ， 並在2ターン内低下其謀略ダメージ38%～75%。"
     },
     {
       "id": "tactic-075",
@@ -9526,7 +9526,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9537,7 +9536,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。効果分類：強化・弱体化・提升屬性・降低屬性・能動発動・武勇系。"
+      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。",
+      "effect": "在3ターン内，自身的突撃戰法ダメージ增加18%～35%，主動戰法所受ダメージ低下10%～20%。（1ターン後方可再発動）"
     },
     {
       "id": "tactic-076",
@@ -9547,7 +9547,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "45%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "飯富虎昌",
       "tags": [
@@ -9558,7 +9557,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：45%。飯富虎昌の固有戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・行動妨害・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：45%。飯富虎昌の固有戦法。",
+      "effect": "敵に敵軍複數（2人）与え48%～96%兵刃ダメージ， 並在1ターン内施加【封撃】状態。"
     },
     {
       "id": "tactic-077",
@@ -9568,7 +9568,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9578,7 +9577,8 @@
         "武勇系",
         "条件発動"
       ],
-      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・兵種・武勇系・条件発動。"
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "騎兵進化為橫掃千軍赤備隊。味方全体獲得18%～35%【会心】（発動時，兵刃ダメージ增加50%）。 飯富虎昌裝備時，味方全体与え会心兵刃ダメージ達10次後，発動全軍出撃（味方全体各自敵に隨機敵軍単体与え44%～88%兵刃ダメージ）。"
     },
     {
       "id": "tactic-078",
@@ -9588,7 +9588,6 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "30%→55%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "佐久間信盛",
       "tags": [
@@ -9599,7 +9598,8 @@
         "統率系",
         "条件発動"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：30%→55%。佐久間信盛の固有戦法。効果分類：回復・状態付与・行動妨害・能動発動・統率系・条件発動。"
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：30%→55%。佐久間信盛の固有戦法。",
+      "effect": "もし自身兵力非味方最低值，なら在1ターン内，敵に敵軍複數（2～3人）施加【挑釁】和【牽制】状態（強制敵軍普通攻撃和戰法以自身為目標）。 否なら，回復自身（回復率2.58，（統率に応じて））。"
     },
     {
       "id": "tactic-079",
@@ -9609,7 +9609,6 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9620,7 +9619,8 @@
         "統率系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：敵軍群体(2-3人)。発動率：100%。習得可能な戦法。効果分類：弱体化・状態付与・行動妨害・指揮效果・統率系・回合觸發。"
+      "summary": "指揮戦法。対象：敵軍群体(2-3人)。発動率：100%。習得可能な戦法。",
+      "effect": "在前3ターン内，敵に敵軍複數（2～3人）施加【挑釁】状態（毎ターン45%～90%確率強制其以自身為普通攻撃目標）。 同時自身所受普通攻撃和突撃戰法ダメージ低下25%～50%。 もし自身為大将，なら不施加挑釁状態。"
     },
     {
       "id": "tactic-080",
@@ -9630,7 +9630,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "45%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "荒木村重",
       "tags": [
@@ -9640,7 +9639,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：45%。荒木村重の固有戦法。効果分類：智略ダメージ・単体攻撃・能動発動・智略系・回合觸發。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。荒木村重の固有戦法。",
+      "effect": "自身と智略最高的敵軍武将同時敵に隨機敵軍単体与え0.96～1.92謀略ダメージ（（智略に応じて））。 第6ターン後，智略最高敵軍武将的ダメージ目標改為味方単体。"
     },
     {
       "id": "tactic-081",
@@ -9650,7 +9650,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9659,7 +9658,8 @@
         "指揮效果",
         "行動妨害"
       ],
-      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。効果分類：弱体化・状態付与・指揮效果・行動妨害。"
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。",
+      "effect": "敵軍複數（2人）第1ターン時，敵に其中1人施加【疲弱】状態； 第3ターン時，敵に另1人施加【疲弱】状態。 【疲弱】使目標所与えダメージ有25%～50%確率無效，持続2ターン。"
     },
     {
       "id": "tactic-082",
@@ -9669,7 +9669,6 @@
       "rarity": "S",
       "target": "我軍群体(2人)",
       "activationRate": "30%→65%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "明智秀満",
       "tags": [
@@ -9680,7 +9679,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：30%→65%。明智秀満の固有戦法。効果分類：智略ダメージ・範囲攻撃・強化・状態付与・能動発動・智略系。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：30%→65%。明智秀満の固有戦法。",
+      "effect": "2ターン内，自身と味方単体獲得65%【奇謀】。 期間内，每次奇謀ダメージ与えダメージ時，奇謀ダメージ率增加15%（最大疊4次，戦闘中持続）。"
     },
     {
       "id": "tactic-083",
@@ -9690,7 +9690,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9702,7 +9701,8 @@
         "回合觸發",
         "条件発動"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：武勇ダメージ・範囲攻撃・強化・受動発動・武勇系・回合觸發・条件発動。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身每次受ける兵刃ダメージ時，武勇增加2.5～5點（最大重複10次）。 第5ターン時，敵に敵軍全体与え0.625～1.25兵刃ダメージ，每重複1次額外ダメージ增加6%～12%。"
     },
     {
       "id": "tactic-084",
@@ -9712,7 +9712,6 @@
       "rarity": "S",
       "target": "友軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "妻木煕子",
       "tags": [
@@ -9722,7 +9721,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：友軍群体(2人)。発動率：100%。妻木煕子の固有戦法。効果分類：回復・強化・指揮效果・智略系・回合觸發。"
+      "summary": "指揮戦法。対象：友軍群体(2人)。発動率：100%。妻木煕子の固有戦法。",
+      "effect": "戦闘中，味方範囲（2人）施加持続性状態時，有25%～50%（（智略に応じて））確率使該状態延長1ターン。 偶數ターン時，もし敵軍全体處於持続性状態中，なら回復味方全体（回復率48%～96%，（智略に応じて））。"
     },
     {
       "id": "tactic-085",
@@ -9732,7 +9732,6 @@
       "rarity": "S",
       "target": "我軍群体(2人)",
       "activationRate": "45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9741,7 +9740,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：45%。習得可能な戦法。効果分類：回復・強化・能動発動・智略系。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：45%。習得可能な戦法。",
+      "effect": "敵に味方範囲（2人）進行回復（回復率0.66～1.32，（智略に応じて））。 目標兵力在50%以下時，基礎回復率提升至0.86～1.72（（智略に応じて））。"
     },
     {
       "id": "tactic-086",
@@ -9751,7 +9751,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "福島正則",
       "tags": [
@@ -9762,7 +9761,8 @@
         "条件発動",
         "大将技"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。福島正則の固有戦法。効果分類：強化・状態付与・受動発動・武勇系・条件発動・大将技。"
+      "summary": "受動戦法。対象：自己。発動率：100%。福島正則の固有戦法。",
+      "effect": "戦闘中，自身獲得46%～92%【亂舞】（普通攻撃時，敵に目標部隊的其他武将也与えダメージ）。 毎ターン有15%～30%確率将自身普通攻撃鎖定至統率最低的敵軍単体，発動時持続1ターン。 兵刃ダメージ每達成5次，発動確率增加7%～13%（最大增加3次）。"
     },
     {
       "id": "tactic-087",
@@ -9772,7 +9772,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "松平信康",
       "tags": [
@@ -9782,7 +9781,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：自己。発動率：35%。松平信康の固有戦法。効果分類：強化・状態付与・提升屬性・能動発動・武勇系。"
+      "summary": "能動戦法。対象：自己。発動率：35%。松平信康の固有戦法。",
+      "effect": "持続2ターン，自身代受味方範囲（2人）20%被ダメージ。 自身武勇增加37.5～75點，獲得12%～24%【離反】。 もし自身兵力低於50%時，武勇增加50～100點，獲得16%～32%【離反】。"
     },
     {
       "id": "tactic-088",
@@ -9792,7 +9792,6 @@
       "rarity": "S",
       "target": "我軍大将",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "寿桂尼",
       "tags": [
@@ -9802,7 +9801,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：我軍大将。発動率：100%。寿桂尼の固有戦法。効果分類：強化・状態付与・指揮效果・智略系・回合觸發。"
+      "summary": "指揮戦法。対象：我軍大将。発動率：100%。寿桂尼の固有戦法。",
+      "effect": "前2ターン，味方大将獲得【洞察】，受ダメージ低下9%～18%（（智略に応じて））。 效果結束後，4ターン内，獲得12%～24%（（智略に応じて））的【離反】と【攻心】。"
     },
     {
       "id": "tactic-089",
@@ -9812,7 +9812,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "大祝鶴",
       "tags": [
@@ -9824,7 +9823,8 @@
         "武勇系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。大祝鶴の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・指揮效果・武勇系・回合觸發。"
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。大祝鶴の固有戦法。",
+      "effect": "戦闘中，味方複數（2人）受ける普通攻撃時，有35%確率敵に敵軍複數与え0.51～1.02兵刃ダメージ。 味方每受ける普通攻撃4次，自身獲得13%～25%【会心】，最大重複2次。"
     },
     {
       "id": "tactic-090",
@@ -9834,7 +9834,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "40%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "浅井長政",
       "tags": [
@@ -9845,7 +9844,8 @@
         "能動発動",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：40%。浅井長政の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・能動発動・大将技。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：40%。浅井長政の固有戦法。",
+      "effect": "敵に敵軍複數（2人）与え0.78～1.56兵刃ダメージ， さらに自身獲得8%～15%【離反】状態，持続1ターン"
     },
     {
       "id": "tactic-091",
@@ -9855,7 +9855,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9863,7 +9862,8 @@
         "提升屬性",
         "能動発動"
       ],
-      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。効果分類：強化・提升屬性・能動発動。"
+      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。",
+      "effect": "3ターン内，自身能動戰法とダメージ提升24%～48%，突撃戰法受ダメージ低下13%～25%。 1ターン後可重新発動。"
     },
     {
       "id": "tactic-092",
@@ -9873,7 +9873,6 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "30%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "島津貴久",
       "tags": [
@@ -9886,7 +9885,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：30%。島津貴久の固有戦法。効果分類：智略ダメージ・範囲攻撃・多段傷害・状態付与・行動妨害・能動発動・智略系・大将技。"
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：30%。島津貴久の固有戦法。",
+      "effect": "敵に敵軍複數（2～3人）与え0.63～1.26謀略ダメージ（（智略に応じて）），並施加【混亂】状態。 もし目標擁有指揮或被動戰法，2ターン内毎ターン敵に目標与え32%～64%謀略ダメージ（（智略に応じて））， かつダメージ率因所擁有指揮或被動戰法數量每增加1個而提升17%～34%。 1ターン後可重新発動。"
     },
     {
       "id": "tactic-093",
@@ -9896,7 +9896,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9905,7 +9904,8 @@
         "提升屬性",
         "兵種"
       ],
-      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・提升屬性・兵種。"
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "足輕進化為鉄火烈襲的薩摩鉄砲兵。味方全体普通攻撃轉換為謀略攻撃，基礎ダメージ率提升20%～40%。 攻撃後1ターン可重新発動。 島津貴久裝備時，基礎ダメージ率提升至30%～60%。"
     },
     {
       "id": "tactic-094",
@@ -9915,7 +9915,6 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "75%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "真柄直隆",
       "tags": [
@@ -9926,7 +9925,8 @@
         "武勇系",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：75%。真柄直隆の固有戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・能動発動・武勇系・大将技。"
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：75%。真柄直隆の固有戦法。",
+      "effect": "準備2ターン後，敵に敵軍複數（2～3人）与え1.665～3.33兵刃ダメージ。 もし此攻撃消滅目標，自身獲得【破陣】状態，持続2ターン。"
     },
     {
       "id": "tactic-095",
@@ -9936,7 +9936,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9946,7 +9945,8 @@
         "条件発動",
         "兵種"
       ],
-      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：武勇ダメージ・強化・範囲攻撃・条件発動・兵種。"
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "足輕進化為臨戰態勢的大太刀力士隊。味方全体受ける普通攻撃ダメージ時，有15%～30%確率向攻撃者発動反撃（ダメージ率50%～100%）。 第2ターン前，普通攻撃と突撃戰法受ダメージ低下9%～18%（（武勇に応じて））。 真柄直隆裝備時，反撃時有13%～25%確率敵に目標与え額外0.6～1.2兵刃ダメージ。"
     },
     {
       "id": "tactic-096",
@@ -9956,7 +9956,6 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "宮部継潤",
       "tags": [
@@ -9968,7 +9967,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。宮部継潤の固有戦法。効果分類：智略ダメージ・回復・強化・範囲攻撃・状態付与・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。宮部継潤の固有戦法。",
+      "effect": "準備1ターン後，味方複數（2～3人）施加心攻效果11%～22% （与え謀略ダメージ時按ダメージ量比例恢復兵力）。 同時2ターン内敵に敵軍複數（2～3人）施加【水攻】状態，毎ターン与え88%持続ダメージ（（智略に応じて））。"
     },
     {
       "id": "tactic-097",
@@ -9978,7 +9978,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -9989,7 +9988,8 @@
         "兵種",
         "条件発動"
       ],
-      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：真実傷害・弱体化・範囲攻撃・強化・兵種・条件発動。"
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "足輕進化為不退轉的僧兵。味方全体兵刃受ダメージ低下10%～20%（（統率に応じて））。 受ける弱体化效果影響時，毎ターン額外損失兵力（ダメージ率30%～60%），【火傷】状態中ダメージ率提升至1.2～2.4。 宮部継潤裝備時，【火傷】以外的持続状態無效。"
     },
     {
       "id": "tactic-098",
@@ -9999,7 +9999,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "瑞溪院",
       "tags": [
@@ -10011,7 +10010,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。瑞溪院の固有戦法。効果分類：強化・弱体化・提升屬性・降低屬性・指揮效果・智略系・回合觸發。"
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。瑞溪院の固有戦法。",
+      "effect": "戦闘開始後首3ターン，味方全体与えダメージ提升12%～24%（（智略に応じて））。 第4ターン起，自身と敵軍単体毎ターン敵に周圍与えダメージ低下28%～56%（（智略に応じて）），持続3ターン。"
     },
     {
       "id": "tactic-099",
@@ -10021,7 +10021,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "相馬盛胤",
       "tags": [
@@ -10033,7 +10032,8 @@
         "武勇系",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。相馬盛胤の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・提升屬性・能動発動・武勇系・大将技。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。相馬盛胤の固有戦法。",
+      "effect": "敵に敵軍単体与え1.21～2.42兵刃ダメージ，並提升味方単体固有戰法発動概率8%～16%，持続2ターン。"
     },
     {
       "id": "tactic-100",
@@ -10043,7 +10043,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -10054,7 +10053,8 @@
         "突撃觸發",
         "智略系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・単体攻撃・弱体化・降低屬性・突撃觸發・智略系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。",
+      "effect": "普通攻撃後，敵に兵力最低的敵軍単体与え1.3～2.6謀略ダメージ（（智略に応じて））， 並低下其受ける的回復效果15%～30%，持続1ターン。"
     },
     {
       "id": "tactic-101",
@@ -10064,7 +10064,6 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "45%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "安東愛季",
       "tags": [
@@ -10075,7 +10074,8 @@
         "能動発動",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：45%。安東愛季の固有戦法。効果分類：強化・状態付与・行動妨害・提升屬性・能動発動・大将技。"
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：45%。安東愛季の固有戦法。",
+      "effect": "持続2ターン，自身獲得【洞察】，統率と智略提升25～50點。 敵に敵軍複數（2～3人）施加【牽制】（確率38%～75%，（智略に応じて）），使其戰法発動時自身為固定敵に象。"
     },
     {
       "id": "tactic-102",
@@ -10085,7 +10085,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -10095,7 +10094,8 @@
         "武勇系",
         "智略系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・受動発動・武勇系・智略系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身每次与え謀略ダメージ時，武勇增加15～30點（最大疊5次）； 每次与え兵刃ダメージ時，智略增加15～30點（最大疊5次）。"
     },
     {
       "id": "tactic-103",
@@ -10105,7 +10105,6 @@
       "rarity": "S",
       "target": "我軍群体(2-3人)",
       "activationRate": "50%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "毛利隆元",
       "tags": [
@@ -10115,7 +10114,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：50%。毛利隆元の固有戦法。効果分類：回復・強化・状態付与・能動発動・智略系。"
+      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：50%。毛利隆元の固有戦法。",
+      "effect": "敵に味方範囲（2～3人）進行回復（回復率30%～60%，（智略に応じて））， 並施加【休養】状態，持続1ターン，使其毎ターン恢復兵力（回復率38%～76%，（智略に応じて））。"
     },
     {
       "id": "tactic-104",
@@ -10125,7 +10125,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "本多正信",
       "tags": [
@@ -10135,7 +10134,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。本多正信の固有戦法。効果分類：回復・強化・指揮效果・智略系・回合觸發。"
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。本多正信の固有戦法。",
+      "effect": "戦闘中，第2ターン前，味方全体獲得18%～35%【閃避】（無效化ダメージ），持続2ターン。 第3ターン開始，味方全体毎ターン兵力恢復1次（恢復率33%～66%，（智略に応じて）），持続3ターン。"
     },
     {
       "id": "tactic-105",
@@ -10145,7 +10145,6 @@
       "rarity": "S",
       "target": "友軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "仙桃院",
       "tags": [
@@ -10156,7 +10155,8 @@
         "智略系",
         "条件発動"
       ],
-      "summary": "指揮戦法。対象：友軍単体。発動率：100%。仙桃院の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・指揮效果・智略系・条件発動。"
+      "summary": "指揮戦法。対象：友軍単体。発動率：100%。仙桃院の固有戦法。",
+      "effect": "戦闘中，自身行動時有22%～44%確率（（智略に応じて））使味方異性下次攻撃敵に隨機敵軍単体追加1.31～2.62兵刃ダメージ。 同時自身該ターン受ダメージ上昇20%。"
     },
     {
       "id": "tactic-106",
@@ -10166,7 +10166,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "20%→35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -10177,7 +10176,8 @@
         "突撃觸發",
         "統率系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：20%→35%。習得可能な戦法。効果分類：単体攻撃・降低屬性・強化・行動妨害・突撃觸發・統率系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：20%→35%。習得可能な戦法。",
+      "effect": "通常攻撃後，敵に敵軍単体与えダメージ， 低下目標統率和智略各65～65點，持続2ターン。 同時為味方大将授予2回分的【抵禦】。 もし自身為大将，なら僅獲得1回分的【抵禦】。"
     },
     {
       "id": "tactic-107",
@@ -10187,7 +10187,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "千坂景親",
       "tags": [
@@ -10200,7 +10199,8 @@
         "統率系",
         "条件発動"
       ],
-      "summary": "指揮戦法。対象：自己。発動率：100%。千坂景親の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・指揮效果・武勇系・統率系・条件発動。"
+      "summary": "指揮戦法。対象：自己。発動率：100%。千坂景親の固有戦法。",
+      "effect": "戦闘中，自身受ける普通攻撃時，武勇和統率各增加7～14點（最大疊5次）。 達到最大疊數後，敵に敵軍全体与え0.8～1.6兵刃ダメージ。 前3ターン内，敵に味方大将施加【援護】状態。"
     },
     {
       "id": "tactic-108",
@@ -10210,7 +10210,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -10219,7 +10218,8 @@
         "受動発動",
         "回合觸發"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：回復・強化・受動発動・回合觸發。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身獲得【休養】状態，毎ターン恢復兵力（恢復率0.7～1.4）。"
     },
     {
       "id": "tactic-109",
@@ -10229,7 +10229,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "25%→50%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "樋口兼豊",
       "tags": [
@@ -10241,7 +10240,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：25%→50%。樋口兼豊の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・強化・弱体化・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：25%→50%。樋口兼豊の固有戦法。",
+      "effect": "準備1ターン，2ターン内，味方単体獲得【洞察】， 敵軍単体獲得撹亂（能動戰法発動時与え1.52～1.52謀略ダメージ，（智略に応じて））。"
     },
     {
       "id": "tactic-110",
@@ -10251,7 +10251,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "30%→55%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "小島弥太郎",
       "tags": [
@@ -10261,7 +10260,8 @@
         "武勇系",
         "条件発動"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：30%→55%。小島弥太郎の固有戦法。効果分類：武勇ダメージ・単体攻撃・突撃觸發・武勇系・条件発動。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：30%→55%。小島弥太郎の固有戦法。",
+      "effect": "通常攻撃後，敵に目標与え3.04兵刃ダメージ。 此戰法每次発動，発動率低下5%（最大低下4次）。"
     },
     {
       "id": "tactic-111",
@@ -10271,7 +10271,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "一条信竜",
       "tags": [
@@ -10282,7 +10281,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：自己。発動率：35%。一条信竜の固有戦法。効果分類：武勇ダメージ・強化・状態付与・提升屬性・能動発動・武勇系。"
+      "summary": "能動戦法。対象：自己。発動率：35%。一条信竜の固有戦法。",
+      "effect": "2ターン内，自身獲得反撃，受ける普通攻撃時敵に攻撃者施加1次反撃（ダメージ率0.74～1.48）。 反撃持続期間内受ける普通攻撃2次時，武勇增加18～36點（可重疊，持続至戰鬥結束）。"
     },
     {
       "id": "tactic-112",
@@ -10292,7 +10292,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -10300,7 +10299,8 @@
         "兵種專屬",
         "速度系"
       ],
-      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・兵種專屬・速度系。"
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "弓兵進化為精妙射術的甲斐弓騎兵。部隊行軍速度增加5%～50%。 味方全体配置順為第一時，主動戰法発動率增加4%～8%（準備型戰法增加6%～12%）。 一条信竜裝備時，発動率增加值受速度影響。"
     },
     {
       "id": "tactic-113",
@@ -10310,7 +10310,6 @@
       "rarity": "S",
       "target": "我軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "岡部元信",
       "tags": [
@@ -10320,7 +10319,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。岡部元信の固有戦法。効果分類：智略ダメージ・強化・状態付与・能動発動・智略系。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。岡部元信の固有戦法。",
+      "effect": "1ターン準備後，2ターン内，味方範囲（2人）獲得【洞察】。 自身在2ターン内，下次受ける普通攻撃時敵に攻撃者施加謀略ダメージ（ダメージ率1.52～3.04，（智略に応じて））。"
     },
     {
       "id": "tactic-114",
@@ -10330,7 +10330,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -10339,7 +10338,8 @@
         "弱体化",
         "指揮效果"
       ],
-      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。効果分類：行動妨害・状態付与・弱体化・指揮效果。"
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。",
+      "effect": "3ターン内，敵軍複數（2人）獲得【封撃】，毎ターン有35%～70%確率普通攻撃不可（毎ターン発動確率減少7%～14%）。"
     },
     {
       "id": "tactic-115",
@@ -10349,7 +10349,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "原虎胤",
       "tags": [
@@ -10357,7 +10356,8 @@
         "受動発動",
         "武勇系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。原虎胤の固有戦法。効果分類：強化・受動発動・武勇系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。原虎胤の固有戦法。",
+      "effect": "戦闘中，自身受ダメージ低下18%～35%（敵軍為騎兵、鉄砲部隊時低下25%～50%）。"
     },
     {
       "id": "tactic-116",
@@ -10367,7 +10367,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "20%→40%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "稲葉一鉄",
       "tags": [
@@ -10378,7 +10377,8 @@
         "能動発動",
         "統率系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：20%→40%。稲葉一鉄の固有戦法。効果分類：強化・状態付与・行動妨害・提升屬性・能動発動・統率系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：20%→40%。稲葉一鉄の固有戦法。",
+      "effect": "2ターン内，自身統率增加150～150點，敵に武勇最高的敵軍単体施加【挑釁】、【牽制】， 強制固定敵軍普通攻撃と戰法発動敵に象為自身。 もし自身處於弱体化状態中，額外在2ターン内獲得2次【抵禦】（1ターン後可再次発動）。"
     },
     {
       "id": "tactic-117",
@@ -10388,7 +10388,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -10398,7 +10397,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。習得可能な戦法。効果分類：武勇ダメージ・範囲攻撃・降低屬性・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。習得可能な戦法。",
+      "effect": "1ターン準備後，2ターン内，敵軍複數（2～3人）統率と智略低下24～48點（（武勇に応じて））， 並敵に目標与え0.51～1.02兵刃ダメージ。"
     },
     {
       "id": "tactic-118",
@@ -10408,7 +10408,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "45%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "森可成",
       "tags": [
@@ -10419,7 +10418,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：45%。森可成の固有戦法。効果分類：武勇ダメージ・単体攻撃・回復・状態付与・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。森可成の固有戦法。",
+      "effect": "敵に敵軍単体与え0.71～1.42兵刃ダメージ。3ターン内，敵に目標施加【潰走】（ダメージ率36%～72%）。 もし目標已處於【潰走】状態中，回復自身（回復率35%～70%，（武勇に応じて））。"
     },
     {
       "id": "tactic-119",
@@ -10429,7 +10429,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "蜂須賀小六",
       "tags": [
@@ -10440,7 +10439,8 @@
         "武勇系",
         "智略系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：40%。蜂須賀小六の固有戦法。効果分類：武勇ダメージ・単体攻撃・弱体化・突撃觸發・武勇系・智略系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：40%。蜂須賀小六の固有戦法。",
+      "effect": "普通攻撃後，敵に攻撃目標与え0.84～1.68ダメージ（ダメージ類型為武勇と智略中的較高者）。 1ターン内，目標とダメージ低下15%～30%（（武勇と智略中的較高者に応じて））。 もし目標兵力超過50%，とダメージ低下效果持続時間增加至2ターン。"
     },
     {
       "id": "tactic-120",
@@ -10450,7 +10450,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "30%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -10460,7 +10459,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：30%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：30%。習得可能な戦法。",
+      "effect": "2ターン内，敵軍複數（2人）獲得【水攻】，毎ターン承受持続ダメージ（ダメージ率0.51～1.02，（智略に応じて））， 同時目標謀略被ダメージ增加15%～30%。"
     },
     {
       "id": "tactic-121",
@@ -10470,7 +10470,6 @@
       "rarity": "S",
       "target": "友軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "高力清長",
       "tags": [
@@ -10479,7 +10478,8 @@
         "能動発動",
         "統率系"
       ],
-      "summary": "能動戦法。対象：友軍単体。発動率：40%。高力清長の固有戦法。効果分類：強化・提升屬性・能動発動・統率系。"
+      "summary": "能動戦法。対象：友軍単体。発動率：40%。高力清長の固有戦法。",
+      "effect": "2ターン内，味方単体主動戰法発動率增加5%～9%（（統率に応じて））。 敵に象於下次発動主動戰法後，統率增加15%～30%（（統率に応じて））。"
     },
     {
       "id": "tactic-122",
@@ -10489,7 +10489,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "25%→50%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "尼子晴久",
       "tags": [
@@ -10501,7 +10500,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：25%→50%。尼子晴久の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・弱体化・能動発動・智略系・大将技。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：25%→50%。尼子晴久の固有戦法。",
+      "effect": "經1ターン準備後，敵に敵軍単体与え1.96謀略ダメージ（（智略に応じて））， 並施加【威壓】状態，持続2ターン。"
     },
     {
       "id": "tactic-123",
@@ -10511,7 +10511,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "斎藤義竜",
       "tags": [
@@ -10522,7 +10521,8 @@
         "能動発動",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。斎藤義竜の固有戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・弱体化・能動発動・大将技。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。斎藤義竜の固有戦法。",
+      "effect": "敵に敵軍複數（2人）与え0.59～1.18兵刃ダメージ， 並施加【挑釁】状態，使其突撃戰法ダメージ低下15%～30%（（統率に応じて）），持続2ターン。"
     },
     {
       "id": "tactic-124",
@@ -10532,7 +10532,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "25%→50%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "南部晴政",
       "tags": [
@@ -10544,7 +10543,8 @@
         "能動発動",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：25%→50%。南部晴政の固有戦法。効果分類：真実傷害・単体攻撃・状態付与・行動妨害・弱体化・能動発動・大将技。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：25%→50%。南部晴政の固有戦法。",
+      "effect": "準備1ターン後，敵に敵軍単体施加【潰走】状態（ダメージ率1.08，優先選擇未持有【潰走】的目標），持続4ターン。 同時使處於【潰走】状態中的敵軍未來2回攻撃ダメージ低下40%，持続2ターン。"
     },
     {
       "id": "tactic-125",
@@ -10554,7 +10554,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "20%→35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "十河一存",
       "tags": [
@@ -10564,7 +10563,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：20%→35%。十河一存の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：20%→35%。十河一存の固有戦法。",
+      "effect": "通常攻撃後，敵に敵軍単体与え1.88兵刃ダメージ， 並施加【威壓】状態，持続1ターン。"
     },
     {
       "id": "tactic-126",
@@ -10574,7 +10574,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "30%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "津田算長",
       "tags": [
@@ -10585,7 +10584,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：30%。津田算長の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・行動妨害・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：30%。津田算長の固有戦法。",
+      "effect": "敵に敵軍単体与え0.94～1.88謀略ダメージ（（智略に応じて））。 持続2ターン，敵に目標隨機施加以下状態之一：【封撃】、【無策】、【威壓】、【混亂】。"
     },
     {
       "id": "tactic-127",
@@ -10595,7 +10595,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -10606,7 +10605,8 @@
         "統率系",
         "智略系"
       ],
-      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・状態付与・兵種・統率系・智略系。"
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "鉄砲進化為破邪顕正的鉄砲僧兵。 味方全体（3名）統率增加6～12點，智略增加6～12點。 第1/2/5/6ターン時，獲得【休養】状態，毎ターン恢復兵力1次（恢復率24%～48%，受統率影響）。 津田算長裝備時，屬性增加值額外受統率影響提升。"
     },
     {
       "id": "tactic-128",
@@ -10616,7 +10616,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "55%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "里見義堯",
       "tags": [
@@ -10626,7 +10625,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：55%。里見義堯の固有戦法。効果分類：智略ダメージ・単体攻撃・突撃觸發・智略系・大将技。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：55%。里見義堯の固有戦法。",
+      "effect": "敵に敵軍単体与え0.92～1.84謀略ダメージ（（智略に応じて））， 並有70%～70%確率同時使味方単体敵に同一目標与え0.77～1.54謀略ダメージ（該味方（智略に応じて））。"
     },
     {
       "id": "tactic-129",
@@ -10636,7 +10636,6 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "河田長親",
       "tags": [
@@ -10646,7 +10645,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。河田長親の固有戦法。効果分類：智略ダメージ・範囲攻撃・弱体化・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。河田長親の固有戦法。",
+      "effect": "經過1ターン準備後，敵に敵軍複數（2～3人）与え0.66～1.32謀略ダメージ（（智略に応じて））， さらに目標主動戰法受ダメージ增加15%～30%，持続2ターン。"
     },
     {
       "id": "tactic-130",
@@ -10656,7 +10656,6 @@
       "rarity": "S",
       "target": "我軍群体(2人)",
       "activationRate": "20%→45%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "諏訪姫",
       "tags": [
@@ -10666,7 +10665,8 @@
         "提升屬性",
         "能動発動"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：20%→45%。諏訪姫の固有戦法。効果分類：回復・強化・移除狀態・提升屬性・能動発動。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：20%→45%。諏訪姫の固有戦法。",
+      "effect": "敵に味方範囲（2人）浄化2個減益效果， 並持続2ターン内，提升其武勇和統率各36～36點。"
     },
     {
       "id": "tactic-131",
@@ -10676,7 +10676,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "30%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "可児才蔵",
       "tags": [
@@ -10687,7 +10686,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：30%。可児才蔵の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：30%。可児才蔵の固有戦法。",
+      "effect": "經過1ターン準備後，敵に敵軍単体与え2.61～5.22兵刃ダメージ， 並施加【禁療】状態，持続3ターン。 此攻撃もし撃殺目標，下一ターン該戰法発動率增加1，無需準備ターン。"
     },
     {
       "id": "tactic-132",
@@ -10697,7 +10697,6 @@
       "rarity": "S",
       "target": "友軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "朝倉義景",
       "tags": [
@@ -10707,7 +10706,8 @@
         "能動発動",
         "大将技"
       ],
-      "summary": "能動戦法。対象：友軍群体(2人)。発動率：35%。朝倉義景の固有戦法。効果分類：強化・状態付与・提升屬性・能動発動・大将技。"
+      "summary": "能動戦法。対象：友軍群体(2人)。発動率：35%。朝倉義景の固有戦法。",
+      "effect": "準備1ターン後，使味方範囲（2人）獲得【先攻】状態， さらに主動戰法与え的ダメージ提升38%～75%，持続2ターン。 （"
     },
     {
       "id": "tactic-133",
@@ -10717,7 +10717,6 @@
       "rarity": "S",
       "target": "我軍群体(2人)",
       "activationRate": "50%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "お市",
       "tags": [
@@ -10727,7 +10726,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：50%。お市の固有戦法。効果分類：回復・強化・提升屬性・能動発動・智略系。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：50%。お市の固有戦法。",
+      "effect": "敵に味方範囲（2人）進行回復（回復率0.59～1.18，（智略に応じて））， 並增加其とダメージ8%～15%（（智略に応じて）），持続2ターン。"
     },
     {
       "id": "tactic-134",
@@ -10737,7 +10737,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "九戸政実",
       "tags": [
@@ -10747,7 +10746,8 @@
         "武勇系",
         "条件発動"
       ],
-      "summary": "受動戦法。対象：敵軍単体。発動率：100%。九戸政実の固有戦法。効果分類：武勇ダメージ・単体攻撃・受動発動・武勇系・条件発動。"
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。九戸政実の固有戦法。",
+      "effect": "第3ターン起，自身以35%～70%確率敵に敵軍単体与え0.89～1.78兵刃ダメージ。 同時以35%確率令武勇最高的味方単体敵に同一目標与え0.89～1.78兵刃ダメージ。 自身発動確率毎ターン低下3%～5%。"
     },
     {
       "id": "tactic-135",
@@ -10757,7 +10757,6 @@
       "rarity": "A",
       "target": "敵軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "鈴木重朝",
       "tags": [
@@ -10768,7 +10767,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。鈴木重朝の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・弱体化・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。鈴木重朝の固有戦法。",
+      "effect": "敵に敵軍複數（2人）与え0.51～1.02謀略ダメージ（（智略に応じて））， 並低下其とダメージ6%～12%，持続2ターン。"
     },
     {
       "id": "tactic-136",
@@ -10778,7 +10778,6 @@
       "rarity": "A",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "斎藤利三",
       "tags": [
@@ -10788,7 +10787,8 @@
         "武勇系",
         "回合觸發"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。斎藤利三の固有戦法。効果分類：強化・状態付与・受動発動・武勇系・回合觸發。"
+      "summary": "受動戦法。対象：自己。発動率：100%。斎藤利三の固有戦法。",
+      "effect": "第5ターン起，自身獲得35%～70%【連撃】状態，持続至戰鬥結束。"
     },
     {
       "id": "tactic-137",
@@ -10798,7 +10798,6 @@
       "rarity": "A",
       "target": "自己",
       "activationRate": "20%→35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "福留親政",
       "tags": [
@@ -10807,7 +10806,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：自己。発動率：20%→35%。福留親政の固有戦法。効果分類：強化・状態付与・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：自己。発動率：20%→35%。福留親政の固有戦法。",
+      "effect": "普通攻撃後，自身獲得【連撃】状態，持続1ターン。"
     },
     {
       "id": "tactic-138",
@@ -10817,7 +10817,6 @@
       "rarity": "A",
       "target": "自己",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -10827,7 +10826,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：自己。発動率：35%。習得可能な戦法。効果分類：強化・弱体化・状態付与・能動発動・武勇系。"
+      "summary": "能動戦法。対象：自己。発動率：35%。習得可能な戦法。",
+      "effect": "自身獲得【連撃】状態，但1ターン内とダメージ低下15%。"
     },
     {
       "id": "tactic-139",
@@ -10837,7 +10837,6 @@
       "rarity": "A",
       "target": "敵軍全体(3人)",
       "activationRate": "50%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "鬼庭左月斎",
       "tags": [
@@ -10848,7 +10847,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：50%。鬼庭左月斎の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・行動妨害・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：50%。鬼庭左月斎の固有戦法。",
+      "effect": "敵に敵軍全体与え28%～56%謀略ダメージ（（智略に応じて））， 並施加【挑釁】状態，持続1ターン。"
     },
     {
       "id": "tactic-140",
@@ -10858,7 +10858,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "下方貞清",
       "tags": [
@@ -10870,7 +10869,8 @@
         "能動発動",
         "速度系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。下方貞清の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・提升屬性・能動発動・速度系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。下方貞清の固有戦法。",
+      "effect": "敵に敵軍単体与え0.77～1.54兵刃ダメージ， 並以18%～35%確率（（速度に応じて））施加【威壓】状態，持続2ターン。 自身速度增加10～20點，持続2ターン。"
     },
     {
       "id": "tactic-141",
@@ -10880,7 +10880,6 @@
       "rarity": "A",
       "target": "我軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "毛利輝元",
       "tags": [
@@ -10889,7 +10888,8 @@
         "指揮效果",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：我軍群体(2人)。発動率：100%。毛利輝元の固有戦法。効果分類：強化・提升屬性・指揮效果・回合觸發。"
+      "summary": "指揮戦法。対象：我軍群体(2人)。発動率：100%。毛利輝元の固有戦法。",
+      "effect": "戦闘中，自身的主動戰法発動確率低下5%～10%， 但味方範囲（2人）獲得9%～18%的与えるダメージ增益效果。 該效果毎ターン有20%～40%確率低下2%。"
     },
     {
       "id": "tactic-142",
@@ -10899,7 +10899,6 @@
       "rarity": "A",
       "target": "我軍群体(2人)",
       "activationRate": "45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -10911,7 +10910,8 @@
         "智略系",
         "速度系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：45%。習得可能な戦法。効果分類：強化・提升屬性・移除狀態・能動発動・武勇系・智略系・速度系。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：45%。習得可能な戦法。",
+      "effect": "持続2ターン，味方範囲（2人）的武勇、智略、速度各增加12～24點，並浄化2個弱体化效果。"
     },
     {
       "id": "tactic-143",
@@ -10921,7 +10921,6 @@
       "rarity": "A",
       "target": "敵軍大将",
       "activationRate": "45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "遠藤直経",
       "tags": [
@@ -10930,7 +10929,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍大将。発動率：45%。遠藤直経の固有戦法。効果分類：武勇ダメージ・単体攻撃・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍大将。発動率：45%。遠藤直経の固有戦法。",
+      "effect": "經歷1ターン準備後，敵に敵軍大将与え1.66～3.32兵刃ダメージ。"
     },
     {
       "id": "tactic-144",
@@ -10940,7 +10940,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "太田牛一",
       "tags": [
@@ -10950,7 +10949,8 @@
         "武勇系",
         "条件発動"
       ],
-      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。太田牛一の固有戦法。効果分類：武勇ダメージ・単体攻撃・指揮效果・武勇系・条件発動。"
+      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。太田牛一の固有戦法。",
+      "effect": "味方範囲（2人）進行普通攻撃後，自身有20%～40%確率敵に其敵に象与え0.6～1.2兵刃ダメージ。"
     },
     {
       "id": "tactic-145",
@@ -10960,7 +10960,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "池田輝政",
       "tags": [
@@ -10973,7 +10972,8 @@
         "智略系",
         "条件発動"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。池田輝政の固有戦法。効果分類：武勇ダメージ・智略ダメージ・単体攻撃・状態付与・能動発動・武勇系・智略系・条件発動。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。池田輝政の固有戦法。",
+      "effect": "敵に敵軍単体与え0.74～1.48兵刃ダメージ及0.74～1.48謀略ダメージ（（智略に応じて））。 もし自身武勇と智略均高於敵に象，なら獲得強化效果，ダメージ率提升至0.85～1.7。"
     },
     {
       "id": "tactic-146",
@@ -10983,7 +10983,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "仙石権兵衛",
       "tags": [
@@ -10994,7 +10993,8 @@
         "条件発動",
         "回合觸發"
       ],
-      "summary": "受動戦法。対象：敵軍単体。発動率：100%。仙石権兵衛の固有戦法。効果分類：武勇ダメージ・単体攻撃・受動発動・武勇系・条件発動・回合觸發。"
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。仙石権兵衛の固有戦法。",
+      "effect": "戦闘中，自身毎ターン有33%～66%確率敵に敵軍単体与え1.05～2.1兵刃ダメージ。 もし味方兵力低於50%かつ低於敵軍時，発動確率低下至50%。"
     },
     {
       "id": "tactic-147",
@@ -11004,7 +11004,6 @@
       "rarity": "A",
       "target": "敵軍群体(2人)",
       "activationRate": "45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -11014,7 +11013,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：45%。習得可能な戦法。効果分類：弱体化・移除狀態・提升屬性・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：45%。習得可能な戦法。",
+      "effect": "敵に敵軍複數（2人）解除2個強化效果， 並持続3ターン自身智略增加14～28點。"
     },
     {
       "id": "tactic-148",
@@ -11024,7 +11024,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "保科正俊",
       "tags": [
@@ -11035,7 +11034,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。保科正俊の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。保科正俊の固有戦法。",
+      "effect": "敵に敵軍単体与え0.86～1.72兵刃ダメージ。 持続1ターン，施加【無策】状態（禁止主動戰法発動）。"
     },
     {
       "id": "tactic-149",
@@ -11045,7 +11045,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "30%→55%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "氏家卜全",
       "tags": [
@@ -11055,7 +11054,8 @@
         "能動発動",
         "魅力系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：30%→55%。氏家卜全の固有戦法。効果分類：弱体化・状態付与・行動妨害・能動発動・魅力系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：30%→55%。氏家卜全の固有戦法。",
+      "effect": "持続2ターン，敵に敵軍単体施加【挑釁】（強制普通攻撃自身）或【牽制】（強制戰法指向自身）。 もし敵軍已處於挑釁或牽制状態，額外低下与えるダメージ25%。 もし同時處於兩状態，ダメージ低下增至45%。"
     },
     {
       "id": "tactic-150",
@@ -11065,7 +11065,6 @@
       "rarity": "A",
       "target": "敵軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "坂井政尚",
       "tags": [
@@ -11075,7 +11074,8 @@
         "能動発動",
         "速度系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。坂井政尚の固有戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・能動発動・速度系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。坂井政尚の固有戦法。",
+      "effect": "敵に敵軍複數（2人）与え0.61～1.22兵刃ダメージ， 並持続1ターン獲得【先攻】状態（優先行動）。"
     },
     {
       "id": "tactic-151",
@@ -11085,7 +11085,6 @@
       "rarity": "A",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "安藤守就",
       "tags": [
@@ -11093,7 +11092,8 @@
         "受動発動",
         "魅力系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。安藤守就の固有戦法。効果分類：強化・受動発動・魅力系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。安藤守就の固有戦法。",
+      "effect": "戦闘中，自身的主動戰法発動確率增加6%～12%。"
     },
     {
       "id": "tactic-152",
@@ -11103,7 +11103,6 @@
       "rarity": "A",
       "target": "敵軍群体(2-3人)",
       "activationRate": "30%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "佐久間盛政",
       "tags": [
@@ -11114,7 +11113,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：30%。佐久間盛政の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：30%。佐久間盛政の固有戦法。",
+      "effect": "自身下一次受ける的ダメージ增加20%～30%。同時在2ターン内，自身獲得9%～18%【離反】（兵刃ダメージ轉化為兵力恢復）。 敵に敵軍複數（2～3人）与え0.59～1.18兵刃ダメージ。"
     },
     {
       "id": "tactic-153",
@@ -11124,7 +11124,6 @@
       "rarity": "A",
       "target": "友軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "水原親憲",
       "tags": [
@@ -11135,7 +11134,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：友軍単体。発動率：40%。水原親憲の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・状態付与・能動発動・武勇系。"
+      "summary": "能動戦法。対象：友軍単体。発動率：40%。水原親憲の固有戦法。",
+      "effect": "1ターン内，味方単体獲得15%～30%【閃避】。 當目標首次受けるダメージ時，自身敵に攻撃者与え0.81～1.62兵刃ダメージ（（武勇に応じて）、（統率に応じて））。"
     },
     {
       "id": "tactic-154",
@@ -11145,7 +11145,6 @@
       "rarity": "A",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "鳥居元忠",
       "tags": [
@@ -11155,7 +11154,8 @@
         "統率系",
         "条件発動"
       ],
-      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。鳥居元忠の固有戦法。効果分類：強化・提升屬性・指揮效果・統率系・条件発動。"
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。鳥居元忠の固有戦法。",
+      "effect": "戦闘中，自身統率增加20～40點，味方複數的武勇和智略各增加10～20點。 自身兵力每下降20%，再度発動該效果（效果為原效果的60%倍，可重疊）。"
     },
     {
       "id": "tactic-155",
@@ -11165,7 +11165,6 @@
       "rarity": "A",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -11174,7 +11173,8 @@
         "受動発動",
         "武勇系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・受動発動・武勇系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "自身的武勇、智略、統率、速度各增加17.5～35點。"
     },
     {
       "id": "tactic-156",
@@ -11184,7 +11184,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "30%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "池田恒興",
       "tags": [
@@ -11194,7 +11193,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：30%。池田恒興の固有戦法。効果分類：武勇ダメージ・単体攻撃・多段傷害・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：30%。池田恒興の固有戦法。",
+      "effect": "通常攻撃後，敵に攻撃目標再与え1.58～3.16兵刃ダメージ。"
     },
     {
       "id": "tactic-157",
@@ -11204,7 +11204,6 @@
       "rarity": "A",
       "target": "我軍群体(2-3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "岩城親隆",
       "tags": [
@@ -11214,7 +11213,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。岩城親隆の固有戦法。効果分類：回復・強化・指揮效果・智略系・回合觸發。"
+      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。岩城親隆の固有戦法。",
+      "effect": "第2到3ターン，味方複數（2～3人）毎ターン恢復兵力（恢復率42%～84%，（智略に応じて））。"
     },
     {
       "id": "tactic-158",
@@ -11224,7 +11224,6 @@
       "rarity": "A",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -11233,7 +11232,8 @@
         "受動発動",
         "統率系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：回復・強化・受動発動・統率系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自身毎ターン恢復兵力（恢復率50%～100%）。"
     },
     {
       "id": "tactic-159",
@@ -11243,7 +11243,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "小山田信茂",
       "tags": [
@@ -11253,7 +11252,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：40%。小山田信茂の固有戦法。効果分類：武勇ダメージ・単体攻撃・多段傷害・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。小山田信茂の固有戦法。",
+      "effect": "敵に敵軍単体隨機与え2～4次兵刃ダメージ（每次ダメージ率42%～84%）。"
     },
     {
       "id": "tactic-160",
@@ -11263,7 +11263,6 @@
       "rarity": "A",
       "target": "友軍単体",
       "activationRate": "45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "福原貞俊",
       "tags": [
@@ -11272,7 +11271,8 @@
         "能動発動",
         "魅力系"
       ],
-      "summary": "能動戦法。対象：友軍単体。発動率：45%。福原貞俊の固有戦法。効果分類：強化・提升屬性・能動発動・魅力系。"
+      "summary": "能動戦法。対象：友軍単体。発動率：45%。福原貞俊の固有戦法。",
+      "effect": "2ターン内，味方単体的主動戰法発動確率增加6%～12%（最大可重疊2次）。"
     },
     {
       "id": "tactic-161",
@@ -11282,7 +11282,6 @@
       "rarity": "A",
       "target": "我軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "栗山善助",
       "tags": [
@@ -11292,7 +11291,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。栗山善助の固有戦法。効果分類：智略ダメージ・範囲攻撃・強化・能動発動・智略系。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。栗山善助の固有戦法。",
+      "effect": "準備1ターン後，2ターン内自身と味方単体的謀略ダメージ上昇10%～20%。 之後敵に敵軍複數（2人）与え0.74～1.48謀略ダメージ（（智略に応じて））。"
     },
     {
       "id": "tactic-162",
@@ -11302,7 +11302,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "国司元相",
       "tags": [
@@ -11312,7 +11311,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。国司元相の固有戦法。効果分類：武勇ダメージ・単体攻撃・回復・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。国司元相の固有戦法。",
+      "effect": "敵に敵軍単体与え1.16～2.32兵刃ダメージ。 第3ターン起，額外回復自身兵力27%～54%（（武勇に応じて））。"
     },
     {
       "id": "tactic-163",
@@ -11322,7 +11322,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "多田三八郎",
       "tags": [
@@ -11332,7 +11331,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。多田三八郎の固有戦法。効果分類：武勇ダメージ・単体攻撃・移除狀態・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。多田三八郎の固有戦法。",
+      "effect": "敵に敵軍単体解除1個增益效果，之後与え1.28～2.56兵刃ダメージ。"
     },
     {
       "id": "tactic-164",
@@ -11342,7 +11342,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "結城秀康",
       "tags": [
@@ -11351,7 +11350,8 @@
         "武勇系",
         "条件発動"
       ],
-      "summary": "受動戦法。対象：敵軍単体。発動率：100%。結城秀康の固有戦法。効果分類：武勇ダメージ・受動発動・武勇系・条件発動。"
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。結城秀康の固有戦法。",
+      "effect": "自身獲得反撃能力（受ける普通攻撃時敵に攻撃者与え26%～52%兵刃ダメージ）。 もし自身非大将，ダメージ率提升至31%～62%。"
     },
     {
       "id": "tactic-165",
@@ -11361,7 +11361,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "新発田重家",
       "tags": [
@@ -11372,7 +11371,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。新発田重家の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・行動妨害・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。新発田重家の固有戦法。",
+      "effect": "敵に敵軍単体与え0.73～1.46謀略ダメージ（（智略に応じて））， 並施加【混亂】状態，持続1ターン。"
     },
     {
       "id": "tactic-166",
@@ -11382,7 +11382,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "磯野員昌",
       "tags": [
@@ -11393,7 +11392,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。磯野員昌の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・状態付与・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。磯野員昌の固有戦法。",
+      "effect": "準備1ターン後，2ターン内自身獲得20%～40%【会心】（発動時兵刃ダメージ提升50%）。 同時敵に敵軍単体与え1.56～3.12兵刃ダメージ。"
     },
     {
       "id": "tactic-167",
@@ -11403,7 +11403,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "小幡景憲",
       "tags": [
@@ -11413,7 +11412,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。小幡景憲の固有戦法。効果分類：智略ダメージ・単体攻撃・強化・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。小幡景憲の固有戦法。",
+      "effect": "敵に敵軍単体与え0.93～1.86謀略ダメージ（（智略に応じて））， 同時為味方単体施加1次鉄壁（被ダメージ無效），持続1ターン。"
     },
     {
       "id": "tactic-168",
@@ -11423,7 +11423,6 @@
       "rarity": "A",
       "target": "我軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "三枝昌貞",
       "tags": [
@@ -11431,7 +11430,8 @@
         "指揮效果",
         "強化"
       ],
-      "summary": "指揮戦法。対象：我軍群体(2人)。発動率：100%。三枝昌貞の固有戦法。効果分類：弱体化・指揮效果・強化。"
+      "summary": "指揮戦法。対象：我軍群体(2人)。発動率：100%。三枝昌貞の固有戦法。",
+      "effect": "第4ターン内，味方範囲（2人）受ダメージ低下11%～22%。"
     },
     {
       "id": "tactic-169",
@@ -11441,7 +11441,6 @@
       "rarity": "A",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "吉川広家",
       "tags": [
@@ -11449,7 +11448,8 @@
         "受動発動",
         "武勇系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。吉川広家の固有戦法。効果分類：回復・受動発動・武勇系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。吉川広家の固有戦法。",
+      "effect": "自身無法進行普通攻撃，与えダメージ低下25%。 但毎ターン通過進食恢復自身兵力1.06～2.12。"
     },
     {
       "id": "tactic-170",
@@ -11459,7 +11459,6 @@
       "rarity": "A",
       "target": "我軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "大久保忠世",
       "tags": [
@@ -11469,7 +11468,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。大久保忠世の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・能動発動・武勇系。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。大久保忠世の固有戦法。",
+      "effect": "準備1ターン後，2ターン内味方範囲（2人）的兵刃ダメージ上昇8%～15%。 之後自身敵に敵軍単体与え1.48～2.96兵刃ダメージ。"
     },
     {
       "id": "tactic-171",
@@ -11479,7 +11479,6 @@
       "rarity": "A",
       "target": "敵軍群体(2人)",
       "activationRate": "20%→45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "池田せん",
       "tags": [
@@ -11489,7 +11488,8 @@
         "能動発動",
         "統率系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：20%→45%。池田せんの固有戦法。効果分類：状態付与・範囲攻撃・行動妨害・能動発動・統率系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：20%→45%。池田せんの固有戦法。",
+      "effect": "準備1ターン，敵に敵軍複數（2人）隨機施加【無策】（智略戰法発動不可）或【封撃】（普通攻撃不可）， 持続1～2ターン（65%確率持続2ターン，35%確率持続1ターン）。"
     },
     {
       "id": "tactic-172",
@@ -11499,7 +11499,6 @@
       "rarity": "A",
       "target": "我軍群体(2人)",
       "activationRate": "45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "蜂須賀家政",
       "tags": [
@@ -11508,7 +11507,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：45%。蜂須賀家政の固有戦法。効果分類：回復・強化・能動発動・智略系。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：45%。蜂須賀家政の固有戦法。",
+      "effect": "回復味方範囲（2人），回復率0.54～1.08（（智略に応じて））。"
     },
     {
       "id": "tactic-173",
@@ -11518,7 +11518,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "武田義信",
       "tags": [
@@ -11528,7 +11527,8 @@
         "突撃觸發",
         "統率系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：40%。武田義信の固有戦法。効果分類：状態付与・行動妨害・降低屬性・突撃觸發・統率系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：40%。武田義信の固有戦法。",
+      "effect": "普通攻撃後，低下目標統率70～140點，並施加【無策】状態（無法発動主動戰法），持続1ターン。"
     },
     {
       "id": "tactic-174",
@@ -11538,7 +11538,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "山内一豊",
       "tags": [
@@ -11546,7 +11545,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：45%。山内一豊の固有戦法。効果分類：降低屬性・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。山内一豊の固有戦法。",
+      "effect": "持続2ターン，低下目標武勇と智略中較高者50～100點。 有10%～20%確率（（武勇に応じて））雙方同時低下50～100點。"
     },
     {
       "id": "tactic-175",
@@ -11556,7 +11556,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "横山喜内",
       "tags": [
@@ -11567,7 +11566,8 @@
         "智略系",
         "条件発動"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：40%。横山喜内の固有戦法。効果分類：智略ダメージ・回復・強化・能動発動・智略系・条件発動。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。横山喜内の固有戦法。",
+      "effect": "隨機発動以下效果其一： ・敵に敵軍単体与え1.2～2.4謀略ダメージ（（智略に応じて））； ・回復味方単体1.2～2.4（（智略に応じて））。"
     },
     {
       "id": "tactic-176",
@@ -11577,7 +11577,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "甘粕景継",
       "tags": [
@@ -11589,7 +11588,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。甘粕景継の固有戦法。効果分類：武勇ダメージ・単体攻撃・多段傷害・状態付与・弱体化・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。甘粕景継の固有戦法。",
+      "effect": "普通攻撃後，敵に敵軍単体与え0.52～1.04兵刃ダメージ。 並施加【潰走】状態，与え47%～94%持続ダメージ（（武勇に応じて）），持続2ターン。"
     },
     {
       "id": "tactic-177",
@@ -11599,7 +11599,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "脇坂安治",
       "tags": [
@@ -11608,7 +11607,8 @@
         "弱体化",
         "能動発動"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：45%。脇坂安治の固有戦法。効果分類：単体攻撃・強化・弱体化・能動発動。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。脇坂安治の固有戦法。",
+      "effect": "敵に敵軍単体与え0.92～1.84ダメージ（ダメージ類型為武勇と智略中較高者）。 同時使目標毎ターン首次受ける異類ダメージ低下20%～40%，持続1ターン。"
     },
     {
       "id": "tactic-178",
@@ -11618,7 +11618,6 @@
       "rarity": "A",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "小山田茂誠",
       "tags": [
@@ -11626,7 +11625,8 @@
         "提升屬性",
         "指揮效果"
       ],
-      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。小山田茂誠の固有戦法。効果分類：強化・提升屬性・指揮效果。"
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。小山田茂誠の固有戦法。",
+      "effect": "味方全体武勇と智略各增加14～28點。"
     },
     {
       "id": "tactic-179",
@@ -11636,7 +11636,6 @@
       "rarity": "B",
       "target": "敵軍単体",
       "activationRate": "30%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "長野業盛",
       "tags": [
@@ -11646,7 +11645,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：30%。長野業盛の固有戦法。効果分類：武勇ダメージ・単体攻撃・多段傷害・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：30%。長野業盛の固有戦法。",
+      "effect": "普通攻撃後，敵に攻撃敵に象追加一次兵刃ダメージ，ダメージ率0.7～1.4。"
     },
     {
       "id": "tactic-180",
@@ -11656,7 +11656,6 @@
       "rarity": "B",
       "target": "敵軍単体",
       "activationRate": "50%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "小早川秀秋",
       "tags": [
@@ -11665,7 +11664,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：50%。小早川秀秋の固有戦法。効果分類：武勇ダメージ・単体攻撃・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：50%。小早川秀秋の固有戦法。",
+      "effect": "敵に敵軍単体与え0.625～1.25兵刃ダメージ。"
     },
     {
       "id": "tactic-181",
@@ -11675,7 +11675,6 @@
       "rarity": "B",
       "target": "敵軍全体(3人)",
       "activationRate": "30%→60%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "内藤信成",
       "tags": [
@@ -11683,7 +11682,8 @@
         "行動妨害",
         "能動発動"
       ],
-      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%→60%。内藤信成の固有戦法。効果分類：状態付与・行動妨害・能動発動。"
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%→60%。内藤信成の固有戦法。",
+      "effect": "敵に敵軍全体（3人）施加【挑釁】状態，持続1ターン， 並固定自身為其攻撃目標。"
     },
     {
       "id": "tactic-182",
@@ -11693,7 +11693,6 @@
       "rarity": "B",
       "target": "敵軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "河尻秀隆",
       "tags": [
@@ -11704,7 +11703,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：40%。河尻秀隆の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・能動発動・武勇系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。河尻秀隆の固有戦法。",
+      "effect": "敵に敵軍単体施加【潰走】状態，持続3ターン， 毎ターン与え35%～70%兵刃ダメージ（（武勇に応じて））。"
     },
     {
       "id": "tactic-183",
@@ -11714,7 +11714,6 @@
       "rarity": "B",
       "target": "敵軍群体(2人)",
       "activationRate": "30%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "織田信雄",
       "tags": [
@@ -11724,7 +11723,8 @@
         "武勇系",
         "条件発動"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：30%。織田信雄の固有戦法。効果分類：武勇ダメージ・範囲攻撃・能動発動・武勇系・条件発動。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：30%。織田信雄の固有戦法。",
+      "effect": "經過1ターン準備後，敵に敵軍複數（2人）与え0.775～1.55兵刃ダメージ。"
     },
     {
       "id": "tactic-184",
@@ -11734,7 +11734,6 @@
       "rarity": "B",
       "target": "友軍単体",
       "activationRate": "23%→45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "林秀貞",
       "tags": [
@@ -11742,7 +11741,8 @@
         "状態耐性",
         "能動発動"
       ],
-      "summary": "能動戦法。対象：友軍単体。発動率：23%→45%。林秀貞の固有戦法。効果分類：強化・状態耐性・能動発動。"
+      "summary": "能動戦法。対象：友軍単体。発動率：23%→45%。林秀貞の固有戦法。",
+      "effect": "敵に味方単体施加敵に【混亂】的耐性效果，持続3ターン。"
     },
     {
       "id": "tactic-185",
@@ -11752,7 +11752,6 @@
       "rarity": "B",
       "target": "友軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "不破光治",
       "tags": [
@@ -11762,7 +11761,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：友軍単体。発動率：40%。不破光治の固有戦法。効果分類：回復・強化・状態付与・能動発動・智略系。"
+      "summary": "能動戦法。対象：友軍単体。発動率：40%。不破光治の固有戦法。",
+      "effect": "敵に味方単体施加【休養】状態，持続2ターン。 每當受けるダメージ時，有50%確率恢復兵力38%～75%（（智略に応じて））。"
     },
     {
       "id": "tactic-186",
@@ -11772,7 +11772,6 @@
       "rarity": "B",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "本願寺教如",
       "tags": [
@@ -11783,7 +11782,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。本願寺教如の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・行動妨害・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。本願寺教如の固有戦法。",
+      "effect": "敵に敵軍単体施加【水攻】状態，持続3ターン， 毎ターン与え35%～70%謀略ダメージ（（智略に応じて））。"
     },
     {
       "id": "tactic-187",
@@ -11793,7 +11793,6 @@
       "rarity": "B",
       "target": "敵軍単体",
       "activationRate": "45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "松平忠直",
       "tags": [
@@ -11804,7 +11803,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：45%。松平忠直の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・状態付与・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：45%。松平忠直の固有戦法。",
+      "effect": "通常攻撃後，自身獲得8%～15%【会心】，持続2ターン。 発動時兵刃ダメージ額外提升50%。"
     },
     {
       "id": "tactic-188",
@@ -11814,7 +11814,6 @@
       "rarity": "B",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "色部勝長",
       "tags": [
@@ -11823,7 +11822,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。色部勝長の固有戦法。効果分類：武勇ダメージ・単体攻撃・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。色部勝長の固有戦法。",
+      "effect": "通常攻撃後，敵に敵軍単体与え0.6～1.2兵刃ダメージ。"
     },
     {
       "id": "tactic-189",
@@ -11833,7 +11833,6 @@
       "rarity": "B",
       "target": "敵軍単体",
       "activationRate": "25%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "杉浦玄任",
       "tags": [
@@ -11843,7 +11842,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：25%。杉浦玄任の固有戦法。効果分類：弱体化・降低屬性・移除狀態・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：25%。杉浦玄任の固有戦法。",
+      "effect": "敵に敵軍単体解除強化效果，並低下其智略9→18點，持続2ターン。"
     },
     {
       "id": "tactic-190",
@@ -11853,7 +11853,6 @@
       "rarity": "B",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "本庄実乃",
       "tags": [
@@ -11864,7 +11863,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。本庄実乃の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・行動妨害・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。本庄実乃の固有戦法。",
+      "effect": "敵に敵軍単体施加【火傷】状態，持続3ターン， 毎ターン与え35%～70%謀略ダメージ（（智略に応じて））。"
     },
     {
       "id": "tactic-191",
@@ -11874,7 +11874,6 @@
       "rarity": "B",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "色部長実",
       "tags": [
@@ -11884,7 +11883,8 @@
         "武勇系",
         "速度系"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。色部長実の固有戦法。効果分類：強化・提升屬性・受動発動・武勇系・速度系。"
+      "summary": "受動戦法。対象：自己。発動率：100%。色部長実の固有戦法。",
+      "effect": "自身武勇と速度增加12.5～25點。"
     },
     {
       "id": "tactic-192",
@@ -11894,7 +11894,6 @@
       "rarity": "B",
       "target": "自己",
       "activationRate": "25%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "遠藤基信",
       "tags": [
@@ -11905,7 +11904,8 @@
         "統率系",
         "条件発動"
       ],
-      "summary": "能動戦法。対象：自己。発動率：25%。遠藤基信の固有戦法。効果分類：強化・提升屬性・能動発動・武勇系・統率系・条件発動。"
+      "summary": "能動戦法。対象：自己。発動率：25%。遠藤基信の固有戦法。",
+      "effect": "持続2ターン，自身武勇增加15～30點。 もし自身為副将，額外增加統率20～40點。"
     },
     {
       "id": "tactic-193",
@@ -11915,7 +11915,6 @@
       "rarity": "B",
       "target": "敵軍単体",
       "activationRate": "55%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "金森長近",
       "tags": [
@@ -11925,7 +11924,8 @@
         "突撃觸發",
         "統率系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：55%。金森長近の固有戦法。効果分類：単体攻撃・弱体化・降低屬性・突撃觸發・統率系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：55%。金森長近の固有戦法。",
+      "effect": "通常攻撃後，持続2ターン，攻撃目標統率低下18～36點。"
     },
     {
       "id": "tactic-194",
@@ -11935,7 +11935,6 @@
       "rarity": "B",
       "target": "敵軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "筒井順慶",
       "tags": [
@@ -11944,7 +11943,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：40%。筒井順慶の固有戦法。効果分類：智略ダメージ・単体攻撃・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。筒井順慶の固有戦法。",
+      "effect": "敵に敵軍単体与え0.75～1.5謀略ダメージ。"
     },
     {
       "id": "tactic-195",
@@ -11954,7 +11954,6 @@
       "rarity": "B",
       "target": "敵軍群体(2人)",
       "activationRate": "25%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "口羽通良",
       "tags": [
@@ -11963,7 +11962,8 @@
         "能動発動",
         "魅力系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：25%。口羽通良の固有戦法。効果分類：弱体化・降低屬性・能動発動・魅力系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：25%。口羽通良の固有戦法。",
+      "effect": "持続2ターン，敵軍複數（2人）ダメージ輸出低下8%～15%。"
     },
     {
       "id": "tactic-196",
@@ -11973,7 +11973,6 @@
       "rarity": "B",
       "target": "自己",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "真田大助",
       "tags": [
@@ -11983,7 +11982,8 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：自己。発動率：35%。真田大助の固有戦法。効果分類：武勇ダメージ・強化・受動発動・能動発動・武勇系。"
+      "summary": "能動戦法。対象：自己。発動率：35%。真田大助の固有戦法。",
+      "effect": "持続1ターン，自身獲得反撃效果（每次受ける通常攻撃時，向攻撃者与え30%～60%兵刃ダメージ）。"
     },
     {
       "id": "tactic-197",
@@ -11993,7 +11993,6 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "お初",
       "tags": [
@@ -12004,7 +12003,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。お初の固有戦法。効果分類：強化・提升屬性・回復・指揮效果・智略系・大将技。"
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。お初の固有戦法。",
+      "effect": "戦闘中，味方複數在通常攻撃後獲得2.5～5主屬性增益（（智略に応じて）），最大重複5段階。 毎ターン行動前，24%～48%確率（（智略に応じて））選擇敵軍複數（2～3人），當該敵軍与えダメージ時，自身有80%確率（（智略に応じて））恢復被ダメージ目標兵力的14%～28%（（智略に応じて）），持続1ターン。"
     },
     {
       "id": "tactic-198",
@@ -12014,7 +12014,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -12024,7 +12023,8 @@
         "能動発動",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：40%。習得可能な戦法。効果分類：武勇ダメージ・智略ダメージ・範囲攻撃・能動発動・大将技。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。習得可能な戦法。",
+      "effect": "敵に統率最低的敵軍単体与え0.84～1.68兵刃ダメージ， 同時敵に智略最低的敵軍単体与え0.84～1.68謀略ダメージ（（智略に応じて））。"
     },
     {
       "id": "tactic-199",
@@ -12034,7 +12034,6 @@
       "rarity": "S",
       "target": "友軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "お江",
       "tags": [
@@ -12048,7 +12047,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "指揮戦法。対象：友軍群体(2人)。発動率：100%。お江の固有戦法。効果分類：強化・提升屬性・状態付与・行動妨害・条件発動・指揮效果・武勇系・智略系・大将技。"
+      "summary": "指揮戦法。対象：友軍群体(2人)。発動率：100%。お江の固有戦法。",
+      "effect": "戦闘中，味方複數（2人）的武勇上昇2%～4%（（智略に応じて）），毎ターン重複1段階，最大4段階。 當重複段階數達到最大時，毎ターン有33%～65%確率（（智略に応じて））敵に敵軍単体施加混亂、封撃、無策、疲弊其中1個状態（已施加的状態不重複施加），持続1ターン。"
     },
     {
       "id": "tactic-200",
@@ -12058,11 +12058,11 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：40%。習得可能な戦法。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：40%。習得可能な戦法。",
+      "effect": "敵に敵軍範囲（2人）与え兵刃ダメージ(ダメージ率48%～96%)，隨後使隨機味方単体統率增加24～48點並【援護】自身，持続2ターン"
     },
     {
       "id": "tactic-201",
@@ -12072,11 +12072,11 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [],
-      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：40%。習得可能な戦法。"
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：40%。習得可能な戦法。",
+      "effect": "【牽制】敵軍範囲（2-3人），さらに自身受ける戰法ダメージ低下8%～15%%（智略に応じて），持続1ターン，下個ターン行動前恢復自身兵力（恢復率39%～78%%（智略に応じて））"
     },
     {
       "id": "tactic-202",
@@ -12086,11 +12086,11 @@
       "rarity": "S",
       "target": "敵軍群体(2人)",
       "activationRate": "1.0",
-      "category": "",
       "learnable": false,
       "uniqueHero": "立花誾千代",
       "tags": [],
-      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：1.0。立花誾千代の固有戦法。"
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：1.0。立花誾千代の固有戦法。",
+      "effect": "戦闘中，有 23%～45%（武勇に応じて）確率敵に敵方範囲 (2人) 分別与え兵刃ダメージ (ダメージ率 38%～76%)，有 25%～50%（武勇に応じて）確率使其進入持続1ターン的【麻痺】状態。もし目標處於【麻痺】状態，恢復味方単体兵力 (恢復率 48%～96%（武勇に応じて）)。"
     },
     {
       "id": "tactic-203",
@@ -12100,11 +12100,11 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "55%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "真田昌幸",
       "tags": [],
-      "summary": "能動戦法。対象：敵軍単体。発動率：55%。真田昌幸の固有戦法。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：55%。真田昌幸の固有戦法。",
+      "effect": "敵に敵軍単体与え謀略ダメージ（ダメージ率0.71～1.42（intに応じて））並施加【混亂】状態，持続1ターン，其下ターン首次普通攻撃目標もし為味方，自身恢復目標兵力（恢復率45%～90%（intに応じて））。もし為敵軍，自身敵に目標与え謀略ダメージ（ダメージ率45%～90%（intに応じて））。もし此戰法発動時目標已【混亂】，自身再敵に敵軍単体与え謀略ダメージ（ダメージ率0.81～1.92（intに応じて），優先選擇其味方）。"
     },
     {
       "id": "tactic-204",
@@ -12114,11 +12114,11 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "45%→90%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "柿崎景家",
       "tags": [],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：45%→90%。柿崎景家の固有戦法。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：45%→90%。柿崎景家の固有戦法。",
+      "effect": "普通攻撃之後，敵に目標与え0.58～1.08兵刃ダメージ，並有40%幾率施加【無策】状態，持続1ターン；もし目標已處於【無策】状態，なら恢復自身兵力（回復率39%～78%，（武勇に応じて））；隨後有50%幾率額外敵に敵軍単体与え一次兵刃ダメージ（ダメージ率0.54～1.08）。該戰法每成功発動一次，使施加【無策】的幾率增加10%，最大增加3次。"
     },
     {
       "id": "tactic-205",
@@ -12128,11 +12128,11 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "伊達輝宗",
       "tags": [],
-      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。伊達輝宗の固有戦法。"
+      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。伊達輝宗の固有戦法。",
+      "effect": "行動前，有15%～30%（統率に応じて）確率敵に自身和敵軍単体施加【封撃】状態，もし自身處於【無策】状態，改為施加【無策】状態 (もし同時處於【封撃】と【無策】状態，施加兩種状態)。除自身外もし味方仍有武将存活，使敵軍目標為自身分擔2%～4%（統率に応じて）的ダメージ，持続2ターン"
     },
     {
       "id": "tactic-206",
@@ -12142,11 +12142,11 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "45%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "鈴木佐大夫",
       "tags": [],
-      "summary": "能動戦法。対象：敵軍単体。発動率：45%。鈴木佐大夫の固有戦法。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。鈴木佐大夫の固有戦法。",
+      "effect": "敵に敵軍単体与え 2-3 次兵刃ダメージ（ダメージ率 0.63～1.26），有 38%～75% 確率敵に其施加 【無策】 或 【封撃】 状態（優先施加未重複的状態），持続 1 ターン，もし目標處於持続性減益状態中，確率增加 8%～15%。該戰法発動後進入 1 ターン冷卻時間。"
     },
     {
       "id": "tactic-207",
@@ -12156,11 +12156,11 @@
       "rarity": "S",
       "target": "我軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "阿松",
       "tags": [],
-      "summary": "指揮戦法。対象：我軍単体。発動率：100%。阿松の固有戦法。"
+      "summary": "指揮戦法。対象：我軍単体。発動率：100%。阿松の固有戦法。",
+      "effect": "使味方大将除自帶戰法外的主動戰法発動確率增加8%～15%（intに応じて），每次獲得自身或味方戰法的功能性状態增益時，有33%～65%（intに応じて）幾率使味方副将受ける的ダメージ低下3%～5%（intに応じて），持続2ターン，最大重複2次"
     },
     {
       "id": "tactic-208",
@@ -12170,11 +12170,11 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "45%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [],
-      "summary": "能動戦法。対象：敵軍単体。発動率：45%。習得可能な戦法。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。習得可能な戦法。",
+      "effect": "敵に敵軍単体与え謀略ダメージ（ダメージ率0.81～1.62，（智略に応じて）），並施加【混亂】状態，持続1ターン，もし其已【混亂】，なら令另外1名敵軍武将敵に其与えダメージ（ダメージ率0.79～1.58，類型受該武将武勇或智略較高的一項影響）"
     },
     {
       "id": "tactic-209",
@@ -12184,11 +12184,11 @@
       "rarity": "S",
       "target": "友軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [],
-      "summary": "指揮戦法。対象：友軍群体(2人)。発動率：100%。習得可能な戦法。"
+      "summary": "指揮戦法。対象：友軍群体(2人)。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，偶數ターン，有40%～80%確率回復味方範囲（2人）（回復率0.61～1.22，（智略に応じて））；もし自身為女性武将，なら奇數ターン也有10%～20%確率（（魅力に応じて））回復味方範囲（2人）（回復率0.61～1.22，（智略に応じて））。"
     },
     {
       "id": "tactic-210",
@@ -12198,11 +12198,11 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "30%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [],
-      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。"
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。",
+      "effect": "準備1ターン，敵に敵軍全体与え謀略ダメージ（ダメージ率1.27～2.54，（智略に応じて））"
     },
     {
       "id": "tactic-211",
@@ -12212,11 +12212,11 @@
       "rarity": "S",
       "target": "友軍群体(2人)",
       "activationRate": "40%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "安宅冬康",
       "tags": [],
-      "summary": "能動戦法。対象：友軍群体(2人)。発動率：40%。安宅冬康の固有戦法。"
+      "summary": "能動戦法。対象：友軍群体(2人)。発動率：40%。安宅冬康の固有戦法。",
+      "effect": "恢復味方範囲（2人）兵力（恢復率0.76～1.52（智略に応じて）），並有26%～52%（智略に応じて）確率使其獲得1次鉄壁，持続2ターン"
     },
     {
       "id": "tactic-212",
@@ -12226,11 +12226,11 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [],
-      "summary": "能動戦法。対象：敵軍単体。発動率：40%。習得可能な戦法。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。習得可能な戦法。",
+      "effect": "使自身獲得13%～25%%【会心】状態，持続2ターン，並敵に敵軍単体与え兵刃ダメージ（ダメージ率0.58～1.16%），有33%～65%%確率（（spdに応じて））再次使自身獲得8%～15%%【会心】状態（最大重複2次），並敵に另一名敵軍与え兵刃ダメージ（ダメージ率49%～98%%）"
     },
     {
       "id": "tactic-213",
@@ -12240,11 +12240,11 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "加藤嘉明",
       "tags": [],
-      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。加藤嘉明の固有戦法。"
+      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。加藤嘉明の固有戦法。",
+      "effect": "味方範囲（2人）毎ターン首次受けるダメージ時，自身有23%～45%確率敵に与えダメージ的敵軍武将与え兵刃ダメージ（ダメージ率43%～86%），並恢復受けるダメージ的味方兵力（恢復率43%～86%，（智略に応じて））"
     },
     {
       "id": "tactic-214",
@@ -12254,7 +12254,6 @@
       "rarity": "S",
       "target": "我軍単体",
       "activationRate": "40%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12262,7 +12261,8 @@
         "提升屬性",
         "能動発動"
       ],
-      "summary": "能動戦法。対象：我軍単体。発動率：40%。習得可能な戦法。効果分類：強化・提升屬性・能動発動。"
+      "summary": "能動戦法。対象：我軍単体。発動率：40%。習得可能な戦法。",
+      "effect": "使自身と異性味方単体受けるダメージ低下10%～20%（（智略に応じて））， 並分擔10%～20%其受ける的ダメージ，持続2ターン。"
     },
     {
       "id": "tactic-215",
@@ -12272,7 +12272,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12281,7 +12280,8 @@
         "弱体化",
         "能動発動"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：武勇ダメージ・単体攻撃・弱体化・能動発動。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。",
+      "effect": "準備1ターン，敵に敵方大将与え1.76～2.52兵刃ダメージ， さらに其与え的ダメージ低下25%～50%，持続2ターン。"
     },
     {
       "id": "tactic-216",
@@ -12291,7 +12291,6 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12302,7 +12301,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・強化・弱体化・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。習得可能な戦法。",
+      "effect": "使自身智略增加16.5～33點（（智略に応じて）），持続2ターン， さらに敵軍範囲（2-3人）下次受ける謀略ダメージ時，額外受ける謀略ダメージ0.53～1.06（（智略に応じて）），持続2ターン。"
     },
     {
       "id": "tactic-217",
@@ -12312,7 +12312,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12323,7 +12322,8 @@
         "武勇系",
         "智略系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：行動妨害・降低屬性・状態付与・突撃觸發・武勇系・智略系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。",
+      "effect": "普通攻撃之後，低下攻撃目標武勇と智略70～140點，持続1ターン。 此外，もし目標已處於【挑釁】或【牽制】状態，なら使自身獲得18%～35%【閃避】状態， 否なら使攻撃目標進入【挑釁】及【牽制】状態，持続1ターン。"
     },
     {
       "id": "tactic-218",
@@ -12333,7 +12333,6 @@
       "rarity": "A",
       "target": "我軍群体(2人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12343,7 +12342,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "指揮戦法。対象：我軍群体(2人)。発動率：100%。習得可能な戦法。効果分類：回復・強化・指揮效果・智略系・回合觸發。"
+      "summary": "指揮戦法。対象：我軍群体(2人)。発動率：100%。習得可能な戦法。",
+      "effect": "第5ターン起，毎ターン恢復味方範囲（2人）兵力0.54～1.08（（智略に応じて））。"
     },
     {
       "id": "tactic-219",
@@ -12353,7 +12353,6 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "40%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12363,7 +12362,8 @@
         "能動発動",
         "統率系"
       ],
-      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：40%。習得可能な戦法。効果分類：行動妨害・状態付与・強化・能動発動・統率系。"
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：40%。習得可能な戦法。",
+      "effect": "使敵軍全体進入【挑釁】状態，さらに自身統率上昇23%～55%，持続2ターン。"
     },
     {
       "id": "tactic-220",
@@ -12373,7 +12373,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "40%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12384,7 +12383,8 @@
         "武勇系",
         "条件発動"
       ],
-      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。効果分類：武勇ダメージ・強化・状態付与・能動発動・武勇系・条件発動。"
+      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。",
+      "effect": "使自身下次主動戰法与え兵刃ダメージ上昇24%～48%，該戰法每次発動，使ダメージ上昇效果增加6%～12%， 每第3次発動時，使敵軍単体進入【無策】状態，持続1ターン。"
     },
     {
       "id": "tactic-221",
@@ -12394,7 +12394,6 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12404,7 +12403,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・単体攻撃・状態付与・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。",
+      "effect": "敵に敵軍単体与え0.68～1.36謀略ダメージ， 並敵に其施加【封撃】效果，持続2ターン。"
     },
     {
       "id": "tactic-222",
@@ -12414,7 +12414,6 @@
       "rarity": "A",
       "target": "敵軍群体(2人)",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12425,7 +12424,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・降低屬性・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。習得可能な戦法。",
+      "effect": "準備1ターン，敵に敵軍範囲（2人）施加【火傷】效果0.52～1.05（（智略に応じて））， 並低下統率10～20點，持続2ターン。"
     },
     {
       "id": "tactic-223",
@@ -12435,7 +12435,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12445,7 +12444,8 @@
         "武勇系",
         "条件発動"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・受動発動・武勇系・条件発動。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，毎ターン獲得1段階蓄勢，もし蓄勢段階數大於等於2かつ自身未處於【威壓】状態時， 消耗全部蓄勢段階數，獲得25%～50%【会心】状態及60～120點武勇，持続1ターン， もし蓄勢段階數大於2時，なら額外獲得13%～25%【会心】状態及30～60點武勇。"
     },
     {
       "id": "tactic-224",
@@ -12455,7 +12455,6 @@
       "rarity": "A",
       "target": "我軍群体(2-3人)",
       "activationRate": "50%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12465,7 +12464,8 @@
         "智略系",
         "条件発動"
       ],
-      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：50%。習得可能な戦法。効果分類：回復・強化・能動発動・智略系・条件発動。"
+      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：50%。習得可能な戦法。",
+      "effect": "準備1ターン後，恢復味方範囲（2-3人）兵力0.72～1.44（（智略に応じて））。 恢復南蠻好尚或南蠻信奉的味方時，恢復率增加至0.86～1.72。"
     },
     {
       "id": "tactic-225",
@@ -12475,7 +12475,6 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12485,7 +12484,8 @@
         "智略系",
         "条件発動"
       ],
-      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・受動発動・智略系・条件発動。"
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。",
+      "effect": "使自身的自帶準備主動戰法発動率增加6%～12%（（智略に応じて））， 自帶準備主動戰法開始準備時，自身增加15～30點智略（（智略に応じて）），持続2ターン。"
     },
     {
       "id": "tactic-226",
@@ -12495,7 +12495,6 @@
       "rarity": "S",
       "target": "我軍群体(2人)",
       "activationRate": "30%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12505,7 +12504,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "能動戦法。対象：我軍群体(2人)。発動率：30%。習得可能な戦法。効果分類：強化・提升屬性・能動発動・智略系・回合觸發。"
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：30%。習得可能な戦法。",
+      "effect": "使味方範囲（2人）受けるダメージ低下12%～24%（（智略に応じて）），持続2ターン，最大重複2次。 首ターン行動前，使本戰法受ける的発動率增加效果将翻倍並持続2ターン。"
     },
     {
       "id": "tactic-227",
@@ -12515,7 +12515,6 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12525,7 +12524,8 @@
         "指揮效果",
         "統率系"
       ],
-      "summary": "陣法戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・受動発動・指揮效果・統率系。"
+      "summary": "陣法戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "味方3人所屬勢力均不同，かつ味方大将自帶戰法為主動或突撃時生效。 戦闘中，使味方大将自帶戰法発動率增加7%～13%。 毎ターン行動前，使兵力較高的副将与え的ダメージ上昇9%～18%，受ける的ダメージ低下5%～10%； 兵力較低的副将与えダメージ上昇5%～10%，受ける的ダメージ低下9%～18%。"
     },
     {
       "id": "tactic-228",
@@ -12535,7 +12535,6 @@
       "rarity": "S",
       "target": "自身",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12545,7 +12544,8 @@
         "智略系",
         "条件発動"
       ],
-      "summary": "受動戦法。対象：自身。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・受動発動・智略系・条件発動。"
+      "summary": "受動戦法。対象：自身。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，自帶主動戰法与えダメージ上昇14%～28%（（智略に応じて））。 自身成功発動自帶主動戰法後，有35%～70%確率使自身獲得2%～4%【攻心】效果 （（智略に応じて），可重複4次）。"
     },
     {
       "id": "tactic-229",
@@ -12555,7 +12555,6 @@
       "rarity": "S",
       "target": "自軍全体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12566,7 +12565,8 @@
         "範囲攻撃",
         "受動発動"
       ],
-      "summary": "兵種戦法。対象：自軍全体。発動率：100%。習得可能な戦法。効果分類：強化・兵種・回復・真実傷害・範囲攻撃・受動発動。"
+      "summary": "兵種戦法。対象：自軍全体。発動率：100%。習得可能な戦法。",
+      "effect": "将足輕進階為忠勇雙全的三河武士。 戦闘中，使味方全体統率增加8～16； 味方全体累計受ける3次普通攻撃後（每次成功発動後所需次數+1），下ターン開始時觸發1次不屈：恢復味方全体兵力（恢復率30%～60%，（統率に応じて））。 第4次觸發不屈時，改為使味方每名武将敵に隨機敵軍単体与えダメージ（ダメージ率41%～82%，類型由武勇和智略較高一項決定）かつ不再觸發不屈。 もし為徳川家康統領，統率增加值額外受其自身統率影響。"
     },
     {
       "id": "tactic-230",
@@ -12576,7 +12576,6 @@
       "rarity": "S",
       "target": "自軍全体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12588,7 +12587,8 @@
         "武勇系",
         "速度系"
       ],
-      "summary": "兵種戦法。対象：自軍全体。発動率：100%。習得可能な戦法。効果分類：強化・兵種・回復・提升屬性・受動発動・武勇系・速度系。"
+      "summary": "兵種戦法。対象：自軍全体。発動率：100%。習得可能な戦法。",
+      "effect": "将騎兵進階為先手製勝的越後先手組。 戦闘中，味方全体速度增加12～24； 第2ターン起，味方全体毎ターン行動前，有18%～35%的確率（受武勇和速度影響）恢復味方単体兵力（恢復率39%～78%，（武勇に応じて））。 もし為上杉謙信統領，味方武勇最高武将透過普通攻撃撃敗目標時，額外觸發一次兵力恢復效果。"
     },
     {
       "id": "tactic-231",
@@ -12598,7 +12598,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "",
       "tags": [
@@ -12609,7 +12608,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・単体攻撃・状態付与・行動妨害・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。",
+      "effect": "敵に敵軍単体与え0.73～1.46謀略ダメージ（（智略に応じて））， 並施加【畏縮】状態，持続1ターン。"
     },
     {
       "id": "tactic-232",
@@ -12619,7 +12619,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "伊達政宗",
       "tags": [
@@ -12631,7 +12630,8 @@
         "指揮效果",
         "大将技"
       ],
-      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。伊達政宗の固有戦法。効果分類：武勇ダメージ・智略ダメージ・多段傷害・単体攻撃・提升屬性・指揮效果・大将技。"
+      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。伊達政宗の固有戦法。",
+      "effect": "戰鬥開始時，自身獲得5段階風采。毎ターン行動時，消耗1段階風采分別敵に敵軍単体与え46%～92%兵刃ダメージ及謀略ダメージ（（武勇に応じて）/（智略に応じて））。 每与え2次兵刃ダメージ及2次謀略ダメージ，使自身武勇及智略增加3%～5%（（武勇に応じて）/（智略に応じて）），最大重複4次，疊滿後改為獲得1段階風采。"
     },
     {
       "id": "tactic-233",
@@ -12641,7 +12641,6 @@
       "rarity": "S",
       "target": "自軍全体",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -12654,7 +12653,8 @@
         "智略系",
         "速度系"
       ],
-      "summary": "兵種戦法。対象：自軍全体。発動率：100%。習得可能な戦法。効果分類：武勇ダメージ・智略ダメージ・単体攻撃・強化・兵種戰法・武勇系・智略系・速度系。"
+      "summary": "兵種戦法。対象：自軍全体。発動率：100%。習得可能な戦法。",
+      "effect": "適應兵種：鉄炮。将鉄炮進階為竜騎兵，部隊移動速度提升50%。 毎ターン開始時，もし無彈丸なら裝填1發，25%～25%確率裝填2發（（武勇に応じて）/（速度に応じて））。 もし持有彈丸，なら有35%～70%確率（（速度に応じて））消耗1發敵に敵軍単体与え0.52～1.04ダメージ（由武勇或智略較高者決定）。 もし由伊達政宗統領，行動後有20%～40%確率（（武勇に応じて）/（智略に応じて））裝填1發彈丸。"
     },
     {
       "id": "tactic-234",
@@ -12664,7 +12664,6 @@
       "rarity": "S",
       "target": "自身",
       "activationRate": "50%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "藤林正保",
       "tags": [
@@ -12672,7 +12671,8 @@
         "強化",
         "能動発動"
       ],
-      "summary": "能動戦法。対象：自身。発動率：50%。藤林正保の固有戦法。効果分類：武勇ダメージ・強化・能動発動。"
+      "summary": "能動戦法。対象：自身。発動率：50%。藤林正保の固有戦法。",
+      "effect": "大幅低下自身被普通攻撃選中的確率。自身下1次普通攻撃後敵に目標与え1.49～2.98兵刃ダメージ，持続2ターン。"
     },
     {
       "id": "tactic-235",
@@ -12682,7 +12682,6 @@
       "rarity": "S",
       "target": "自軍全体",
       "activationRate": "",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -12694,7 +12693,8 @@
         "武勇系",
         "速度系"
       ],
-      "summary": "兵種戦法。対象：自軍全体。発動率：未設定。習得可能な戦法。効果分類：武勇ダメージ・強化・多段傷害・状態付与・兵種效果・武勇系・速度系。"
+      "summary": "兵種戦法。対象：自軍全体。発動率：未設定。習得可能な戦法。",
+      "effect": "適應兵種：弓兵 将弓兵進階為善於諜報的伊賀忍者。味方全体武勇、速度增加5～10點。 戰鬥開始時，獲得每名敵軍2份密報。敵に敵軍進行普通攻撃後，有35%確率消耗1份密報，額外与え0.51～1.02兵刃ダメージ。 同一名武将的密報消耗完畢後，使其進入【疲弊】状態，持続1ターン。 由藤林正保統率時，確率額外受速度屬性影響。"
     },
     {
       "id": "tactic-236",
@@ -12704,7 +12704,6 @@
       "rarity": "S",
       "target": "自軍群体（2人）",
       "activationRate": "",
-      "category": "",
       "learnable": false,
       "uniqueHero": "三好実休",
       "tags": [
@@ -12714,7 +12713,8 @@
         "智略系",
         "回合觸發"
       ],
-      "summary": "受動戦法。対象：自軍群体（2人）。発動率：未設定。三好実休の固有戦法。効果分類：回復・強化・受動発動・智略系・回合觸發。"
+      "summary": "受動戦法。対象：自軍群体（2人）。発動率：未設定。三好実休の固有戦法。",
+      "effect": "自身第1次発動主動或突撃戰法時，有40%～80%確率（（智略に応じて））恢復味方範囲（2人）兵力0.66～1.32（（智略に応じて））。 第2次発動主動或突撃戰法時，有40%～80%確率（（智略に応じて））使味方範囲（2人）与え的謀略ダメージ提升15%～30%（（智略に応じて）），持続2ターン，最大重複2次。 每奇數ターン重置発動次數計數。"
     },
     {
       "id": "tactic-237",
@@ -12724,7 +12724,6 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -12734,7 +12733,8 @@
         "突撃觸發",
         "武勇系"
       ],
-      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：武勇ダメージ・単体攻撃・弱体化・突撃觸發・武勇系。"
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。",
+      "effect": "普通攻撃後，敵に目標与え1.19～2.38兵刃ダメージ，さらに目標下2次与えダメージ低下21%～42%（（武勇に応じて））。 每個目標最大存在4次低下ダメージ效果，每次效果持続2ターン。"
     },
     {
       "id": "tactic-238",
@@ -12744,7 +12744,6 @@
       "rarity": "S",
       "target": "友軍単体",
       "activationRate": "45%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "大久保長安",
       "tags": [
@@ -12755,7 +12754,8 @@
         "速度系",
         "智略系"
       ],
-      "summary": "能動戦法。対象：友軍単体。発動率：45%。大久保長安の固有戦法。効果分類：武勇ダメージ・強化・能動発動・武勇系・速度系・智略系。"
+      "summary": "能動戦法。対象：友軍単体。発動率：45%。大久保長安の固有戦法。",
+      "effect": "增加味方単体武勇及速度10～20點（（智略に応じて）），さらに其行動前敵に敵軍単体与え0.51～1.02兵刃ダメージ（受其と目標速度差影響，（智略に応じて）），持続1ターン。 持続時間結束時，将效果轉移至另一名味方単体（不可再轉移）。"
     },
     {
       "id": "tactic-239",
@@ -12765,7 +12765,6 @@
       "rarity": "S",
       "target": "自身",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -12773,7 +12772,8 @@
         "指揮效果",
         "政務系"
       ],
-      "summary": "指揮戦法。対象：自身。発動率：100%。習得可能な戦法。効果分類：強化・指揮效果・政務系。"
+      "summary": "指揮戦法。対象：自身。発動率：100%。習得可能な戦法。",
+      "effect": "自身作為評定衆時，使自身兵糧增產正面效果增加2%～3%（（政務に応じて））。"
     },
     {
       "id": "tactic-240",
@@ -12783,7 +12783,6 @@
       "rarity": "S",
       "target": "敵軍単体或敵軍群体（2人）",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "長野業正",
       "tags": [
@@ -12796,7 +12795,8 @@
         "統率系",
         "大将技"
       ],
-      "summary": "指揮戦法。対象：敵軍単体或敵軍群体（2人）。発動率：100%。長野業正の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・行動妨害・指揮效果・条件発動・統率系・大将技。"
+      "summary": "指揮戦法。対象：敵軍単体或敵軍群体（2人）。発動率：100%。長野業正の固有戦法。",
+      "effect": "戦闘中，もし上ターン受ける普通攻撃，なら有38%～75%確率（（統率に応じて））敵に攻撃自身的目標施加【消沉】状態（ダメージ率23%～46%，（智略に応じて）），持続3ターン。 否なら，有15%～30%確率（（統率に応じて））敵に敵軍範囲（2人）施加【消沉】状態（ダメージ率23%～46%，（智略に応じて）），持続3ターン。 施加【消沉】状態時，もし敵方已處於【消沉】状態，なら改為施加18%～36%【疲弊】状態（（統率に応じて）），持続1ターン。"
     },
     {
       "id": "tactic-241",
@@ -12806,7 +12806,6 @@
       "rarity": "S",
       "target": "自軍単体或自軍群体",
       "activationRate": "100%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -12816,7 +12815,8 @@
         "回合觸發",
         "統率系"
       ],
-      "summary": "指揮戦法。対象：自軍単体或自軍群体。発動率：100%。習得可能な戦法。効果分類：回復・強化・指揮效果・回合觸發・統率系。"
+      "summary": "指揮戦法。対象：自軍単体或自軍群体。発動率：100%。習得可能な戦法。",
+      "effect": "戦闘中，毎ターン17%～34%確率（（統率に応じて））恢復自身和味方単体兵力（恢復率41%～82%，（統率に応じて））。 もし自身不為味方兵力最低者，なら使恢復目標變為味方範囲。"
     },
     {
       "id": "tactic-242",
@@ -12826,7 +12826,6 @@
       "rarity": "S",
       "target": "敵軍群体（2人）",
       "activationRate": "35%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "佐竹義重",
       "tags": [
@@ -12837,7 +12836,8 @@
         "能動発動",
         "大将技"
       ],
-      "summary": "能動戦法。対象：敵軍群体（2人）。発動率：35%。佐竹義重の固有戦法。効果分類：武勇ダメージ・範囲攻撃・弱体化・降低屬性・能動発動・大将技。"
+      "summary": "能動戦法。対象：敵軍群体（2人）。発動率：35%。佐竹義重の固有戦法。",
+      "effect": "敵に敵軍範囲（2人）与え1.07～2.14兵刃ダメージ， 並低下其統率32.5～65點（（武勇に応じて）），持続1ターン。"
     },
     {
       "id": "tactic-243",
@@ -12847,7 +12847,6 @@
       "rarity": "S",
       "target": "自軍群体（2-3人）",
       "activationRate": "45%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "堀直政",
       "tags": [
@@ -12858,7 +12857,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：自軍群体（2-3人）。発動率：45%。堀直政の固有戦法。効果分類：回復・強化・範囲攻撃・提升屬性・能動発動・智略系。"
+      "summary": "能動戦法。対象：自軍群体（2-3人）。発動率：45%。堀直政の固有戦法。",
+      "effect": "使味方範囲（2-3人）獲得3次回生（恢復率27%～54%（（智略に応じて））），持続1ターン。 持続時間結束時，每剩餘1次回生，使其与えダメージ提升5%～11%（（智略に応じて）），持続1ターン。"
     },
     {
       "id": "tactic-244",
@@ -12868,7 +12868,6 @@
       "rarity": "S",
       "target": "敵軍群体（2人）",
       "activationRate": "40%",
-      "category": "",
       "learnable": true,
       "uniqueHero": "",
       "tags": [
@@ -12878,7 +12877,8 @@
         "能動発動",
         "智略系"
       ],
-      "summary": "能動戦法。対象：敵軍群体（2人）。発動率：40%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・弱体化・能動発動・智略系。"
+      "summary": "能動戦法。対象：敵軍群体（2人）。発動率：40%。習得可能な戦法。",
+      "effect": "敵に敵軍範囲（2人）与え0.67～1.34謀略ダメージ（（智略に応じて））， 並減少其受ける的回復效果20%～40%，持続1ターン。"
     },
     {
       "id": "tactic-245",
@@ -12888,7 +12888,6 @@
       "rarity": "S",
       "target": "自身",
       "activationRate": "100%",
-      "category": "",
       "learnable": false,
       "uniqueHero": "浦上宗景",
       "tags": [
@@ -12901,7 +12900,8 @@
         "智略系",
         "大将技"
       ],
-      "summary": "受動戦法。対象：自身。発動率：100%。浦上宗景の固有戦法。効果分類：智略ダメージ・単体攻撃・強化・提升屬性・行動妨害・受動発動・智略系・大将技。"
+      "summary": "受動戦法。対象：自身。発動率：100%。浦上宗景の固有戦法。",
+      "effect": "普通攻撃後有25%～50%確率敵に目標与え1.06～2.18謀略ダメージ（（智略に応じて））。 戰鬥前4ターン，毎ターン行動前使自身武勇和智略增加30～60點（（智略に応じて）），持続ターン，毎ターン增加的屬性減少25%。 第5ターン開始時，使智略最高的味方単体進入【混亂】状態，持続1ターン。"
     }
   ]
 }
