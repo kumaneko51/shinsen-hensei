@@ -1,0 +1,67 @@
+{
+  "updatedAt": "2026-08-24",
+  "heroes": [
+    {
+      "id": "oda-nobunaga",
+      "name": "織田信長",
+      "faction": "織田",
+      "cost": "6",
+      "rarity": "",
+      "troopType": "",
+      "command": "",
+      "strength": "",
+      "intelligence": "",
+      "skill": "天下布武"
+    },
+    {
+      "id": "toyotomi-hideyoshi",
+      "name": "豊臣秀吉",
+      "faction": "豊臣",
+      "cost": "6",
+      "rarity": "",
+      "troopType": "",
+      "command": "",
+      "strength": "",
+      "intelligence": "",
+      "skill": "王道楽土"
+    },
+    {
+      "id": "tokugawa-ieyasu",
+      "name": "徳川家康",
+      "faction": "徳川",
+      "cost": "6",
+      "rarity": "",
+      "troopType": "",
+      "command": "",
+      "strength": "",
+      "intelligence": "",
+      "skill": "風林火山"
+    }
+  ],
+  "tactics": [
+    {
+      "id": "tenka-fubu",
+      "name": "天下布武",
+      "type": "指揮",
+      "rarity": "",
+      "effectCategory": "",
+      "description": "マスタデータで説明を追加してください。"
+    },
+    {
+      "id": "fuurinkazan",
+      "name": "風林火山",
+      "type": "能動",
+      "rarity": "",
+      "effectCategory": "",
+      "description": "マスタデータで説明を追加してください。"
+    },
+    {
+      "id": "oudou-rakudo",
+      "name": "王道楽土",
+      "type": "受動",
+      "rarity": "",
+      "effectCategory": "",
+      "description": "マスタデータで説明を追加してください。"
+    }
+  ]
+}
