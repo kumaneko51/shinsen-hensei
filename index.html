@@ -1,37 +1,440 @@
 <!doctype html>
 <!--
-  アプリの概要: GitHub Pagesで公開する信長の野望・真戦の編成支援サイト。
-  主な機能: 武将・戦法検索、所持管理、最大10部隊の端末内保存。
-  関連ファイル／構成: index.html（単一ページ公開版）、GAS／スプレッドシート（マスタ管理）。
+  アプリの概要: 信長の野望・真戦の部隊を武将・戦法マスターから組み立てる公開用編成作業台。
+  主な機能: 最大10部隊、主将・副将、突破、武将／戦法ライブラリ、所持管理、共有URL。
+  関連ファイル／構成: index.html（GitHub Pages公開画面）、master.json（武将・戦法マスター）。
   更新日: 2026-08-24
   更新履歴:
-    - 2026-08-24: GitHub Pages公開用の初版を作成。
-    - 2026-08-24: 公開マスター読込時に端末内の旧武将データで上書きされないよう修正。
-  メンテナンスメモ: 実データへの差替えと広告導入前に権利・プライバシー方針を確認する。
+    - 2026-08-24: 参照アプリの作業台構成に合わせた日本語版レイアウトを作成。
+  メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="信長の野望・真戦の部隊編成を端末内に保存できる非公式ツール。">
-  <title>信長の野望・真戦 編成支援</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>真戦編成 日本語版</title>
   <style>
-    :root{--navy:#173c59;--gold:#b88929;--paper:#fffdf8;--bg:#f4f1ea;--ink:#202a33;--line:#ddd5c5;--muted:#66716e;--red:#a44538}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans JP",sans-serif;line-height:1.55}.wrap{width:min(1100px,calc(100% - 32px));margin:auto}header{background:var(--navy);color:#fff;position:sticky;top:0;z-index:2}header .wrap{min-height:62px;display:flex;align-items:center;justify-content:space-between;gap:16px}.brand{font-weight:700;letter-spacing:.04em}nav{display:flex;gap:14px}a{color:inherit}nav a{font-size:14px}.hero{padding:58px 0 38px}.eyebrow{margin:0;color:var(--gold);font-size:12px;font-weight:700;letter-spacing:.14em}h1{margin:4px 0 12px;font-size:clamp(30px,5vw,48px);line-height:1.22}h2{margin:3px 0;font-size:27px}.section{padding:32px 0;border-top:1px solid var(--line)}.head{display:flex;justify-content:space-between;align-items:end;gap:10px}.actions{display:flex;gap:8px}button{border:0;border-radius:6px;background:var(--navy);color:#fff;padding:9px 14px;font:inherit;cursor:pointer}button.sub{background:#687976}button.del{background:var(--red)}.status{min-height:22px;color:var(--muted);font-size:14px}.filters{display:grid;grid-template-columns:2fr 1fr 1fr auto;gap:10px;align-items:end;margin-top:15px}label{font-size:13px;font-weight:600;color:#4c5856}input,select{display:block;width:100%;margin-top:4px;border:1px solid #cbc3b2;border-radius:5px;padding:9px;background:#fff;font:inherit}.check{padding:9px 0;white-space:nowrap}.check input{display:inline;width:auto;margin:0 5px 0 0}.team{margin:12px 0;padding:16px;background:var(--paper);border:1px solid var(--line);border-radius:9px}.teamhead{display:flex;justify-content:space-between;gap:8px;align-items:center;margin-bottom:12px}.teamname{max-width:320px;font-weight:700}.members{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.member{padding:11px;border-left:4px solid var(--gold);background:#faf7f0}.member p{margin:0 0 7px;font-size:13px;font-weight:700}.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin-top:14px}.card{padding:14px;border:1px solid var(--line);border-radius:8px;background:var(--paper)}.card.owned{outline:2px solid #d3ac56}.card h3{margin:0 0 7px;font-size:17px}.card p{margin:7px 0;font-size:13px;color:#4e5958}.tag{display:inline-block;margin:0 4px 5px 0;padding:2px 7px;border-radius:12px;background:#e8dfce;color:#5c4c2e;font-size:11px}.own{display:block;margin-top:9px;font-weight:400}.empty{padding:22px;border:1px dashed var(--line);border-radius:7px;color:var(--muted);text-align:center}footer{margin-top:30px;padding:24px 0;background:#243942;color:#dfe8e9;font-size:12px}@media(max-width:720px){header .wrap,.head{align-items:flex-start;flex-direction:column}header{position:static;padding:12px 0}nav{flex-wrap:wrap}.filters,.members{grid-template-columns:1fr}.hero{padding-top:35px}}
+    :root { --ink:#1e293b; --muted:#64748b; --line:#dbe3ed; --ground:#f5f7fb; --blue:#2563eb; --nav:#172554; --gold:#d39b23; --red:#dc4b50; --green:#0f9f6e; }
+    * { box-sizing:border-box; }
+    body { margin:0; min-width:320px; color:var(--ink); background:var(--ground); font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif; }
+    button,input,select { font:inherit; } button { cursor:pointer; } button:focus-visible,input:focus-visible,select:focus-visible { outline:3px solid #93c5fd; outline-offset:1px; }
+    .app { display:grid; grid-template-columns:216px minmax(0,1fr); min-height:100vh; }
+    .side { display:flex; flex-direction:column; padding:18px 12px; color:#dbeafe; background:linear-gradient(180deg,var(--nav),#0f1f46); }
+    .brand { display:flex; gap:10px; align-items:center; padding:8px 10px 24px; color:#fff; text-decoration:none; font-weight:800; }
+    .mark { display:grid; place-items:center; width:34px; height:34px; border-radius:10px; background:linear-gradient(145deg,#f7d977,#bc7912); color:#38240a; font-size:18px; }
+    .brand small { display:block; margin-top:2px; color:#9db1d6; font-size:10px; letter-spacing:.08em; }
+    .label { margin:14px 10px 6px; color:#7890bc; font-size:10px; font-weight:800; letter-spacing:.11em; }
+    .nav { width:100%; padding:10px; border:0; border-radius:8px; color:#dbeafe; background:transparent; text-align:left; }
+    .nav:hover,.nav.active { background:#233d76; color:#fff; }.side-foot { margin-top:auto; padding:14px 10px 4px; color:#91a4c8; font-size:11px; line-height:1.6; }
+    .shell { min-width:0; }.top { position:sticky; top:0; z-index:5; display:flex; gap:12px; align-items:center; min-height:69px; padding:10px 22px; border-bottom:1px solid var(--line); background:rgba(255,255,255,.94); backdrop-filter:blur(10px); }
+    .team-name,.select,.search,.filter { height:36px; padding:0 10px; border:1px solid var(--line); border-radius:7px; color:var(--ink); background:#fff; }.team-name { min-width:170px; font-weight:700; }.select { font-weight:700; }
+    .summary { display:flex; gap:16px; margin-right:auto; color:var(--muted); font-size:11px; }.summary b { display:block; color:var(--ink); font-size:14px; }.summary .warn { color:var(--red); }
+    .btn { padding:8px 11px; border:1px solid var(--line); border-radius:7px; color:#334155; background:#fff; font-size:12px; font-weight:700; }.btn:hover { border-color:#93b4ec; background:#f6f9ff; }.btn.primary { border-color:var(--blue); color:#fff; background:var(--blue); }.btn.danger { border-color:#fecaca; color:#b91c1c; }
+    .main { display:grid; grid-template-columns:224px minmax(550px,1fr); min-height:calc(100vh - 69px); }.teams { padding:14px 10px; border-right:1px solid var(--line); background:#f8fafc; }.teams-head { display:flex; justify-content:space-between; padding:2px 7px 11px; color:var(--muted); font-size:12px; font-weight:800; }
+    .team { display:flex; gap:8px; align-items:center; width:100%; margin:4px 0; padding:10px 8px; border:1px solid transparent; border-radius:8px; color:#334155; background:transparent; text-align:left; }.team.active { border-color:#b9cdf4; color:#174ea6; background:#eaf2ff; }.num { display:grid; place-items:center; flex:0 0 22px; width:22px; height:22px; border-radius:50%; color:#fff; background:#94a3b8; font-size:11px; font-weight:800; }.team.active .num { background:var(--blue); }.team strong { display:block; font-size:12px; }.team small { color:#718096; font-size:10px; }.add { width:100%; margin-top:9px; padding:10px; border:1px dashed #9bb5df; border-radius:8px; color:#2457a6; background:#f5f9ff; font-weight:800; }.actions { display:grid; gap:7px; margin-top:16px; }
+    .work { min-width:0; background:#fff; }.slots { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:12px; padding:18px; border-bottom:1px solid var(--line); background:#fbfcfe; }.slot { min-width:0; padding:12px; border:1px solid var(--line); border-radius:10px; background:#fff; box-shadow:0 2px 8px rgba(15,23,42,.035); }.slot.selected { border-color:#4f8bea; box-shadow:0 0 0 3px #dbeafe; }.role { color:var(--muted); font-size:11px; font-weight:800; letter-spacing:.08em; }.hero { display:flex; gap:9px; align-items:center; width:100%; margin:8px 0; padding:0; border:0; color:inherit; background:transparent; text-align:left; }.portrait { display:grid; place-items:center; flex:0 0 42px; width:42px; height:42px; border:2px solid #d6b76f; border-radius:8px; color:#fff; background:linear-gradient(145deg,#334a72,#172554); font-weight:900; }.hero-name { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:15px; font-weight:800; }.meta { display:block; margin-top:2px; color:var(--muted); font-size:10px; }.tag { display:inline-block; margin:1px 3px 1px 0; padding:2px 5px; border-radius:4px; color:#475569; background:#eef2f7; font-size:10px; font-weight:700; }.tag.s { color:#9a6700; background:#fff3cd; }.stars { display:flex; gap:2px; margin:7px 0; }.star { padding:0; border:0; color:#cbd5e1; background:none; font-size:17px; line-height:1; }.star.on { color:var(--gold); }.stats { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; margin:9px 0; }.stat { padding:4px 3px; border-radius:5px; background:#f5f7fb; text-align:center; }.stat span { display:block; color:var(--muted); font-size:9px; }.stat b { font-size:12px; }.traits { min-height:22px; font-size:10px; }.skill { display:block; width:100%; min-height:31px; margin-top:5px; padding:5px 7px; border:1px dashed #b9c7d9; border-radius:6px; color:var(--muted); background:#fafcff; font-size:10px; text-align:left; }.skill.active { border-color:#4f8bea; color:#174ea6; background:#eff6ff; }
+    .library { padding:14px 18px 20px; }.tabs { display:flex; gap:4px; border-bottom:1px solid var(--line); }.tab { padding:10px 15px; border:0; border-bottom:3px solid transparent; color:var(--muted); background:transparent; font-weight:800; }.tab.active { border-color:var(--blue); color:#1d4ed8; }.tools { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:12px 0; }.search { min-width:190px; flex:1; }.filter { height:36px; }.switch { display:flex; gap:6px; align-items:center; color:var(--muted); font-size:12px; white-space:nowrap; }.cards { display:grid; grid-template-columns:repeat(auto-fill,minmax(135px,1fr)); gap:8px; max-height:430px; overflow:auto; padding:2px; }.card { position:relative; min-height:106px; padding:10px; border:1px solid var(--line); border-radius:8px; color:var(--ink); background:#fff; text-align:left; }.card:hover { border-color:#80a9ed; box-shadow:0 2px 8px rgba(37,99,235,.13); }.card.disabled { opacity:.55; }.card h3 { margin:7px 0 3px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; font-size:13px; }.card p { margin:0; color:var(--muted); font-size:10px; }.owned { position:absolute; top:8px; right:8px; width:7px; height:7px; border-radius:50%; background:var(--green); }.empty { padding:34px; color:var(--muted); text-align:center; }
+    .backdrop { position:fixed; inset:0; z-index:10; display:grid; place-items:center; padding:16px; background:rgba(15,23,42,.38); }.modal { width:min(600px,100%); max-height:88vh; overflow:auto; padding:20px; border-radius:12px; background:#fff; box-shadow:0 24px 70px rgba(15,23,42,.28); }.modal h2 { margin:0 0 5px; font-size:18px; }.modal p { color:var(--muted); font-size:12px; }.inventory { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:7px; margin:14px 0; }.inventory label { display:flex; gap:6px; align-items:center; padding:8px; border:1px solid var(--line); border-radius:6px; font-size:12px; }.modal-actions { display:flex; justify-content:flex-end; gap:8px; }.toast { position:fixed; right:18px; bottom:18px; z-index:20; max-width:330px; padding:11px 14px; border-radius:8px; color:#fff; background:#0f172a; box-shadow:0 8px 24px rgba(15,23,42,.26); font-size:12px; }
+    @media(max-width:1000px) { .slots { grid-template-columns:1fr; }.main { grid-template-columns:185px minmax(400px,1fr); }.cards { max-height:none; } } @media(max-width:720px) { .app { display:block; }.side { display:none; }.top { position:static; flex-wrap:wrap; padding:10px 12px; }.summary { order:3; width:100%; }.main { display:block; }.teams { border-right:0; border-bottom:1px solid var(--line); }.teams .team,.teams .actions { display:none; }.team-name { min-width:0; flex:1; }.slots,.library { padding:12px; } }
   </style>
 </head>
 <body>
-<header><div class="wrap"><span class="brand">信長の野望・真戦 編成支援</span><nav><a href="#lineups">編成</a><a href="#heroes">武将</a><a href="#tactics">戦法</a><a href="#policy">ポリシー</a></nav></div></header>
-<main class="wrap">
-<section class="hero"><p class="eyebrow">PUBLIC LINEUP TOOL</p><h1>自分だけの部隊編成を、すばやく比較。</h1><p>編成・所持データはこの端末内だけに保存されます。ログインは不要です。</p></section>
-<section id="lineups" class="section"><div class="head"><div><p class="eyebrow">LINEUPS</p><h2>部隊編成</h2></div><div class="actions"><button id="add">部隊を追加</button><button id="save" class="sub">保存</button><button id="share" class="sub">共有URL</button></div></div><p id="status" class="status" aria-live="polite"></p><p id="cost-summary" class="status"></p><div id="teams"></div></section>
-<section id="heroes" class="section"><p class="eyebrow">HEROES</p><h2>武将検索</h2><div class="filters"><label>名前・固有戦法<input id="hq" type="search" placeholder="例：信長"></label><label>勢力<select id="hf"><option value="">すべて</option></select></label><label>レア度<select id="hr"><option value="">すべて</option></select></label><label class="check"><input id="ho" type="checkbox">所持のみ</label></div><div id="heroesList" class="grid"></div></section>
-<section id="tactics" class="section"><p class="eyebrow">TACTICS</p><h2>戦法検索</h2><div class="filters"><label>名前・説明<input id="tq" type="search" placeholder="例：攻撃"></label><label>種別<select id="tt"><option value="">すべて</option></select></label><label>レア度<select id="tr"><option value="">すべて</option></select></label><label class="check"><input id="to" type="checkbox">所持のみ</label></div><div id="tacticsList" class="grid"></div></section>
-<section id="policy" class="section"><p class="eyebrow">POLICY</p><h2>利用・プライバシーについて</h2><p>本サイトは非公式のファン制作ツールです。ゲーム名、画像、データその他の権利は各権利者に帰属します。部隊編成・所持データは利用者のブラウザ内にのみ保存し、運営者は収集しません。</p><p>広告を導入する場合は、広告事業者、Cookie利用、オプトアウト方法および問い合わせ先を追記します。</p></section>
-</main><footer><div class="wrap">非公式ファン制作ツール｜掲載データの権利確認後に正式なマスタを反映します。</div></footer>
-<script>
-'use strict';
-const CONFIG={MAX_TEAMS:10,MAX_MEMBERS:3,MAX_TACTICS_PER_MEMBER:2,STORAGE_KEY:'shinsen-hensei-v1'};
-let MASTER={heroes:[{id:'oda-nobunaga',name:'織田信長',faction:'織田',cost:'6',rarity:'',skill:'天下布武'},{id:'toyotomi-hideyoshi',name:'豊臣秀吉',faction:'豊臣',cost:'6',rarity:'',skill:'王道楽土'},{id:'tokugawa-ieyasu',name:'徳川家康',faction:'徳川',cost:'6',rarity:'',skill:'風林火山'}],tactics:[{id:'tenka-fubu',name:'天下布武',type:'指揮',rarity:'',description:'マスタデータで説明を追加してください。'},{id:'fuurinkazan',name:'風林火山',type:'能動',rarity:'',description:'マスタデータで説明を追加してください。'},{id:'oudou-rakudo',name:'王道楽土',type:'受動',rarity:'',description:'マスタデータで説明を追加してください。'}]};
-let state={...MASTER,teams:[],inventory:{heroIds:[],tacticIds:[]}};
-/** アプリを初期化する。 @returns {Promise<void>} */
-async function init(){try{const response=await fetch('master.json',{cache:'no-cache'});if(response.ok)MASTER=await response.json();}catch(error){status('公開マスタの読込に失敗したため、内蔵データを表示しています。',true);}try{const shared=readShared();const persisted=shared||JSON.parse(localStorage.getItem(CONFIG.STORAGE_KEY)||'{}');state={...MASTER,teams:Array.isArray(persisted.teams)?persisted.teams:[],inventory:{heroIds:Array.isArray((persisted.inventory||{}).heroIds)?persisted.inventory.heroIds:[],tacticIds:Array.isArray((persisted.inventory||{}).tacticIds)?persisted.inventory.tacticIds:[]}};}catch(error){}fill('hf',state.heroes,'faction');fill('hr',state.heroes,'rarity');fill('tt',state.tactics,'type');fill('tr',state.tactics,'rarity');document.getElementById('add').onclick=addTeam;document.getElementById('save').onclick=save;document.getElementById('share').onclick=share;['hq','hf','hr','ho'].forEach(id=>document.getElementById(id).addEventListener('input',renderHeroes));['tq','tt','tr','to'].forEach(id=>document.getElementById(id).addEventListener('input',renderTactics));renderAll();}
+  <div id="app"></div>
+  <script>
+    'use strict';
+
+    /**
+     * アプリ全体で使用する設定値。
+     * @type {Object}
+     */
+    const CONFIG = {
+      MASTER_URL: 'master.json',
+      STORAGE_KEY: 'shinsen-hensei-workbench-v2',
+      MAX_TEAMS: 10,
+      MAX_MEMBERS: 3,
+      MAX_BREAKTHROUGH: 5,
+      TEAM_COST_LIMIT: 20
+    };
+
+    const ROLES = ['主将', '副将', '副将'];
+    const STAT_LABELS = { leadership: '統', valor: '武', intelligence: '智', politics: '政', charisma: '魅', speed: '速' };
+    let master = { heroes: [], tactics: [] };
+    let state = makeState_();
+
+    /**
+     * 初期状態を作成する。
+     * @returns {Object} アプリ状態。
+     */
+    function makeState_() {
+      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '' };
+    }
+
+    /**
+     * 空の武将枠を作成する。
+     * @returns {Object} 武将枠。
+     */
+    function makeMember_() {
+      return { heroId: '', breakthrough: 0, tacticIds: ['', ''], bonuses: { leadership: 0, valor: 0, intelligence: 0, politics: 0, charisma: 0, speed: 0 } };
+    }
+
+    /**
+     * 新しい部隊を作成する。
+     * @param {number} number 表示番号。
+     * @returns {Object} 部隊。
+     */
+    function makeTeam_(number) {
+      return { id: Date.now() + '-' + number, name: '部隊 ' + number, members: Array.from({ length: CONFIG.MAX_MEMBERS }, makeMember_) };
+    }
+
+    /**
+     * マスターと端末保存データを読み込み、画面を開始する。
+     * @returns {Promise<void>} 完了時に解決するPromise。
+     */
+    async function init() {
+      try {
+        const response = await fetch(CONFIG.MASTER_URL, { cache: 'no-cache' });
+        if (response.ok) master = await response.json();
+      } catch (error) {
+        showToast_('公開マスターを読み込めませんでした。');
+      }
+      const saved = loadState_();
+      state.teams = Array.isArray(saved.teams) ? saved.teams.map(normalizeTeam_) : [makeTeam_(1)];
+      state.inventory = normalizeInventory_(saved.inventory);
+      state.activeTeam = Math.min(Number(saved.activeTeam) || 0, Math.max(0, state.teams.length - 1));
+      if (!state.teams.length) state.teams.push(makeTeam_(1));
+      render();
+    }
+
+    /**
+     * 端末内の保存データを読み込む。
+     * @returns {Object} 保存データ。
+     */
+    function loadState_() {
+      try { return JSON.parse(localStorage.getItem(CONFIG.STORAGE_KEY) || '{}'); } catch (error) { return {}; }
+    }
+
+    /**
+     * 古い部隊データも含めて現行形式に補正する。
+     * @param {Object} team 部隊データ。
+     * @returns {Object} 補正済み部隊。
+     */
+    function normalizeTeam_(team) {
+      const members = Array.isArray(team.members) ? team.members.slice(0, 3).map(function(member) {
+        const base = makeMember_();
+        return { ...base, ...member, tacticIds: [((member.tacticIds || [])[0] || ''), ((member.tacticIds || [])[1] || '')], bonuses: { ...base.bonuses, ...(member.bonuses || member.stats || {}) } };
+      }) : [];
+      while (members.length < 3) members.push(makeMember_());
+      return { id: team.id || String(Date.now()), name: String(team.name || '部隊'), members: members };
+    }
+
+    /**
+     * 所持データを補正する。
+     * @param {Object} inventory 所持データ。
+     * @returns {Object} 補正済み所持データ。
+     */
+    function normalizeInventory_(inventory) {
+      return { heroIds: Array.isArray((inventory || {}).heroIds) ? inventory.heroIds : [], tacticIds: Array.isArray((inventory || {}).tacticIds) ? inventory.tacticIds : [] };
+    }
+
+    /**
+     * アプリ全体を描画する。
+     * @returns {void}
+     */
+    function render() {
+      const team = activeTeam_();
+      document.getElementById('app').innerHTML = '<div class="app">' + sidebar_() + '<div class="shell">' + topbar_(team) + '<main class="main">' + teamList_() + '<section class="work">' + slots_(team) + library_() + '</section></main></div></div>' + modal_() + (state.toast ? '<div class="toast">' + escape_(state.toast) + '</div>' : '');
+      bind_();
+    }
+
+    /**
+     * 左サイドバーを描画する。
+     * @returns {string} HTML。
+     */
+    function sidebar_() {
+      return '<aside class="side"><a class="brand" href="#"><span class="mark">戦</span><span>真戦編成<small>SHINSEI · JP</small></span></a><p class="label">主要機能</p><button class="nav active">♜　編成作業台</button><button class="nav" data-modal="inventory">◈　所持品管理</button><button class="nav" data-action="share">↗　共有リンク</button><p class="label">準備中</p><button class="nav" disabled>▦　武将データベース</button><button class="nav" disabled>⚔　戦闘シミュレーション</button><div class="side-foot">非公式ファンツール<br>データ・商標の権利は各権利者に帰属します。</div></aside>';
+    }
+
+    /**
+     * 上部の編成情報を描画する。
+     * @param {Object} team 表示中の部隊。
+     * @returns {string} HTML。
+     */
+    function topbar_(team) {
+      const cost = teamCost_(team);
+      const troops = troopSummary_(team);
+      return '<header class="top"><select class="select" data-team-select>' + state.teams.map(function(item, index) { return '<option value="' + index + '"' + (index === state.activeTeam ? ' selected' : '') + '>編成 ' + (index + 1) + '</option>'; }).join('') + '</select><input class="team-name" data-team-name aria-label="部隊名" value="' + escape_(team.name) + '"><div class="summary"><span>コスト<b class="' + (cost > 20 ? 'warn' : '') + '">' + cost + ' / 20</b></span><span>兵種<b>歩 ' + troops.foot + '　弓 ' + troops.bow + '　騎 ' + troops.cavalry + '　砲 ' + troops.gun + '</b></span></div><button class="btn" data-modal="inventory">所持管理</button><button class="btn" data-action="share">共有</button><button class="btn danger" data-action="reset">リセット</button></header>';
+    }
+
+    /**
+     * 部隊一覧を描画する。
+     * @returns {string} HTML。
+     */
+    function teamList_() {
+      return '<aside class="teams"><div class="teams-head"><span>部隊一覧</span><span>' + state.teams.length + ' / 10</span></div>' + state.teams.map(function(team, index) { return '<button class="team ' + (index === state.activeTeam ? 'active' : '') + '" data-select-team="' + index + '"><span class="num">' + (index + 1) + '</span><span><strong>' + escape_(team.name) + '</strong><small>' + teamCost_(team) + ' / 20 コスト</small></span></button>'; }).join('') + '<button class="add" data-action="add">＋ 部隊を追加</button><div class="actions"><button class="btn" data-action="share">この部隊を共有</button><button class="btn danger" data-action="delete">この部隊を削除</button></div></aside>';
+    }
+
+    /**
+     * 主将・副将3枠を描画する。
+     * @param {Object} team 表示中の部隊。
+     * @returns {string} HTML。
+     */
+    function slots_(team) {
+      return '<section class="slots">' + team.members.map(function(member, role) { return slot_(member, role); }).join('') + '</section>';
+    }
+
+    /**
+     * 部隊内の一枠を描画する。
+     * @param {Object} member 枠データ。
+     * @param {number} role 役割番号。
+     * @returns {string} HTML。
+     */
+    function slot_(member, role) {
+      const hero = hero_(member.heroId);
+      const selected = state.selected.role === role;
+      if (!hero) return '<article class="slot ' + (selected ? 'selected' : '') + '"><div class="role">' + ROLES[role] + '</div><button class="btn" data-focus-hero="' + role + '">＋ 武将を選択</button><div class="skill">武将を選択すると戦法を設定できます</div></article>';
+      const stats = Object.keys(STAT_LABELS).map(function(key) { return '<div class="stat"><span>' + STAT_LABELS[key] + '</span><b>' + (Number((hero.stats || {})[key] || 0) + Number((member.bonuses || {})[key] || 0)) + '</b></div>'; }).join('');
+      const traits = (hero.traits || []).slice(0, 4).map(function(trait) { return '<span class="tag ' + (trait.rank === 'S' ? 's' : '') + '">' + escape_(trait.name) + '</span>'; }).join('');
+      const skills = member.tacticIds.map(function(id, index) { const tactic = tactic_(id); const active = selected && state.selected.kind === 'tactic' && state.selected.slot === index; return '<button class="skill ' + (active ? 'active' : '') + '" data-focus-tactic="' + role + ':' + index + '">' + (tactic ? escape_(tactic.name) + '　<small>' + escape_(tactic.type || '') + '</small>' : '＋ 戦法を習得') + '</button>'; }).join('');
+      return '<article class="slot ' + (selected ? 'selected' : '') + '"><div class="role">' + ROLES[role] + (role === 0 ? '　大将技' : '') + '</div><button class="hero" data-focus-hero="' + role + '"><span class="portrait">' + escape_(hero.name.slice(0, 1)) + '</span><span><span class="hero-name">' + escape_(hero.name) + '</span><span class="meta">' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '　' + hero.cost + 'C</span></span></button><div class="stars">' + stars_(role, member.breakthrough) + '</div><span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><span class="tag">' + escape_(hero.uniqueSkill || '固有戦法未設定') + '</span><div class="stats">' + stats + '</div><div class="traits">' + traits + '</div>' + skills + '</article>';
+    }
+
+    /**
+     * 突破ボタンを描画する。
+     * @param {number} role 役割番号。
+     * @param {number} value 現在の突破数。
+     * @returns {string} HTML。
+     */
+    function stars_(role, value) {
+      return Array.from({ length: 5 }, function(_, index) { return '<button class="star ' + (index < value ? 'on' : '') + '" data-star="' + role + ':' + (index + 1) + '" aria-label="' + (index + 1) + '星突破">★</button>'; }).join('');
+    }
+
+    /**
+     * 武将・戦法ライブラリを描画する。
+     * @returns {string} HTML。
+     */
+    function library_() {
+      const isHero = state.tab === 'heroes';
+      const items = isHero ? filteredHeroes_() : filteredTactics_();
+      const factionOptions = unique_(master.heroes || [], 'faction').map(function(value) { return '<option value="' + escape_(value) + '"' + (state.faction === value ? ' selected' : '') + '>' + escape_(value) + '</option>'; }).join('');
+      const rarityOptions = unique_(isHero ? master.heroes || [] : master.tactics || [], 'rarity').map(function(value) { return '<option value="' + escape_(value) + '"' + (state.rarity === value ? ' selected' : '') + '>' + escape_(value) + '</option>'; }).join('');
+      return '<section class="library"><div class="tabs"><button class="tab ' + (isHero ? 'active' : '') + '" data-tab="heroes">武将庫 <small>' + (master.heroes || []).length + '</small></button><button class="tab ' + (!isHero ? 'active' : '') + '" data-tab="tactics">戦法庫 <small>' + (master.tactics || []).length + '</small></button></div><div class="tools"><input class="search" type="search" data-query value="' + escape_(state.query) + '" placeholder="' + (isHero ? '武将名・固有戦法を検索…' : '戦法名を検索…') + '"><select class="filter" data-cost><option value="">コスト：すべて</option><option value="7"' + (state.cost === '7' ? ' selected' : '') + '>7C</option><option value="6"' + (state.cost === '6' ? ' selected' : '') + '>6C</option><option value="5"' + (state.cost === '5' ? ' selected' : '') + '>5C</option><option value="4"' + (state.cost === '4' ? ' selected' : '') + '>4C以下</option></select>' + (isHero ? '<select class="filter" data-faction><option value="">勢力：すべて</option>' + factionOptions + '</select>' : '<select class="filter" data-type><option value="">種別：すべて</option><option value="指揮">指揮</option><option value="能動">能動</option><option value="受動">受動</option><option value="追撃">追撃</option></select>') + '<select class="filter" data-rarity><option value="">レア度：すべて</option>' + rarityOptions + '</select><label class="switch"><input type="checkbox" data-owned-filter' + (state.ownedOnly ? ' checked' : '') + '> 所持のみ</label></div><div class="cards">' + (items.map(isHero ? heroCard_ : tacticCard_).join('') || '<div class="empty">条件に一致するデータがありません。</div>') + '</div></section>';
+    }
+
+    /**
+     * 武将カードを描画する。
+     * @param {Object} hero 武将データ。
+     * @returns {string} HTML。
+     */
+    function heroCard_(hero) {
+      const used = activeTeam_().members.some(function(member) { return member.heroId === hero.id; });
+      const owned = state.inventory.heroIds.includes(hero.id);
+      return '<button class="card ' + (used ? 'disabled' : '') + '" data-hero="' + escape_(hero.id) + '">' + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><h3>' + escape_(hero.name) + '</h3><p>' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '</p><p>' + (used ? '編成済み' : escape_(hero.uniqueSkill || '')) + '</p></button>';
+    }
+
+    /**
+     * 戦法カードを描画する。
+     * @param {Object} tactic 戦法データ。
+     * @returns {string} HTML。
+     */
+    function tacticCard_(tactic) {
+      const owned = state.inventory.tacticIds.includes(tactic.id);
+      return '<button class="card" data-tactic="' + escape_(tactic.id) + '">' + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(tactic.rarity || '') + '</span><span class="tag">' + escape_(tactic.type || '') + '</span><h3>' + escape_(tactic.name) + '</h3><p>' + escape_(tactic.target || '') + '　発動 ' + escape_(tactic.activationRate || '') + '</p><p>' + (tactic.learnable ? '習得可能' : '固有戦法') + '</p></button>';
+    }
+
+    /**
+     * 所持管理モーダルを描画する。
+     * @returns {string} HTML。
+     */
+    function modal_() {
+      if (state.modal !== 'inventory') return '';
+      const isHero = state.tab === 'heroes';
+      const key = isHero ? 'heroIds' : 'tacticIds';
+      const items = isHero ? master.heroes || [] : master.tactics || [];
+      return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true"><h2>所持管理</h2><p>' + (isHero ? '所持している武将を選択してください。' : '所持している戦法を選択してください。') + '</p><div class="inventory">' + items.map(function(item) { return '<label><input type="checkbox" data-inventory="' + key + ':' + escape_(item.id) + '"' + (state.inventory[key].includes(item.id) ? ' checked' : '') + '><span>' + escape_(item.name) + '</span></label>'; }).join('') + '</div><div class="modal-actions"><button class="btn" data-close-modal>閉じる</button><button class="btn primary" data-action="save">保存</button></div></section></div>';
+    }
+
+    /**
+     * DOMイベントを登録する。
+     * @returns {void}
+     */
+    function bind_() {
+      all_('[data-team-select]', function(element) { element.onchange = function() { state.activeTeam = Number(element.value); state.selected = { role: 0, kind: 'hero', slot: 0 }; render(); }; });
+      all_('[data-team-name]', function(element) { element.oninput = function() { activeTeam_().name = element.value; render(); }; });
+      all_('[data-select-team]', function(element) { element.onclick = function() { state.activeTeam = Number(element.dataset.selectTeam); render(); }; });
+      all_('[data-modal]', function(element) { element.onclick = function() { state.modal = element.dataset.modal; render(); }; });
+      all_('[data-close-modal]', function(element) { element.onclick = function() { state.modal = ''; render(); }; });
+      all_('[data-action]', function(element) { element.onclick = function() { action_(element.dataset.action); }; });
+      all_('[data-focus-hero]', function(element) { element.onclick = function() { state.selected = { role: Number(element.dataset.focusHero), kind: 'hero', slot: 0 }; state.tab = 'heroes'; render(); }; });
+      all_('[data-focus-tactic]', function(element) { element.onclick = function() { const values = element.dataset.focusTactic.split(':').map(Number); state.selected = { role: values[0], kind: 'tactic', slot: values[1] }; state.tab = 'tactics'; render(); }; });
+      all_('[data-star]', function(element) { element.onclick = function() { const values = element.dataset.star.split(':').map(Number); activeTeam_().members[values[0]].breakthrough = values[1]; render(); }; });
+      all_('[data-tab]', function(element) { element.onclick = function() { state.tab = element.dataset.tab; state.query = ''; state.cost = ''; state.faction = ''; state.rarity = ''; render(); }; });
+      all_('[data-query]', function(element) { element.oninput = function() { state.query = element.value; render(); }; });
+      all_('[data-cost]', function(element) { element.onchange = function() { state.cost = element.value; render(); }; });
+      all_('[data-faction]', function(element) { element.onchange = function() { state.faction = element.value; render(); }; });
+      all_('[data-type]', function(element) { element.onchange = function() { state.faction = element.value; render(); }; });
+      all_('[data-rarity]', function(element) { element.onchange = function() { state.rarity = element.value; render(); }; });
+      all_('[data-owned-filter]', function(element) { element.onchange = function() { state.ownedOnly = element.checked; render(); }; });
+      all_('[data-hero]', function(element) { element.onclick = function() { chooseHero_(element.dataset.hero); }; });
+      all_('[data-tactic]', function(element) { element.onclick = function() { chooseTactic_(element.dataset.tactic); }; });
+      all_('[data-inventory]', function(element) { element.onchange = function() { const values = element.dataset.inventory.split(':'); const ids = state.inventory[values[0]]; state.inventory[values[0]] = element.checked ? Array.from(new Set(ids.concat(values[1]))) : ids.filter(function(id) { return id !== values[1]; }); }; });
+    }
+
+    /**
+     * 複数の要素に処理を設定する。
+     * @param {string} selector CSSセレクタ。
+     * @param {Function} callback 設定処理。
+     * @returns {void}
+     */
+    function all_(selector, callback) { document.querySelectorAll(selector).forEach(callback); }
+
+    /**
+     * 操作ボタンを処理する。
+     * @param {string} name 操作名。
+     * @returns {void}
+     */
+    function action_(name) {
+      if (name === 'add') {
+        if (state.teams.length >= CONFIG.MAX_TEAMS) return showToast_('部隊は最大10部隊までです。');
+        state.teams.push(makeTeam_(state.teams.length + 1));
+        state.activeTeam = state.teams.length - 1;
+      }
+      if (name === 'delete') {
+        if (state.teams.length <= 1) return showToast_('最後の部隊は削除できません。');
+        state.teams.splice(state.activeTeam, 1);
+        state.activeTeam = Math.max(0, state.activeTeam - 1);
+      }
+      if (name === 'reset') {
+        if (!window.confirm('表示中の部隊を空にしますか？')) return;
+        activeTeam_().members = Array.from({ length: 3 }, makeMember_);
+      }
+      if (name === 'save') {
+        localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify({ teams: state.teams, inventory: state.inventory, activeTeam: state.activeTeam }));
+        state.modal = '';
+        showToast_('この端末に保存しました。');
+      }
+      if (name === 'share') share_();
+      render();
+    }
+
+    /**
+     * 選択中の枠に武将を設定する。
+     * @param {string} id 武将ID。
+     * @returns {void}
+     */
+    function chooseHero_(id) {
+      const duplicate = activeTeam_().members.some(function(member, index) { return member.heroId === id && index !== state.selected.role; });
+      if (duplicate) return showToast_('同じ武将は1部隊に重複して設定できません。');
+      const member = activeTeam_().members[state.selected.role];
+      member.heroId = id;
+      member.tacticIds = ['', ''];
+      render();
+    }
+
+    /**
+     * 選択中の枠に戦法を設定する。
+     * @param {string} id 戦法ID。
+     * @returns {void}
+     */
+    function chooseTactic_(id) {
+      if (state.selected.kind !== 'tactic') return showToast_('先に武将枠内の「戦法を習得」を選択してください。');
+      activeTeam_().members[state.selected.role].tacticIds[state.selected.slot] = id;
+      render();
+    }
+
+    /**
+     * 共有URLを作成する。
+     * @returns {void}
+     */
+    function share_() {
+      const data = { team: activeTeam_(), inventory: state.inventory };
+      const url = location.origin + location.pathname + '#share=' + btoa(unescape(encodeURIComponent(JSON.stringify(data))));
+      if (navigator.clipboard) navigator.clipboard.writeText(url);
+      showToast_('共有URLをクリップボードにコピーしました。');
+    }
+
+    /**
+     * 一時メッセージを表示する。
+     * @param {string} text 表示文。
+     * @returns {void}
+     */
+    function showToast_(text) {
+      state.toast = text;
+      render();
+      window.setTimeout(function() { if (state.toast === text) { state.toast = ''; render(); } }, 2600);
+    }
+
+    /**
+     * 表示中の部隊を取得する。
+     * @returns {Object} 部隊。
+     */
+    function activeTeam_() { return state.teams[state.activeTeam]; }
+
+    /**
+     * 武将をIDから取得する。
+     * @param {string} id 武将ID。
+     * @returns {Object|null} 武将。
+     */
+    function hero_(id) { return (master.heroes || []).find(function(hero) { return hero.id === id; }) || null; }
+
+    /**
+     * 戦法をIDから取得する。
+     * @param {string} id 戦法ID。
+     * @returns {Object|null} 戦法。
+     */
+    function tactic_(id) { return (master.tactics || []).find(function(tactic) { return tactic.id === id; }) || null; }
+
+    /**
+     * 部隊の合計コストを取得する。
+     * @param {Object} team 部隊。
+     * @returns {number} 合計コスト。
+     */
+    function teamCost_(team) { return team.members.reduce(function(total, member) { const hero = hero_(member.heroId); return total + Number(hero ? hero.cost : 0); }, 0); }
+
+    /**
+     * 特性から兵種の概算を集計する。
+     * @param {Object} team 部隊。
+     * @returns {Object} 兵種別件数。
+     */
+    function troopSummary_(team) {
+      const result = { foot: 0, bow: 0, cavalry: 0, gun: 0 };
+      team.members.forEach(function(member) { const hero = hero_(member.heroId); (hero && hero.traits || []).forEach(function(trait) { (trait.affinity && trait.affinity.troopTypes || []).forEach(function(type) { if (type === '歩兵') result.foot += 1; if (type === '弓兵') result.bow += 1; if (type === '騎兵') result.cavalry += 1; if (type === '鉄砲') result.gun += 1; }); }); });
+      return result;
+    }
+
+    /**
+     * 条件に合う武将を取得する。
+     * @returns {Array<Object>} 武将一覧。
+     */
+    function filteredHeroes_() {
+      const query = state.query.toLowerCase();
+      return (master.heroes || []).filter(function(hero) { return (!query || (hero.name + hero.uniqueSkill + hero.clan).toLowerCase().includes(query)) && (!state.cost || (state.cost === '4' ? Number(hero.cost) <= 4 : String(hero.cost) === state.cost)) && (!state.faction || hero.faction === state.faction) && (!state.rarity || hero.rarity === state.rarity) && (!state.ownedOnly || state.inventory.heroIds.includes(hero.id)); });
+    }
+
+    /**
+     * 条件に合う戦法を取得する。
+     * @returns {Array<Object>} 戦法一覧。
+     */
+    function filteredTactics_() {
+      const query = state.query.toLowerCase();
+      return (master.tactics || []).filter(function(tactic) { return (!query || (tactic.name + tactic.type + tactic.target).toLowerCase().includes(query)) && (!state.faction || tactic.type === state.faction) && (!state.rarity || tactic.rarity === state.rarity) && (!state.ownedOnly || state.inventory.tacticIds.includes(tactic.id)); });
+    }
+
+    /**
+     * 配列内のキー値を重複なく返す。
+     * @param {Array<Object>} values データ。
+     * @param {string} key キー名。
+     * @returns {Array<string>} 値一覧。
+     */
+    function unique_(values, key) { return Array.from(new Set(values.map(function(value) { return value[key]; }).filter(Boolean))).sort(); }
+
+    /**
+     * HTML表示用に文字列をエスケープする。
+     * @param {*} value 表示値。
+     * @returns {string} エスケープ済み文字列。
+     */
+    function escape_(value) { return String(value || '').replace(/[&<>"']/g, function(character) { return ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[character]; }); }
+
+    init();
+  </script>
+</body>
+</html>
