@@ -1,6 +1,6 @@
 {
   "updatedAt": "2026-08-24",
-  "sourceNote": "参照サイトから日本語項目を整理した編成用基本データ。画像・長文説明は含めません。",
+  "sourceNote": "編成に必要な基本データ。肖像は外部参照、戦法は日本語の概要を表示します。",
   "heroes": [
     {
       "id": "hero-001",
@@ -52,7 +52,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12357847/dd2d4cce18d89cbb3905aa374a8a03c0.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/763195"
     },
     {
       "id": "hero-002",
@@ -104,7 +106,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12357845/807836a5ef5a49910c7f20407c6578e0.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/763193"
     },
     {
       "id": "hero-003",
@@ -156,7 +160,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055627/327a66cb3e5844555d093e2f3fda155c.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747895"
     },
     {
       "id": "hero-004",
@@ -208,7 +214,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055646/87ae12a47d4d8ce2dc7a81e011fc6621.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747896"
     },
     {
       "id": "hero-005",
@@ -261,7 +269,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055632/3fa6b3394f4ff5b03ab1bce0b0dd6843.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747897"
     },
     {
       "id": "hero-006",
@@ -313,7 +323,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055634/35e9d47082a75364b6970ba8265000d5.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747898"
     },
     {
       "id": "hero-007",
@@ -371,7 +383,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055631/d8387c45eaf3775c8ec8beadf556dfa4.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747899"
     },
     {
       "id": "hero-008",
@@ -423,7 +437,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055626/66fff6dc2c8784b6eb753ddf0885c285.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747900"
     },
     {
       "id": "hero-009",
@@ -475,7 +491,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055630/4787d474a686c4e9dfaaf09d6f2958e7.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747902"
     },
     {
       "id": "hero-010",
@@ -527,7 +545,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055657/953b241d7b38cda01999dbb502e48b42.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747903"
     },
     {
       "id": "hero-011",
@@ -579,7 +599,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055667/0675f5d4ca7d024bfdeefbc5295ae7b9.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747904"
     },
     {
       "id": "hero-012",
@@ -631,7 +653,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055707/7e409db722f1d1759c2b65554c49be58.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747905"
     },
     {
       "id": "hero-013",
@@ -683,7 +707,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055699/eced11b50611643202b7d63879a681e8.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747906"
     },
     {
       "id": "hero-014",
@@ -735,7 +761,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055636/d664c9742ea9c7a16d62038ec1fc8e39.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747908"
     },
     {
       "id": "hero-015",
@@ -788,7 +816,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055670/0171d6abcdc62071edeef152660aaa02.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747909"
     },
     {
       "id": "hero-016",
@@ -845,7 +875,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055633/e283b18fc4a5db1c201e7f43515bba6f.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747910"
     },
     {
       "id": "hero-017",
@@ -897,7 +929,9 @@
             "level": 1
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055648/69a53eafd2a6e8d75537f9873e1da459.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747917"
     },
     {
       "id": "hero-018",
@@ -949,7 +983,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055628/bdc1eb31dcfe874239a66038581308d0.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747950"
     },
     {
       "id": "hero-019",
@@ -1002,7 +1038,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12574313/95366e0015fcfc7060d2e91fd83e8e97.webp/show",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/783641"
     },
     {
       "id": "hero-020",
@@ -1055,7 +1093,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12574317/64638985c15502c77259eb04fcde6bee.webp/show",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/783636"
     },
     {
       "id": "hero-021",
@@ -1107,7 +1147,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12574312/7d05ba7c68cd8af74d009e83b7aff7aa.webp/show",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/783640"
     },
     {
       "id": "hero-022",
@@ -1154,7 +1196,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://i.imgur.com/q5xaAim.png",
+      "detailUrl": ""
     },
     {
       "id": "hero-023",
@@ -1207,7 +1251,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://i.imgur.com/ONGXNGW.png",
+      "detailUrl": ""
     },
     {
       "id": "hero-024",
@@ -1260,7 +1306,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://i.imgur.com/M41XVF9.png",
+      "detailUrl": ""
     },
     {
       "id": "hero-025",
@@ -1307,7 +1355,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12530232/c322560b0968cc03d24eccfcdcf3de58.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/780761"
     },
     {
       "id": "hero-026",
@@ -1360,7 +1410,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12530231/a7101ef4091a8959bb9c3931546e5e16.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/780760"
     },
     {
       "id": "hero-027",
@@ -1412,7 +1464,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12357848/e8c4cb70911ff74825806b1d1300de71.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/763198"
     },
     {
       "id": "hero-028",
@@ -1465,7 +1519,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12357850/5eb6c7da5382a54830d9324e594bbbd4.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/763194"
     },
     {
       "id": "hero-029",
@@ -1518,7 +1574,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12357846/790a1a04a6f673a556d8db8dae364e02.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/763191"
     },
     {
       "id": "hero-030",
@@ -1570,7 +1628,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055676/d7a1c17322a345997aa436feb75a0493.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747901"
     },
     {
       "id": "hero-031",
@@ -1622,7 +1682,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055645/3a17a21342e2fffde582a62d2b03f552.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747907"
     },
     {
       "id": "hero-032",
@@ -1674,7 +1736,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12009739/5d6109b177003f846f26c20ec6a0d84c.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/744502"
     },
     {
       "id": "hero-033",
@@ -1727,7 +1791,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055682/88d181b63f8c55472b3153180b122772.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747911"
     },
     {
       "id": "hero-034",
@@ -1780,7 +1846,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055680/90ba886bc9ed3bc430186a642f9b5f78.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747912"
     },
     {
       "id": "hero-035",
@@ -1832,7 +1900,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055654/922c04b507311825294ae463a5b428fe.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747914"
     },
     {
       "id": "hero-036",
@@ -1884,7 +1954,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055649/f483ad962e9bda93123b6da2c5d169b8.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747915"
     },
     {
       "id": "hero-037",
@@ -1937,7 +2009,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055661/03cec8076ab7083cdc5b659dea5a2f39.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747916"
     },
     {
       "id": "hero-038",
@@ -1989,7 +2063,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055673/4b74dc7fd385dbbf28eb1cd10cbdc6dc.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747918"
     },
     {
       "id": "hero-039",
@@ -2041,7 +2117,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055644/38490ed83ce93dac400f9d756ee38694.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747919"
     },
     {
       "id": "hero-040",
@@ -2094,7 +2172,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055696/22649ec3a5734a7c1c021f4fb65880aa.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747921"
     },
     {
       "id": "hero-041",
@@ -2146,7 +2226,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055652/72302bfb51603b58e2ddae113761e4e2.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747922"
     },
     {
       "id": "hero-042",
@@ -2198,7 +2280,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055681/09200d701b55445098663fc627b02e27.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747924"
     },
     {
       "id": "hero-043",
@@ -2256,7 +2340,9 @@
             "level": 1
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055666/9805b53cb7b53d397a2ef0fa622a969f.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747925"
     },
     {
       "id": "hero-044",
@@ -2308,7 +2394,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055688/6b916cdbd7ef0dc40e30554a7a421562.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747927"
     },
     {
       "id": "hero-045",
@@ -2360,7 +2448,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055692/e2afe89b9d4e6f2d9c5c61cf7d3bd938.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747932"
     },
     {
       "id": "hero-046",
@@ -2412,7 +2502,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055659/bed721485471cc2a928bb8788a3f465b.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747934"
     },
     {
       "id": "hero-047",
@@ -2464,7 +2556,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055672/d9b9463bf6a8858250508936e3d1122f.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747936"
     },
     {
       "id": "hero-048",
@@ -2516,7 +2610,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055664/40b90c409f3581131d0131eac1d80495.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747938"
     },
     {
       "id": "hero-049",
@@ -2568,7 +2664,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055651/8a5683a0d09d39867921ed3b9396381d.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747941"
     },
     {
       "id": "hero-050",
@@ -2620,7 +2718,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055662/b3fd6273fb8e2e71f617b07b301f43b7.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747943"
     },
     {
       "id": "hero-051",
@@ -2672,7 +2772,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055655/e3ff439eb70b5547802a0d282db93c29.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747944"
     },
     {
       "id": "hero-052",
@@ -2724,7 +2826,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055739/a1117926b748b54538c3adb96f49afa9.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747946"
     },
     {
       "id": "hero-053",
@@ -2781,7 +2885,9 @@
             "level": 1
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055624/b9052c21120f94df752fd251c16aa4e1.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747947"
     },
     {
       "id": "hero-054",
@@ -2833,7 +2939,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055674/010390bfa96172cff4c7e8b9dada6e3c.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747952"
     },
     {
       "id": "hero-055",
@@ -2885,7 +2993,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055749/c75c66f561dc5b5674c1d2d09f4c1f72.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747956"
     },
     {
       "id": "hero-056",
@@ -2938,7 +3048,9 @@
             "level": 1
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055660/ae9d808bce77ac1092b06d7b66dbad36.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747958"
     },
     {
       "id": "hero-057",
@@ -2991,7 +3103,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055698/c35d01aed1ce250a08c363d8552cb0e2.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747960"
     },
     {
       "id": "hero-058",
@@ -3043,7 +3157,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055737/0623e4011a3dd24313bbe03960385989.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747961"
     },
     {
       "id": "hero-059",
@@ -3095,7 +3211,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12058822/85b4656607631d926cd3a6fd9c1edb62.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747963"
     },
     {
       "id": "hero-060",
@@ -3153,7 +3271,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12058817/2f45b76572b816f6392571a58d798f5b.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747964"
     },
     {
       "id": "hero-061",
@@ -3205,7 +3325,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12574315/c150d6fe5c6eb533415703ceede26605.webp/show",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/783642"
     },
     {
       "id": "hero-062",
@@ -3258,7 +3380,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12574311/d005a1c4ff926dfc9a8c8211358d9574.webp/show",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/783637"
     },
     {
       "id": "hero-063",
@@ -3305,7 +3429,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://i.imgur.com/4tS1C7F.png",
+      "detailUrl": ""
     },
     {
       "id": "hero-064",
@@ -3362,7 +3488,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12357852/9e351005c6c07fc9151aa64d776374e8.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/763196"
     },
     {
       "id": "hero-065",
@@ -3414,7 +3542,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12357851/c4b441a167ead429d27177d1b5b2d845.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/763192"
     },
     {
       "id": "hero-066",
@@ -3466,7 +3596,9 @@
             "level": 1
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055622/72f39457ca42ebacb241b08ec4eb2ecf.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747913"
     },
     {
       "id": "hero-067",
@@ -3518,7 +3650,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055623/47e8840880cd40060ce3e4f0b7902f18.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747920"
     },
     {
       "id": "hero-068",
@@ -3570,7 +3704,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055700/dcd63e1ed53c7b630259c56ce316ef5f.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747926"
     },
     {
       "id": "hero-069",
@@ -3622,7 +3758,9 @@
             "level": 1
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055704/eb1302f4c40aea73e7d7413b37c50fe5.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747928"
     },
     {
       "id": "hero-070",
@@ -3674,7 +3812,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055643/a1b42de8219001e377018ba74d692e36.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747930"
     },
     {
       "id": "hero-071",
@@ -3721,7 +3861,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055629/405d2f46946bbef211cfe7901cb56c22.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747931"
     },
     {
       "id": "hero-072",
@@ -3773,7 +3915,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055669/81d1727c726bb82f8c36f5ebbbfc5031.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747933"
     },
     {
       "id": "hero-073",
@@ -3825,7 +3969,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055689/fc65f0be8d27018794a7caacfb36e06e.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747935"
     },
     {
       "id": "hero-074",
@@ -3872,7 +4018,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055663/08969ce6e76aed602f03ad651362a0a0.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747937"
     },
     {
       "id": "hero-075",
@@ -3919,7 +4067,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055690/fa9d3892321e5ea31074a55a40e6c10f.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747939"
     },
     {
       "id": "hero-076",
@@ -3971,7 +4121,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055701/b9a8b32e92fca31b7c7235bb71391154.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747942"
     },
     {
       "id": "hero-077",
@@ -4028,7 +4180,9 @@
             "level": 3
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055647/f166c1b1cb8fecee66fe7d367507c340.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747945"
     },
     {
       "id": "hero-078",
@@ -4081,7 +4235,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055656/c0fa5e3d386d0e18e10bbe876d297afd.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747948"
     },
     {
       "id": "hero-079",
@@ -4134,7 +4290,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055640/bf7a48f43213aaf2a09285f80958e3d2.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747951"
     },
     {
       "id": "hero-080",
@@ -4186,7 +4344,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055677/530c110bc0111d57989b5e6825032a03.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747953"
     },
     {
       "id": "hero-081",
@@ -4238,7 +4398,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055668/f3b49d984fbc1a99c377fd1102a0903f.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747955"
     },
     {
       "id": "hero-082",
@@ -4290,7 +4452,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055625/97ac779e174678dee25b35d5c0746290.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747957"
     },
     {
       "id": "hero-083",
@@ -4342,7 +4506,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055684/4d41682caec15f3dab72f9fdeaf3181c.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747959"
     },
     {
       "id": "hero-084",
@@ -4394,7 +4560,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055703/7dae9af52036adf3d8e81da7d867d6e2.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747962"
     },
     {
       "id": "hero-085",
@@ -4446,7 +4614,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12574316/24f641b6899b9aae617cc1a7a0c1f5f0.webp/show",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/783638"
     },
     {
       "id": "hero-086",
@@ -4499,7 +4669,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12574310/0e36f6ce453c6732c6c81fc8ee2c7250.webp/show",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/783639"
     },
     {
       "id": "hero-087",
@@ -4552,7 +4724,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://i.imgur.com/OxVO6ZM.png",
+      "detailUrl": ""
     },
     {
       "id": "hero-088",
@@ -4599,7 +4773,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://i.imgur.com/lY6o6rm.png",
+      "detailUrl": ""
     },
     {
       "id": "hero-089",
@@ -4652,7 +4828,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://i.imgur.com/0jdBDUR.png",
+      "detailUrl": ""
     },
     {
       "id": "hero-090",
@@ -4705,7 +4883,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12357849/bb3dd4f91fbf3489b90c162abf609ecd.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/763197"
     },
     {
       "id": "hero-091",
@@ -4757,7 +4937,9 @@
             "level": 1
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055683/ba879ab759a8ce10148f693405d38d14.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747929"
     },
     {
       "id": "hero-092",
@@ -4809,7 +4991,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055695/7c92a272bf447015c39048f0f4f15af1.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747940"
     },
     {
       "id": "hero-093",
@@ -4861,7 +5045,9 @@
             "level": 3
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055693/ce2edf2956fedba58a14706580be44ba.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747949"
     },
     {
       "id": "hero-094",
@@ -4908,7 +5094,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055675/38ac5a2d2198ee3aebd1363b57777868.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747954"
     },
     {
       "id": "hero-095",
@@ -4960,7 +5148,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://i.imgur.com/Mkg4Iay.png",
+      "detailUrl": ""
     },
     {
       "id": "hero-096",
@@ -5022,7 +5212,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12055694/4e119fce2e55290062ed03078f029cfa.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747923"
     },
     {
       "id": "hero-097",
@@ -5075,7 +5267,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12574314/c03d9699d979351f0f957ed086014231.webp/show",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/783643"
     },
     {
       "id": "hero-098",
@@ -5122,7 +5316,9 @@
             "level": 1
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059104/32b8d546134d9cdc97d43ff19e5f5e92.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747967"
     },
     {
       "id": "hero-099",
@@ -5173,7 +5369,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059143/c37dc76965a7ff5f6b9e9bc4fc3608c5.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747971"
     },
     {
       "id": "hero-100",
@@ -5219,7 +5417,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059297/678b6fc4fd9fba522fbc41661794ba5a.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747981"
     },
     {
       "id": "hero-101",
@@ -5265,7 +5465,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059319/62ad415155a451b9c54b25d7f8420d54.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747983"
     },
     {
       "id": "hero-102",
@@ -5311,7 +5513,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059350/72a6b1ba6b30701b2771e44a8451ee79.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747985"
     },
     {
       "id": "hero-103",
@@ -5357,7 +5561,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059349/244ffb84eb9464dd8235675d8b3a3372.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747988"
     },
     {
       "id": "hero-104",
@@ -5403,7 +5609,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059309/e76d1af1c16baae50f3e5c4b4452d37d.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747993"
     },
     {
       "id": "hero-105",
@@ -5449,7 +5657,9 @@
             "level": 1
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059310/01d7fadbd9eba89556aece3f09d9a435.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747996"
     },
     {
       "id": "hero-106",
@@ -5495,7 +5705,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059312/6c232c89149bdcea2bc2037b2f49d04d.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747998"
     },
     {
       "id": "hero-107",
@@ -5541,7 +5753,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059336/a83a47fdd30113e67c5a4ff2b59252c6.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748002"
     },
     {
       "id": "hero-108",
@@ -5587,7 +5801,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059342/5c31a9841d80f6e2dad6310c80eab3e0.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748003"
     },
     {
       "id": "hero-109",
@@ -5633,7 +5849,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059149/632067efd512dd45fc01fea2cb532804.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747966"
     },
     {
       "id": "hero-110",
@@ -5674,7 +5892,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059107/c8c8851d0e08b1d7266053b3bfb09cad.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747970"
     },
     {
       "id": "hero-111",
@@ -5720,7 +5940,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059160/2a6aa0ffa82e7a6d627e97174984a5d4.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747972"
     },
     {
       "id": "hero-112",
@@ -5766,7 +5988,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059138/b6c84e610ae7e8747fa7eaed52434e0b.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747973"
     },
     {
       "id": "hero-113",
@@ -5812,7 +6036,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059162/7fbcdad6b6ea3c2c5663f8563cf82795.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747974"
     },
     {
       "id": "hero-114",
@@ -5863,7 +6089,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059174/0f092d3a3dec0c1a246a038d09ca4a47.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747977"
     },
     {
       "id": "hero-115",
@@ -5909,7 +6137,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059136/fa20a5ed8afd5858a12464f6a10e9642.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747978"
     },
     {
       "id": "hero-116",
@@ -5960,7 +6190,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059135/4ab06e20fe182fbf915ae0b7d8bf2603.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747979"
     },
     {
       "id": "hero-117",
@@ -6006,7 +6238,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059227/6598d1a95c68f789624a5db352194756.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747982"
     },
     {
       "id": "hero-118",
@@ -6057,7 +6291,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059552/58edec6cce7864aba499b922027c1a98.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747989"
     },
     {
       "id": "hero-119",
@@ -6103,7 +6339,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059255/1df9cd545956716a94577d1f3ba4aef5.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747990"
     },
     {
       "id": "hero-120",
@@ -6149,7 +6387,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059226/f53dfda6596efd505a50cd23d6a1f0c3.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747991"
     },
     {
       "id": "hero-121",
@@ -6200,7 +6440,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059228/e66075f8b7f7163a0de36b80d91ade56.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747994"
     },
     {
       "id": "hero-122",
@@ -6256,7 +6498,9 @@
             "level": 3
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059246/4724e7fb0c80c9890c99c547307311c4.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747995"
     },
     {
       "id": "hero-123",
@@ -6303,7 +6547,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059250/f7ab9a83391a2db40e1b09f02ce88c37.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747997"
     },
     {
       "id": "hero-124",
@@ -6349,7 +6595,9 @@
             "level": 1
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059244/f41527015c3de71b0c1a9164fc608384.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747999"
     },
     {
       "id": "hero-125",
@@ -6395,7 +6643,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059269/8c264bf7aa2f6aa7d19a5489ca17dead.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748000"
     },
     {
       "id": "hero-126",
@@ -6441,7 +6691,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059224/86a0a6a4a00d5402e9b34691670600d7.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748004"
     },
     {
       "id": "hero-127",
@@ -6487,7 +6739,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059177/2f44addb241fc8ab405cb34bb02bc09a.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747968"
     },
     {
       "id": "hero-128",
@@ -6533,7 +6787,9 @@
             "level": 1
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059144/91f2ca5bc4d83309f61016f467bde413.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747975"
     },
     {
       "id": "hero-129",
@@ -6579,7 +6835,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059147/8e478c8d0318ea5e373db0f48239e06a.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747976"
     },
     {
       "id": "hero-130",
@@ -6630,7 +6888,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059170/1e4ddae00478b7f1349cc3bddfa82374.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747980"
     },
     {
       "id": "hero-131",
@@ -6676,7 +6936,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059239/97c0b62e952d562fe9c8e54675742cea.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747984"
     },
     {
       "id": "hero-132",
@@ -6722,7 +6984,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059247/25fe4ab0f781a7674cb03bf7c4373538.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747986"
     },
     {
       "id": "hero-133",
@@ -6768,7 +7032,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059232/dbbea137e5f0c11b02ee716735368645.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747987"
     },
     {
       "id": "hero-134",
@@ -6809,7 +7075,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059282/2ff57637c831b9136aba1056567dacc5.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748001"
     },
     {
       "id": "hero-135",
@@ -6860,7 +7128,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12058901/cf1ec4dfb3a796ed018339158dac3feb.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747965"
     },
     {
       "id": "hero-136",
@@ -6906,7 +7176,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059153/2ce21a81599b277dc76b065c44d90bc4.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747969"
     },
     {
       "id": "hero-137",
@@ -6957,7 +7229,9 @@
             "level": 2
           }
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059275/61a7e81870cf23c57ffc669849d44392.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/747992"
     },
     {
       "id": "hero-138",
@@ -6997,7 +7271,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059242/cd7750d1b8b6e4dacd840539d9d6cc6a.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748008"
     },
     {
       "id": "hero-139",
@@ -7037,7 +7313,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059291/a9e3e0107527efa642f2bedee3feee89.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748005"
     },
     {
       "id": "hero-140",
@@ -7077,7 +7355,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059258/86e288e83fb3ce51058a11cc984b6773.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748006"
     },
     {
       "id": "hero-141",
@@ -7117,7 +7397,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059273/4369879843ae7e3187a5e8fc6bd385e0.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748015"
     },
     {
       "id": "hero-142",
@@ -7157,7 +7439,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059259/d61a7d1a6dbbc77223b0624fc4cd1dbb.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748016"
     },
     {
       "id": "hero-143",
@@ -7197,7 +7481,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059261/826ddbf8b59548b2676cfc4f96ae7656.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748017"
     },
     {
       "id": "hero-144",
@@ -7237,7 +7523,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059284/84b0427b80d85639c1ff4d683fd78245.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748018"
     },
     {
       "id": "hero-145",
@@ -7277,7 +7565,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059257/924a14d1fb0c60724d5337b3d5fe418c.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748020"
     },
     {
       "id": "hero-146",
@@ -7317,7 +7607,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059265/ef90c3fd1187d8839cde1d5d7fc69483.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748021"
     },
     {
       "id": "hero-147",
@@ -7357,7 +7649,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059251/016d2b19b6291fc5f7b4b16293780b78.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748007"
     },
     {
       "id": "hero-148",
@@ -7397,7 +7691,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059288/5ad1236f54e88f6325f8f542903a8d54.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748009"
     },
     {
       "id": "hero-149",
@@ -7437,7 +7733,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059225/e0557d205da6bf04cd2c0984fc786839.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748010"
     },
     {
       "id": "hero-150",
@@ -7477,7 +7775,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059295/cdcfb56e068428d7346f4521888337bd.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748011"
     },
     {
       "id": "hero-151",
@@ -7517,7 +7817,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059229/bef836e74e557ecf86d02702d9460e12.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748012"
     },
     {
       "id": "hero-152",
@@ -7557,7 +7859,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059243/12e5cb1d96b6bf17ce233b74f684359d.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748013"
     },
     {
       "id": "hero-153",
@@ -7597,7 +7901,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059286/710efb7205a068d4635bb431009fd585.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748014"
     },
     {
       "id": "hero-154",
@@ -7637,7 +7943,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059237/b0f84ece37996c456f1dd51199038533.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748019"
     },
     {
       "id": "hero-155",
@@ -7677,7 +7985,9 @@
           "active": true,
           "affinity": null
         }
-      ]
+      ],
+      "portrait": "https://img.game8.jp/12059222/f056b1e127c2804576823379688f2233.webp/original",
+      "detailUrl": "https://game8.jp/nobunaga-shinsen/748022"
     }
   ],
   "tactics": [
@@ -7691,7 +8001,17 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "山県昌景"
+      "uniqueHero": "山県昌景",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "弱体化",
+        "受動発動",
+        "武勇系",
+        "条件発動",
+        "大将技"
+      ],
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。山県昌景の固有戦法。効果分類：武勇ダメージ・単体攻撃・弱体化・受動発動・武勇系・条件発動・大将技。"
     },
     {
       "id": "tactic-002",
@@ -7703,7 +8023,14 @@
       "activationRate": "20%→40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "状態付与",
+        "状態耐性",
+        "能動発動"
+      ],
+      "summary": "能動戦法。対象：自己。発動率：20%→40%。習得可能な戦法。効果分類：強化・状態付与・状態耐性・能動発動。"
     },
     {
       "id": "tactic-003",
@@ -7715,7 +8042,18 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "黒田官兵衛"
+      "uniqueHero": "黒田官兵衛",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "多段傷害",
+        "強化",
+        "状態付与",
+        "受動発動",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。黒田官兵衛の固有戦法。効果分類：智略ダメージ・単体攻撃・多段傷害・強化・状態付与・受動発動・智略系・大将技。"
     },
     {
       "id": "tactic-004",
@@ -7727,7 +8065,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "弱体化",
+        "指揮效果",
+        "統率系",
+        "大将技"
+      ],
+      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。習得可能な戦法。効果分類：強化・弱体化・指揮效果・統率系・大将技。"
     },
     {
       "id": "tactic-005",
@@ -7739,7 +8085,17 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "織田信長"
+      "uniqueHero": "織田信長",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "回復",
+        "指揮效果",
+        "統率系",
+        "条件発動",
+        "大将技"
+      ],
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。織田信長の固有戦法。効果分類：強化・提升屬性・回復・指揮效果・統率系・条件発動・大将技。"
     },
     {
       "id": "tactic-006",
@@ -7751,7 +8107,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・能動発動・智略系。"
     },
     {
       "id": "tactic-007",
@@ -7763,7 +8127,20 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "武田信玄"
+      "uniqueHero": "武田信玄",
+      "tags": [
+        "武勇ダメージ",
+        "智略ダメージ",
+        "範囲攻撃",
+        "単体攻撃",
+        "多段傷害",
+        "強化",
+        "弱体化",
+        "指揮效果",
+        "統率系",
+        "大将技"
+      ],
+      "summary": "指揮戦法。対象：雙方全体。発動率：100%。武田信玄の固有戦法。効果分類：武勇ダメージ・智略ダメージ・範囲攻撃・単体攻撃・多段傷害・強化・弱体化・指揮效果・統率系・大将技。"
     },
     {
       "id": "tactic-008",
@@ -7775,7 +8152,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "強化",
+        "受動発動",
+        "武勇系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：武勇ダメージ・単体攻撃・強化・受動発動・武勇系。"
     },
     {
       "id": "tactic-009",
@@ -7787,7 +8172,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "徳川家康"
+      "uniqueHero": "徳川家康",
+      "tags": [
+        "降低屬性",
+        "援護",
+        "指揮效果",
+        "統率系",
+        "条件発動",
+        "大将技"
+      ],
+      "summary": "指揮戦法。対象：敵軍全体(3人)。発動率：100%。徳川家康の固有戦法。効果分類：降低屬性・援護・指揮效果・統率系・条件発動・大将技。"
     },
     {
       "id": "tactic-010",
@@ -7799,7 +8193,13 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "受動発動",
+        "統率系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・受動発動・統率系。"
     },
     {
       "id": "tactic-011",
@@ -7811,7 +8211,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "毛利元就"
+      "uniqueHero": "毛利元就",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "行動妨害",
+        "指揮效果",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。毛利元就の固有戦法。効果分類：智略ダメージ・範囲攻撃・行動妨害・指揮效果・智略系・大将技。"
     },
     {
       "id": "tactic-012",
@@ -7823,7 +8232,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "受動発動",
+        "統率系",
+        "条件発動"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・受動発動・統率系・条件発動。"
     },
     {
       "id": "tactic-013",
@@ -7835,7 +8251,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "豊臣秀吉"
+      "uniqueHero": "豊臣秀吉",
+      "tags": [
+        "回復",
+        "強化",
+        "指揮效果",
+        "智略系",
+        "回合觸發",
+        "大将技"
+      ],
+      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。豊臣秀吉の固有戦法。効果分類：回復・強化・指揮效果・智略系・回合觸發・大将技。"
     },
     {
       "id": "tactic-014",
@@ -7847,7 +8272,16 @@
       "activationRate": "30%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "多段傷害",
+        "状態付与",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・多段傷害・状態付与・能動発動・智略系。"
     },
     {
       "id": "tactic-015",
@@ -7859,7 +8293,17 @@
       "activationRate": "35%→70%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "明智光秀"
+      "uniqueHero": "明智光秀",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%→70%。明智光秀の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・行動妨害・能動発動・智略系・大将技。"
     },
     {
       "id": "tactic-016",
@@ -7871,7 +8315,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "強化",
+        "受動発動",
+        "智略系",
+        "条件発動"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・強化・受動発動・智略系・条件発動。"
     },
     {
       "id": "tactic-017",
@@ -7883,7 +8336,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "上杉謙信"
+      "uniqueHero": "上杉謙信",
+      "tags": [
+        "強化",
+        "受動発動",
+        "武勇系",
+        "条件発動",
+        "大将技"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。上杉謙信の固有戦法。効果分類：強化・受動発動・武勇系・条件発動・大将技。"
     },
     {
       "id": "tactic-018",
@@ -7895,7 +8356,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "回復",
+        "強化",
+        "弱体化",
+        "受動発動",
+        "武勇系",
+        "回合觸發"
+      ],
+      "summary": "受動戦法。対象：我軍群体(2-3人)。発動率：100%。習得可能な戦法。効果分類：回復・強化・弱体化・受動発動・武勇系・回合觸發。"
     },
     {
       "id": "tactic-019",
@@ -7907,7 +8377,17 @@
       "activationRate": "35%→70%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "今川義元"
+      "uniqueHero": "今川義元",
+      "tags": [
+        "武勇ダメージ",
+        "智略ダメージ",
+        "多段傷害",
+        "強化",
+        "突撃觸發",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%→70%。今川義元の固有戦法。効果分類：武勇ダメージ・智略ダメージ・多段傷害・強化・突撃觸發・智略系・大将技。"
     },
     {
       "id": "tactic-020",
@@ -7919,7 +8399,13 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "受動発動",
+        "武勇系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・受動発動・武勇系。"
     },
     {
       "id": "tactic-021",
@@ -7931,7 +8417,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "長宗我部元親"
+      "uniqueHero": "長宗我部元親",
+      "tags": [
+        "強化",
+        "状態付与",
+        "提升屬性",
+        "指揮效果",
+        "統率系",
+        "大将技"
+      ],
+      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。長宗我部元親の固有戦法。効果分類：強化・状態付与・提升屬性・指揮效果・統率系・大将技。"
     },
     {
       "id": "tactic-022",
@@ -7943,7 +8438,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "指揮效果",
+        "武勇系",
+        "統率系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・指揮效果・武勇系・統率系・回合觸發。"
     },
     {
       "id": "tactic-023",
@@ -7955,7 +8458,18 @@
       "activationRate": "30%→65%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "立花道雪"
+      "uniqueHero": "立花道雪",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "突撃觸發",
+        "武勇系",
+        "大将技"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：30%→65%。立花道雪の固有戦法。効果分類：武勇ダメージ・範囲攻撃・単体攻撃・状態付与・行動妨害・突撃觸發・武勇系・大将技。"
     },
     {
       "id": "tactic-024",
@@ -7967,7 +8481,18 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "強化",
+        "能動発動",
+        "武勇系",
+        "条件発動"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・強化・能動発動・武勇系・条件発動。"
     },
     {
       "id": "tactic-025",
@@ -7979,7 +8504,17 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "松永久秀"
+      "uniqueHero": "松永久秀",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "降低屬性",
+        "能動発動",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。松永久秀の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・降低屬性・能動発動・智略系・大将技。"
     },
     {
       "id": "tactic-026",
@@ -7991,7 +8526,12 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "受動発動"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・受動発動。"
     },
     {
       "id": "tactic-027",
@@ -8003,7 +8543,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "北条綱成"
+      "uniqueHero": "北条綱成",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。北条綱成の固有戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・行動妨害・能動発動・大将技。"
     },
     {
       "id": "tactic-028",
@@ -8015,7 +8564,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動"
+      ],
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。習得可能な戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・行動妨害・能動発動。"
     },
     {
       "id": "tactic-029",
@@ -8027,7 +8584,20 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "本願寺顕如"
+      "uniqueHero": "本願寺顕如",
+      "tags": [
+        "真実傷害",
+        "範囲攻撃",
+        "状態付与",
+        "回復",
+        "受動発動",
+        "条件発動",
+        "回合觸發",
+        "武勇系",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "受動戦法。対象：敵軍群体(2-3人)。発動率：100%。本願寺顕如の固有戦法。効果分類：真実傷害・範囲攻撃・状態付与・回復・受動発動・条件発動・回合觸發・武勇系・智略系・大将技。"
     },
     {
       "id": "tactic-030",
@@ -8039,7 +8609,17 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "本多忠勝"
+      "uniqueHero": "本多忠勝",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "強化",
+        "状態付与",
+        "受動発動",
+        "武勇系",
+        "大将技"
+      ],
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。本多忠勝の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・状態付与・受動発動・武勇系・大将技。"
     },
     {
       "id": "tactic-031",
@@ -8051,7 +8631,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "状態付与",
+        "受動発動",
+        "武勇系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・受動発動・武勇系。"
     },
     {
       "id": "tactic-032",
@@ -8063,7 +8650,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "陶晴賢"
+      "uniqueHero": "陶晴賢",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "強化",
+        "能動発動",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。陶晴賢の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・能動発動・大将技。"
     },
     {
       "id": "tactic-033",
@@ -8075,7 +8670,16 @@
       "activationRate": "25%→35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：25%→35%。習得可能な戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-034",
@@ -8087,7 +8691,16 @@
       "activationRate": "50%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "酒井忠次"
+      "uniqueHero": "酒井忠次",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：50%。酒井忠次の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・能動発動・大将技。"
     },
     {
       "id": "tactic-035",
@@ -8099,7 +8712,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "回復",
+        "強化",
+        "状態付与",
+        "提升屬性",
+        "統率系"
+      ],
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：回復・強化・状態付与・提升屬性・統率系。"
     },
     {
       "id": "tactic-036",
@@ -8111,7 +8732,17 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "大内義隆"
+      "uniqueHero": "大内義隆",
+      "tags": [
+        "智略ダメージ",
+        "強化",
+        "弱体化",
+        "状態付与",
+        "降低屬性",
+        "指揮效果",
+        "統率系"
+      ],
+      "summary": "指揮戦法。対象：我軍単体。発動率：100%。大内義隆の固有戦法。効果分類：智略ダメージ・強化・弱体化・状態付与・降低屬性・指揮效果・統率系。"
     },
     {
       "id": "tactic-037",
@@ -8123,7 +8754,15 @@
       "activationRate": "15%→30%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "状態付与",
+        "能動発動",
+        "智略系",
+        "速度系"
+      ],
+      "summary": "能動戦法。対象：我軍単体。発動率：15%→30%。習得可能な戦法。効果分類：強化・状態付与・能動発動・智略系・速度系。"
     },
     {
       "id": "tactic-038",
@@ -8135,7 +8774,17 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "高橋紹運"
+      "uniqueHero": "高橋紹運",
+      "tags": [
+        "強化",
+        "状態付与",
+        "受動発動",
+        "武勇系",
+        "智略系",
+        "統率系",
+        "大将技"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。高橋紹運の固有戦法。効果分類：強化・状態付与・受動発動・武勇系・智略系・統率系・大将技。"
     },
     {
       "id": "tactic-039",
@@ -8147,7 +8796,16 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "智略ダメージ",
+        "単体攻撃",
+        "多段傷害",
+        "突撃觸發",
+        "智略系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：40%。習得可能な戦法。効果分類：武勇ダメージ・智略ダメージ・単体攻撃・多段傷害・突撃觸發・智略系。"
     },
     {
       "id": "tactic-040",
@@ -8159,7 +8817,17 @@
       "activationRate": "35%→65%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "前田慶次"
+      "uniqueHero": "前田慶次",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "突撃觸發",
+        "武勇系",
+        "条件発動"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%→65%。前田慶次の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・突撃觸發・武勇系・条件発動。"
     },
     {
       "id": "tactic-041",
@@ -8171,7 +8839,17 @@
       "activationRate": "45%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "北条氏康"
+      "uniqueHero": "北条氏康",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "強化",
+        "回復",
+        "能動発動",
+        "大将技",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：45%。北条氏康の固有戦法。効果分類：智略ダメージ・単体攻撃・強化・回復・能動発動・大将技・智略系。"
     },
     {
       "id": "tactic-042",
@@ -8183,7 +8861,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "回復",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：友軍単体。発動率：35%。習得可能な戦法。効果分類：回復・強化・状態付与・能動発動・智略系。"
     },
     {
       "id": "tactic-043",
@@ -8195,7 +8881,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "馬場信春"
+      "uniqueHero": "馬場信春",
+      "tags": [
+        "回復",
+        "強化",
+        "移除狀態",
+        "受動発動",
+        "統率系",
+        "条件発動"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。馬場信春の固有戦法。効果分類：回復・強化・移除狀態・受動発動・統率系・条件発動。"
     },
     {
       "id": "tactic-044",
@@ -8207,7 +8902,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "状態付与",
+        "受動発動",
+        "武勇系",
+        "条件発動",
+        "回合觸發"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・受動発動・武勇系・条件発動・回合觸發。"
     },
     {
       "id": "tactic-045",
@@ -8219,7 +8923,16 @@
       "activationRate": "50%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "柴田勝家"
+      "uniqueHero": "柴田勝家",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "移除狀態",
+        "能動発動",
+        "大将技",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：50%。柴田勝家の固有戦法。効果分類：武勇ダメージ・範囲攻撃・移除狀態・能動発動・大将技・武勇系。"
     },
     {
       "id": "tactic-046",
@@ -8231,7 +8944,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "伊達晴宗"
+      "uniqueHero": "伊達晴宗",
+      "tags": [
+        "強化",
+        "状態付与",
+        "能動発動",
+        "武勇系",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。伊達晴宗の固有戦法。効果分類：強化・状態付与・能動発動・武勇系・大将技。"
     },
     {
       "id": "tactic-047",
@@ -8243,7 +8964,16 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "強化",
+        "状態付与",
+        "提升屬性",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。効果分類：武勇ダメージ・強化・状態付与・提升屬性・能動発動・武勇系。"
     },
     {
       "id": "tactic-048",
@@ -8255,7 +8985,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "前田利家"
+      "uniqueHero": "前田利家",
+      "tags": [
+        "強化",
+        "状態付与",
+        "受動発動",
+        "武勇系",
+        "大将技"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。前田利家の固有戦法。効果分類：強化・状態付与・受動発動・武勇系・大将技。"
     },
     {
       "id": "tactic-049",
@@ -8267,7 +9005,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "能動発動",
+        "速度系",
+        "兵種"
+      ],
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・能動発動・速度系・兵種。"
     },
     {
       "id": "tactic-050",
@@ -8279,7 +9025,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "加藤清正"
+      "uniqueHero": "加藤清正",
+      "tags": [
+        "強化",
+        "状態付与",
+        "受動発動",
+        "武勇系",
+        "条件発動"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。加藤清正の固有戦法。効果分類：強化・状態付与・受動発動・武勇系・条件発動。"
     },
     {
       "id": "tactic-051",
@@ -8291,7 +9045,14 @@
       "activationRate": "30%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。効果分類：武勇ダメージ・範囲攻撃・能動発動・武勇系。"
     },
     {
       "id": "tactic-052",
@@ -8303,7 +9064,16 @@
       "activationRate": "60%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "榊原康政"
+      "uniqueHero": "榊原康政",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "強化",
+        "能動発動",
+        "武勇系",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(1-2人)。発動率：60%。榊原康政の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・能動発動・武勇系・大将技。"
     },
     {
       "id": "tactic-053",
@@ -8315,7 +9085,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "弱体化",
+        "降低屬性",
+        "指揮效果",
+        "武勇系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。効果分類：弱体化・降低屬性・指揮效果・武勇系・回合觸發。"
     },
     {
       "id": "tactic-054",
@@ -8327,7 +9105,17 @@
       "activationRate": "40%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "山本勘助"
+      "uniqueHero": "山本勘助",
+      "tags": [
+        "智略ダメージ",
+        "武勇ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "能動発動",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。山本勘助の固有戦法。効果分類：智略ダメージ・武勇ダメージ・範囲攻撃・状態付与・能動発動・智略系・大将技。"
     },
     {
       "id": "tactic-055",
@@ -8339,7 +9127,15 @@
       "activationRate": "50%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "回復",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：50%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・回復・能動発動・智略系。"
     },
     {
       "id": "tactic-056",
@@ -8351,7 +9147,14 @@
       "activationRate": "45%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "内藤昌豊"
+      "uniqueHero": "内藤昌豊",
+      "tags": [
+        "回復",
+        "強化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：我軍単体。発動率：45%。内藤昌豊の固有戦法。効果分類：回復・強化・能動発動・智略系。"
     },
     {
       "id": "tactic-057",
@@ -8363,7 +9166,15 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "回復",
+        "強化",
+        "移除狀態",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：我軍単体。発動率：40%。習得可能な戦法。効果分類：回復・強化・移除狀態・能動発動・智略系。"
     },
     {
       "id": "tactic-058",
@@ -8375,7 +9186,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "竹中半兵衛"
+      "uniqueHero": "竹中半兵衛",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "弱体化",
+        "能動発動",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：35%。竹中半兵衛の固有戦法。効果分類：智略ダメージ・範囲攻撃・弱体化・能動発動・智略系・大将技。"
     },
     {
       "id": "tactic-059",
@@ -8387,7 +9207,17 @@
       "activationRate": "30%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "行動妨害",
+        "弱体化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：30%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・行動妨害・弱体化・能動発動・智略系。"
     },
     {
       "id": "tactic-060",
@@ -8399,7 +9229,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "成田甲斐"
+      "uniqueHero": "成田甲斐",
+      "tags": [
+        "強化",
+        "状態付与",
+        "受動発動",
+        "武勇系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。成田甲斐の固有戦法。効果分類：強化・状態付与・受動発動・武勇系。"
     },
     {
       "id": "tactic-061",
@@ -8411,7 +9248,14 @@
       "activationRate": "25%→35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "状態付与",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：25%→35%。習得可能な戦法。効果分類：強化・状態付与・能動発動・武勇系。"
     },
     {
       "id": "tactic-062",
@@ -8423,7 +9267,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "ねね"
+      "uniqueHero": "ねね",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "指揮效果",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：我軍大将。発動率：100%。ねねの固有戦法。効果分類：智略ダメージ・範囲攻撃・指揮效果・智略系・回合觸發。"
     },
     {
       "id": "tactic-063",
@@ -8435,7 +9287,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "状態付与",
+        "行動妨害",
+        "受動発動",
+        "魅力系",
+        "条件発動"
+      ],
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。習得可能な戦法。効果分類：状態付与・行動妨害・受動発動・魅力系・条件発動。"
     },
     {
       "id": "tactic-064",
@@ -8447,7 +9307,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "帰蝶"
+      "uniqueHero": "帰蝶",
+      "tags": [
+        "弱体化",
+        "状態付与",
+        "行動妨害",
+        "受動発動",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "受動戦法。対象：敵軍群体(2人)。発動率：100%。帰蝶の固有戦法。効果分類：弱体化・状態付与・行動妨害・受動発動・智略系・回合觸發。"
     },
     {
       "id": "tactic-065",
@@ -8459,7 +9328,16 @@
       "activationRate": "20%→35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "状態付与",
+        "行動妨害",
+        "範囲攻撃",
+        "弱体化",
+        "能動発動",
+        "条件発動"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：20%→35%。習得可能な戦法。効果分類：状態付与・行動妨害・範囲攻撃・弱体化・能動発動・条件発動。"
     },
     {
       "id": "tactic-066",
@@ -8471,7 +9349,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "宇佐美定満"
+      "uniqueHero": "宇佐美定満",
+      "tags": [
+        "強化",
+        "状態付与",
+        "指揮效果",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。宇佐美定満の固有戦法。効果分類：強化・状態付与・指揮效果・智略系・回合觸發。"
     },
     {
       "id": "tactic-067",
@@ -8483,7 +9369,13 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "弱体化",
+        "指揮效果",
+        "智略系"
+      ],
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。効果分類：弱体化・指揮效果・智略系。"
     },
     {
       "id": "tactic-068",
@@ -8495,7 +9387,15 @@
       "activationRate": "40%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "甘粕景持"
+      "uniqueHero": "甘粕景持",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "強化",
+        "状態付与",
+        "能動発動"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：40%。甘粕景持の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・能動発動。"
     },
     {
       "id": "tactic-069",
@@ -8507,7 +9407,14 @@
       "activationRate": "30%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。効果分類：武勇ダメージ・範囲攻撃・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-070",
@@ -8519,7 +9426,16 @@
       "activationRate": "25%→45%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "太田資正"
+      "uniqueHero": "太田資正",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "速度系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：25%→45%。太田資正の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・状態付与・能動発動・速度系。"
     },
     {
       "id": "tactic-071",
@@ -8531,7 +9447,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "受動発動",
+        "武勇系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・受動発動・武勇系。"
     },
     {
       "id": "tactic-072",
@@ -8543,7 +9466,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "板垣信方"
+      "uniqueHero": "板垣信方",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "弱体化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。板垣信方の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・弱体化・能動発動・智略系。"
     },
     {
       "id": "tactic-073",
@@ -8555,7 +9487,15 @@
       "activationRate": "25%→35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "行動妨害",
+        "状態付与",
+        "能動発動",
+        "智略系",
+        "条件発動"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：25%→35%。習得可能な戦法。効果分類：行動妨害・状態付与・能動発動・智略系・条件発動。"
     },
     {
       "id": "tactic-074",
@@ -8567,7 +9507,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "甘利虎泰"
+      "uniqueHero": "甘利虎泰",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "弱体化",
+        "降低屬性",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。甘利虎泰の固有戦法。効果分類：武勇ダメージ・単体攻撃・弱体化・降低屬性・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-075",
@@ -8579,7 +9528,16 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "弱体化",
+        "提升屬性",
+        "降低屬性",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。効果分類：強化・弱体化・提升屬性・降低屬性・能動発動・武勇系。"
     },
     {
       "id": "tactic-076",
@@ -8591,7 +9549,16 @@
       "activationRate": "45%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "飯富虎昌"
+      "uniqueHero": "飯富虎昌",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：45%。飯富虎昌の固有戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・行動妨害・能動発動・武勇系。"
     },
     {
       "id": "tactic-077",
@@ -8603,7 +9570,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "状態付与",
+        "兵種",
+        "武勇系",
+        "条件発動"
+      ],
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・兵種・武勇系・条件発動。"
     },
     {
       "id": "tactic-078",
@@ -8615,7 +9590,16 @@
       "activationRate": "30%→55%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "佐久間信盛"
+      "uniqueHero": "佐久間信盛",
+      "tags": [
+        "回復",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "統率系",
+        "条件発動"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：30%→55%。佐久間信盛の固有戦法。効果分類：回復・状態付与・行動妨害・能動発動・統率系・条件発動。"
     },
     {
       "id": "tactic-079",
@@ -8627,7 +9611,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "弱体化",
+        "状態付与",
+        "行動妨害",
+        "指揮效果",
+        "統率系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：敵軍群体(2-3人)。発動率：100%。習得可能な戦法。効果分類：弱体化・状態付与・行動妨害・指揮效果・統率系・回合觸發。"
     },
     {
       "id": "tactic-080",
@@ -8639,7 +9632,15 @@
       "activationRate": "45%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "荒木村重"
+      "uniqueHero": "荒木村重",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "能動発動",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。荒木村重の固有戦法。効果分類：智略ダメージ・単体攻撃・能動発動・智略系・回合觸發。"
     },
     {
       "id": "tactic-081",
@@ -8651,7 +9652,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "弱体化",
+        "状態付与",
+        "指揮效果",
+        "行動妨害"
+      ],
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。効果分類：弱体化・状態付与・指揮效果・行動妨害。"
     },
     {
       "id": "tactic-082",
@@ -8663,7 +9671,16 @@
       "activationRate": "30%→65%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "明智秀満"
+      "uniqueHero": "明智秀満",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：30%→65%。明智秀満の固有戦法。効果分類：智略ダメージ・範囲攻撃・強化・状態付与・能動発動・智略系。"
     },
     {
       "id": "tactic-083",
@@ -8675,7 +9692,17 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "強化",
+        "受動発動",
+        "武勇系",
+        "回合觸發",
+        "条件発動"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：武勇ダメージ・範囲攻撃・強化・受動発動・武勇系・回合觸發・条件発動。"
     },
     {
       "id": "tactic-084",
@@ -8687,7 +9714,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "妻木煕子"
+      "uniqueHero": "妻木煕子",
+      "tags": [
+        "回復",
+        "強化",
+        "指揮效果",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：友軍群体(2人)。発動率：100%。妻木煕子の固有戦法。効果分類：回復・強化・指揮效果・智略系・回合觸發。"
     },
     {
       "id": "tactic-085",
@@ -8699,7 +9734,14 @@
       "activationRate": "45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "回復",
+        "強化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：45%。習得可能な戦法。効果分類：回復・強化・能動発動・智略系。"
     },
     {
       "id": "tactic-086",
@@ -8711,7 +9753,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "福島正則"
+      "uniqueHero": "福島正則",
+      "tags": [
+        "強化",
+        "状態付与",
+        "受動発動",
+        "武勇系",
+        "条件発動",
+        "大将技"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。福島正則の固有戦法。効果分類：強化・状態付与・受動発動・武勇系・条件発動・大将技。"
     },
     {
       "id": "tactic-087",
@@ -8723,7 +9774,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "松平信康"
+      "uniqueHero": "松平信康",
+      "tags": [
+        "強化",
+        "状態付与",
+        "提升屬性",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：自己。発動率：35%。松平信康の固有戦法。効果分類：強化・状態付与・提升屬性・能動発動・武勇系。"
     },
     {
       "id": "tactic-088",
@@ -8735,7 +9794,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "寿桂尼"
+      "uniqueHero": "寿桂尼",
+      "tags": [
+        "強化",
+        "状態付与",
+        "指揮效果",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：我軍大将。発動率：100%。寿桂尼の固有戦法。効果分類：強化・状態付与・指揮效果・智略系・回合觸發。"
     },
     {
       "id": "tactic-089",
@@ -8747,7 +9814,17 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "大祝鶴"
+      "uniqueHero": "大祝鶴",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "強化",
+        "状態付与",
+        "指揮效果",
+        "武勇系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。大祝鶴の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・指揮效果・武勇系・回合觸發。"
     },
     {
       "id": "tactic-090",
@@ -8759,7 +9836,16 @@
       "activationRate": "40%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "浅井長政"
+      "uniqueHero": "浅井長政",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：40%。浅井長政の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・能動発動・大将技。"
     },
     {
       "id": "tactic-091",
@@ -8771,7 +9857,13 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "能動発動"
+      ],
+      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。効果分類：強化・提升屬性・能動発動。"
     },
     {
       "id": "tactic-092",
@@ -8783,7 +9875,18 @@
       "activationRate": "30%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "島津貴久"
+      "uniqueHero": "島津貴久",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "多段傷害",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：30%。島津貴久の固有戦法。効果分類：智略ダメージ・範囲攻撃・多段傷害・状態付与・行動妨害・能動発動・智略系・大将技。"
     },
     {
       "id": "tactic-093",
@@ -8795,7 +9898,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "提升屬性",
+        "兵種"
+      ],
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・提升屬性・兵種。"
     },
     {
       "id": "tactic-094",
@@ -8807,7 +9917,16 @@
       "activationRate": "75%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "真柄直隆"
+      "uniqueHero": "真柄直隆",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "能動発動",
+        "武勇系",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：75%。真柄直隆の固有戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・能動発動・武勇系・大将技。"
     },
     {
       "id": "tactic-095",
@@ -8819,7 +9938,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "強化",
+        "範囲攻撃",
+        "条件発動",
+        "兵種"
+      ],
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：武勇ダメージ・強化・範囲攻撃・条件発動・兵種。"
     },
     {
       "id": "tactic-096",
@@ -8831,7 +9958,17 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "宮部継潤"
+      "uniqueHero": "宮部継潤",
+      "tags": [
+        "智略ダメージ",
+        "回復",
+        "強化",
+        "範囲攻撃",
+        "状態付与",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。宮部継潤の固有戦法。効果分類：智略ダメージ・回復・強化・範囲攻撃・状態付与・能動発動・智略系。"
     },
     {
       "id": "tactic-097",
@@ -8843,7 +9980,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "真実傷害",
+        "弱体化",
+        "範囲攻撃",
+        "強化",
+        "兵種",
+        "条件発動"
+      ],
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：真実傷害・弱体化・範囲攻撃・強化・兵種・条件発動。"
     },
     {
       "id": "tactic-098",
@@ -8855,7 +10001,17 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "瑞溪院"
+      "uniqueHero": "瑞溪院",
+      "tags": [
+        "強化",
+        "弱体化",
+        "提升屬性",
+        "降低屬性",
+        "指揮效果",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。瑞溪院の固有戦法。効果分類：強化・弱体化・提升屬性・降低屬性・指揮效果・智略系・回合觸發。"
     },
     {
       "id": "tactic-099",
@@ -8867,7 +10023,17 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "相馬盛胤"
+      "uniqueHero": "相馬盛胤",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "強化",
+        "提升屬性",
+        "能動発動",
+        "武勇系",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。相馬盛胤の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・提升屬性・能動発動・武勇系・大将技。"
     },
     {
       "id": "tactic-100",
@@ -8879,7 +10045,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "弱体化",
+        "降低屬性",
+        "突撃觸發",
+        "智略系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・単体攻撃・弱体化・降低屬性・突撃觸發・智略系。"
     },
     {
       "id": "tactic-101",
@@ -8891,7 +10066,16 @@
       "activationRate": "45%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "安東愛季"
+      "uniqueHero": "安東愛季",
+      "tags": [
+        "強化",
+        "状態付与",
+        "行動妨害",
+        "提升屬性",
+        "能動発動",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：45%。安東愛季の固有戦法。効果分類：強化・状態付与・行動妨害・提升屬性・能動発動・大将技。"
     },
     {
       "id": "tactic-102",
@@ -8903,7 +10087,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "状態付与",
+        "受動発動",
+        "武勇系",
+        "智略系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・受動発動・武勇系・智略系。"
     },
     {
       "id": "tactic-103",
@@ -8915,7 +10107,15 @@
       "activationRate": "50%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "毛利隆元"
+      "uniqueHero": "毛利隆元",
+      "tags": [
+        "回復",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：50%。毛利隆元の固有戦法。効果分類：回復・強化・状態付与・能動発動・智略系。"
     },
     {
       "id": "tactic-104",
@@ -8927,7 +10127,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "本多正信"
+      "uniqueHero": "本多正信",
+      "tags": [
+        "回復",
+        "強化",
+        "指揮效果",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。本多正信の固有戦法。効果分類：回復・強化・指揮效果・智略系・回合觸發。"
     },
     {
       "id": "tactic-105",
@@ -8939,7 +10147,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "仙桃院"
+      "uniqueHero": "仙桃院",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "強化",
+        "指揮效果",
+        "智略系",
+        "条件発動"
+      ],
+      "summary": "指揮戦法。対象：友軍単体。発動率：100%。仙桃院の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・指揮效果・智略系・条件発動。"
     },
     {
       "id": "tactic-106",
@@ -8951,7 +10168,16 @@
       "activationRate": "20%→35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "単体攻撃",
+        "降低屬性",
+        "強化",
+        "行動妨害",
+        "突撃觸發",
+        "統率系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：20%→35%。習得可能な戦法。効果分類：単体攻撃・降低屬性・強化・行動妨害・突撃觸發・統率系。"
     },
     {
       "id": "tactic-107",
@@ -8963,7 +10189,18 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "千坂景親"
+      "uniqueHero": "千坂景親",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "強化",
+        "状態付与",
+        "指揮效果",
+        "武勇系",
+        "統率系",
+        "条件発動"
+      ],
+      "summary": "指揮戦法。対象：自己。発動率：100%。千坂景親の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・指揮效果・武勇系・統率系・条件発動。"
     },
     {
       "id": "tactic-108",
@@ -8975,7 +10212,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "回復",
+        "強化",
+        "受動発動",
+        "回合觸發"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：回復・強化・受動発動・回合觸發。"
     },
     {
       "id": "tactic-109",
@@ -8987,7 +10231,17 @@
       "activationRate": "25%→50%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "樋口兼豊"
+      "uniqueHero": "樋口兼豊",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "強化",
+        "弱体化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：25%→50%。樋口兼豊の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・強化・弱体化・能動発動・智略系。"
     },
     {
       "id": "tactic-110",
@@ -8999,7 +10253,15 @@
       "activationRate": "30%→55%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "小島弥太郎"
+      "uniqueHero": "小島弥太郎",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "突撃觸發",
+        "武勇系",
+        "条件発動"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：30%→55%。小島弥太郎の固有戦法。効果分類：武勇ダメージ・単体攻撃・突撃觸發・武勇系・条件発動。"
     },
     {
       "id": "tactic-111",
@@ -9011,7 +10273,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "一条信竜"
+      "uniqueHero": "一条信竜",
+      "tags": [
+        "武勇ダメージ",
+        "強化",
+        "状態付与",
+        "提升屬性",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：自己。発動率：35%。一条信竜の固有戦法。効果分類：武勇ダメージ・強化・状態付与・提升屬性・能動発動・武勇系。"
     },
     {
       "id": "tactic-112",
@@ -9023,7 +10294,13 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "兵種專屬",
+        "速度系"
+      ],
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・兵種專屬・速度系。"
     },
     {
       "id": "tactic-113",
@@ -9035,7 +10312,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "岡部元信"
+      "uniqueHero": "岡部元信",
+      "tags": [
+        "智略ダメージ",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。岡部元信の固有戦法。効果分類：智略ダメージ・強化・状態付与・能動発動・智略系。"
     },
     {
       "id": "tactic-114",
@@ -9047,7 +10332,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "行動妨害",
+        "状態付与",
+        "弱体化",
+        "指揮效果"
+      ],
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。習得可能な戦法。効果分類：行動妨害・状態付与・弱体化・指揮效果。"
     },
     {
       "id": "tactic-115",
@@ -9059,7 +10351,13 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "原虎胤"
+      "uniqueHero": "原虎胤",
+      "tags": [
+        "強化",
+        "受動発動",
+        "武勇系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。原虎胤の固有戦法。効果分類：強化・受動発動・武勇系。"
     },
     {
       "id": "tactic-116",
@@ -9071,7 +10369,16 @@
       "activationRate": "20%→40%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "稲葉一鉄"
+      "uniqueHero": "稲葉一鉄",
+      "tags": [
+        "強化",
+        "状態付与",
+        "行動妨害",
+        "提升屬性",
+        "能動発動",
+        "統率系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：20%→40%。稲葉一鉄の固有戦法。効果分類：強化・状態付与・行動妨害・提升屬性・能動発動・統率系。"
     },
     {
       "id": "tactic-117",
@@ -9083,7 +10390,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "降低屬性",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。習得可能な戦法。効果分類：武勇ダメージ・範囲攻撃・降低屬性・能動発動・武勇系。"
     },
     {
       "id": "tactic-118",
@@ -9095,7 +10410,16 @@
       "activationRate": "45%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "森可成"
+      "uniqueHero": "森可成",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "回復",
+        "状態付与",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。森可成の固有戦法。効果分類：武勇ダメージ・単体攻撃・回復・状態付与・能動発動・武勇系。"
     },
     {
       "id": "tactic-119",
@@ -9107,7 +10431,16 @@
       "activationRate": "40%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "蜂須賀小六"
+      "uniqueHero": "蜂須賀小六",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "弱体化",
+        "突撃觸發",
+        "武勇系",
+        "智略系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：40%。蜂須賀小六の固有戦法。効果分類：武勇ダメージ・単体攻撃・弱体化・突撃觸發・武勇系・智略系。"
     },
     {
       "id": "tactic-120",
@@ -9119,7 +10452,15 @@
       "activationRate": "30%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：30%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・能動発動・智略系。"
     },
     {
       "id": "tactic-121",
@@ -9131,7 +10472,14 @@
       "activationRate": "40%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "高力清長"
+      "uniqueHero": "高力清長",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "能動発動",
+        "統率系"
+      ],
+      "summary": "能動戦法。対象：友軍単体。発動率：40%。高力清長の固有戦法。効果分類：強化・提升屬性・能動発動・統率系。"
     },
     {
       "id": "tactic-122",
@@ -9143,7 +10491,17 @@
       "activationRate": "25%→50%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "尼子晴久"
+      "uniqueHero": "尼子晴久",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "弱体化",
+        "能動発動",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：25%→50%。尼子晴久の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・弱体化・能動発動・智略系・大将技。"
     },
     {
       "id": "tactic-123",
@@ -9155,7 +10513,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "斎藤義竜"
+      "uniqueHero": "斎藤義竜",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "弱体化",
+        "能動発動",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。斎藤義竜の固有戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・弱体化・能動発動・大将技。"
     },
     {
       "id": "tactic-124",
@@ -9167,7 +10534,17 @@
       "activationRate": "25%→50%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "南部晴政"
+      "uniqueHero": "南部晴政",
+      "tags": [
+        "真実傷害",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "弱体化",
+        "能動発動",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：25%→50%。南部晴政の固有戦法。効果分類：真実傷害・単体攻撃・状態付与・行動妨害・弱体化・能動発動・大将技。"
     },
     {
       "id": "tactic-125",
@@ -9179,7 +10556,15 @@
       "activationRate": "20%→35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "十河一存"
+      "uniqueHero": "十河一存",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：20%→35%。十河一存の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-126",
@@ -9191,7 +10576,16 @@
       "activationRate": "30%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "津田算長"
+      "uniqueHero": "津田算長",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：30%。津田算長の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・行動妨害・能動発動・智略系。"
     },
     {
       "id": "tactic-127",
@@ -9203,7 +10597,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "状態付与",
+        "兵種",
+        "統率系",
+        "智略系"
+      ],
+      "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・状態付与・兵種・統率系・智略系。"
     },
     {
       "id": "tactic-128",
@@ -9215,7 +10618,15 @@
       "activationRate": "55%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "里見義堯"
+      "uniqueHero": "里見義堯",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "突撃觸發",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：55%。里見義堯の固有戦法。効果分類：智略ダメージ・単体攻撃・突撃觸發・智略系・大将技。"
     },
     {
       "id": "tactic-129",
@@ -9227,7 +10638,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "河田長親"
+      "uniqueHero": "河田長親",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "弱体化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。河田長親の固有戦法。効果分類：智略ダメージ・範囲攻撃・弱体化・能動発動・智略系。"
     },
     {
       "id": "tactic-130",
@@ -9239,7 +10658,15 @@
       "activationRate": "20%→45%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "諏訪姫"
+      "uniqueHero": "諏訪姫",
+      "tags": [
+        "回復",
+        "強化",
+        "移除狀態",
+        "提升屬性",
+        "能動発動"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：20%→45%。諏訪姫の固有戦法。効果分類：回復・強化・移除狀態・提升屬性・能動発動。"
     },
     {
       "id": "tactic-131",
@@ -9251,7 +10678,16 @@
       "activationRate": "30%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "可児才蔵"
+      "uniqueHero": "可児才蔵",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：30%。可児才蔵の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・能動発動・武勇系。"
     },
     {
       "id": "tactic-132",
@@ -9263,7 +10699,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "朝倉義景"
+      "uniqueHero": "朝倉義景",
+      "tags": [
+        "強化",
+        "状態付与",
+        "提升屬性",
+        "能動発動",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：友軍群体(2人)。発動率：35%。朝倉義景の固有戦法。効果分類：強化・状態付与・提升屬性・能動発動・大将技。"
     },
     {
       "id": "tactic-133",
@@ -9275,7 +10719,15 @@
       "activationRate": "50%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "お市"
+      "uniqueHero": "お市",
+      "tags": [
+        "回復",
+        "強化",
+        "提升屬性",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：50%。お市の固有戦法。効果分類：回復・強化・提升屬性・能動発動・智略系。"
     },
     {
       "id": "tactic-134",
@@ -9287,7 +10739,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "九戸政実"
+      "uniqueHero": "九戸政実",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "受動発動",
+        "武勇系",
+        "条件発動"
+      ],
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。九戸政実の固有戦法。効果分類：武勇ダメージ・単体攻撃・受動発動・武勇系・条件発動。"
     },
     {
       "id": "tactic-135",
@@ -9299,7 +10759,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "鈴木重朝"
+      "uniqueHero": "鈴木重朝",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "弱体化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。鈴木重朝の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・弱体化・能動発動・智略系。"
     },
     {
       "id": "tactic-136",
@@ -9311,7 +10780,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "斎藤利三"
+      "uniqueHero": "斎藤利三",
+      "tags": [
+        "強化",
+        "状態付与",
+        "受動発動",
+        "武勇系",
+        "回合觸發"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。斎藤利三の固有戦法。効果分類：強化・状態付与・受動発動・武勇系・回合觸發。"
     },
     {
       "id": "tactic-137",
@@ -9323,7 +10800,14 @@
       "activationRate": "20%→35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "福留親政"
+      "uniqueHero": "福留親政",
+      "tags": [
+        "強化",
+        "状態付与",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：自己。発動率：20%→35%。福留親政の固有戦法。効果分類：強化・状態付与・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-138",
@@ -9335,7 +10819,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "弱体化",
+        "状態付与",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：自己。発動率：35%。習得可能な戦法。効果分類：強化・弱体化・状態付与・能動発動・武勇系。"
     },
     {
       "id": "tactic-139",
@@ -9347,7 +10839,16 @@
       "activationRate": "50%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "鬼庭左月斎"
+      "uniqueHero": "鬼庭左月斎",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：50%。鬼庭左月斎の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・行動妨害・能動発動・智略系。"
     },
     {
       "id": "tactic-140",
@@ -9359,7 +10860,17 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "下方貞清"
+      "uniqueHero": "下方貞清",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "提升屬性",
+        "能動発動",
+        "速度系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。下方貞清の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・提升屬性・能動発動・速度系。"
     },
     {
       "id": "tactic-141",
@@ -9371,7 +10882,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "毛利輝元"
+      "uniqueHero": "毛利輝元",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "指揮效果",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：我軍群体(2人)。発動率：100%。毛利輝元の固有戦法。効果分類：強化・提升屬性・指揮效果・回合觸發。"
     },
     {
       "id": "tactic-142",
@@ -9383,7 +10901,17 @@
       "activationRate": "45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "移除狀態",
+        "能動発動",
+        "武勇系",
+        "智略系",
+        "速度系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：45%。習得可能な戦法。効果分類：強化・提升屬性・移除狀態・能動発動・武勇系・智略系・速度系。"
     },
     {
       "id": "tactic-143",
@@ -9395,7 +10923,14 @@
       "activationRate": "45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "遠藤直経"
+      "uniqueHero": "遠藤直経",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍大将。発動率：45%。遠藤直経の固有戦法。効果分類：武勇ダメージ・単体攻撃・能動発動・武勇系。"
     },
     {
       "id": "tactic-144",
@@ -9407,7 +10942,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "太田牛一"
+      "uniqueHero": "太田牛一",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "指揮效果",
+        "武勇系",
+        "条件発動"
+      ],
+      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。太田牛一の固有戦法。効果分類：武勇ダメージ・単体攻撃・指揮效果・武勇系・条件発動。"
     },
     {
       "id": "tactic-145",
@@ -9419,7 +10962,18 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "池田輝政"
+      "uniqueHero": "池田輝政",
+      "tags": [
+        "武勇ダメージ",
+        "智略ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "能動発動",
+        "武勇系",
+        "智略系",
+        "条件発動"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。池田輝政の固有戦法。効果分類：武勇ダメージ・智略ダメージ・単体攻撃・状態付与・能動発動・武勇系・智略系・条件発動。"
     },
     {
       "id": "tactic-146",
@@ -9431,7 +10985,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "仙石権兵衛"
+      "uniqueHero": "仙石権兵衛",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "受動発動",
+        "武勇系",
+        "条件発動",
+        "回合觸發"
+      ],
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。仙石権兵衛の固有戦法。効果分類：武勇ダメージ・単体攻撃・受動発動・武勇系・条件発動・回合觸發。"
     },
     {
       "id": "tactic-147",
@@ -9443,7 +11006,15 @@
       "activationRate": "45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "弱体化",
+        "移除狀態",
+        "提升屬性",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：45%。習得可能な戦法。効果分類：弱体化・移除狀態・提升屬性・能動発動・智略系。"
     },
     {
       "id": "tactic-148",
@@ -9455,7 +11026,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "保科正俊"
+      "uniqueHero": "保科正俊",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。保科正俊の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・能動発動・武勇系。"
     },
     {
       "id": "tactic-149",
@@ -9467,7 +11047,15 @@
       "activationRate": "30%→55%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "氏家卜全"
+      "uniqueHero": "氏家卜全",
+      "tags": [
+        "弱体化",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "魅力系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：30%→55%。氏家卜全の固有戦法。効果分類：弱体化・状態付与・行動妨害・能動発動・魅力系。"
     },
     {
       "id": "tactic-150",
@@ -9479,7 +11067,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "坂井政尚"
+      "uniqueHero": "坂井政尚",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "能動発動",
+        "速度系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。坂井政尚の固有戦法。効果分類：武勇ダメージ・範囲攻撃・状態付与・能動発動・速度系。"
     },
     {
       "id": "tactic-151",
@@ -9491,7 +11087,13 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "安藤守就"
+      "uniqueHero": "安藤守就",
+      "tags": [
+        "強化",
+        "受動発動",
+        "魅力系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。安藤守就の固有戦法。効果分類：強化・受動発動・魅力系。"
     },
     {
       "id": "tactic-152",
@@ -9503,7 +11105,16 @@
       "activationRate": "30%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "佐久間盛政"
+      "uniqueHero": "佐久間盛政",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：30%。佐久間盛政の固有戦法。効果分類：武勇ダメージ・範囲攻撃・強化・状態付与・能動発動・武勇系。"
     },
     {
       "id": "tactic-153",
@@ -9515,7 +11126,16 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "水原親憲"
+      "uniqueHero": "水原親憲",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：友軍単体。発動率：40%。水原親憲の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・状態付与・能動発動・武勇系。"
     },
     {
       "id": "tactic-154",
@@ -9527,7 +11147,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "鳥居元忠"
+      "uniqueHero": "鳥居元忠",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "指揮效果",
+        "統率系",
+        "条件発動"
+      ],
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。鳥居元忠の固有戦法。効果分類：強化・提升屬性・指揮效果・統率系・条件発動。"
     },
     {
       "id": "tactic-155",
@@ -9539,7 +11167,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "受動発動",
+        "武勇系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・受動発動・武勇系。"
     },
     {
       "id": "tactic-156",
@@ -9551,7 +11186,15 @@
       "activationRate": "30%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "池田恒興"
+      "uniqueHero": "池田恒興",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "多段傷害",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：30%。池田恒興の固有戦法。効果分類：武勇ダメージ・単体攻撃・多段傷害・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-157",
@@ -9563,7 +11206,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "岩城親隆"
+      "uniqueHero": "岩城親隆",
+      "tags": [
+        "回復",
+        "強化",
+        "指揮效果",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：我軍群体(2-3人)。発動率：100%。岩城親隆の固有戦法。効果分類：回復・強化・指揮效果・智略系・回合觸發。"
     },
     {
       "id": "tactic-158",
@@ -9575,7 +11226,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "回復",
+        "強化",
+        "受動発動",
+        "統率系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：回復・強化・受動発動・統率系。"
     },
     {
       "id": "tactic-159",
@@ -9587,7 +11245,15 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "小山田信茂"
+      "uniqueHero": "小山田信茂",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "多段傷害",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。小山田信茂の固有戦法。効果分類：武勇ダメージ・単体攻撃・多段傷害・能動発動・武勇系。"
     },
     {
       "id": "tactic-160",
@@ -9599,7 +11265,14 @@
       "activationRate": "45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "福原貞俊"
+      "uniqueHero": "福原貞俊",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "能動発動",
+        "魅力系"
+      ],
+      "summary": "能動戦法。対象：友軍単体。発動率：45%。福原貞俊の固有戦法。効果分類：強化・提升屬性・能動発動・魅力系。"
     },
     {
       "id": "tactic-161",
@@ -9611,7 +11284,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "栗山善助"
+      "uniqueHero": "栗山善助",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "強化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。栗山善助の固有戦法。効果分類：智略ダメージ・範囲攻撃・強化・能動発動・智略系。"
     },
     {
       "id": "tactic-162",
@@ -9623,7 +11304,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "国司元相"
+      "uniqueHero": "国司元相",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "回復",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。国司元相の固有戦法。効果分類：武勇ダメージ・単体攻撃・回復・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-163",
@@ -9635,7 +11324,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "多田三八郎"
+      "uniqueHero": "多田三八郎",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "移除狀態",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。多田三八郎の固有戦法。効果分類：武勇ダメージ・単体攻撃・移除狀態・能動発動・武勇系。"
     },
     {
       "id": "tactic-164",
@@ -9647,7 +11344,14 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "結城秀康"
+      "uniqueHero": "結城秀康",
+      "tags": [
+        "武勇ダメージ",
+        "受動発動",
+        "武勇系",
+        "条件発動"
+      ],
+      "summary": "受動戦法。対象：敵軍単体。発動率：100%。結城秀康の固有戦法。効果分類：武勇ダメージ・受動発動・武勇系・条件発動。"
     },
     {
       "id": "tactic-165",
@@ -9659,7 +11363,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "新発田重家"
+      "uniqueHero": "新発田重家",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。新発田重家の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・行動妨害・能動発動・智略系。"
     },
     {
       "id": "tactic-166",
@@ -9671,7 +11384,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "磯野員昌"
+      "uniqueHero": "磯野員昌",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。磯野員昌の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・状態付与・能動発動・武勇系。"
     },
     {
       "id": "tactic-167",
@@ -9683,7 +11405,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "小幡景憲"
+      "uniqueHero": "小幡景憲",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "強化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。小幡景憲の固有戦法。効果分類：智略ダメージ・単体攻撃・強化・能動発動・智略系。"
     },
     {
       "id": "tactic-168",
@@ -9695,7 +11425,13 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "三枝昌貞"
+      "uniqueHero": "三枝昌貞",
+      "tags": [
+        "弱体化",
+        "指揮效果",
+        "強化"
+      ],
+      "summary": "指揮戦法。対象：我軍群体(2人)。発動率：100%。三枝昌貞の固有戦法。効果分類：弱体化・指揮效果・強化。"
     },
     {
       "id": "tactic-169",
@@ -9707,7 +11443,13 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "吉川広家"
+      "uniqueHero": "吉川広家",
+      "tags": [
+        "回復",
+        "受動発動",
+        "武勇系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。吉川広家の固有戦法。効果分類：回復・受動発動・武勇系。"
     },
     {
       "id": "tactic-170",
@@ -9719,7 +11461,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "大久保忠世"
+      "uniqueHero": "大久保忠世",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "強化",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：35%。大久保忠世の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・能動発動・武勇系。"
     },
     {
       "id": "tactic-171",
@@ -9731,7 +11481,15 @@
       "activationRate": "20%→45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "池田せん"
+      "uniqueHero": "池田せん",
+      "tags": [
+        "状態付与",
+        "範囲攻撃",
+        "行動妨害",
+        "能動発動",
+        "統率系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：20%→45%。池田せんの固有戦法。効果分類：状態付与・範囲攻撃・行動妨害・能動発動・統率系。"
     },
     {
       "id": "tactic-172",
@@ -9743,7 +11501,14 @@
       "activationRate": "45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "蜂須賀家政"
+      "uniqueHero": "蜂須賀家政",
+      "tags": [
+        "回復",
+        "強化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：45%。蜂須賀家政の固有戦法。効果分類：回復・強化・能動発動・智略系。"
     },
     {
       "id": "tactic-173",
@@ -9755,7 +11520,15 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "武田義信"
+      "uniqueHero": "武田義信",
+      "tags": [
+        "状態付与",
+        "行動妨害",
+        "降低屬性",
+        "突撃觸發",
+        "統率系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：40%。武田義信の固有戦法。効果分類：状態付与・行動妨害・降低屬性・突撃觸發・統率系。"
     },
     {
       "id": "tactic-174",
@@ -9767,7 +11540,13 @@
       "activationRate": "45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "山内一豊"
+      "uniqueHero": "山内一豊",
+      "tags": [
+        "降低屬性",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。山内一豊の固有戦法。効果分類：降低屬性・能動発動・武勇系。"
     },
     {
       "id": "tactic-175",
@@ -9779,7 +11558,16 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "横山喜内"
+      "uniqueHero": "横山喜内",
+      "tags": [
+        "智略ダメージ",
+        "回復",
+        "強化",
+        "能動発動",
+        "智略系",
+        "条件発動"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。横山喜内の固有戦法。効果分類：智略ダメージ・回復・強化・能動発動・智略系・条件発動。"
     },
     {
       "id": "tactic-176",
@@ -9791,7 +11579,17 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "甘粕景継"
+      "uniqueHero": "甘粕景継",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "多段傷害",
+        "状態付与",
+        "弱体化",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。甘粕景継の固有戦法。効果分類：武勇ダメージ・単体攻撃・多段傷害・状態付与・弱体化・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-177",
@@ -9803,7 +11601,14 @@
       "activationRate": "45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "脇坂安治"
+      "uniqueHero": "脇坂安治",
+      "tags": [
+        "単体攻撃",
+        "強化",
+        "弱体化",
+        "能動発動"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。脇坂安治の固有戦法。効果分類：単体攻撃・強化・弱体化・能動発動。"
     },
     {
       "id": "tactic-178",
@@ -9815,7 +11620,13 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "小山田茂誠"
+      "uniqueHero": "小山田茂誠",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "指揮效果"
+      ],
+      "summary": "指揮戦法。対象：我軍全体(3人)。発動率：100%。小山田茂誠の固有戦法。効果分類：強化・提升屬性・指揮效果。"
     },
     {
       "id": "tactic-179",
@@ -9827,7 +11638,15 @@
       "activationRate": "30%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "長野業盛"
+      "uniqueHero": "長野業盛",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "多段傷害",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：30%。長野業盛の固有戦法。効果分類：武勇ダメージ・単体攻撃・多段傷害・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-180",
@@ -9839,7 +11658,14 @@
       "activationRate": "50%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "小早川秀秋"
+      "uniqueHero": "小早川秀秋",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：50%。小早川秀秋の固有戦法。効果分類：武勇ダメージ・単体攻撃・能動発動・武勇系。"
     },
     {
       "id": "tactic-181",
@@ -9851,7 +11677,13 @@
       "activationRate": "30%→60%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "内藤信成"
+      "uniqueHero": "内藤信成",
+      "tags": [
+        "状態付与",
+        "行動妨害",
+        "能動発動"
+      ],
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%→60%。内藤信成の固有戦法。効果分類：状態付与・行動妨害・能動発動。"
     },
     {
       "id": "tactic-182",
@@ -9863,7 +11695,16 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "河尻秀隆"
+      "uniqueHero": "河尻秀隆",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。河尻秀隆の固有戦法。効果分類：武勇ダメージ・単体攻撃・状態付与・行動妨害・能動発動・武勇系。"
     },
     {
       "id": "tactic-183",
@@ -9875,7 +11716,15 @@
       "activationRate": "30%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "織田信雄"
+      "uniqueHero": "織田信雄",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "能動発動",
+        "武勇系",
+        "条件発動"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：30%。織田信雄の固有戦法。効果分類：武勇ダメージ・範囲攻撃・能動発動・武勇系・条件発動。"
     },
     {
       "id": "tactic-184",
@@ -9887,7 +11736,13 @@
       "activationRate": "23%→45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "林秀貞"
+      "uniqueHero": "林秀貞",
+      "tags": [
+        "強化",
+        "状態耐性",
+        "能動発動"
+      ],
+      "summary": "能動戦法。対象：友軍単体。発動率：23%→45%。林秀貞の固有戦法。効果分類：強化・状態耐性・能動発動。"
     },
     {
       "id": "tactic-185",
@@ -9899,7 +11754,15 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "不破光治"
+      "uniqueHero": "不破光治",
+      "tags": [
+        "回復",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：友軍単体。発動率：40%。不破光治の固有戦法。効果分類：回復・強化・状態付与・能動発動・智略系。"
     },
     {
       "id": "tactic-186",
@@ -9911,7 +11774,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "本願寺教如"
+      "uniqueHero": "本願寺教如",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。本願寺教如の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・行動妨害・能動発動・智略系。"
     },
     {
       "id": "tactic-187",
@@ -9923,7 +11795,16 @@
       "activationRate": "45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "松平忠直"
+      "uniqueHero": "松平忠直",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "強化",
+        "状態付与",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：45%。松平忠直の固有戦法。効果分類：武勇ダメージ・単体攻撃・強化・状態付与・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-188",
@@ -9935,7 +11816,14 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "色部勝長"
+      "uniqueHero": "色部勝長",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。色部勝長の固有戦法。効果分類：武勇ダメージ・単体攻撃・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-189",
@@ -9947,7 +11835,15 @@
       "activationRate": "25%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "杉浦玄任"
+      "uniqueHero": "杉浦玄任",
+      "tags": [
+        "弱体化",
+        "降低屬性",
+        "移除狀態",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：25%。杉浦玄任の固有戦法。効果分類：弱体化・降低屬性・移除狀態・能動発動・智略系。"
     },
     {
       "id": "tactic-190",
@@ -9959,7 +11855,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "本庄実乃"
+      "uniqueHero": "本庄実乃",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。本庄実乃の固有戦法。効果分類：智略ダメージ・単体攻撃・状態付与・行動妨害・能動発動・智略系。"
     },
     {
       "id": "tactic-191",
@@ -9971,7 +11876,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "色部長実"
+      "uniqueHero": "色部長実",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "受動発動",
+        "武勇系",
+        "速度系"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。色部長実の固有戦法。効果分類：強化・提升屬性・受動発動・武勇系・速度系。"
     },
     {
       "id": "tactic-192",
@@ -9983,7 +11896,16 @@
       "activationRate": "25%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "遠藤基信"
+      "uniqueHero": "遠藤基信",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "能動発動",
+        "武勇系",
+        "統率系",
+        "条件発動"
+      ],
+      "summary": "能動戦法。対象：自己。発動率：25%。遠藤基信の固有戦法。効果分類：強化・提升屬性・能動発動・武勇系・統率系・条件発動。"
     },
     {
       "id": "tactic-193",
@@ -9995,7 +11917,15 @@
       "activationRate": "55%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "金森長近"
+      "uniqueHero": "金森長近",
+      "tags": [
+        "単体攻撃",
+        "弱体化",
+        "降低屬性",
+        "突撃觸發",
+        "統率系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：55%。金森長近の固有戦法。効果分類：単体攻撃・弱体化・降低屬性・突撃觸發・統率系。"
     },
     {
       "id": "tactic-194",
@@ -10007,7 +11937,14 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "筒井順慶"
+      "uniqueHero": "筒井順慶",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。筒井順慶の固有戦法。効果分類：智略ダメージ・単体攻撃・能動発動・智略系。"
     },
     {
       "id": "tactic-195",
@@ -10019,7 +11956,14 @@
       "activationRate": "25%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "口羽通良"
+      "uniqueHero": "口羽通良",
+      "tags": [
+        "弱体化",
+        "降低屬性",
+        "能動発動",
+        "魅力系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：25%。口羽通良の固有戦法。効果分類：弱体化・降低屬性・能動発動・魅力系。"
     },
     {
       "id": "tactic-196",
@@ -10031,7 +11975,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": "真田大助"
+      "uniqueHero": "真田大助",
+      "tags": [
+        "武勇ダメージ",
+        "強化",
+        "受動発動",
+        "能動発動",
+        "武勇系"
+      ],
+      "summary": "能動戦法。対象：自己。発動率：35%。真田大助の固有戦法。効果分類：武勇ダメージ・強化・受動発動・能動発動・武勇系。"
     },
     {
       "id": "tactic-197",
@@ -10043,7 +11995,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "お初"
+      "uniqueHero": "お初",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "回復",
+        "指揮效果",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：100%。お初の固有戦法。効果分類：強化・提升屬性・回復・指揮效果・智略系・大将技。"
     },
     {
       "id": "tactic-198",
@@ -10055,7 +12016,15 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "智略ダメージ",
+        "範囲攻撃",
+        "能動発動",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。習得可能な戦法。効果分類：武勇ダメージ・智略ダメージ・範囲攻撃・能動発動・大将技。"
     },
     {
       "id": "tactic-199",
@@ -10067,7 +12036,19 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "お江"
+      "uniqueHero": "お江",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "状態付与",
+        "行動妨害",
+        "条件発動",
+        "指揮效果",
+        "武勇系",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "指揮戦法。対象：友軍群体(2人)。発動率：100%。お江の固有戦法。効果分類：強化・提升屬性・状態付与・行動妨害・条件発動・指揮效果・武勇系・智略系・大将技。"
     },
     {
       "id": "tactic-200",
@@ -10079,7 +12060,9 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：40%。習得可能な戦法。"
     },
     {
       "id": "tactic-201",
@@ -10091,7 +12074,9 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [],
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：40%。習得可能な戦法。"
     },
     {
       "id": "tactic-202",
@@ -10103,7 +12088,9 @@
       "activationRate": "1.0",
       "category": "",
       "learnable": false,
-      "uniqueHero": "立花誾千代"
+      "uniqueHero": "立花誾千代",
+      "tags": [],
+      "summary": "指揮戦法。対象：敵軍群体(2人)。発動率：1.0。立花誾千代の固有戦法。"
     },
     {
       "id": "tactic-203",
@@ -10115,7 +12102,9 @@
       "activationRate": "55%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "真田昌幸"
+      "uniqueHero": "真田昌幸",
+      "tags": [],
+      "summary": "能動戦法。対象：敵軍単体。発動率：55%。真田昌幸の固有戦法。"
     },
     {
       "id": "tactic-204",
@@ -10127,7 +12116,9 @@
       "activationRate": "45%→90%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "柿崎景家"
+      "uniqueHero": "柿崎景家",
+      "tags": [],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：45%→90%。柿崎景家の固有戦法。"
     },
     {
       "id": "tactic-205",
@@ -10139,7 +12130,9 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "伊達輝宗"
+      "uniqueHero": "伊達輝宗",
+      "tags": [],
+      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。伊達輝宗の固有戦法。"
     },
     {
       "id": "tactic-206",
@@ -10151,7 +12144,9 @@
       "activationRate": "45%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "鈴木佐大夫"
+      "uniqueHero": "鈴木佐大夫",
+      "tags": [],
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。鈴木佐大夫の固有戦法。"
     },
     {
       "id": "tactic-207",
@@ -10163,7 +12158,9 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "阿松"
+      "uniqueHero": "阿松",
+      "tags": [],
+      "summary": "指揮戦法。対象：我軍単体。発動率：100%。阿松の固有戦法。"
     },
     {
       "id": "tactic-208",
@@ -10175,7 +12172,9 @@
       "activationRate": "45%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [],
+      "summary": "能動戦法。対象：敵軍単体。発動率：45%。習得可能な戦法。"
     },
     {
       "id": "tactic-209",
@@ -10187,7 +12186,9 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [],
+      "summary": "指揮戦法。対象：友軍群体(2人)。発動率：100%。習得可能な戦法。"
     },
     {
       "id": "tactic-210",
@@ -10199,7 +12200,9 @@
       "activationRate": "30%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [],
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：30%。習得可能な戦法。"
     },
     {
       "id": "tactic-211",
@@ -10211,7 +12214,9 @@
       "activationRate": "40%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "安宅冬康"
+      "uniqueHero": "安宅冬康",
+      "tags": [],
+      "summary": "能動戦法。対象：友軍群体(2人)。発動率：40%。安宅冬康の固有戦法。"
     },
     {
       "id": "tactic-212",
@@ -10223,7 +12228,9 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [],
+      "summary": "能動戦法。対象：敵軍単体。発動率：40%。習得可能な戦法。"
     },
     {
       "id": "tactic-213",
@@ -10235,7 +12242,9 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "加藤嘉明"
+      "uniqueHero": "加藤嘉明",
+      "tags": [],
+      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。加藤嘉明の固有戦法。"
     },
     {
       "id": "tactic-214",
@@ -10247,7 +12256,13 @@
       "activationRate": "40%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "能動発動"
+      ],
+      "summary": "能動戦法。対象：我軍単体。発動率：40%。習得可能な戦法。効果分類：強化・提升屬性・能動発動。"
     },
     {
       "id": "tactic-215",
@@ -10259,7 +12274,14 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "弱体化",
+        "能動発動"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：武勇ダメージ・単体攻撃・弱体化・能動発動。"
     },
     {
       "id": "tactic-216",
@@ -10271,7 +12293,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "強化",
+        "弱体化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2-3人)。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・強化・弱体化・能動発動・智略系。"
     },
     {
       "id": "tactic-217",
@@ -10283,7 +12314,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "行動妨害",
+        "降低屬性",
+        "状態付与",
+        "突撃觸發",
+        "武勇系",
+        "智略系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：行動妨害・降低屬性・状態付与・突撃觸發・武勇系・智略系。"
     },
     {
       "id": "tactic-218",
@@ -10295,7 +12335,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "回復",
+        "強化",
+        "指揮效果",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "指揮戦法。対象：我軍群体(2人)。発動率：100%。習得可能な戦法。効果分類：回復・強化・指揮效果・智略系・回合觸發。"
     },
     {
       "id": "tactic-219",
@@ -10307,7 +12355,15 @@
       "activationRate": "40%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "行動妨害",
+        "状態付与",
+        "強化",
+        "能動発動",
+        "統率系"
+      ],
+      "summary": "能動戦法。対象：敵軍全体(3人)。発動率：40%。習得可能な戦法。効果分類：行動妨害・状態付与・強化・能動発動・統率系。"
     },
     {
       "id": "tactic-220",
@@ -10319,7 +12375,16 @@
       "activationRate": "40%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "強化",
+        "状態付与",
+        "能動発動",
+        "武勇系",
+        "条件発動"
+      ],
+      "summary": "能動戦法。対象：自己。発動率：40%。習得可能な戦法。効果分類：武勇ダメージ・強化・状態付与・能動発動・武勇系・条件発動。"
     },
     {
       "id": "tactic-221",
@@ -10331,7 +12396,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・単体攻撃・状態付与・能動発動・智略系。"
     },
     {
       "id": "tactic-222",
@@ -10343,7 +12416,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "降低屬性",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体(2人)。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・降低屬性・能動発動・智略系。"
     },
     {
       "id": "tactic-223",
@@ -10355,7 +12437,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "状態付与",
+        "受動発動",
+        "武勇系",
+        "条件発動"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・受動発動・武勇系・条件発動。"
     },
     {
       "id": "tactic-224",
@@ -10367,7 +12457,15 @@
       "activationRate": "50%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "回復",
+        "強化",
+        "能動発動",
+        "智略系",
+        "条件発動"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2-3人)。発動率：50%。習得可能な戦法。効果分類：回復・強化・能動発動・智略系・条件発動。"
     },
     {
       "id": "tactic-225",
@@ -10379,7 +12477,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "受動発動",
+        "智略系",
+        "条件発動"
+      ],
+      "summary": "受動戦法。対象：自己。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・受動発動・智略系・条件発動。"
     },
     {
       "id": "tactic-226",
@@ -10391,7 +12497,15 @@
       "activationRate": "30%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "能動発動",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "能動戦法。対象：我軍群体(2人)。発動率：30%。習得可能な戦法。効果分類：強化・提升屬性・能動発動・智略系・回合觸發。"
     },
     {
       "id": "tactic-227",
@@ -10403,7 +12517,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "提升屬性",
+        "受動発動",
+        "指揮效果",
+        "統率系"
+      ],
+      "summary": "陣法戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。効果分類：強化・提升屬性・受動発動・指揮效果・統率系。"
     },
     {
       "id": "tactic-228",
@@ -10415,7 +12537,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "状態付与",
+        "受動発動",
+        "智略系",
+        "条件発動"
+      ],
+      "summary": "受動戦法。対象：自身。発動率：100%。習得可能な戦法。効果分類：強化・状態付与・受動発動・智略系・条件発動。"
     },
     {
       "id": "tactic-229",
@@ -10427,7 +12557,16 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "兵種",
+        "回復",
+        "真実傷害",
+        "範囲攻撃",
+        "受動発動"
+      ],
+      "summary": "兵種戦法。対象：自軍全体。発動率：100%。習得可能な戦法。効果分類：強化・兵種・回復・真実傷害・範囲攻撃・受動発動。"
     },
     {
       "id": "tactic-230",
@@ -10439,7 +12578,17 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "兵種",
+        "回復",
+        "提升屬性",
+        "受動発動",
+        "武勇系",
+        "速度系"
+      ],
+      "summary": "兵種戦法。対象：自軍全体。発動率：100%。習得可能な戦法。効果分類：強化・兵種・回復・提升屬性・受動発動・武勇系・速度系。"
     },
     {
       "id": "tactic-231",
@@ -10451,7 +12600,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "状態付与",
+        "行動妨害",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：智略ダメージ・単体攻撃・状態付与・行動妨害・能動発動・智略系。"
     },
     {
       "id": "tactic-232",
@@ -10463,7 +12621,17 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "伊達政宗"
+      "uniqueHero": "伊達政宗",
+      "tags": [
+        "武勇ダメージ",
+        "智略ダメージ",
+        "多段傷害",
+        "単体攻撃",
+        "提升屬性",
+        "指揮效果",
+        "大将技"
+      ],
+      "summary": "指揮戦法。対象：敵軍単体。発動率：100%。伊達政宗の固有戦法。効果分類：武勇ダメージ・智略ダメージ・多段傷害・単体攻撃・提升屬性・指揮效果・大将技。"
     },
     {
       "id": "tactic-233",
@@ -10475,7 +12643,18 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "智略ダメージ",
+        "単体攻撃",
+        "強化",
+        "兵種戰法",
+        "武勇系",
+        "智略系",
+        "速度系"
+      ],
+      "summary": "兵種戦法。対象：自軍全体。発動率：100%。習得可能な戦法。効果分類：武勇ダメージ・智略ダメージ・単体攻撃・強化・兵種戰法・武勇系・智略系・速度系。"
     },
     {
       "id": "tactic-234",
@@ -10487,7 +12666,13 @@
       "activationRate": "50%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "藤林正保"
+      "uniqueHero": "藤林正保",
+      "tags": [
+        "武勇ダメージ",
+        "強化",
+        "能動発動"
+      ],
+      "summary": "能動戦法。対象：自身。発動率：50%。藤林正保の固有戦法。効果分類：武勇ダメージ・強化・能動発動。"
     },
     {
       "id": "tactic-235",
@@ -10499,7 +12684,17 @@
       "activationRate": "",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "強化",
+        "多段傷害",
+        "状態付与",
+        "兵種效果",
+        "武勇系",
+        "速度系"
+      ],
+      "summary": "兵種戦法。対象：自軍全体。発動率：未設定。習得可能な戦法。効果分類：武勇ダメージ・強化・多段傷害・状態付与・兵種效果・武勇系・速度系。"
     },
     {
       "id": "tactic-236",
@@ -10511,7 +12706,15 @@
       "activationRate": "",
       "category": "",
       "learnable": false,
-      "uniqueHero": "三好実休"
+      "uniqueHero": "三好実休",
+      "tags": [
+        "回復",
+        "強化",
+        "受動発動",
+        "智略系",
+        "回合觸發"
+      ],
+      "summary": "受動戦法。対象：自軍群体（2人）。発動率：未設定。三好実休の固有戦法。効果分類：回復・強化・受動発動・智略系・回合觸發。"
     },
     {
       "id": "tactic-237",
@@ -10523,7 +12726,15 @@
       "activationRate": "35%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "武勇ダメージ",
+        "単体攻撃",
+        "弱体化",
+        "突撃觸發",
+        "武勇系"
+      ],
+      "summary": "突撃戦法。対象：敵軍単体。発動率：35%。習得可能な戦法。効果分類：武勇ダメージ・単体攻撃・弱体化・突撃觸發・武勇系。"
     },
     {
       "id": "tactic-238",
@@ -10535,7 +12746,16 @@
       "activationRate": "45%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "大久保長安"
+      "uniqueHero": "大久保長安",
+      "tags": [
+        "武勇ダメージ",
+        "強化",
+        "能動発動",
+        "武勇系",
+        "速度系",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：友軍単体。発動率：45%。大久保長安の固有戦法。効果分類：武勇ダメージ・強化・能動発動・武勇系・速度系・智略系。"
     },
     {
       "id": "tactic-239",
@@ -10547,7 +12767,13 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "強化",
+        "指揮效果",
+        "政務系"
+      ],
+      "summary": "指揮戦法。対象：自身。発動率：100%。習得可能な戦法。効果分類：強化・指揮效果・政務系。"
     },
     {
       "id": "tactic-240",
@@ -10559,7 +12785,18 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "長野業正"
+      "uniqueHero": "長野業正",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "状態付与",
+        "行動妨害",
+        "指揮效果",
+        "条件発動",
+        "統率系",
+        "大将技"
+      ],
+      "summary": "指揮戦法。対象：敵軍単体或敵軍群体（2人）。発動率：100%。長野業正の固有戦法。効果分類：智略ダメージ・範囲攻撃・状態付与・行動妨害・指揮效果・条件発動・統率系・大将技。"
     },
     {
       "id": "tactic-241",
@@ -10571,7 +12808,15 @@
       "activationRate": "100%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "回復",
+        "強化",
+        "指揮效果",
+        "回合觸發",
+        "統率系"
+      ],
+      "summary": "指揮戦法。対象：自軍単体或自軍群体。発動率：100%。習得可能な戦法。効果分類：回復・強化・指揮效果・回合觸發・統率系。"
     },
     {
       "id": "tactic-242",
@@ -10583,7 +12828,16 @@
       "activationRate": "35%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "佐竹義重"
+      "uniqueHero": "佐竹義重",
+      "tags": [
+        "武勇ダメージ",
+        "範囲攻撃",
+        "弱体化",
+        "降低屬性",
+        "能動発動",
+        "大将技"
+      ],
+      "summary": "能動戦法。対象：敵軍群体（2人）。発動率：35%。佐竹義重の固有戦法。効果分類：武勇ダメージ・範囲攻撃・弱体化・降低屬性・能動発動・大将技。"
     },
     {
       "id": "tactic-243",
@@ -10595,7 +12849,16 @@
       "activationRate": "45%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "堀直政"
+      "uniqueHero": "堀直政",
+      "tags": [
+        "回復",
+        "強化",
+        "範囲攻撃",
+        "提升屬性",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：自軍群体（2-3人）。発動率：45%。堀直政の固有戦法。効果分類：回復・強化・範囲攻撃・提升屬性・能動発動・智略系。"
     },
     {
       "id": "tactic-244",
@@ -10607,7 +12870,15 @@
       "activationRate": "40%",
       "category": "",
       "learnable": true,
-      "uniqueHero": ""
+      "uniqueHero": "",
+      "tags": [
+        "智略ダメージ",
+        "範囲攻撃",
+        "弱体化",
+        "能動発動",
+        "智略系"
+      ],
+      "summary": "能動戦法。対象：敵軍群体（2人）。発動率：40%。習得可能な戦法。効果分類：智略ダメージ・範囲攻撃・弱体化・能動発動・智略系。"
     },
     {
       "id": "tactic-245",
@@ -10619,7 +12890,18 @@
       "activationRate": "100%",
       "category": "",
       "learnable": false,
-      "uniqueHero": "浦上宗景"
+      "uniqueHero": "浦上宗景",
+      "tags": [
+        "智略ダメージ",
+        "単体攻撃",
+        "強化",
+        "提升屬性",
+        "行動妨害",
+        "受動発動",
+        "智略系",
+        "大将技"
+      ],
+      "summary": "受動戦法。対象：自身。発動率：100%。浦上宗景の固有戦法。効果分類：智略ダメージ・単体攻撃・強化・提升屬性・行動妨害・受動発動・智略系・大将技。"
     }
   ]
 }
