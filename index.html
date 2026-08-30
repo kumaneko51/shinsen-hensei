@@ -21,6 +21,7 @@
     - 2026-08-30: Supabase の公開キーを設定し、ログイン後のクラウド同期機能を追加。
     - 2026-08-30: 濃紺基調のサイドバー配色と、武将カード肖像の上寄せ表示を調整。
     - 2026-08-30: 武将庫を横5列の縦長カードにし、肖像を引いた表示へ調整。
+    - 2026-08-30: QookkaスナップショットURLから所持武将・戦法を取り込む機能を追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -76,6 +77,7 @@
       STORAGE_VERSION: 2,
       SUPABASE_URL: (window.SUPABASE_CONFIG || {}).url || '',
       SUPABASE_PUBLISHABLE_KEY: (window.SUPABASE_CONFIG || {}).publishableKey || '',
+      QOOKKA_IMPORT_URL: ((window.SUPABASE_CONFIG || {}).url || '') + '/functions/v1/qookka-import',
       CLOUD_FORMATION_NAME: '作業台自動保存',
       CLOUD_SYNC_DELAY_MS: 1200
     };
@@ -507,7 +509,7 @@
         showToast_('この端末に保存しました。');
       }
       if (name === 'share') share_();
-      if (name === 'import-link') importShareLink_();
+      if (name === 'import-link') void importShareLink_();
       if (name === 'profile-create') createProfile_();
       if (name === 'group-create') createGroup_();
       if (name === 'share-save') createSavedShare_();
@@ -1033,15 +1035,20 @@
     }
 
     /**
-     * 入力された共有URLから部隊を読み込む。
-     * @returns {void}
+     * 入力された共有URLまたはQookka URLからデータを読み込む。
+     * @returns {Promise<void>} 読込完了時に解決するPromise。
      */
-    function importShareLink_() {
+    async function importShareLink_() {
       const url = window.prompt('共有URLを貼り付けてください。', '');
       if (!url) return;
       const marker = '#share=';
       const index = url.indexOf(marker);
-      if (index < 0) return showToast_('真戦編成の共有URLを入力してください。');
+      if (index < 0) {
+        const snapshotId = extractQookkaSnapshotId_(url);
+        if (!snapshotId) return showToast_('真戦編成の共有URL、またはQookkaのsnapshot_id付きURLを入力してください。');
+        await importQookkaSnapshot_(snapshotId);
+        return;
+      }
       const shared = decodeSharedData_(url.slice(index + marker.length));
       if (!shared || !shared.team) return showToast_('共有URLの内容を読み込めませんでした。');
       state.teams[state.activeTeam] = normalizeTeam_(shared.team);
@@ -1049,6 +1056,77 @@
       persist_();
       render();
       showToast_('共有編成を読み込みました。');
+    }
+
+    /**
+     * Qookka URLから公開スナップショットIDを取り出す。
+     * @param {string} value 入力URL。
+     * @returns {string} snapshot_id。取得できない場合は空文字。
+     */
+    function extractQookkaSnapshotId_(value) {
+      try {
+        const parsed = new URL(value);
+        if (!/(^|\.)qookkagames\.com$/i.test(parsed.hostname)) return '';
+        const query = parsed.hash.includes('?') ? parsed.hash.slice(parsed.hash.indexOf('?') + 1) : parsed.search.slice(1);
+        const snapshotId = new URLSearchParams(query).get('snapshot_id') || '';
+        return /^[a-f0-9]{24}$/i.test(snapshotId) ? snapshotId : '';
+      } catch (error) {
+        return '';
+      }
+    }
+
+    /**
+     * 外部サービスの表記をマスター照合用に正規化する。
+     * @param {string} value 名称。
+     * @returns {string} 照合用の名称。
+     */
+    function normalizeExternalName_(value) {
+      return String(value || '').normalize('NFKC').replace(/[\s　・・]/g, '').replace(/之/g, 'の').replace(/ヶ/g, 'ケ');
+    }
+
+    /**
+     * Qookka名称から現在のマスターIDを検索する。
+     * @param {Array<Object>} items 武将または戦法マスター。
+     * @param {string} externalName Qookka側の名称。
+     * @returns {string} マスターID。未登録時は空文字。
+     */
+    function findMasterIdByExternalName_(items, externalName) {
+      const target = normalizeExternalName_(externalName);
+      const matched = items.find(function(item) {
+        return [item.name, item.sourceName].some(function(name) { return normalizeExternalName_(name) === target; });
+      });
+      return matched ? matched.id : '';
+    }
+
+    /**
+     * Qookka公開スナップショットから所持武将と所持戦法を取り込む。
+     * @param {string} snapshotId 公開スナップショットID。
+     * @returns {Promise<void>} 取込完了時に解決するPromise。
+     */
+    async function importQookkaSnapshot_(snapshotId) {
+      if (!CONFIG.SUPABASE_PUBLISHABLE_KEY || !CONFIG.QOOKKA_IMPORT_URL) return showToast_('Qookka取込の接続設定がありません。');
+      showToast_('Qookkaの所持データを読み込んでいます。');
+      try {
+        const response = await fetch(CONFIG.QOOKKA_IMPORT_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json', apikey: CONFIG.SUPABASE_PUBLISHABLE_KEY, Authorization: 'Bearer ' + CONFIG.SUPABASE_PUBLISHABLE_KEY },
+          body: JSON.stringify({ snapshotId: snapshotId })
+        });
+        const data = await response.json();
+        if (!response.ok || data.error) return showToast_(data.error || 'Qookkaの所持データを読み込めませんでした。');
+        const heroIds = (data.heroes || []).map(function(item) { return findMasterIdByExternalName_(heroes_(), item.name); }).filter(Boolean);
+        const tacticIds = (data.skills || []).map(function(item) { return findMasterIdByExternalName_(tactics_(), item.name); }).filter(Boolean);
+        const unmatchedHeroes = Math.max(0, Number((data.summary || {}).heroCount || 0) - heroIds.length);
+        const unmatchedTactics = Math.max(0, Number((data.summary || {}).skillCount || 0) - tacticIds.length);
+        const message = 'Qookkaから武将 ' + heroIds.length + ' 人、戦法 ' + tacticIds.length + ' 件を認識しました。現在の所持品をこの内容で置き換えますか？' + (unmatchedHeroes || unmatchedTactics ? '\n未登録：武将 ' + unmatchedHeroes + ' 人、戦法 ' + unmatchedTactics + ' 件' : '');
+        if (!window.confirm(message)) return;
+        state.inventory = { heroIds: Array.from(new Set(heroIds)), tacticIds: Array.from(new Set(tacticIds)) };
+        persist_();
+        render();
+        showToast_('Qookkaの所持武将・戦法を取り込みました。');
+      } catch (error) {
+        showToast_('Qookka取込中に通信エラーが発生しました。');
+      }
     }
 
     /**

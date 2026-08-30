@@ -1,0 +1,10 @@
+# アプリの概要: Supabase Edge Function の公開設定。
+# 主な機能: Qookka公開スナップショットを安全に中継する。
+# 関連ファイル／構成: supabase/functions/qookka-import/index.ts、index.html。
+# 更新日: 2026-08-30
+# 更新履歴:
+#   - 2026-08-30: Qookka取込用関数を匿名公開で追加。
+# メンテナンスメモ: この関数は公開済みsnapshot_idのみを受け付け、ユーザー情報は保存しない。
+
+[functions.qookka-import]
+verify_jwt = false
