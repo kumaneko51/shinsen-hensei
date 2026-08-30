@@ -14,6 +14,7 @@
     - 2026-08-30: 端末内限定のカスタム武将・カスタム戦法の登録を追加。
     - 2026-08-30: 端末データのバックアップ書き出し・読み込みを追加。
     - 2026-08-30: 戦法効果文に残る中国語由来の用語を画面表示時に日本語へ補正。
+    - 2026-08-30: 武将データベースと戦闘シミュレーターの準備中ページを追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -173,7 +174,7 @@
      */
     function sidebar_() {
       const item = function(route, icon, label) { return '<button class="nav ' + (state.route === route ? 'active' : '') + '" data-route="' + route + '">' + icon + '　' + label + '</button>'; };
-      return '<aside class="side"><a class="brand" href="#/lineups"><span class="mark">戦</span><span>真戦編成<small>SHINSEI · JP</small></span></a><p class="label">主要機能</p>' + item('lineups', '♜', '編成作業台') + item('profiles', '♙', 'プロフィール') + item('groups', '▦', '部隊グループ') + item('shares', '↗', '共有一覧') + item('proposals', '◇', '編成提案') + item('gacha', '✦', '抽選記録') + '<p class="label">その他</p>' + item('settings', '⚙', '設定') + '<div class="side-foot">非公式ファンツール<br>データ・商標の権利は各権利者に帰属します。</div></aside>';
+      return '<aside class="side"><a class="brand" href="#/lineups"><span class="mark">戦</span><span>真戦編成<small>SHINSEI · JP</small></span></a><p class="label">主要機能</p>' + item('lineups', '♜', '編成作業台') + item('profiles', '♙', 'プロフィール') + item('groups', '▦', '部隊グループ') + item('shares', '↗', '共有一覧') + item('proposals', '◇', '編成提案') + item('gacha', '✦', '抽選記録') + '<p class="label">準備中</p>' + item('heroesDb', '▤', '武将データベース') + item('battleSim', '⚔', '戦闘シミュレーター') + '<p class="label">その他</p>' + item('settings', '⚙', '設定') + '<div class="side-foot">非公式ファンツール<br>データ・商標の権利は各権利者に帰属します。</div></aside>';
     }
 
     /**
@@ -189,7 +190,7 @@
      * @returns {string} HTML。
      */
     function routeSelect_() {
-      const routes = { lineups: '編成', profiles: 'プロフィール', groups: 'グループ', shares: '共有', proposals: '提案', gacha: '抽選記録', settings: '設定' };
+      const routes = { lineups: '編成', profiles: 'プロフィール', groups: 'グループ', shares: '共有', proposals: '提案', gacha: '抽選記録', heroesDb: '武将DB', battleSim: '戦闘計算', settings: '設定' };
       return '<select class="select route-select" data-route-select aria-label="ページ選択">' + Object.keys(routes).map(function(key) { return '<option value="' + key + '"' + (state.route === key ? ' selected' : '') + '>' + routes[key] + '</option>'; }).join('') + '</select>';
     }
 
@@ -290,7 +291,7 @@
      * @returns {string} HTML。
      */
     function page_() {
-      const pages = { profiles: profilesPage_, groups: groupsPage_, shares: sharesPage_, proposals: proposalsPage_, gacha: gachaPage_, settings: settingsPage_ };
+      const pages = { profiles: profilesPage_, groups: groupsPage_, shares: sharesPage_, proposals: proposalsPage_, gacha: gachaPage_, heroesDb: heroesDbPage_, battleSim: battleSimPage_, settings: settingsPage_ };
       return '<main class="page">' + (pages[state.route] ? pages[state.route]() : lineupsPage_()) + '</main>';
     }
 
@@ -354,6 +355,22 @@
       const totals = state.gachaLogs.reduce(function(result, item) { result.count += Number(item.count || 0); result.rare += Number(item.rare || 0); return result; }, { count: 0, rare: 0 });
       const records = state.gachaLogs.map(function(item) { return '<article class="record"><span><strong>' + escape_(item.pool) + '</strong><small>' + escape_(item.createdAt) + '　' + item.count + '回 ・ 高レア ' + item.rare + '件</small></span><button class="btn danger" data-gacha-delete="' + escape_(item.id) + '">削除</button></article>'; }).join('');
       return pageHead_('抽選記録', '抽選回数と高レア獲得数を端末内に記録します。', '<button class="btn primary" data-action="gacha-add">＋ 抽選を記録</button>') + '<div class="panel"><div class="statline"><span>総抽選数<b>' + totals.count + '</b></span><span>高レア獲得<b>' + totals.rare + '</b></span><span>高レア率<b>' + (totals.count ? Math.round(totals.rare / totals.count * 1000) / 10 : 0) + '%</b></span></div></div><div class="record-list" style="margin-top:14px">' + (records || '<div class="empty-panel">抽選記録はありません。</div>') + '</div>';
+    }
+
+    /**
+     * 武将データベースの準備中ページを描画する。
+     * @returns {string} HTML。
+     */
+    function heroesDbPage_() {
+      return pageHead_('武将データベース', '武将ごとの詳細比較・絞り込み機能を準備しています。') + '<section class="empty-panel">武将データベースは準備中です。現在は編成作業台の「武将庫」で、全武将の検索・絞り込みを利用できます。<br><br><button class="btn primary" data-route="lineups">武将庫を開く</button></section>';
+    }
+
+    /**
+     * 戦闘シミュレーターの準備中ページを描画する。
+     * @returns {string} HTML。
+     */
+    function battleSimPage_() {
+      return pageHead_('戦闘シミュレーター', '戦法・兵種・能力値を考慮する戦闘計算機能を準備しています。') + '<section class="empty-panel">戦闘シミュレーターは準備中です。編成の保存・共有・比較は現在利用できます。</section>';
     }
 
     /**
@@ -506,7 +523,7 @@
           showToast_('共有URLの内容を読み込めませんでした。');
         }
       }
-      const allowed = ['lineups', 'profiles', 'groups', 'shares', 'proposals', 'gacha', 'settings'];
+      const allowed = ['lineups', 'profiles', 'groups', 'shares', 'proposals', 'gacha', 'heroesDb', 'battleSim', 'settings'];
       if (allowed.includes(value)) state.route = value;
     }
 
