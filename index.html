@@ -7,6 +7,7 @@
   更新履歴:
     - 2026-08-24: 参照アプリの作業台構成に合わせた日本語版レイアウトを作成。
     - 2026-08-30: プロフィール、部隊グループ、共有一覧、提案、抽選記録、設定の端末内管理画面を追加。
+    - 2026-08-30: 自由編成／所持品編成の切替と、武将・戦法のドラッグ配置を追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -70,7 +71,7 @@
      * @returns {Object} アプリ状態。
      */
     function makeState_() {
-      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], route: 'lineups', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '' };
+      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], route: 'lineups', mode: 'free', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '' };
     }
 
     /**
@@ -109,6 +110,7 @@
       state.savedShares = Array.isArray(saved.savedShares) ? saved.savedShares : [];
       state.proposals = Array.isArray(saved.proposals) ? saved.proposals : [];
       state.gachaLogs = Array.isArray(saved.gachaLogs) ? saved.gachaLogs : [];
+      state.mode = saved.mode === 'inventory' ? 'inventory' : 'free';
       state.activeTeam = Math.min(Number(saved.activeTeam) || 0, Math.max(0, state.teams.length - 1));
       if (!state.teams.length) state.teams.push(makeTeam_(1));
       restoreRoute_();
@@ -182,7 +184,7 @@
     function topbar_(team) {
       const cost = teamCost_(team);
       const troops = troopSummary_(team);
-      return '<header class="top"><select class="select" data-team-select>' + state.teams.map(function(item, index) { return '<option value="' + index + '"' + (index === state.activeTeam ? ' selected' : '') + '>編成 ' + (index + 1) + '</option>'; }).join('') + '</select><input class="team-name" data-team-name aria-label="部隊名" value="' + escape_(team.name) + '"><div class="summary"><span>コスト<b class="' + (cost > 20 ? 'warn' : '') + '">' + cost + ' / 20</b></span><span>兵種<b>歩 ' + troops.foot + '　弓 ' + troops.bow + '　騎 ' + troops.cavalry + '　砲 ' + troops.gun + '</b></span></div><button class="btn" data-modal="inventory">所持管理</button><button class="btn" data-action="share">共有</button><button class="btn danger" data-action="reset">リセット</button></header>';
+      return '<header class="top"><select class="select" data-mode aria-label="編成モード"><option value="free"' + (state.mode === 'free' ? ' selected' : '') + '>自由編成</option><option value="inventory"' + (state.mode === 'inventory' ? ' selected' : '') + '>所持品編成</option></select><select class="select" data-team-select>' + state.teams.map(function(item, index) { return '<option value="' + index + '"' + (index === state.activeTeam ? ' selected' : '') + '>編成 ' + (index + 1) + '</option>'; }).join('') + '</select><input class="team-name" data-team-name aria-label="部隊名" value="' + escape_(team.name) + '"><div class="summary"><span>コスト<b class="' + (cost > 20 ? 'warn' : '') + '">' + cost + ' / 20</b></span><span>兵種<b>歩 ' + troops.foot + '　弓 ' + troops.bow + '　騎 ' + troops.cavalry + '　砲 ' + troops.gun + '</b></span></div><button class="btn" data-modal="inventory">所持管理</button><button class="btn" data-action="share">共有</button><button class="btn danger" data-action="reset">リセット</button></header>';
     }
 
     /**
@@ -211,12 +213,12 @@
     function slot_(member, role) {
       const hero = hero_(member.heroId);
       const selected = state.selected.role === role;
-      if (!hero) return '<article class="slot ' + (selected ? 'selected' : '') + '"><div class="role">' + ROLES[role] + '</div><button class="btn" data-focus-hero="' + role + '">＋ 武将を選択</button><div class="skill">武将を選択すると戦法を設定できます</div></article>';
+      if (!hero) return '<article class="slot ' + (selected ? 'selected' : '') + '" data-drop-role="' + role + '"><div class="role">' + ROLES[role] + '</div><button class="btn" data-focus-hero="' + role + '">＋ 武将を選択</button><div class="skill">武将を選択すると戦法を設定できます</div></article>';
       const visual = hero.portrait ? '<img src="' + escape_(hero.portrait) + '" alt="" loading="lazy" referrerpolicy="no-referrer">' : escape_(hero.name.slice(0, 1));
       const stats = Object.keys(STAT_LABELS).map(function(key) { return '<div class="stat"><span>' + STAT_LABELS[key] + '</span><b>' + (Number((hero.stats || {})[key] || 0) + Number((member.bonuses || {})[key] || 0)) + '</b></div>'; }).join('');
       const traits = (hero.traits || []).slice(0, 4).map(function(trait) { return '<span class="tag ' + (trait.rank === 'S' ? 's' : '') + '">' + escape_(trait.name) + '</span>'; }).join('');
-      const skills = member.tacticIds.map(function(id, index) { const tactic = tactic_(id); const active = selected && state.selected.kind === 'tactic' && state.selected.slot === index; return '<button class="skill ' + (active ? 'active' : '') + '" data-focus-tactic="' + role + ':' + index + '">' + (tactic ? escape_(tactic.name) + '　<small>' + escape_(tactic.type || '') + '</small>' : '＋ 戦法を習得') + '</button>'; }).join('');
-      return '<article class="slot ' + (selected ? 'selected' : '') + '"><div class="role">' + ROLES[role] + (role === 0 ? '　大将技' : '') + '</div><button class="hero" data-focus-hero="' + role + '"><span class="portrait">' + visual + '</span><span><span class="hero-name">' + escape_(hero.name) + '</span><span class="meta">' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '　' + hero.cost + 'C</span></span></button><div class="stars">' + stars_(role, member.breakthrough) + '</div><span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><span class="tag">' + escape_(hero.uniqueSkill || '固有戦法未設定') + '</span><div class="stats">' + stats + '</div><div class="traits">' + traits + '</div>' + skills + '</article>';
+      const skills = member.tacticIds.map(function(id, index) { const tactic = tactic_(id); const active = selected && state.selected.kind === 'tactic' && state.selected.slot === index; return '<button class="skill ' + (active ? 'active' : '') + '" data-focus-tactic="' + role + ':' + index + '" data-drop-tactic="' + role + ':' + index + '">' + (tactic ? escape_(tactic.name) + '　<small>' + escape_(tactic.type || '') + '</small>' : '＋ 戦法を習得') + '</button>'; }).join('');
+      return '<article class="slot ' + (selected ? 'selected' : '') + '" data-drop-role="' + role + '"><div class="role">' + ROLES[role] + (role === 0 ? '　大将技' : '') + '</div><button class="hero" data-focus-hero="' + role + '"><span class="portrait">' + visual + '</span><span><span class="hero-name">' + escape_(hero.name) + '</span><span class="meta">' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '　' + hero.cost + 'C</span></span></button><div class="stars">' + stars_(role, member.breakthrough) + '</div><span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><span class="tag">' + escape_(hero.uniqueSkill || '固有戦法未設定') + '</span><div class="stats">' + stats + '</div><div class="traits">' + traits + '</div>' + skills + '</article>';
     }
 
     /**
@@ -250,7 +252,7 @@
       const used = activeTeam_().members.some(function(member) { return member.heroId === hero.id; });
       const owned = state.inventory.heroIds.includes(hero.id);
       const image = hero.portrait ? '<img class="card-photo" src="' + escape_(hero.portrait) + '" alt="' + escape_(hero.name) + 'の肖像" loading="lazy" referrerpolicy="no-referrer">' : '';
-      return '<button class="card ' + (used ? 'disabled' : '') + '" data-hero="' + escape_(hero.id) + '">' + image + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><h3>' + escape_(hero.name) + '</h3><p>' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '</p><p>' + (used ? '編成済み' : escape_(hero.uniqueSkill || '')) + '</p></button>';
+      return '<button class="card ' + (used ? 'disabled' : '') + '" data-hero="' + escape_(hero.id) + '" data-drag-hero="' + escape_(hero.id) + '" draggable="' + (!used) + '">' + image + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><h3>' + escape_(hero.name) + '</h3><p>' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '</p><p>' + (used ? '編成済み' : escape_(hero.uniqueSkill || '')) + '</p></button>';
     }
 
     /**
@@ -263,7 +265,7 @@
       const unique = !tactic.learnable;
       const summary = tactic.summary || ((tactic.type || '戦法') + '戦法。対象：' + (tactic.target || '未設定') + '。発動率：' + (tactic.activationRate || '未設定') + '。');
       const effect = tactic.effect || '効果本文は準備中です。';
-      return '<button class="card tactic-card ' + (unique ? 'disabled unique' : '') + '"' + (unique ? ' aria-disabled="true"' : ' data-tactic="' + escape_(tactic.id) + '"') + '>' + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(tactic.rarity || '') + '</span><span class="tag">' + escape_(tactic.type || '') + '</span><h3>' + escape_(tactic.name) + '</h3><p>' + escape_(tactic.target || '') + '　発動 ' + escape_(tactic.activationRate || '') + '</p><p>' + (unique ? '固有戦法（選択不可）' : '習得可能') + '</p><span class="tip" tabindex="0" aria-label="戦法効果">ⓘ<span class="tipbox">' + escape_(summary) + '<strong>戦法効果（機械翻訳）</strong>' + escape_(effect) + '</span></span></button>';
+      return '<button class="card tactic-card ' + (unique ? 'disabled unique' : '') + '"' + (unique ? ' aria-disabled="true"' : ' data-tactic="' + escape_(tactic.id) + '" data-drag-tactic="' + escape_(tactic.id) + '" draggable="true"') + '>' + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(tactic.rarity || '') + '</span><span class="tag">' + escape_(tactic.type || '') + '</span><h3>' + escape_(tactic.name) + '</h3><p>' + escape_(tactic.target || '') + '　発動 ' + escape_(tactic.activationRate || '') + '</p><p>' + (unique ? '固有戦法（選択不可）' : '習得可能') + '</p><span class="tip" tabindex="0" aria-label="戦法効果">ⓘ<span class="tipbox">' + escape_(summary) + '<strong>戦法効果（機械翻訳）</strong>' + escape_(effect) + '</span></span></button>';
     }
 
     /**
@@ -374,15 +376,16 @@
      */
     function bind_() {
       all_('[data-route]', function(element) { element.onclick = function() { changeRoute_(element.dataset.route); }; });
+      all_('[data-mode]', function(element) { element.onchange = function() { state.mode = element.value; persist_(); render(); }; });
       all_('[data-team-select]', function(element) { element.onchange = function() { state.activeTeam = Number(element.value); state.selected = { role: 0, kind: 'hero', slot: 0 }; render(); }; });
-      all_('[data-team-name]', function(element) { element.oninput = function() { activeTeam_().name = element.value; render(); }; });
+      all_('[data-team-name]', function(element) { element.oninput = function() { activeTeam_().name = element.value; persist_(); render(); }; });
       all_('[data-select-team]', function(element) { element.onclick = function() { state.activeTeam = Number(element.dataset.selectTeam); render(); }; });
       all_('[data-modal]', function(element) { element.onclick = function() { state.modal = element.dataset.modal; render(); }; });
       all_('[data-close-modal]', function(element) { element.onclick = function() { state.modal = ''; render(); }; });
       all_('[data-action]', function(element) { element.onclick = function() { action_(element.dataset.action); }; });
       all_('[data-focus-hero]', function(element) { element.onclick = function() { state.selected = { role: Number(element.dataset.focusHero), kind: 'hero', slot: 0 }; state.tab = 'heroes'; render(); }; });
       all_('[data-focus-tactic]', function(element) { element.onclick = function() { const values = element.dataset.focusTactic.split(':').map(Number); state.selected = { role: values[0], kind: 'tactic', slot: values[1] }; state.tab = 'tactics'; render(); }; });
-      all_('[data-star]', function(element) { element.onclick = function() { const values = element.dataset.star.split(':').map(Number); activeTeam_().members[values[0]].breakthrough = values[1]; render(); }; });
+      all_('[data-star]', function(element) { element.onclick = function() { const values = element.dataset.star.split(':').map(Number); activeTeam_().members[values[0]].breakthrough = values[1]; persist_(); render(); }; });
       all_('[data-tab]', function(element) { element.onclick = function() { state.tab = element.dataset.tab; state.query = ''; state.cost = ''; state.faction = ''; state.rarity = ''; render(); }; });
       all_('[data-query]', function(element) { element.oninput = function() { state.query = element.value; render(); }; });
       all_('[data-cost]', function(element) { element.onchange = function() { state.cost = element.value; render(); }; });
@@ -405,6 +408,10 @@
       all_('[data-proposal-vote]', function(element) { element.onclick = function() { voteProposal_(element.dataset.proposalVote); }; });
       all_('[data-proposal-delete]', function(element) { element.onclick = function() { deleteRecord_('proposals', element.dataset.proposalDelete); }; });
       all_('[data-gacha-delete]', function(element) { element.onclick = function() { deleteRecord_('gachaLogs', element.dataset.gachaDelete); }; });
+      all_('[data-drag-hero]', function(element) { element.ondragstart = function(event) { event.dataTransfer.setData('text/plain', 'hero:' + element.dataset.dragHero); }; });
+      all_('[data-drag-tactic]', function(element) { element.ondragstart = function(event) { event.dataTransfer.setData('text/plain', 'tactic:' + element.dataset.dragTactic); }; });
+      all_('[data-drop-role]', function(element) { element.ondragover = function(event) { event.preventDefault(); }; element.ondrop = function(event) { event.preventDefault(); dropHero_(event.dataTransfer.getData('text/plain'), Number(element.dataset.dropRole)); }; });
+      all_('[data-drop-tactic]', function(element) { element.ondragover = function(event) { event.preventDefault(); }; element.ondrop = function(event) { event.preventDefault(); dropTactic_(event.dataTransfer.getData('text/plain'), element.dataset.dropTactic); }; });
     }
 
     /**
@@ -490,7 +497,7 @@
      * @returns {void}
      */
     function persist_() {
-      const data = { version: CONFIG.STORAGE_VERSION, teams: state.teams, activeTeam: state.activeTeam, inventory: state.inventory, profiles: state.profiles, groups: state.groups, savedShares: state.savedShares, proposals: state.proposals, gachaLogs: state.gachaLogs };
+      const data = { version: CONFIG.STORAGE_VERSION, teams: state.teams, activeTeam: state.activeTeam, inventory: state.inventory, profiles: state.profiles, groups: state.groups, savedShares: state.savedShares, proposals: state.proposals, gachaLogs: state.gachaLogs, mode: state.mode };
       localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(data));
     }
 
@@ -695,11 +702,13 @@
      * @returns {void}
      */
     function chooseHero_(id) {
+      if (state.mode === 'inventory' && !state.inventory.heroIds.includes(id)) return showToast_('所持品編成では、所持武将だけを設定できます。');
       const duplicate = activeTeam_().members.some(function(member, index) { return member.heroId === id && index !== state.selected.role; });
       if (duplicate) return showToast_('同じ武将は1部隊に重複して設定できません。');
       const member = activeTeam_().members[state.selected.role];
       member.heroId = id;
       member.tacticIds = ['', ''];
+      persist_();
       render();
     }
 
@@ -710,8 +719,35 @@
      */
     function chooseTactic_(id) {
       if (state.selected.kind !== 'tactic') return showToast_('先に武将枠内の「戦法を習得」を選択してください。');
+      if (state.mode === 'inventory' && !state.inventory.tacticIds.includes(id)) return showToast_('所持品編成では、所持戦法だけを設定できます。');
       activeTeam_().members[state.selected.role].tacticIds[state.selected.slot] = id;
+      persist_();
       render();
+    }
+
+    /**
+     * ドラッグされた武将を役割枠へ設定する。
+     * @param {string} payload ドラッグデータ。
+     * @param {number} role 役割番号。
+     * @returns {void}
+     */
+    function dropHero_(payload, role) {
+      if (payload.indexOf('hero:') !== 0) return;
+      state.selected = { role: role, kind: 'hero', slot: 0 };
+      chooseHero_(payload.slice(5));
+    }
+
+    /**
+     * ドラッグされた戦法を戦法枠へ設定する。
+     * @param {string} payload ドラッグデータ。
+     * @param {string} target 役割番号と戦法枠番号。
+     * @returns {void}
+     */
+    function dropTactic_(payload, target) {
+      if (payload.indexOf('tactic:') !== 0) return;
+      const values = target.split(':').map(Number);
+      state.selected = { role: values[0], kind: 'tactic', slot: values[1] };
+      chooseTactic_(payload.slice(7));
     }
 
     /**
@@ -790,7 +826,7 @@
      */
     function filteredHeroes_() {
       const query = state.query.toLowerCase();
-      return (master.heroes || []).filter(function(hero) { return (!query || (hero.name + hero.uniqueSkill + hero.clan).toLowerCase().includes(query)) && (!state.cost || (state.cost === '4' ? Number(hero.cost) <= 4 : String(hero.cost) === state.cost)) && (!state.faction || hero.faction === state.faction) && (!state.rarity || hero.rarity === state.rarity) && (!state.ownedOnly || state.inventory.heroIds.includes(hero.id)); });
+      return (master.heroes || []).filter(function(hero) { return (!query || (hero.name + hero.uniqueSkill + hero.clan).toLowerCase().includes(query)) && (!state.cost || (state.cost === '4' ? Number(hero.cost) <= 4 : String(hero.cost) === state.cost)) && (!state.faction || hero.faction === state.faction) && (!state.rarity || hero.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.heroIds.includes(hero.id)); });
     }
 
     /**
@@ -799,7 +835,7 @@
      */
     function filteredTactics_() {
       const query = state.query.toLowerCase();
-      return (master.tactics || []).filter(function(tactic) { return tactic.learnable && (!query || (tactic.name + tactic.type + tactic.target).toLowerCase().includes(query)) && (!state.faction || tactic.type === state.faction) && (!state.rarity || tactic.rarity === state.rarity) && (!state.ownedOnly || state.inventory.tacticIds.includes(tactic.id)); });
+      return (master.tactics || []).filter(function(tactic) { return tactic.learnable && (!query || (tactic.name + tactic.type + tactic.target).toLowerCase().includes(query)) && (!state.faction || tactic.type === state.faction) && (!state.rarity || tactic.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.tacticIds.includes(tactic.id)); });
     }
 
     /**
