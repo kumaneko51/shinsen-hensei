@@ -26,6 +26,7 @@
     - 2026-08-30: 所持品編成中は武将庫・戦法庫の件数を所持数で表示するよう改善。
     - 2026-08-30: 選択武将の肖像・戦法欄を拡大し、能力値の振り分け操作を追加。
     - 2026-08-30: 突破星1つにつき能力振分の上限を10ポイント増やすよう改善。
+    - 2026-08-30: 能力振分の操作をカード内から専用モーダルへ移動。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -71,6 +72,16 @@
     .stat-adjust { display:grid; place-items:center; width:17px; height:17px; padding:0; border:1px solid #cbd5e1; border-radius:4px; color:#334155; background:#fff; font-size:13px; line-height:1; }
     .stat-adjust:hover { border-color:#4f8bea; color:#1d4ed8; background:#eff6ff; }
     .stat small { display:block; min-height:11px; color:#2563eb; font-size:9px; }
+    .stat-open { padding:4px 7px; border:1px solid #bfdbfe; border-radius:5px; color:#1d4ed8; background:#eff6ff; font-size:10px; font-weight:800; }
+    .stat-modal { width:min(430px,100%); }
+    .stat-summary { display:flex; justify-content:space-between; align-items:center; margin:15px 0 10px; padding:10px 12px; border-radius:7px; background:#f8fafc; color:#64748b; font-size:12px; }
+    .stat-summary b { color:#c58000; font-size:14px; }
+    .stat-editor { display:grid; gap:8px; }
+    .stat-editor-row { display:grid; grid-template-columns:28px 42px 34px 28px 34px 28px 42px 42px; gap:5px; align-items:center; color:#334155; font-size:12px; }
+    .stat-editor-row > b { text-align:center; color:#0f172a; }
+    .stat-editor-row > span { color:#94a3b8; text-align:right; }
+    .stat-editor-row .stat-adjust { width:28px; height:28px; font-size:14px; }
+    .stat-reset { margin-right:auto; }
     @media(max-width:1300px) { .slot .hero .portrait { height:270px; } }
     @media(max-width:720px) { .slot .hero .portrait { height:290px; } }
   </style>
@@ -274,10 +285,10 @@
       const visual = hero.portrait ? fallback + '<img src="' + escape_(hero.portrait) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : fallback;
       const allocatedPoints = allocatedStatPoints_(member);
       const statBonusLimit = statBonusLimit_(member);
-      const stats = Object.keys(STAT_LABELS).map(function(key) { const bonus = Number((member.bonuses || {})[key] || 0); const value = Number((hero.stats || {})[key] || 0) + bonus; return '<div class="stat"><span>' + STAT_LABELS[key] + '</span><div class="stat-value"><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':-1" aria-label="' + STAT_LABELS[key] + 'を1下げる">−</button><b>' + value + '</b><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':1" aria-label="' + STAT_LABELS[key] + 'を1上げる">＋</button></div><small>' + (bonus ? '＋' + bonus : '') + '</small></div>'; }).join('');
+      const stats = Object.keys(STAT_LABELS).map(function(key) { const bonus = Number((member.bonuses || {})[key] || 0); const value = Number((hero.stats || {})[key] || 0) + bonus; return '<div class="stat"><span>' + STAT_LABELS[key] + '</span><b>' + value + '</b><small>' + (bonus ? '＋' + bonus : '') + '</small></div>'; }).join('');
       const traits = (hero.traits || []).slice(0, 4).map(function(trait) { return '<span class="tag ' + (trait.rank === 'S' ? 's' : '') + '">' + escape_(trait.name) + '</span>'; }).join('');
       const skills = member.tacticIds.map(function(id, index) { const tactic = tactic_(id); const active = selected && state.selected.kind === 'tactic' && state.selected.slot === index; return '<div class="skill-row"><button class="skill ' + (active ? 'active' : '') + '" data-focus-tactic="' + role + ':' + index + '" data-drop-tactic="' + role + ':' + index + '">' + (tactic ? escape_(tactic.name) + '　<small>' + escape_(tactic.type || '') + '</small>' : '＋ 戦法を習得') + '</button>' + (tactic ? '<button class="clear" data-remove-tactic="' + role + ':' + index + '" aria-label="' + escape_(tactic.name) + 'を解除">×</button>' : '') + '</div>'; }).join('');
-      return '<article class="slot ' + (selected ? 'selected' : '') + '" data-drop-role="' + role + '"><div class="role role-line"><span>' + ROLES[role] + (role === 0 ? '　大将技' : '') + '</span><button class="clear" data-remove-hero="' + role + '" aria-label="' + escape_(hero.name) + 'を解除">×</button></div><button class="hero" data-focus-hero="' + role + '" data-drag-member="' + role + '" draggable="true"><span class="portrait">' + visual + '</span><span><span class="hero-name">' + escape_(hero.name) + '</span><span class="meta">' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '　' + hero.cost + 'C</span></span></button><div class="stars">' + stars_(role, member.breakthrough) + '</div><span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><span class="tag">' + escape_(hero.uniqueSkill || '固有戦法未設定') + '</span><div class="stat-allocation"><span>能力振分</span><b>' + allocatedPoints + ' / ' + statBonusLimit + '</b></div><div class="stats">' + stats + '</div><div class="traits">' + traits + '</div>' + skills + '</article>';
+      return '<article class="slot ' + (selected ? 'selected' : '') + '" data-drop-role="' + role + '"><div class="role role-line"><span>' + ROLES[role] + (role === 0 ? '　大将技' : '') + '</span><button class="clear" data-remove-hero="' + role + '" aria-label="' + escape_(hero.name) + 'を解除">×</button></div><button class="hero" data-focus-hero="' + role + '" data-drag-member="' + role + '" draggable="true"><span class="portrait">' + visual + '</span><span><span class="hero-name">' + escape_(hero.name) + '</span><span class="meta">' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '　' + hero.cost + 'C</span></span></button><div class="stars">' + stars_(role, member.breakthrough) + '</div><span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><span class="tag">' + escape_(hero.uniqueSkill || '固有戦法未設定') + '</span><div class="stat-allocation"><button class="stat-open" data-stat-modal="' + role + '">能力振分</button><b>' + allocatedPoints + ' / ' + statBonusLimit + '</b></div><div class="stats">' + stats + '</div><div class="traits">' + traits + '</div>' + skills + '</article>';
     }
 
     /**
@@ -324,9 +335,22 @@
       const current = Math.max(0, Number((member.bonuses || {})[key] || 0));
       const allocated = allocatedStatPoints_(member);
       const limit = statBonusLimit_(member);
-      if (delta > 0 && allocated >= limit) return showToast_('能力振分は合計 ' + limit + ' までです。');
-      if (delta < 0 && current === 0) return;
-      member.bonuses[key] = Math.max(0, current + delta);
+      const change = delta > 0 ? Math.min(delta, limit - allocated) : -Math.min(Math.abs(delta), current);
+      if (!change) return delta > 0 ? showToast_('能力振分は合計 ' + limit + ' までです。') : undefined;
+      member.bonuses[key] = current + change;
+      persist_();
+      render();
+    }
+
+    /**
+     * 指定した武将の能力振分を初期値へ戻す。
+     * @param {number} role 武将枠の番号。
+     * @returns {void}
+     */
+    function resetStatBonus_(role) {
+      const member = activeTeam_().members[role];
+      if (!member) return;
+      member.bonuses = makeMember_().bonuses;
       persist_();
       render();
     }
@@ -484,11 +508,32 @@
      * @returns {string} HTML。
      */
     function modal_() {
+      if (state.modal.indexOf('stats:') === 0) return statAllocationModal_(Number(state.modal.slice(6)));
       if (state.modal !== 'inventory') return '';
       const isHero = state.tab === 'heroes';
       const key = isHero ? 'heroIds' : 'tacticIds';
       const items = isHero ? heroes_() : tactics_();
       return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true"><h2>所持管理</h2><p>' + (isHero ? '所持している武将を選択してください。' : '所持している戦法を選択してください。') + '</p><div class="inventory">' + items.map(function(item) { return '<label><input type="checkbox" data-inventory="' + key + ':' + escape_(item.id) + '"' + (state.inventory[key].includes(item.id) ? ' checked' : '') + '><span>' + escape_(item.name) + '</span></label>'; }).join('') + '</div><div class="modal-actions"><button class="btn" data-close-modal>閉じる</button><button class="btn primary" data-action="save">保存</button></div></section></div>';
+    }
+
+    /**
+     * 武将の能力振分モーダルを描画する。
+     * @param {number} role 武将枠の番号。
+     * @returns {string} HTML。
+     */
+    function statAllocationModal_(role) {
+      const member = activeTeam_().members[role];
+      const hero = member ? hero_(member.heroId) : null;
+      if (!member || !hero) return '';
+      const allocated = allocatedStatPoints_(member);
+      const limit = statBonusLimit_(member);
+      const rows = Object.keys(STAT_LABELS).map(function(key) {
+        const base = Number((hero.stats || {})[key] || 0);
+        const bonus = Number((member.bonuses || {})[key] || 0);
+        const value = base + bonus;
+        return '<div class="stat-editor-row"><b>' + STAT_LABELS[key] + '</b><span>' + base + '</span><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':-10" aria-label="' + STAT_LABELS[key] + 'を10下げる">−10</button><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':-1" aria-label="' + STAT_LABELS[key] + 'を1下げる">−</button><span>＋' + bonus + '</span><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':1" aria-label="' + STAT_LABELS[key] + 'を1上げる">＋</button><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':10" aria-label="' + STAT_LABELS[key] + 'を10上げる">＋10</button><b>' + value + '</b></div>';
+      }).join('');
+      return '<div class="backdrop"><section class="modal stat-modal" role="dialog" aria-modal="true"><div class="role-line"><div><h2>自由属性加点</h2><p>' + escape_(hero.name) + 'の能力値を振り分けます。</p></div><button class="clear" data-close-modal aria-label="閉じる">×</button></div><div class="stat-summary"><span>残りの配分可能点</span><b>' + (limit - allocated) + ' / ' + limit + '</b></div><div class="stat-editor">' + rows + '</div><div class="modal-actions"><button class="btn stat-reset" data-stat-reset="' + role + '">リセット</button><button class="btn" data-close-modal>キャンセル</button><button class="btn primary" data-close-modal>確定</button></div></section></div>';
     }
 
     /**
@@ -508,7 +553,9 @@
       all_('[data-focus-hero]', function(element) { element.onclick = function() { state.selected = { role: Number(element.dataset.focusHero), kind: 'hero', slot: 0 }; state.tab = 'heroes'; render(); }; });
       all_('[data-focus-tactic]', function(element) { element.onclick = function() { const values = element.dataset.focusTactic.split(':').map(Number); state.selected = { role: values[0], kind: 'tactic', slot: values[1] }; state.tab = 'tactics'; render(); }; });
       all_('[data-star]', function(element) { element.onclick = function() { const values = element.dataset.star.split(':').map(Number); const member = activeTeam_().members[values[0]]; member.breakthrough = member.breakthrough === values[1] ? 0 : values[1]; persist_(); render(); }; });
+      all_('[data-stat-modal]', function(element) { element.onclick = function() { state.modal = 'stats:' + Number(element.dataset.statModal); render(); }; });
       all_('[data-stat-adjust]', function(element) { element.onclick = function() { const values = element.dataset.statAdjust.split(':'); changeStatBonus_(Number(values[0]), values[1], Number(values[2])); }; });
+      all_('[data-stat-reset]', function(element) { element.onclick = function() { resetStatBonus_(Number(element.dataset.statReset)); }; });
       all_('[data-tab]', function(element) { element.onclick = function() { state.tab = element.dataset.tab; state.query = ''; state.cost = ''; state.faction = ''; state.rarity = ''; render(); }; });
       all_('[data-query]', function(element) { element.oninput = function() { state.query = element.value; render(); }; });
       all_('[data-cost]', function(element) { element.onchange = function() { state.cost = element.value; render(); }; });
