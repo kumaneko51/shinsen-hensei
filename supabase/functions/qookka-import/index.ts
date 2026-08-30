@@ -25,7 +25,7 @@ const CONFIG = {
  * @returns {Response} HTTPレスポンス。
  */
 function jsonResponse_(body: object, status = 200): Response {
-  return new Response(JSON.stringify(body), {
+  return new Response(status === 204 ? null : JSON.stringify(body), {
     status,
     headers: {
       'Content-Type': 'application/json; charset=utf-8',
