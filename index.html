@@ -12,6 +12,7 @@
     - 2026-08-30: モバイル画面でも各機能ページを切り替えられるメニューを追加。
     - 2026-08-30: 武将・戦法の解除、戦法重複の防止、突破の解除操作を追加。
     - 2026-08-30: 端末内限定のカスタム武将・カスタム戦法の登録を追加。
+    - 2026-08-30: 端末データのバックアップ書き出し・読み込みを追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -361,7 +362,7 @@
     function settingsPage_() {
       const heroes = state.customHeroes.map(function(item) { return '<div class="record"><strong>' + escape_(item.name) + '</strong><button class="btn danger" data-custom-delete="hero:' + escape_(item.id) + '">削除</button></div>'; }).join('');
       const tactics = state.customTactics.map(function(item) { return '<div class="record"><strong>' + escape_(item.name) + '</strong><button class="btn danger" data-custom-delete="tactic:' + escape_(item.id) + '">削除</button></div>'; }).join('');
-      return pageHead_('設定', 'この端末に保存している情報を確認・削除します。') + '<section class="page-grid"><article class="panel"><h2>保存方式</h2><p>現在はブラウザの localStorage を使用しています。別の端末・別ブラウザには同期されません。</p></article><article class="panel"><h2>カスタムデータ</h2><p>公開マスターを編集せず、端末内だけで武将・戦法を追加できます。</p><div class="actions"><button class="btn" data-action="custom-hero">武将を追加</button><button class="btn" data-action="custom-tactic">戦法を追加</button></div><div class="record-list">' + heroes + tactics + '</div></article><article class="panel"><h2>端末データ</h2><p>部隊、所持品、プロフィール、グループ、共有一覧、提案、抽選記録、カスタムデータを削除できます。</p><button class="btn danger" data-action="clear-data">端末データをすべて削除</button></article></section>';
+      return pageHead_('設定', 'この端末に保存している情報を確認・削除します。') + '<section class="page-grid"><article class="panel"><h2>保存方式</h2><p>現在はブラウザの localStorage を使用しています。別の端末・別ブラウザには同期されません。</p></article><article class="panel"><h2>バックアップ</h2><p>端末データをJSONファイルとして書き出し、別の端末で読み込めます。</p><div class="actions"><button class="btn" data-action="export-data">書き出す</button><button class="btn" data-action="import-data">読み込む</button></div><input type="file" data-import-file accept="application/json,.json" hidden></article><article class="panel"><h2>カスタムデータ</h2><p>公開マスターを編集せず、端末内だけで武将・戦法を追加できます。</p><div class="actions"><button class="btn" data-action="custom-hero">武将を追加</button><button class="btn" data-action="custom-tactic">戦法を追加</button></div><div class="record-list">' + heroes + tactics + '</div></article><article class="panel"><h2>端末データ</h2><p>部隊、所持品、プロフィール、グループ、共有一覧、提案、抽選記録、カスタムデータを削除できます。</p><button class="btn danger" data-action="clear-data">端末データをすべて削除</button></article></section>';
     }
 
     /**
@@ -414,6 +415,7 @@
       all_('[data-hero]', function(element) { element.onclick = function() { chooseHero_(element.dataset.hero); }; });
       all_('[data-tactic]', function(element) { element.onclick = function() { chooseTactic_(element.dataset.tactic); }; });
       all_('[data-inventory]', function(element) { element.onchange = function() { const values = element.dataset.inventory.split(':'); const ids = state.inventory[values[0]]; state.inventory[values[0]] = element.checked ? Array.from(new Set(ids.concat(values[1]))) : ids.filter(function(id) { return id !== values[1]; }); }; });
+      all_('[data-import-file]', function(element) { element.onchange = function() { if (element.files && element.files[0]) importBackup_(element.files[0]); }; });
       all_('[data-remove-hero]', function(element) { element.onclick = function() { removeHero_(Number(element.dataset.removeHero)); }; });
       all_('[data-remove-tactic]', function(element) { element.onclick = function() { const values = element.dataset.removeTactic.split(':').map(Number); removeTactic_(values[0], values[1]); }; });
       all_('[data-profile-apply]', function(element) { element.onclick = function() { applyProfile_(element.dataset.profileApply); }; });
@@ -478,6 +480,8 @@
       if (name === 'gacha-add') addGachaLog_();
       if (name === 'custom-hero') addCustomHero_();
       if (name === 'custom-tactic') addCustomTactic_();
+      if (name === 'export-data') exportBackup_();
+      if (name === 'import-data') { const input = document.querySelector('[data-import-file]'); if (input) input.click(); }
       if (name === 'clear-data') clearData_();
       persist_();
       render();
@@ -524,6 +528,51 @@
     function persist_() {
       const data = { version: CONFIG.STORAGE_VERSION, teams: state.teams, activeTeam: state.activeTeam, inventory: state.inventory, profiles: state.profiles, groups: state.groups, savedShares: state.savedShares, proposals: state.proposals, gachaLogs: state.gachaLogs, customHeroes: state.customHeroes, customTactics: state.customTactics, mode: state.mode };
       localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(data));
+    }
+
+    /**
+     * 端末データをバックアップJSONとして書き出す。
+     * @returns {void}
+     */
+    function exportBackup_() {
+      const data = { version: CONFIG.STORAGE_VERSION, teams: state.teams, activeTeam: state.activeTeam, inventory: state.inventory, profiles: state.profiles, groups: state.groups, savedShares: state.savedShares, proposals: state.proposals, gachaLogs: state.gachaLogs, customHeroes: state.customHeroes, customTactics: state.customTactics, mode: state.mode, exportedAt: new Date().toISOString() };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = 'shinsen-hensei-backup-' + new Date().toISOString().slice(0, 10) + '.json';
+      link.click();
+      URL.revokeObjectURL(url);
+      showToast_('バックアップを書き出しました。');
+    }
+
+    /**
+     * JSONバックアップを読み込んで端末データを置き換える。
+     * @param {File} file 読み込むJSONファイル。
+     * @returns {Promise<void>} 完了時に解決するPromise。
+     */
+    async function importBackup_(file) {
+      try {
+        const data = JSON.parse(await file.text());
+        if (!Array.isArray(data.teams) || !window.confirm('現在の端末データをバックアップ内容で置き換えますか？')) return;
+        state.teams = data.teams.map(normalizeTeam_).slice(0, CONFIG.MAX_TEAMS);
+        state.inventory = normalizeInventory_(data.inventory);
+        state.profiles = Array.isArray(data.profiles) ? data.profiles : [];
+        state.groups = Array.isArray(data.groups) ? data.groups : [];
+        state.savedShares = Array.isArray(data.savedShares) ? data.savedShares : [];
+        state.proposals = Array.isArray(data.proposals) ? data.proposals : [];
+        state.gachaLogs = Array.isArray(data.gachaLogs) ? data.gachaLogs : [];
+        state.customHeroes = Array.isArray(data.customHeroes) ? data.customHeroes : [];
+        state.customTactics = Array.isArray(data.customTactics) ? data.customTactics : [];
+        state.mode = data.mode === 'inventory' ? 'inventory' : 'free';
+        state.activeTeam = Math.min(Number(data.activeTeam) || 0, Math.max(0, state.teams.length - 1));
+        if (!state.teams.length) state.teams = [makeTeam_(1)];
+        persist_();
+        render();
+        showToast_('バックアップを読み込みました。');
+      } catch (error) {
+        showToast_('バックアップを読み込めませんでした。JSONファイルを確認してください。');
+      }
     }
 
     /**
