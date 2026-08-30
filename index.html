@@ -22,6 +22,7 @@
     - 2026-08-30: 濃紺基調のサイドバー配色と、武将カード肖像の上寄せ表示を調整。
     - 2026-08-30: 武将庫を横5列の縦長カードにし、肖像を引いた表示へ調整。
     - 2026-08-30: QookkaスナップショットURLから所持武将・戦法を取り込む機能を追加。
+    - 2026-08-30: Qookka取込後に所持品編成へ自動で切り替えるよう改善。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -1121,9 +1122,11 @@
         const message = 'Qookkaから武将 ' + heroIds.length + ' 人、戦法 ' + tacticIds.length + ' 件を認識しました。現在の所持品をこの内容で置き換えますか？' + (unmatchedHeroes || unmatchedTactics ? '\n未登録：武将 ' + unmatchedHeroes + ' 人、戦法 ' + unmatchedTactics + ' 件' : '');
         if (!window.confirm(message)) return;
         state.inventory = { heroIds: Array.from(new Set(heroIds)), tacticIds: Array.from(new Set(tacticIds)) };
+        state.mode = 'inventory';
+        state.ownedOnly = true;
         persist_();
         render();
-        showToast_('Qookkaの所持武将・戦法を取り込みました。');
+        showToast_('Qookkaの所持武将・戦法を取り込み、所持品編成へ切り替えました。');
       } catch (error) {
         showToast_('Qookka取込中に通信エラーが発生しました。');
       }
