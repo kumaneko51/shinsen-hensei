@@ -18,6 +18,7 @@
     - 2026-08-30: 参照サイトの白地サイドバーとベージュの選択状態に配色を調整。
     - 2026-08-30: 外部肖像の取得失敗時に武将名の代替表示を行うよう改善。
     - 2026-08-30: 戦法カードに効果分類タグを表示。
+    - 2026-08-30: Supabase の公開キーを設定し、ログイン後のクラウド同期機能を追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -54,6 +55,8 @@
 </head>
 <body>
   <div id="app"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
   <script>
     'use strict';
 
@@ -68,20 +71,26 @@
       MAX_MEMBERS: 3,
       MAX_BREAKTHROUGH: 5,
       TEAM_COST_LIMIT: 20,
-      STORAGE_VERSION: 2
+      STORAGE_VERSION: 2,
+      SUPABASE_URL: (window.SUPABASE_CONFIG || {}).url || '',
+      SUPABASE_PUBLISHABLE_KEY: (window.SUPABASE_CONFIG || {}).publishableKey || '',
+      CLOUD_FORMATION_NAME: '作業台自動保存',
+      CLOUD_SYNC_DELAY_MS: 1200
     };
 
     const ROLES = ['主将', '副将', '副将'];
     const STAT_LABELS = { leadership: '統', valor: '武', intelligence: '智', politics: '政', charisma: '魅', speed: '速' };
     let master = { heroes: [], tactics: [] };
     let state = makeState_();
+    let supabaseClient = null;
+    let cloudSyncTimer = null;
 
     /**
      * 初期状態を作成する。
      * @returns {Object} アプリ状態。
      */
     function makeState_() {
-      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], customHeroes: [], customTactics: [], route: 'lineups', mode: 'free', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '' };
+      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], customHeroes: [], customTactics: [], route: 'lineups', mode: 'free', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '', cloudUser: null };
     }
 
     /**
@@ -126,6 +135,7 @@
       state.activeTeam = Math.min(Number(saved.activeTeam) || 0, Math.max(0, state.teams.length - 1));
       if (!state.teams.length) state.teams.push(makeTeam_(1));
       restoreRoute_();
+      await initCloud_();
       render();
     }
 
@@ -185,7 +195,7 @@
      * @returns {string} HTML。
      */
     function pageTopbar_() {
-      return '<header class="top">' + routeSelect_() + '<strong>真戦編成 日本語版</strong><span class="summary">端末内保存モード</span><button class="btn" data-route="lineups">編成作業台へ</button></header>';
+      return '<header class="top">' + routeSelect_() + '<strong>真戦編成 日本語版</strong><span class="summary">' + cloudStatus_() + '</span><button class="btn" data-action="cloud-login">' + (state.cloudUser ? '同期中' : 'ログイン') + '</button><button class="btn" data-route="lineups">編成作業台へ</button></header>';
     }
 
     /**
@@ -205,7 +215,7 @@
     function topbar_(team) {
       const cost = teamCost_(team);
       const troops = troopSummary_(team);
-      return '<header class="top">' + routeSelect_() + '<select class="select" data-mode aria-label="編成モード"><option value="free"' + (state.mode === 'free' ? ' selected' : '') + '>自由編成</option><option value="inventory"' + (state.mode === 'inventory' ? ' selected' : '') + '>所持品編成</option></select><select class="select" data-team-select>' + state.teams.map(function(item, index) { return '<option value="' + index + '"' + (index === state.activeTeam ? ' selected' : '') + '>編成 ' + (index + 1) + '</option>'; }).join('') + '</select><input class="team-name" data-team-name aria-label="部隊名" value="' + escape_(team.name) + '"><div class="summary"><span>コスト<b class="' + (cost > 20 ? 'warn' : '') + '">' + cost + ' / 20</b></span><span>兵種<b>歩 ' + troops.foot + '　弓 ' + troops.bow + '　騎 ' + troops.cavalry + '　砲 ' + troops.gun + '</b></span></div><button class="btn" data-modal="inventory">所持管理</button><button class="btn" data-action="import-link">URLを読み込む</button><button class="btn" data-action="share">共有</button><button class="btn danger" data-action="reset">リセット</button></header>';
+      return '<header class="top">' + routeSelect_() + '<select class="select" data-mode aria-label="編成モード"><option value="free"' + (state.mode === 'free' ? ' selected' : '') + '>自由編成</option><option value="inventory"' + (state.mode === 'inventory' ? ' selected' : '') + '>所持品編成</option></select><select class="select" data-team-select>' + state.teams.map(function(item, index) { return '<option value="' + index + '"' + (index === state.activeTeam ? ' selected' : '') + '>編成 ' + (index + 1) + '</option>'; }).join('') + '</select><input class="team-name" data-team-name aria-label="部隊名" value="' + escape_(team.name) + '"><div class="summary"><span>コスト<b class="' + (cost > 20 ? 'warn' : '') + '">' + cost + ' / 20</b></span><span>兵種<b>歩 ' + troops.foot + '　弓 ' + troops.bow + '　騎 ' + troops.cavalry + '　砲 ' + troops.gun + '</b></span><span>' + cloudStatus_() + '</span></div><button class="btn" data-action="cloud-login">' + (state.cloudUser ? 'クラウド同期' : 'ログイン') + '</button><button class="btn" data-modal="inventory">所持管理</button><button class="btn" data-action="import-link">URLを読み込む</button><button class="btn" data-action="share">共有</button><button class="btn danger" data-action="reset">リセット</button></header>';
     }
 
     /**
@@ -506,6 +516,7 @@
       if (name === 'export-data') exportBackup_();
       if (name === 'import-data') { const input = document.querySelector('[data-import-file]'); if (input) input.click(); }
       if (name === 'clear-data') clearData_();
+      if (name === 'cloud-login') cloudLogin_();
       persist_();
       render();
     }
@@ -545,12 +556,84 @@
     }
 
     /**
+     * クラウド同期の状態を表示する文言を作成する。
+     * @returns {string} 表示用の状態。
+     */
+    function cloudStatus_() {
+      if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_PUBLISHABLE_KEY) return '端末内保存モード';
+      return state.cloudUser ? 'クラウド同期: ' + escape_(state.cloudUser.email || 'ログイン済み') : '端末内保存（ログインでクラウド同期）';
+    }
+
+    /**
+     * Supabase クライアントを初期化し、既存ログイン状態を復元する。
+     * @returns {Promise<void>} 初期化完了時に解決するPromise。
+     */
+    async function initCloud_() {
+      if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_PUBLISHABLE_KEY || !window.supabase) return;
+      try {
+        supabaseClient = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_PUBLISHABLE_KEY);
+        const result = await supabaseClient.auth.getUser();
+        state.cloudUser = result.data.user || null;
+        supabaseClient.auth.onAuthStateChange(function(event, session) {
+          state.cloudUser = session ? session.user : null;
+          if (state.cloudUser) scheduleCloudSync_();
+          render();
+        });
+      } catch (error) {
+        supabaseClient = null;
+      }
+    }
+
+    /**
+     * メールリンクでクラウド同期用ログインを開始する。
+     * @returns {Promise<void>} 処理完了時に解決するPromise。
+     */
+    async function cloudLogin_() {
+      if (!supabaseClient) return showToast_('クラウド同期の設定を読み込めませんでした。');
+      if (state.cloudUser) {
+        scheduleCloudSync_();
+        return showToast_('クラウドへ保存を開始しました。');
+      }
+      const email = window.prompt('ログイン用メールアドレスを入力してください。確認リンクを送信します。');
+      if (!email) return;
+      const result = await supabaseClient.auth.signInWithOtp({ email: email, options: { emailRedirectTo: location.origin + location.pathname } });
+      showToast_(result.error ? 'ログインリンクを送信できませんでした。' : '確認リンクをメールへ送信しました。');
+    }
+
+    /**
+     * 連続編集時のクラウド保存をまとめて予約する。
+     * @returns {void}
+     */
+    function scheduleCloudSync_() {
+      if (!supabaseClient || !state.cloudUser) return;
+      clearTimeout(cloudSyncTimer);
+      cloudSyncTimer = setTimeout(function() { void saveCloud_(); }, CONFIG.CLOUD_SYNC_DELAY_MS);
+    }
+
+    /**
+     * 現在の端末データをログイン中ユーザー専用のクラウド領域へ保存する。
+     * @returns {Promise<void>} 保存完了時に解決するPromise。
+     */
+    async function saveCloud_() {
+      if (!supabaseClient || !state.cloudUser) return;
+      const userId = state.cloudUser.id;
+      const payload = { activeTeam: state.activeTeam, inventory: state.inventory, profiles: state.profiles, groups: state.groups, savedShares: state.savedShares, proposals: state.proposals, gachaLogs: state.gachaLogs, customHeroes: state.customHeroes, customTactics: state.customTactics };
+      const profileResult = await supabaseClient.from('user_profiles').upsert({ user_id: userId, display_name: state.cloudUser.email || '', inventory: state.inventory });
+      if (profileResult.error) return;
+      const existing = await supabaseClient.from('formations').select('id').eq('user_id', userId).eq('name', CONFIG.CLOUD_FORMATION_NAME).limit(1);
+      const record = { user_id: userId, name: CONFIG.CLOUD_FORMATION_NAME, teams: { teams: state.teams, payload: payload }, mode: state.mode };
+      if (existing.data && existing.data[0]) await supabaseClient.from('formations').update(record).eq('id', existing.data[0].id);
+      else await supabaseClient.from('formations').insert(record);
+    }
+
+    /**
      * 端末内データを保存する。
      * @returns {void}
      */
     function persist_() {
       const data = { version: CONFIG.STORAGE_VERSION, teams: state.teams, activeTeam: state.activeTeam, inventory: state.inventory, profiles: state.profiles, groups: state.groups, savedShares: state.savedShares, proposals: state.proposals, gachaLogs: state.gachaLogs, customHeroes: state.customHeroes, customTactics: state.customTactics, mode: state.mode };
       localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(data));
+      scheduleCloudSync_();
     }
 
     /**
