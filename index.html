@@ -13,6 +13,7 @@
     - 2026-08-30: 武将・戦法の解除、戦法重複の防止、突破の解除操作を追加。
     - 2026-08-30: 端末内限定のカスタム武将・カスタム戦法の登録を追加。
     - 2026-08-30: 端末データのバックアップ書き出し・読み込みを追加。
+    - 2026-08-30: 戦法効果文に残る中国語由来の用語を画面表示時に日本語へ補正。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -280,8 +281,8 @@
       const owned = state.inventory.tacticIds.includes(tactic.id);
       const unique = !tactic.learnable;
       const summary = tactic.summary || ((tactic.type || '戦法') + '戦法。対象：' + (tactic.target || '未設定') + '。発動率：' + (tactic.activationRate || '未設定') + '。');
-      const effect = tactic.effect || '効果本文は準備中です。';
-      return '<button class="card tactic-card ' + (unique ? 'disabled unique' : '') + '"' + (unique ? ' aria-disabled="true"' : ' data-tactic="' + escape_(tactic.id) + '" data-drag-tactic="' + escape_(tactic.id) + '" draggable="true"') + '>' + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(tactic.rarity || '') + '</span><span class="tag">' + escape_(tactic.type || '') + '</span><h3>' + escape_(tactic.name) + '</h3><p>' + escape_(tactic.target || '') + '　発動 ' + escape_(tactic.activationRate || '') + '</p><p>' + (unique ? '固有戦法（選択不可）' : '習得可能') + '</p><span class="tip" tabindex="0" aria-label="戦法効果">ⓘ<span class="tipbox">' + escape_(summary) + '<strong>戦法効果（機械翻訳）</strong>' + escape_(effect) + '</span></span></button>';
+      const effect = localizedText_(tactic.effect || '効果本文は準備中です。');
+      return '<button class="card tactic-card ' + (unique ? 'disabled unique' : '') + '"' + (unique ? ' aria-disabled="true"' : ' data-tactic="' + escape_(tactic.id) + '" data-drag-tactic="' + escape_(tactic.id) + '" draggable="true"') + '>' + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(tactic.rarity || '') + '</span><span class="tag">' + escape_(tactic.type || '') + '</span><h3>' + escape_(tactic.name) + '</h3><p>' + escape_(tactic.target || '') + '　発動 ' + escape_(tactic.activationRate || '') + '</p><p>' + (unique ? '固有戦法（選択不可）' : '習得可能') + '</p><span class="tip" tabindex="0" aria-label="戦法効果">ⓘ<span class="tipbox">' + escape_(summary) + '<strong>戦法効果（日本語補正）</strong>' + escape_(effect) + '</span></span></button>';
     }
 
     /**
@@ -1051,6 +1052,23 @@
      * @returns {Array<string>} 値一覧。
      */
     function unique_(values, key) { return Array.from(new Set(values.map(function(value) { return value[key]; }).filter(Boolean))).sort(); }
+
+    /**
+     * 効果文に残る中国語由来の主要用語を日本語表示へ補正する。
+     * @param {string} value 効果文。
+     * @returns {string} 日本語用語へ補正した文。
+     */
+    function localizedText_(value) {
+      const replacements = [
+        ['，', '、'], ['。 ', '。'], ['毎ターン', '毎ターン'], ['戦闘開始後的', '戦闘開始後'], ['戦闘開始後', '戦闘開始後'], ['戦闘中', '戦闘中'], ['行動前', '行動前'], ['行動後', '行動後'],
+        ['敵軍', '敵軍'], ['味方', '味方'], ['自身', '自身'], ['受ける', '受ける'], ['与える', '与える'],
+        ['額外增加', 'さらに上昇'], ['額外', 'さらに'], ['增加', '上昇'], ['獲得', '得る'], ['発動', '発動'], ['確率', '確率'], ['持続', '持続'], ['最大', '最大'], ['重複', '重複'],
+        ['兵刃ダメージ', '兵刃ダメージ'], ['謀略ダメージ', '謀略ダメージ'], ['回復', '回復'], ['低下', '低下'], ['上昇', '上昇'],
+        ['もし', 'もし'], ['さらに', 'さらに'], ['此ターン', 'このターン'], ['其', 'その'], ['対象', '対象'], ['範囲', '範囲'],
+        ['敵に敵軍単体与え', '敵軍単体に与え'], ['自身的', '自身の'], ['受ける的', '受ける'], ['味方に', '味方に'], ['（（', '（'], ['））', '）']
+      ];
+      return replacements.reduce(function(result, pair) { return result.replaceAll(pair[0], pair[1]); }, String(value || ''));
+    }
 
     /**
      * HTML表示用に文字列をエスケープする。
