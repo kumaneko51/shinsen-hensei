@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-24",
+  "updatedAt": "2026-08-30",
   "sourceNote": "編成に必要な基本データ。肖像は外部参照。戦法効果は参照データを基にした日本語機械翻訳。",
   "heroes": [
     {
@@ -7988,6 +7988,114 @@
       ],
       "portrait": "https://img.game8.jp/12059222/f056b1e127c2804576823379688f2233.webp/original",
       "detailUrl": "https://game8.jp/nobunaga-shinsen/748022"
+    },
+    {
+      "id": "hero-156",
+      "name": "一条信龍",
+      "sourceName": "一条信龙",
+      "faction": "武田",
+      "clan": "武田家",
+      "cost": 5,
+      "rarity": "B",
+      "gender": "男",
+      "uniqueSkill": "不屈の精神",
+      "teachableSkill": "甲斐弓騎兵・拓",
+      "assemblySkill": "",
+      "stats": {
+        "leadership": 153,
+        "valor": 156,
+        "intelligence": 125,
+        "politics": 120,
+        "charisma": 128,
+        "speed": 90
+      },
+      "traits": [
+        {
+          "name": "弓術Ⅱ",
+          "rank": "B",
+          "active": true,
+          "affinity": {
+            "troopTypes": [
+              "弓兵"
+            ],
+            "level": 2
+          }
+        },
+        {
+          "name": "統帥Ⅱ",
+          "rank": "B",
+          "active": true,
+          "affinity": null
+        },
+        {
+          "name": "防護Ⅱ",
+          "rank": "B",
+          "active": true,
+          "affinity": null
+        },
+        {
+          "name": "剛猛Ⅰ",
+          "rank": "C",
+          "active": true,
+          "affinity": null
+        }
+      ],
+      "portrait": "https://p11386-media-cdn.qookkagames.com/P11386/sns/public_config/release/res/card/hero/yitiaoxinlong.png",
+      "detailUrl": ""
+    },
+    {
+      "id": "hero-157",
+      "name": "斎藤義龍",
+      "sourceName": "斋藤义龙",
+      "faction": "群雄",
+      "clan": "斎藤家",
+      "cost": 5,
+      "rarity": "C",
+      "gender": "男",
+      "uniqueSkill": "傲岸不遜",
+      "teachableSkill": "傲岸不遜",
+      "assemblySkill": "",
+      "stats": {
+        "leadership": 165,
+        "valor": 163,
+        "intelligence": 142,
+        "politics": 135,
+        "charisma": 101,
+        "speed": 108
+      },
+      "traits": [
+        {
+          "name": "馬術Ⅱ",
+          "rank": "B",
+          "active": true,
+          "affinity": {
+            "troopTypes": [
+              "騎兵"
+            ],
+            "level": 2
+          }
+        },
+        {
+          "name": "看破Ⅱ",
+          "rank": "B",
+          "active": true,
+          "affinity": null
+        },
+        {
+          "name": "堅固Ⅲ",
+          "rank": "A",
+          "active": true,
+          "affinity": null
+        },
+        {
+          "name": "攻勢Ⅱ",
+          "rank": "B",
+          "active": true,
+          "affinity": null
+        }
+      ],
+      "portrait": "https://p11386-media-cdn.qookkagames.com/P11386/sns/public_config/release/res/card/hero/zhaitengyilong.png",
+      "detailUrl": ""
     }
   ],
   "tactics": [
@@ -9440,7 +9548,7 @@
     {
       "id": "tactic-071",
       "name": "百戦錬磨",
-      "sourceName": "百戰磨煉",
+      "sourceName": "百战磨练",
       "type": "受動",
       "rarity": "S",
       "target": "自己",
@@ -12592,13 +12700,13 @@
     },
     {
       "id": "tactic-231",
-      "name": "追亡逐北",
+      "name": "追い崩し",
       "sourceName": "追亡逐北",
       "type": "能動",
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "智略ダメージ",
@@ -12862,8 +12970,8 @@
     },
     {
       "id": "tactic-244",
-      "name": "荷馱崩",
-      "sourceName": "荷馱崩",
+      "name": "荷駄崩し",
+      "sourceName": "荷驮崩",
       "type": "能動",
       "rarity": "S",
       "target": "敵軍群体（2人）",
@@ -12902,6 +13010,25 @@
       ],
       "summary": "受動戦法。対象：自身。発動率：100%。浦上宗景の固有戦法。",
       "effect": "普通攻撃後有25%～50%確率敵に目標与え1.06～2.18謀略ダメージ（（智略に応じて））。 戰鬥前4ターン，毎ターン行動前使自身武勇和智略增加30～60點（（智略に応じて）），持続ターン，毎ターン增加的屬性減少25%。 第5ターン開始時，使智略最高的味方単体進入【混亂】状態，持続1ターン。"
+    },
+    {
+      "id": "tactic-246",
+      "name": "甲斐弓騎兵・拓",
+      "sourceName": "甲斐弓骑兵·拓",
+      "type": "兵種",
+      "rarity": "S",
+      "target": "自軍全体(3人)",
+      "activationRate": "100%",
+      "learnable": true,
+      "uniqueHero": "",
+      "tags": [
+        "兵種",
+        "行軍速度",
+        "発動率上昇",
+        "受動発動"
+      ],
+      "summary": "兵種戦法。対象：自軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "弓兵を甲斐弓騎兵・拓へ進化させる。部隊の行軍速度を上げ、自軍全体の最初の能動戦法の発動率を上昇させる。準備が必要な戦法はさらに上昇する。"
     }
   ]
 }
