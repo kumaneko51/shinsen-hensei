@@ -11,6 +11,7 @@
     - 2026-08-30: 編成枠の入替、共有URLの手動読み込み、部隊名入力の安定化を追加。
     - 2026-08-30: モバイル画面でも各機能ページを切り替えられるメニューを追加。
     - 2026-08-30: 武将・戦法の解除、戦法重複の防止、突破の解除操作を追加。
+    - 2026-08-30: 端末内限定のカスタム武将・カスタム戦法の登録を追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -74,7 +75,7 @@
      * @returns {Object} アプリ状態。
      */
     function makeState_() {
-      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], route: 'lineups', mode: 'free', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '' };
+      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], customHeroes: [], customTactics: [], route: 'lineups', mode: 'free', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '' };
     }
 
     /**
@@ -113,6 +114,8 @@
       state.savedShares = Array.isArray(saved.savedShares) ? saved.savedShares : [];
       state.proposals = Array.isArray(saved.proposals) ? saved.proposals : [];
       state.gachaLogs = Array.isArray(saved.gachaLogs) ? saved.gachaLogs : [];
+      state.customHeroes = Array.isArray(saved.customHeroes) ? saved.customHeroes : [];
+      state.customTactics = Array.isArray(saved.customTactics) ? saved.customTactics : [];
       state.mode = saved.mode === 'inventory' ? 'inventory' : 'free';
       state.activeTeam = Math.min(Number(saved.activeTeam) || 0, Math.max(0, state.teams.length - 1));
       if (!state.teams.length) state.teams.push(makeTeam_(1));
@@ -250,9 +253,9 @@
     function library_() {
       const isHero = state.tab === 'heroes';
       const items = isHero ? filteredHeroes_() : filteredTactics_();
-      const factionOptions = unique_(master.heroes || [], 'faction').map(function(value) { return '<option value="' + escape_(value) + '"' + (state.faction === value ? ' selected' : '') + '>' + escape_(value) + '</option>'; }).join('');
-      const rarityOptions = unique_(isHero ? master.heroes || [] : master.tactics || [], 'rarity').map(function(value) { return '<option value="' + escape_(value) + '"' + (state.rarity === value ? ' selected' : '') + '>' + escape_(value) + '</option>'; }).join('');
-      return '<section class="library ' + (isHero ? '' : 'tactics-pane') + '"><div class="tabs"><button class="tab ' + (isHero ? 'active' : '') + '" data-tab="heroes">武将庫 <small>' + (master.heroes || []).length + '</small></button><button class="tab ' + (!isHero ? 'active' : '') + '" data-tab="tactics">戦法庫 <small>' + (master.tactics || []).length + '</small></button></div><div class="tools"><input class="search" type="search" data-query value="' + escape_(state.query) + '" placeholder="' + (isHero ? '武将名・固有戦法を検索…' : '戦法名を検索…') + '"><select class="filter" data-cost><option value="">コスト：すべて</option><option value="7"' + (state.cost === '7' ? ' selected' : '') + '>7C</option><option value="6"' + (state.cost === '6' ? ' selected' : '') + '>6C</option><option value="5"' + (state.cost === '5' ? ' selected' : '') + '>5C</option><option value="4"' + (state.cost === '4' ? ' selected' : '') + '>4C以下</option></select>' + (isHero ? '<select class="filter" data-faction><option value="">勢力：すべて</option>' + factionOptions + '</select>' : '<select class="filter" data-type><option value="">種別：すべて</option><option value="指揮">指揮</option><option value="能動">能動</option><option value="受動">受動</option><option value="追撃">追撃</option></select>') + '<select class="filter" data-rarity><option value="">レア度：すべて</option>' + rarityOptions + '</select><label class="switch"><input type="checkbox" data-owned-filter' + (state.ownedOnly ? ' checked' : '') + '> 所持のみ</label></div><div class="cards ' + (isHero ? '' : 'tactic-list') + '">' + (items.map(isHero ? heroCard_ : tacticCard_).join('') || '<div class="empty">条件に一致するデータがありません。</div>') + '</div></section>';
+      const factionOptions = unique_(heroes_(), 'faction').map(function(value) { return '<option value="' + escape_(value) + '"' + (state.faction === value ? ' selected' : '') + '>' + escape_(value) + '</option>'; }).join('');
+      const rarityOptions = unique_(isHero ? heroes_() : tactics_(), 'rarity').map(function(value) { return '<option value="' + escape_(value) + '"' + (state.rarity === value ? ' selected' : '') + '>' + escape_(value) + '</option>'; }).join('');
+      return '<section class="library ' + (isHero ? '' : 'tactics-pane') + '"><div class="tabs"><button class="tab ' + (isHero ? 'active' : '') + '" data-tab="heroes">武将庫 <small>' + heroes_().length + '</small></button><button class="tab ' + (!isHero ? 'active' : '') + '" data-tab="tactics">戦法庫 <small>' + tactics_().length + '</small></button></div><div class="tools"><input class="search" type="search" data-query value="' + escape_(state.query) + '" placeholder="' + (isHero ? '武将名・固有戦法を検索…' : '戦法名を検索…') + '"><select class="filter" data-cost><option value="">コスト：すべて</option><option value="7"' + (state.cost === '7' ? ' selected' : '') + '>7C</option><option value="6"' + (state.cost === '6' ? ' selected' : '') + '>6C</option><option value="5"' + (state.cost === '5' ? ' selected' : '') + '>5C</option><option value="4"' + (state.cost === '4' ? ' selected' : '') + '>4C以下</option></select>' + (isHero ? '<select class="filter" data-faction><option value="">勢力：すべて</option>' + factionOptions + '</select>' : '<select class="filter" data-type><option value="">種別：すべて</option><option value="指揮">指揮</option><option value="能動">能動</option><option value="受動">受動</option><option value="追撃">追撃</option></select>') + '<select class="filter" data-rarity><option value="">レア度：すべて</option>' + rarityOptions + '</select><label class="switch"><input type="checkbox" data-owned-filter' + (state.ownedOnly ? ' checked' : '') + '> 所持のみ</label></div><div class="cards ' + (isHero ? '' : 'tactic-list') + '">' + (items.map(isHero ? heroCard_ : tacticCard_).join('') || '<div class="empty">条件に一致するデータがありません。</div>') + '</div></section>';
     }
 
     /**
@@ -356,7 +359,9 @@
      * @returns {string} HTML。
      */
     function settingsPage_() {
-      return pageHead_('設定', 'この端末に保存している情報を確認・削除します。') + '<section class="page-grid"><article class="panel"><h2>保存方式</h2><p>現在はブラウザの localStorage を使用しています。別の端末・別ブラウザには同期されません。</p></article><article class="panel"><h2>端末データ</h2><p>部隊、所持品、プロフィール、グループ、共有一覧、提案、抽選記録を削除できます。</p><button class="btn danger" data-action="clear-data">端末データをすべて削除</button></article></section>';
+      const heroes = state.customHeroes.map(function(item) { return '<div class="record"><strong>' + escape_(item.name) + '</strong><button class="btn danger" data-custom-delete="hero:' + escape_(item.id) + '">削除</button></div>'; }).join('');
+      const tactics = state.customTactics.map(function(item) { return '<div class="record"><strong>' + escape_(item.name) + '</strong><button class="btn danger" data-custom-delete="tactic:' + escape_(item.id) + '">削除</button></div>'; }).join('');
+      return pageHead_('設定', 'この端末に保存している情報を確認・削除します。') + '<section class="page-grid"><article class="panel"><h2>保存方式</h2><p>現在はブラウザの localStorage を使用しています。別の端末・別ブラウザには同期されません。</p></article><article class="panel"><h2>カスタムデータ</h2><p>公開マスターを編集せず、端末内だけで武将・戦法を追加できます。</p><div class="actions"><button class="btn" data-action="custom-hero">武将を追加</button><button class="btn" data-action="custom-tactic">戦法を追加</button></div><div class="record-list">' + heroes + tactics + '</div></article><article class="panel"><h2>端末データ</h2><p>部隊、所持品、プロフィール、グループ、共有一覧、提案、抽選記録、カスタムデータを削除できます。</p><button class="btn danger" data-action="clear-data">端末データをすべて削除</button></article></section>';
     }
 
     /**
@@ -378,7 +383,7 @@
       if (state.modal !== 'inventory') return '';
       const isHero = state.tab === 'heroes';
       const key = isHero ? 'heroIds' : 'tacticIds';
-      const items = isHero ? master.heroes || [] : master.tactics || [];
+      const items = isHero ? heroes_() : tactics_();
       return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true"><h2>所持管理</h2><p>' + (isHero ? '所持している武将を選択してください。' : '所持している戦法を選択してください。') + '</p><div class="inventory">' + items.map(function(item) { return '<label><input type="checkbox" data-inventory="' + key + ':' + escape_(item.id) + '"' + (state.inventory[key].includes(item.id) ? ' checked' : '') + '><span>' + escape_(item.name) + '</span></label>'; }).join('') + '</div><div class="modal-actions"><button class="btn" data-close-modal>閉じる</button><button class="btn primary" data-action="save">保存</button></div></section></div>';
     }
 
@@ -423,6 +428,7 @@
       all_('[data-proposal-vote]', function(element) { element.onclick = function() { voteProposal_(element.dataset.proposalVote); }; });
       all_('[data-proposal-delete]', function(element) { element.onclick = function() { deleteRecord_('proposals', element.dataset.proposalDelete); }; });
       all_('[data-gacha-delete]', function(element) { element.onclick = function() { deleteRecord_('gachaLogs', element.dataset.gachaDelete); }; });
+      all_('[data-custom-delete]', function(element) { element.onclick = function() { const values = element.dataset.customDelete.split(':'); deleteCustomData_(values[0], values[1]); }; });
       all_('[data-drag-hero]', function(element) { element.ondragstart = function(event) { event.dataTransfer.setData('text/plain', 'hero:' + element.dataset.dragHero); }; });
       all_('[data-drag-member]', function(element) { element.ondragstart = function(event) { event.dataTransfer.setData('text/plain', 'member:' + element.dataset.dragMember); }; });
       all_('[data-drag-tactic]', function(element) { element.ondragstart = function(event) { event.dataTransfer.setData('text/plain', 'tactic:' + element.dataset.dragTactic); }; });
@@ -470,6 +476,8 @@
       if (name === 'share-save') createSavedShare_();
       if (name === 'proposal-create') createProposal_();
       if (name === 'gacha-add') addGachaLog_();
+      if (name === 'custom-hero') addCustomHero_();
+      if (name === 'custom-tactic') addCustomTactic_();
       if (name === 'clear-data') clearData_();
       persist_();
       render();
@@ -514,7 +522,7 @@
      * @returns {void}
      */
     function persist_() {
-      const data = { version: CONFIG.STORAGE_VERSION, teams: state.teams, activeTeam: state.activeTeam, inventory: state.inventory, profiles: state.profiles, groups: state.groups, savedShares: state.savedShares, proposals: state.proposals, gachaLogs: state.gachaLogs, mode: state.mode };
+      const data = { version: CONFIG.STORAGE_VERSION, teams: state.teams, activeTeam: state.activeTeam, inventory: state.inventory, profiles: state.profiles, groups: state.groups, savedShares: state.savedShares, proposals: state.proposals, gachaLogs: state.gachaLogs, customHeroes: state.customHeroes, customTactics: state.customTactics, mode: state.mode };
       localStorage.setItem(CONFIG.STORAGE_KEY, JSON.stringify(data));
     }
 
@@ -666,6 +674,49 @@
       if (!Number.isFinite(count) || !Number.isFinite(rare) || count < 1 || rare < 0) return showToast_('抽選回数と高レア数を正しく入力してください。');
       state.gachaLogs.unshift({ id: makeId_(), pool: pool.slice(0, 40), count: Math.floor(count), rare: Math.floor(rare), createdAt: dateLabel_() });
       showToast_('抽選記録を追加しました。');
+    }
+
+    /**
+     * 端末内限定のカスタム武将を登録する。
+     * @returns {void}
+     */
+    function addCustomHero_() {
+      const name = window.prompt('武将名を入力してください。', 'カスタム武将');
+      if (!name) return;
+      const cost = Number(window.prompt('コストを入力してください。', '5'));
+      if (!Number.isFinite(cost) || cost < 1 || cost > 9) return showToast_('コストは1〜9で入力してください。');
+      const faction = window.prompt('勢力を入力してください。', 'その他') || 'その他';
+      const rarity = window.prompt('レア度を入力してください。', 'S') || 'S';
+      state.customHeroes.push({ id: 'custom-hero-' + makeId_(), name: name.slice(0, 40), faction: faction.slice(0, 30), clan: 'カスタム', cost: cost, rarity: rarity.slice(0, 10), uniqueSkill: '', portrait: '', stats: { leadership: 100, valor: 100, intelligence: 100, politics: 100, charisma: 100, speed: 100 }, traits: [] });
+      showToast_('カスタム武将を追加しました。');
+    }
+
+    /**
+     * 端末内限定のカスタム戦法を登録する。
+     * @returns {void}
+     */
+    function addCustomTactic_() {
+      const name = window.prompt('戦法名を入力してください。', 'カスタム戦法');
+      if (!name) return;
+      const type = window.prompt('戦法種別を入力してください。', '能動') || '能動';
+      const effect = window.prompt('戦法効果を入力してください。', '') || '';
+      state.customTactics.push({ id: 'custom-tactic-' + makeId_(), name: name.slice(0, 40), type: type.slice(0, 20), rarity: 'S', target: '任意', activationRate: '任意', summary: effect.slice(0, 120) || 'カスタム戦法', effect: effect.slice(0, 500) || '効果未設定', learnable: true });
+      showToast_('カスタム戦法を追加しました。');
+    }
+
+    /**
+     * 端末内のカスタムデータを削除する。
+     * @param {string} kind データ種別。
+     * @param {string} id データID。
+     * @returns {void}
+     */
+    function deleteCustomData_(kind, id) {
+      if (!window.confirm('このカスタムデータを削除しますか？')) return;
+      if (kind === 'hero') state.customHeroes = state.customHeroes.filter(function(item) { return item.id !== id; });
+      if (kind === 'tactic') state.customTactics = state.customTactics.filter(function(item) { return item.id !== id; });
+      state.teams.forEach(function(team) { team.members.forEach(function(member) { if (member.heroId === id) member.heroId = ''; member.tacticIds = member.tacticIds.map(function(tacticId) { return tacticId === id ? '' : tacticId; }); }); });
+      persist_();
+      render();
     }
 
     /**
@@ -887,14 +938,26 @@
      * @param {string} id 武将ID。
      * @returns {Object|null} 武将。
      */
-    function hero_(id) { return (master.heroes || []).find(function(hero) { return hero.id === id; }) || null; }
+    function hero_(id) { return heroes_().find(function(hero) { return hero.id === id; }) || null; }
 
     /**
      * 戦法をIDから取得する。
      * @param {string} id 戦法ID。
      * @returns {Object|null} 戦法。
      */
-    function tactic_(id) { return (master.tactics || []).find(function(tactic) { return tactic.id === id; }) || null; }
+    function tactic_(id) { return tactics_().find(function(tactic) { return tactic.id === id; }) || null; }
+
+    /**
+     * 公開マスターと端末登録分を結合した武将一覧を取得する。
+     * @returns {Array<Object>} 武将一覧。
+     */
+    function heroes_() { return (master.heroes || []).concat(state.customHeroes || []); }
+
+    /**
+     * 公開マスターと端末登録分を結合した戦法一覧を取得する。
+     * @returns {Array<Object>} 戦法一覧。
+     */
+    function tactics_() { return (master.tactics || []).concat(state.customTactics || []); }
 
     /**
      * 部隊の合計コストを取得する。
@@ -920,7 +983,7 @@
      */
     function filteredHeroes_() {
       const query = state.query.toLowerCase();
-      return (master.heroes || []).filter(function(hero) { return (!query || (hero.name + hero.uniqueSkill + hero.clan).toLowerCase().includes(query)) && (!state.cost || (state.cost === '4' ? Number(hero.cost) <= 4 : String(hero.cost) === state.cost)) && (!state.faction || hero.faction === state.faction) && (!state.rarity || hero.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.heroIds.includes(hero.id)); });
+      return heroes_().filter(function(hero) { return (!query || (hero.name + hero.uniqueSkill + hero.clan).toLowerCase().includes(query)) && (!state.cost || (state.cost === '4' ? Number(hero.cost) <= 4 : String(hero.cost) === state.cost)) && (!state.faction || hero.faction === state.faction) && (!state.rarity || hero.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.heroIds.includes(hero.id)); });
     }
 
     /**
@@ -929,7 +992,7 @@
      */
     function filteredTactics_() {
       const query = state.query.toLowerCase();
-      return (master.tactics || []).filter(function(tactic) { return tactic.learnable && (!query || (tactic.name + tactic.type + tactic.target).toLowerCase().includes(query)) && (!state.faction || tactic.type === state.faction) && (!state.rarity || tactic.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.tacticIds.includes(tactic.id)); });
+      return tactics_().filter(function(tactic) { return tactic.learnable && (!query || (tactic.name + tactic.type + tactic.target).toLowerCase().includes(query)) && (!state.faction || tactic.type === state.faction) && (!state.rarity || tactic.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.tacticIds.includes(tactic.id)); });
     }
 
     /**
