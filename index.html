@@ -25,6 +25,7 @@
     - 2026-08-30: Qookka取込後に所持品編成へ自動で切り替えるよう改善。
     - 2026-08-30: 所持品編成中は武将庫・戦法庫の件数を所持数で表示するよう改善。
     - 2026-08-30: 選択武将の肖像・戦法欄を拡大し、能力値の振り分け操作を追加。
+    - 2026-08-30: 突破星1つにつき能力振分の上限を10ポイント増やすよう改善。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -91,7 +92,8 @@
       MAX_TEAMS: 10,
       MAX_MEMBERS: 3,
       MAX_BREAKTHROUGH: 5,
-      STAT_BONUS_LIMIT: 50,
+      STAT_BONUS_BASE_LIMIT: 50,
+      STAT_BONUS_PER_BREAKTHROUGH: 10,
       TEAM_COST_LIMIT: 20,
       STORAGE_VERSION: 2,
       SUPABASE_URL: (window.SUPABASE_CONFIG || {}).url || '',
@@ -271,10 +273,11 @@
       const fallback = '<span class="portrait-fallback" aria-hidden="true">' + escape_(hero.name.slice(0, 1)) + '</span>';
       const visual = hero.portrait ? fallback + '<img src="' + escape_(hero.portrait) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : fallback;
       const allocatedPoints = allocatedStatPoints_(member);
+      const statBonusLimit = statBonusLimit_(member);
       const stats = Object.keys(STAT_LABELS).map(function(key) { const bonus = Number((member.bonuses || {})[key] || 0); const value = Number((hero.stats || {})[key] || 0) + bonus; return '<div class="stat"><span>' + STAT_LABELS[key] + '</span><div class="stat-value"><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':-1" aria-label="' + STAT_LABELS[key] + 'を1下げる">−</button><b>' + value + '</b><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':1" aria-label="' + STAT_LABELS[key] + 'を1上げる">＋</button></div><small>' + (bonus ? '＋' + bonus : '') + '</small></div>'; }).join('');
       const traits = (hero.traits || []).slice(0, 4).map(function(trait) { return '<span class="tag ' + (trait.rank === 'S' ? 's' : '') + '">' + escape_(trait.name) + '</span>'; }).join('');
       const skills = member.tacticIds.map(function(id, index) { const tactic = tactic_(id); const active = selected && state.selected.kind === 'tactic' && state.selected.slot === index; return '<div class="skill-row"><button class="skill ' + (active ? 'active' : '') + '" data-focus-tactic="' + role + ':' + index + '" data-drop-tactic="' + role + ':' + index + '">' + (tactic ? escape_(tactic.name) + '　<small>' + escape_(tactic.type || '') + '</small>' : '＋ 戦法を習得') + '</button>' + (tactic ? '<button class="clear" data-remove-tactic="' + role + ':' + index + '" aria-label="' + escape_(tactic.name) + 'を解除">×</button>' : '') + '</div>'; }).join('');
-      return '<article class="slot ' + (selected ? 'selected' : '') + '" data-drop-role="' + role + '"><div class="role role-line"><span>' + ROLES[role] + (role === 0 ? '　大将技' : '') + '</span><button class="clear" data-remove-hero="' + role + '" aria-label="' + escape_(hero.name) + 'を解除">×</button></div><button class="hero" data-focus-hero="' + role + '" data-drag-member="' + role + '" draggable="true"><span class="portrait">' + visual + '</span><span><span class="hero-name">' + escape_(hero.name) + '</span><span class="meta">' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '　' + hero.cost + 'C</span></span></button><div class="stars">' + stars_(role, member.breakthrough) + '</div><span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><span class="tag">' + escape_(hero.uniqueSkill || '固有戦法未設定') + '</span><div class="stat-allocation"><span>能力振分</span><b>' + allocatedPoints + ' / ' + CONFIG.STAT_BONUS_LIMIT + '</b></div><div class="stats">' + stats + '</div><div class="traits">' + traits + '</div>' + skills + '</article>';
+      return '<article class="slot ' + (selected ? 'selected' : '') + '" data-drop-role="' + role + '"><div class="role role-line"><span>' + ROLES[role] + (role === 0 ? '　大将技' : '') + '</span><button class="clear" data-remove-hero="' + role + '" aria-label="' + escape_(hero.name) + 'を解除">×</button></div><button class="hero" data-focus-hero="' + role + '" data-drag-member="' + role + '" draggable="true"><span class="portrait">' + visual + '</span><span><span class="hero-name">' + escape_(hero.name) + '</span><span class="meta">' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '　' + hero.cost + 'C</span></span></button><div class="stars">' + stars_(role, member.breakthrough) + '</div><span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><span class="tag">' + escape_(hero.uniqueSkill || '固有戦法未設定') + '</span><div class="stat-allocation"><span>能力振分</span><b>' + allocatedPoints + ' / ' + statBonusLimit + '</b></div><div class="stats">' + stats + '</div><div class="traits">' + traits + '</div>' + skills + '</article>';
     }
 
     /**
@@ -299,6 +302,16 @@
     }
 
     /**
+     * 突破数を反映した能力値振分の上限を取得する。
+     * @param {Object} member 武将枠データ。
+     * @returns {number} 振り分け可能な上限ポイント。
+     */
+    function statBonusLimit_(member) {
+      const breakthrough = Math.max(0, Math.min(CONFIG.MAX_BREAKTHROUGH, Number(member.breakthrough) || 0));
+      return CONFIG.STAT_BONUS_BASE_LIMIT + (breakthrough * CONFIG.STAT_BONUS_PER_BREAKTHROUGH);
+    }
+
+    /**
      * 指定した武将の能力値ポイントを増減する。
      * @param {number} role 武将枠の番号。
      * @param {string} key 能力値キー。
@@ -310,7 +323,8 @@
       if (!member || !Object.prototype.hasOwnProperty.call(STAT_LABELS, key)) return;
       const current = Math.max(0, Number((member.bonuses || {})[key] || 0));
       const allocated = allocatedStatPoints_(member);
-      if (delta > 0 && allocated >= CONFIG.STAT_BONUS_LIMIT) return showToast_('能力振分は合計 ' + CONFIG.STAT_BONUS_LIMIT + ' までです。');
+      const limit = statBonusLimit_(member);
+      if (delta > 0 && allocated >= limit) return showToast_('能力振分は合計 ' + limit + ' までです。');
       if (delta < 0 && current === 0) return;
       member.bonuses[key] = Math.max(0, current + delta);
       persist_();
