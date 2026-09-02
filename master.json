@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-08-30",
+  "updatedAt": "2026-09-02",
   "sourceNote": "編成に必要な基本データ。肖像は外部参照。戦法効果は参照データを基にした日本語機械翻訳。",
   "heroes": [
     {
@@ -3435,7 +3435,7 @@
     },
     {
       "id": "hero-064",
-      "name": "瑞溪院",
+      "name": "瑞渓院",
       "sourceName": "瑞溪院",
       "faction": "群雄",
       "clan": "北条家",
@@ -8094,7 +8094,7 @@
           "affinity": null
         }
       ],
-      "portrait": "https://p11386-media-cdn.qookkagames.com/P11386/sns/public_config/release/res/card/hero/zhaitengyilong.png",
+      "portrait": "https://www.sanguo-zhi.com/wiki/assets/details/saitouyoshitatsu.webp",
       "detailUrl": ""
     }
   ],
@@ -12657,8 +12657,8 @@
     },
     {
       "id": "tactic-229",
-      "name": "三河武士",
-      "sourceName": "三河武士",
+      "name": "三河武士隊",
+      "sourceName": "三河武士队",
       "type": "兵種",
       "rarity": "S",
       "target": "自軍全体",
@@ -12826,8 +12826,8 @@
     },
     {
       "id": "tactic-237",
-      "name": "威風凜凜",
-      "sourceName": "威風凜凜",
+      "name": "威風凜々",
+      "sourceName": "威风凛凛",
       "type": "突撃",
       "rarity": "S",
       "target": "敵軍単体",
@@ -13029,6 +13029,26 @@
       ],
       "summary": "兵種戦法。対象：自軍全体(3人)。発動率：100%。習得可能な戦法。",
       "effect": "弓兵を甲斐弓騎兵・拓へ進化させる。部隊の行軍速度を上げ、自軍全体の最初の能動戦法の発動率を上昇させる。準備が必要な戦法はさらに上昇する。"
+    },
+    {
+      "id": "tactic-247",
+      "name": "赤備え隊・拓",
+      "sourceName": "赤备队·拓",
+      "type": "兵種",
+      "rarity": "S",
+      "target": "自軍全体(3人)",
+      "activationRate": "100%",
+      "learnable": true,
+      "uniqueHero": "",
+      "tags": [
+        "兵種",
+        "会心",
+        "武勇ダメージ",
+        "強化",
+        "受動発動"
+      ],
+      "summary": "兵種戦法。対象：自軍全体(3人)。発動率：100%。習得可能な戦法。",
+      "effect": "騎兵を赤備え隊・拓へ進化させる。自軍全体に会心状態を付与し、会心発生時の兵刃ダメージを上昇させる。飯富虎昌が主将の場合、会心ダメージの累計回数に応じて全軍出撃が発動する。"
     }
   ]
 }
