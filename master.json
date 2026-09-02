@@ -4350,8 +4350,8 @@
     },
     {
       "id": "hero-081",
-      "name": "斎藤義竜",
-      "sourceName": "齋藤義龍",
+      "name": "斎藤義龍",
+      "sourceName": "斋藤义龙",
       "faction": "群雄",
       "clan": "斎藤家",
       "cost": 5,
@@ -4399,8 +4399,8 @@
           "affinity": null
         }
       ],
-      "portrait": "https://img.game8.jp/12055668/f3b49d984fbc1a99c377fd1102a0903f.webp/original",
-      "detailUrl": "https://game8.jp/nobunaga-shinsen/747955"
+      "portrait": "https://www.sanguo-zhi.com/wiki/assets/details/saitouyoshitatsu.webp",
+      "detailUrl": "https://www.sanguo-zhi.com/wiki/general/saitouyoshitatsu/"
     },
     {
       "id": "hero-082",
@@ -8041,60 +8041,6 @@
         }
       ],
       "portrait": "https://p11386-media-cdn.qookkagames.com/P11386/sns/public_config/release/res/card/hero/yitiaoxinlong.png",
-      "detailUrl": ""
-    },
-    {
-      "id": "hero-157",
-      "name": "斎藤義龍",
-      "sourceName": "斋藤义龙",
-      "faction": "群雄",
-      "clan": "斎藤家",
-      "cost": 5,
-      "rarity": "C",
-      "gender": "男",
-      "uniqueSkill": "傲岸不遜",
-      "teachableSkill": "傲岸不遜",
-      "assemblySkill": "",
-      "stats": {
-        "leadership": 165,
-        "valor": 163,
-        "intelligence": 142,
-        "politics": 135,
-        "charisma": 101,
-        "speed": 108
-      },
-      "traits": [
-        {
-          "name": "馬術Ⅱ",
-          "rank": "B",
-          "active": true,
-          "affinity": {
-            "troopTypes": [
-              "騎兵"
-            ],
-            "level": 2
-          }
-        },
-        {
-          "name": "看破Ⅱ",
-          "rank": "B",
-          "active": true,
-          "affinity": null
-        },
-        {
-          "name": "堅固Ⅲ",
-          "rank": "A",
-          "active": true,
-          "affinity": null
-        },
-        {
-          "name": "攻勢Ⅱ",
-          "rank": "B",
-          "active": true,
-          "affinity": null
-        }
-      ],
-      "portrait": "https://www.sanguo-zhi.com/wiki/assets/details/saitouyoshitatsu.webp",
       "detailUrl": ""
     }
   ],

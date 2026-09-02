@@ -30,6 +30,8 @@
     - 2026-08-30: 一条信龍・斎藤義龍と甲斐弓騎兵・拓を追加し、外部取込で一致しなかった戦法名を日本語正式表記へ修正。
     - 2026-09-02: 瑞渓院・威風凜々・三河武士隊の表記をQookka取込に合わせ、赤備え隊・拓を追加。
     - 2026-09-02: 斎藤義龍の肖像を取得可能な画像URLへ更新。
+    - 2026-09-02: 重複登録された斎藤義龍を既存カードへ統合し、武将庫の本来の位置へ修正。
+    - 2026-09-02: 旧IDの斎藤義龍を既存カードへ引き継ぐ保存データ移行を追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -114,7 +116,8 @@
       SUPABASE_PUBLISHABLE_KEY: (window.SUPABASE_CONFIG || {}).publishableKey || '',
       QOOKKA_IMPORT_URL: ((window.SUPABASE_CONFIG || {}).url || '') + '/functions/v1/qookka-import',
       CLOUD_FORMATION_NAME: '作業台自動保存',
-      CLOUD_SYNC_DELAY_MS: 1200
+      CLOUD_SYNC_DELAY_MS: 1200,
+      LEGACY_HERO_ID_MAP: Object.freeze({ 'hero-157': 'hero-081' })
     };
 
     const ROLES = ['主将', '副将', '副将'];
@@ -147,6 +150,16 @@
      */
     function makeTeam_(number) {
       return { id: Date.now() + '-' + number, name: '部隊 ' + number, members: Array.from({ length: CONFIG.MAX_MEMBERS }, makeMember_) };
+    }
+
+    /**
+     * 旧版の武将IDを現在のマスターIDへ変換する。
+     * @param {string} heroId 保存済みの武将ID。
+     * @returns {string} 現行の武将ID。
+     */
+    function normalizeHeroId_(heroId) {
+      const id = String(heroId || '');
+      return CONFIG.LEGACY_HERO_ID_MAP[id] || id;
     }
 
     /**
@@ -194,7 +207,7 @@
     function normalizeTeam_(team) {
       const members = Array.isArray(team.members) ? team.members.slice(0, 3).map(function(member) {
         const base = makeMember_();
-        return { ...base, ...member, tacticIds: [((member.tacticIds || [])[0] || ''), ((member.tacticIds || [])[1] || '')], bonuses: { ...base.bonuses, ...(member.bonuses || member.stats || {}) } };
+        return { ...base, ...member, heroId: normalizeHeroId_(member.heroId), tacticIds: [((member.tacticIds || [])[0] || ''), ((member.tacticIds || [])[1] || '')], bonuses: { ...base.bonuses, ...(member.bonuses || member.stats || {}) } };
       }) : [];
       while (members.length < 3) members.push(makeMember_());
       return { id: team.id || String(Date.now()), name: String(team.name || '部隊'), members: members };
@@ -206,7 +219,9 @@
      * @returns {Object} 補正済み所持データ。
      */
     function normalizeInventory_(inventory) {
-      return { heroIds: Array.isArray((inventory || {}).heroIds) ? inventory.heroIds : [], tacticIds: Array.isArray((inventory || {}).tacticIds) ? inventory.tacticIds : [] };
+      const heroIds = Array.isArray((inventory || {}).heroIds) ? inventory.heroIds.map(normalizeHeroId_) : [];
+      const tacticIds = Array.isArray((inventory || {}).tacticIds) ? inventory.tacticIds : [];
+      return { heroIds: Array.from(new Set(heroIds)), tacticIds: Array.from(new Set(tacticIds)) };
     }
 
     /**
