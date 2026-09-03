@@ -35,6 +35,7 @@
     - 2026-09-03: 表示名・メールアドレス・パスワードによるアカウント登録とログインを追加。
     - 2026-09-03: 一門限定の編成閲覧・コメント・招待ID画面を追加。
     - 2026-09-03: 既存アカウント向けのパスワード再設定メール送信・更新画面を追加。
+    - 2026-09-03: 再設定メールから戻った直後に更新画面を確実に開くよう改善。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -137,7 +138,7 @@
      * @returns {Object} アプリ状態。
      */
     function makeState_() {
-      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], customHeroes: [], customTactics: [], family: null, familyMembers: [], familyLineups: [], familyComments: [], route: 'lineups', mode: 'free', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '', cloudUser: null };
+      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], customHeroes: [], customTactics: [], family: null, familyMembers: [], familyLineups: [], familyComments: [], route: 'lineups', mode: 'free', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '', cloudUser: null, passwordRecoveryRequested: false };
     }
 
     /**
@@ -172,6 +173,7 @@
      * @returns {Promise<void>} 完了時に解決するPromise。
      */
     async function init() {
+      state.passwordRecoveryRequested = isPasswordRecoveryUrl_();
       try {
         const response = await fetch(CONFIG.MASTER_URL, { cache: 'no-cache' });
         if (response.ok) master = await response.json();
@@ -818,6 +820,15 @@
     }
 
     /**
+     * 現在のURLがSupabaseのパスワード再設定リンクからの戻りか判定する。
+     * @returns {boolean} 再設定リンクの場合はtrue。
+     */
+    function isPasswordRecoveryUrl_() {
+      const value = String(location.hash || '') + '&' + String(location.search || '');
+      return /(?:[?&#]|^)type=recovery(?:[&#&]|$)/.test(value);
+    }
+
+    /**
      * Supabase クライアントを初期化し、既存ログイン状態を復元する。
      * @returns {Promise<void>} 初期化完了時に解決するPromise。
      */
@@ -828,6 +839,7 @@
         const result = await supabaseClient.auth.getUser();
         state.cloudUser = result.data.user || null;
         if (state.cloudUser) await loadFamily_();
+        if (state.cloudUser && state.passwordRecoveryRequested) state.modal = 'password-recovery';
         supabaseClient.auth.onAuthStateChange(function(event, session) {
           state.cloudUser = session ? session.user : null;
           if (event === 'PASSWORD_RECOVERY') state.modal = 'password-recovery';
