@@ -2,10 +2,11 @@
   アプリの概要: 信長の野望・真戦の日本語版編成支援ツールの利用・管理ガイド。
   主な機能: 編成、所持品、端末保存、共有、グループ、提案、抽選記録、バックアップ、クラウド同期。
   関連ファイル／構成: index.html（画面）、master.json（公開マスター）、supabase-config.js、supabase/schema.sql。
-  更新日: 2026-08-30
+  更新日: 2026-09-03
   更新履歴:
     - 2026-08-30: 現行の端末内管理機能とクラウド連携の前提を追記。
     - 2026-08-30: Supabaseのメールリンクログインとユーザー専用クラウド保存を追加。
+    - 2026-09-03: 表示名・メールアドレス・パスワードの認証方法と公開マスターの追加手順を更新。
   メンテナンスメモ: Publishable keyのみをクライアントに配置し、service_roleキーは保存しない。
 -->
 
@@ -27,33 +28,43 @@
 
 ## クラウド機能について
 
-Supabase を接続済みです。公開サイトの「ログイン」からメールアドレスを入力すると、確認リンクが届きます。リンクを開けば、ユーザー専用のクラウド保存が開始されます。
+Supabase を接続済みです。公開サイトの「ログイン・登録」から、表示名・メールアドレス・パスワードを入力して登録できます。登録後に確認メールが届く場合は、メール内のリンクを開くとユーザー専用のクラウド保存が開始されます。
 
 `supabase-config.js` の Publishable key は、RLS（行レベルセキュリティ）を有効にしたブラウザ公開用キーです。管理用の service_role キーやデータベースパスワードは、リポジトリへ含めていません。
 
 ## 公開マスタの登録
 
-武将と戦法は master.json で管理します。GitHub上で master.json を開き、鉛筆アイコンから編集して Commit changes を実行すると、GitHub Pagesへ反映されます。
+武将と戦法は Supabase ではなく `master.json` で管理します。GitHub上で [master.json](https://github.com/kumaneko51/shinsen-hensei/blob/main/master.json) を開き、鉛筆アイコンから編集して「Commit changes」を実行すると、GitHub Pagesへ反映されます。
+
+追加は、同じ種類の既存データ1件を複製して末尾へ貼り付け、`id` を重複しない連番に変更する方法が安全です。武将は `heroes`、戦法は `tactics` の配列内に追加します。各項目の最後にカンマを付ける必要があるため、編集後はJSONの形式を必ず確認してください。
 
 武将に登録できる主な項目:
 
 - id: 重複しない半角英数字とハイフン
 - name: 武将名
+- sourceName: 外部取り込み照合用の原語名
 - faction: 勢力
+- clan: 家名
 - cost: コスト
 - rarity: レア度
-- troopType: 兵種
-- command, strength, intelligence: 能力値
-- skill: 固有戦法
+- stats: `leadership`、`valor`、`intelligence`、`politics`、`charisma`、`speed` の能力値
+- uniqueSkill: 固有戦法
+- teachableSkill: 伝授戦法
+- traits: 特性一覧
+- portrait: 肖像の画像URL
 
 戦法に登録できる主な項目:
 
 - id: 重複しない半角英数字とハイフン
 - name: 戦法名
+- sourceName: 外部取り込み照合用の原語名
 - type: 種別
 - rarity: レア度
-- effectCategory: 効果分類
-- description: 説明
+- target: 対象
+- activationRate: 発動率
+- learnable: `true` は選択可能、`false` は固有戦法として選択不可
+- tags: 効果分類
+- summary、effect: 戦法の要約と詳細説明
 
 JSONの記法を誤るとサイトに反映されないため、編集前の内容をコピーして保管してください。
 

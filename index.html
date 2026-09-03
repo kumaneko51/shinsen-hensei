@@ -3,7 +3,7 @@
   アプリの概要: 信長の野望・真戦の部隊を武将・戦法マスターから組み立てる公開用編成作業台。
   主な機能: 最大10部隊、主将・副将、突破、武将／戦法ライブラリ、所持管理、共有URL。
   関連ファイル／構成: index.html（GitHub Pages公開画面）、master.json（武将・戦法マスター）。
-  更新日: 2026-09-02
+  更新日: 2026-09-03
   更新履歴:
     - 2026-08-24: 参照アプリの作業台構成に合わせた日本語版レイアウトを作成。
     - 2026-08-30: プロフィール、部隊グループ、共有一覧、提案、抽選記録、設定の端末内管理画面を追加。
@@ -32,6 +32,7 @@
     - 2026-09-02: 斎藤義龍の肖像を取得可能な画像URLへ更新。
     - 2026-09-02: 重複登録された斎藤義龍を既存カードへ統合し、武将庫の本来の位置へ修正。
     - 2026-09-02: 旧IDの斎藤義龍を既存カードへ引き継ぐ保存データ移行を追加。
+    - 2026-09-03: 表示名・メールアドレス・パスワードによるアカウント登録とログインを追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -86,6 +87,7 @@
     .stat-editor-row > b { text-align:center; color:#0f172a; }
     .stat-editor-row > span { color:#94a3b8; text-align:right; }
     .stat-editor-row .stat-adjust { width:28px; height:28px; font-size:14px; }
+    .auth-form { display:grid; gap:10px; margin-top:16px; }.auth-form label { display:grid; gap:5px; color:#475569; font-size:12px; font-weight:700; }.auth-form input { width:100%; padding:9px 10px; border:1px solid var(--line); border-radius:7px; color:var(--ink); background:#fff; }.auth-note { margin-top:12px; padding:9px 10px; border-radius:7px; color:#475569; background:#f8fafc; font-size:11px; line-height:1.6; }
     .stat-reset { margin-right:auto; }
     @media(max-width:1300px) { .slot .hero .portrait { height:270px; } }
     @media(max-width:720px) { .slot .hero .portrait { height:290px; } }
@@ -527,11 +529,29 @@
      */
     function modal_() {
       if (state.modal.indexOf('stats:') === 0) return statAllocationModal_(Number(state.modal.slice(6)));
+      if (state.modal === 'auth') return authModal_();
+      if (state.modal === 'account') return accountModal_();
       if (state.modal !== 'inventory') return '';
       const isHero = state.tab === 'heroes';
       const key = isHero ? 'heroIds' : 'tacticIds';
       const items = isHero ? heroes_() : tactics_();
       return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true"><h2>所持管理</h2><p>' + (isHero ? '所持している武将を選択してください。' : '所持している戦法を選択してください。') + '</p><div class="inventory">' + items.map(function(item) { return '<label><input type="checkbox" data-inventory="' + key + ':' + escape_(item.id) + '"' + (state.inventory[key].includes(item.id) ? ' checked' : '') + '><span>' + escape_(item.name) + '</span></label>'; }).join('') + '</div><div class="modal-actions"><button class="btn" data-close-modal>閉じる</button><button class="btn primary" data-action="save">保存</button></div></section></div>';
+    }
+
+    /**
+     * アカウント登録・ログイン用モーダルを描画する。
+     * @returns {string} HTML。
+     */
+    function authModal_() {
+      return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="auth-title"><div class="role-line"><div><h2 id="auth-title">アカウント登録・ログイン</h2><p>登録後は別の端末でも同じデータを利用できます。</p></div><button class="clear" data-close-modal aria-label="閉じる">×</button></div><div class="auth-form"><label>表示名<input type="text" data-auth-name maxlength="30" autocomplete="nickname" placeholder="例：くまねこ"></label><label>メールアドレス<input type="email" data-auth-email autocomplete="email" placeholder="name@example.com"></label><label>パスワード<input type="password" data-auth-password minlength="8" autocomplete="current-password" placeholder="8文字以上"></label></div><p class="auth-note">新規登録では表示名も入力してください。登録後に確認メールが届く場合があります。</p><div class="modal-actions"><button class="btn" data-close-modal>キャンセル</button><button class="btn" data-auth-submit="login">ログイン</button><button class="btn primary" data-auth-submit="signup">新規登録</button></div></section></div>';
+    }
+
+    /**
+     * ログイン中のアカウント情報モーダルを描画する。
+     * @returns {string} HTML。
+     */
+    function accountModal_() {
+      return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true"><h2>アカウント</h2><p>ログイン名：' + escape_(currentUserDisplayName_()) + '<br>メールアドレス：' + escape_(state.cloudUser ? state.cloudUser.email || '' : '') + '</p><div class="modal-actions"><button class="btn" data-close-modal>閉じる</button><button class="btn danger" data-auth-signout>ログアウト</button></div></section></div>';
     }
 
     /**
@@ -584,6 +604,8 @@
       all_('[data-hero]', function(element) { element.onclick = function() { chooseHero_(element.dataset.hero); }; });
       all_('[data-tactic]', function(element) { element.onclick = function() { chooseTactic_(element.dataset.tactic); }; });
       all_('[data-inventory]', function(element) { element.onchange = function() { const values = element.dataset.inventory.split(':'); const ids = state.inventory[values[0]]; state.inventory[values[0]] = element.checked ? Array.from(new Set(ids.concat(values[1]))) : ids.filter(function(id) { return id !== values[1]; }); }; });
+      all_('[data-auth-submit]', function(element) { element.onclick = function() { void submitAuth_(element.dataset.authSubmit); }; });
+      all_('[data-auth-signout]', function(element) { element.onclick = function() { void signOut_(); }; });
       all_('[data-import-file]', function(element) { element.onchange = function() { if (element.files && element.files[0]) importBackup_(element.files[0]); }; });
       all_('[data-remove-hero]', function(element) { element.onclick = function() { removeHero_(Number(element.dataset.removeHero)); }; });
       all_('[data-remove-tactic]', function(element) { element.onclick = function() { const values = element.dataset.removeTactic.split(':').map(Number); removeTactic_(values[0], values[1]); }; });
@@ -697,7 +719,16 @@
      */
     function cloudStatus_() {
       if (!CONFIG.SUPABASE_URL || !CONFIG.SUPABASE_PUBLISHABLE_KEY) return '端末内保存モード';
-      return state.cloudUser ? 'クラウド同期: ' + escape_(state.cloudUser.email || 'ログイン済み') : '端末内保存（ログインでクラウド同期）';
+      return state.cloudUser ? 'ログイン: ' + escape_(currentUserDisplayName_()) : '端末内保存（ログインでクラウド同期）';
+    }
+
+    /**
+     * ログイン中ユーザーの画面表示用の名前を取得する。
+     * @returns {string} 表示名。未設定時はメールアドレス。
+     */
+    function currentUserDisplayName_() {
+      const metadata = state.cloudUser && state.cloudUser.user_metadata ? state.cloudUser.user_metadata : {};
+      return String(metadata.display_name || state.cloudUser && state.cloudUser.email || 'ログイン済み');
     }
 
     /**
@@ -721,19 +752,53 @@
     }
 
     /**
-     * メールリンクでクラウド同期用ログインを開始する。
-     * @returns {Promise<void>} 処理完了時に解決するPromise。
+     * アカウント登録・ログイン画面を開く。
+     * @returns {void}
      */
-    async function cloudLogin_() {
+    function cloudLogin_() {
       if (!supabaseClient) return showToast_('クラウド同期の設定を読み込めませんでした。');
       if (state.cloudUser) {
-        scheduleCloudSync_();
-        return showToast_('クラウドへ保存を開始しました。');
+        state.modal = 'account';
+        return render();
       }
-      const email = window.prompt('ログイン用メールアドレスを入力してください。確認リンクを送信します。');
-      if (!email) return;
-      const result = await supabaseClient.auth.signInWithOtp({ email: email, options: { emailRedirectTo: location.origin + location.pathname } });
-      showToast_(result.error ? 'ログインリンクを送信できませんでした。' : '確認リンクをメールへ送信しました。');
+      state.modal = 'auth';
+      render();
+    }
+
+    /**
+     * 入力された認証情報で新規登録またはログインを実行する。
+     * @param {string} mode 実行種別。signup または login。
+     * @returns {Promise<void>} 認証完了時に解決するPromise。
+     */
+    async function submitAuth_(mode) {
+      if (!supabaseClient) return showToast_('クラウド同期の設定を読み込めませんでした。');
+      const name = String((document.querySelector('[data-auth-name]') || {}).value || '').trim();
+      const email = String((document.querySelector('[data-auth-email]') || {}).value || '').trim();
+      const password = String((document.querySelector('[data-auth-password]') || {}).value || '');
+      if (!email || !password || (mode === 'signup' && !name)) return showToast_('表示名・メールアドレス・パスワードを入力してください。');
+      if (password.length < 8) return showToast_('パスワードは8文字以上で入力してください。');
+      const result = mode === 'signup'
+        ? await supabaseClient.auth.signUp({ email: email, password: password, options: { data: { display_name: name }, emailRedirectTo: location.origin + location.pathname } })
+        : await supabaseClient.auth.signInWithPassword({ email: email, password: password });
+      if (result.error) return showToast_(mode === 'signup' ? '登録できませんでした。入力内容を確認してください。' : 'メールアドレスまたはパスワードが正しくありません。');
+      state.modal = '';
+      if (mode === 'signup' && !result.data.session) showToast_('確認メールを送信しました。メール内のリンクを開いて登録を完了してください。');
+      else showToast_(mode === 'signup' ? '登録してログインしました。' : 'ログインしました。');
+      render();
+    }
+
+    /**
+     * 現在のアカウントからログアウトする。
+     * @returns {Promise<void>} ログアウト完了時に解決するPromise。
+     */
+    async function signOut_() {
+      if (!supabaseClient) return;
+      const result = await supabaseClient.auth.signOut();
+      if (result.error) return showToast_('ログアウトできませんでした。');
+      state.cloudUser = null;
+      state.modal = '';
+      showToast_('ログアウトしました。');
+      render();
     }
 
     /**
@@ -754,7 +819,7 @@
       if (!supabaseClient || !state.cloudUser) return;
       const userId = state.cloudUser.id;
       const payload = { activeTeam: state.activeTeam, inventory: state.inventory, profiles: state.profiles, groups: state.groups, savedShares: state.savedShares, proposals: state.proposals, gachaLogs: state.gachaLogs, customHeroes: state.customHeroes, customTactics: state.customTactics };
-      const profileResult = await supabaseClient.from('user_profiles').upsert({ user_id: userId, display_name: state.cloudUser.email || '', inventory: state.inventory });
+      const profileResult = await supabaseClient.from('user_profiles').upsert({ user_id: userId, display_name: currentUserDisplayName_(), inventory: state.inventory });
       if (profileResult.error) return;
       const existing = await supabaseClient.from('formations').select('id').eq('user_id', userId).eq('name', CONFIG.CLOUD_FORMATION_NAME).limit(1);
       const record = { user_id: userId, name: CONFIG.CLOUD_FORMATION_NAME, teams: { teams: state.teams, payload: payload }, mode: state.mode };
