@@ -34,6 +34,7 @@
     - 2026-09-02: 旧IDの斎藤義龍を既存カードへ引き継ぐ保存データ移行を追加。
     - 2026-09-03: 表示名・メールアドレス・パスワードによるアカウント登録とログインを追加。
     - 2026-09-03: 一門限定の編成閲覧・コメント・招待ID画面を追加。
+    - 2026-09-03: 既存アカウント向けのパスワード再設定メール送信・更新画面を追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -567,6 +568,7 @@
       if (state.modal.indexOf('stats:') === 0) return statAllocationModal_(Number(state.modal.slice(6)));
       if (state.modal === 'auth') return authModal_();
       if (state.modal === 'account') return accountModal_();
+      if (state.modal === 'password-recovery') return passwordRecoveryModal_();
       if (state.modal.indexOf('family-lineup:') === 0) return familyLineupModal_(state.modal.slice(14));
       if (state.modal.indexOf('family-comments:') === 0) return familyCommentsModal_(state.modal.slice(16));
       if (state.modal !== 'inventory') return '';
@@ -581,7 +583,15 @@
      * @returns {string} HTML。
      */
     function authModal_() {
-      return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="auth-title"><div class="role-line"><div><h2 id="auth-title">アカウント登録・ログイン</h2><p>登録後は別の端末でも同じデータを利用できます。</p></div><button class="clear" data-close-modal aria-label="閉じる">×</button></div><div class="auth-form"><label>表示名<input type="text" data-auth-name maxlength="30" autocomplete="nickname" placeholder="例：くまねこ"></label><label>メールアドレス<input type="email" data-auth-email autocomplete="email" placeholder="name@example.com"></label><label>パスワード<input type="password" data-auth-password minlength="8" autocomplete="current-password" placeholder="8文字以上"></label></div><p class="auth-note">新規登録では表示名も入力してください。登録後に確認メールが届く場合があります。</p><div class="modal-actions"><button class="btn" data-close-modal>キャンセル</button><button class="btn" data-auth-submit="login">ログイン</button><button class="btn primary" data-auth-submit="signup">新規登録</button></div></section></div>';
+      return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="auth-title"><div class="role-line"><div><h2 id="auth-title">アカウント登録・ログイン</h2><p>登録後は別の端末でも同じデータを利用できます。</p></div><button class="clear" data-close-modal aria-label="閉じる">×</button></div><div class="auth-form"><label>表示名<input type="text" data-auth-name maxlength="30" autocomplete="nickname" placeholder="例：くまねこ"></label><label>メールアドレス<input type="email" data-auth-email autocomplete="email" placeholder="name@example.com"></label><label>パスワード<input type="password" data-auth-password minlength="8" autocomplete="current-password" placeholder="8文字以上"></label></div><p class="auth-note">新規登録では表示名も入力してください。以前に同じメールアドレスで利用していた場合は、下の再設定を使用してください。</p><div class="modal-actions"><button class="btn" data-auth-reset>パスワードを再設定</button><button class="btn" data-close-modal>キャンセル</button><button class="btn" data-auth-submit="login">ログイン</button><button class="btn primary" data-auth-submit="signup">新規登録</button></div></section></div>';
+    }
+
+    /**
+     * メールの再設定リンクから開かれたパスワード更新画面を描画する。
+     * @returns {string} HTML。
+     */
+    function passwordRecoveryModal_() {
+      return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="recovery-title"><div class="role-line"><div><h2 id="recovery-title">パスワードを再設定</h2><p>新しいパスワードを設定してください。</p></div><button class="clear" data-close-modal aria-label="閉じる">×</button></div><div class="auth-form"><label>新しいパスワード<input type="password" data-recovery-password minlength="8" autocomplete="new-password" placeholder="8文字以上"></label><label>新しいパスワード（確認）<input type="password" data-recovery-password-confirm minlength="8" autocomplete="new-password" placeholder="もう一度入力"></label></div><div class="modal-actions"><button class="btn" data-close-modal>キャンセル</button><button class="btn primary" data-recovery-submit>パスワードを更新</button></div></section></div>';
     }
 
     /**
@@ -672,6 +682,8 @@
       all_('[data-tactic]', function(element) { element.onclick = function() { chooseTactic_(element.dataset.tactic); }; });
       all_('[data-inventory]', function(element) { element.onchange = function() { const values = element.dataset.inventory.split(':'); const ids = state.inventory[values[0]]; state.inventory[values[0]] = element.checked ? Array.from(new Set(ids.concat(values[1]))) : ids.filter(function(id) { return id !== values[1]; }); }; });
       all_('[data-auth-submit]', function(element) { element.onclick = function() { void submitAuth_(element.dataset.authSubmit); }; });
+      all_('[data-auth-reset]', function(element) { element.onclick = function() { void requestPasswordReset_(); }; });
+      all_('[data-recovery-submit]', function(element) { element.onclick = function() { void updatePassword_(); }; });
       all_('[data-auth-signout]', function(element) { element.onclick = function() { void signOut_(); }; });
       all_('[data-family-view]', function(element) { element.onclick = function() { state.modal = 'family-lineup:' + element.dataset.familyView; render(); }; });
       all_('[data-family-comments]', function(element) { element.onclick = function() { state.modal = 'family-comments:' + element.dataset.familyComments; render(); }; });
@@ -818,6 +830,7 @@
         if (state.cloudUser) await loadFamily_();
         supabaseClient.auth.onAuthStateChange(function(event, session) {
           state.cloudUser = session ? session.user : null;
+          if (event === 'PASSWORD_RECOVERY') state.modal = 'password-recovery';
           if (state.cloudUser) {
             scheduleCloudSync_();
             void loadFamily_();
@@ -867,6 +880,38 @@
       state.modal = '';
       if (mode === 'signup' && !result.data.session) showToast_('確認メールを送信しました。メール内のリンクを開いて登録を完了してください。');
       else showToast_(mode === 'signup' ? '登録してログインしました。' : 'ログインしました。');
+      render();
+    }
+
+    /**
+     * 入力メールアドレス宛にパスワード再設定リンクを送信する。
+     * @returns {Promise<void>} 送信完了時に解決するPromise。
+     */
+    async function requestPasswordReset_() {
+      if (!supabaseClient) return showToast_('クラウド同期の設定を読み込めませんでした。');
+      const email = String((document.querySelector('[data-auth-email]') || {}).value || '').trim();
+      if (!email) return showToast_('再設定するメールアドレスを入力してください。');
+      const result = await supabaseClient.auth.resetPasswordForEmail(email, { redirectTo: location.origin + location.pathname });
+      if (result.error) return showToast_('再設定メールを送信できませんでした。時間を置いてからもう一度お試しください。');
+      state.modal = '';
+      showToast_('パスワード再設定メールを送信しました。メール内のリンクを開いてください。');
+      render();
+    }
+
+    /**
+     * 再設定リンクで認証されたアカウントのパスワードを更新する。
+     * @returns {Promise<void>} 更新完了時に解決するPromise。
+     */
+    async function updatePassword_() {
+      if (!supabaseClient || !state.cloudUser) return showToast_('再設定メール内のリンクを開き直してください。');
+      const password = String((document.querySelector('[data-recovery-password]') || {}).value || '');
+      const confirmation = String((document.querySelector('[data-recovery-password-confirm]') || {}).value || '');
+      if (password.length < 8) return showToast_('パスワードは8文字以上で入力してください。');
+      if (password !== confirmation) return showToast_('確認用パスワードが一致しません。');
+      const result = await supabaseClient.auth.updateUser({ password: password });
+      if (result.error) return showToast_('パスワードを更新できませんでした。再設定メールを開き直してください。');
+      state.modal = '';
+      showToast_('パスワードを更新しました。');
       render();
     }
 
