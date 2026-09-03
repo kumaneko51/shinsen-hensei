@@ -33,6 +33,7 @@
     - 2026-09-02: 重複登録された斎藤義龍を既存カードへ統合し、武将庫の本来の位置へ修正。
     - 2026-09-02: 旧IDの斎藤義龍を既存カードへ引き継ぐ保存データ移行を追加。
     - 2026-09-03: 表示名・メールアドレス・パスワードによるアカウント登録とログインを追加。
+    - 2026-09-03: 一門限定の編成閲覧・コメント・招待ID画面を追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -88,6 +89,7 @@
     .stat-editor-row > span { color:#94a3b8; text-align:right; }
     .stat-editor-row .stat-adjust { width:28px; height:28px; font-size:14px; }
     .auth-form { display:grid; gap:10px; margin-top:16px; }.auth-form label { display:grid; gap:5px; color:#475569; font-size:12px; font-weight:700; }.auth-form input { width:100%; padding:9px 10px; border:1px solid var(--line); border-radius:7px; color:var(--ink); background:#fff; }.auth-note { margin-top:12px; padding:9px 10px; border-radius:7px; color:#475569; background:#f8fafc; font-size:11px; line-height:1.6; }
+    .family-meta { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:12px 0; }.family-code { padding:7px 10px; border:1px dashed #93b4ec; border-radius:7px; color:#174ea6; background:#f6f9ff; font-family:ui-monospace,monospace; font-weight:800; }.family-member-list { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0; }.family-lineup { display:grid; gap:8px; }.family-lineup small { color:var(--muted); }.comment-list { display:grid; gap:8px; margin:14px 0; }.comment { padding:9px 10px; border-radius:7px; background:#f8fafc; }.comment strong { display:block; margin-bottom:4px; font-size:12px; }.comment p { margin:0; color:#475569; white-space:pre-wrap; }.comment-form { display:grid; gap:8px; }.comment-form textarea { min-height:88px; resize:vertical; padding:9px 10px; border:1px solid var(--line); border-radius:7px; font:inherit; }
     .stat-reset { margin-right:auto; }
     @media(max-width:1300px) { .slot .hero .portrait { height:270px; } }
     @media(max-width:720px) { .slot .hero .portrait { height:290px; } }
@@ -134,7 +136,7 @@
      * @returns {Object} アプリ状態。
      */
     function makeState_() {
-      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], customHeroes: [], customTactics: [], route: 'lineups', mode: 'free', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '', cloudUser: null };
+      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], customHeroes: [], customTactics: [], family: null, familyMembers: [], familyLineups: [], familyComments: [], route: 'lineups', mode: 'free', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '', cloudUser: null };
     }
 
     /**
@@ -243,7 +245,7 @@
      */
     function sidebar_() {
       const item = function(route, icon, label) { return '<button class="nav ' + (state.route === route ? 'active' : '') + '" data-route="' + route + '">' + icon + '　' + label + '</button>'; };
-      return '<aside class="side"><a class="brand" href="#/lineups"><span class="mark">戦</span><span>真戦編成<small>SHINSEI · JP</small></span></a><p class="label">主要機能</p>' + item('lineups', '♜', '編成作業台') + item('profiles', '♙', 'プロフィール') + item('groups', '▦', '部隊グループ') + item('shares', '↗', '共有一覧') + item('proposals', '◇', '編成提案') + item('gacha', '✦', '抽選記録') + '<p class="label">準備中</p>' + item('heroesDb', '▤', '武将データベース') + item('battleSim', '⚔', '戦闘シミュレーター') + '<p class="label">その他</p>' + item('settings', '⚙', '設定') + '<div class="side-foot">非公式ファンツール<br>データ・商標の権利は各権利者に帰属します。</div></aside>';
+      return '<aside class="side"><a class="brand" href="#/lineups"><span class="mark">戦</span><span>真戦編成<small>SHINSEI · JP</small></span></a><p class="label">主要機能</p>' + item('lineups', '♜', '編成作業台') + (state.cloudUser ? item('family', '♟', '一門') : '') + item('profiles', '♙', 'プロフィール') + item('groups', '▦', '部隊グループ') + item('shares', '↗', '共有一覧') + item('proposals', '◇', '編成提案') + item('gacha', '✦', '抽選記録') + '<p class="label">準備中</p>' + item('heroesDb', '▤', '武将データベース') + item('battleSim', '⚔', '戦闘シミュレーター') + '<p class="label">その他</p>' + item('settings', '⚙', '設定') + '<div class="side-foot">非公式ファンツール<br>データ・商標の権利は各権利者に帰属します。</div></aside>';
     }
 
     /**
@@ -260,6 +262,7 @@
      */
     function routeSelect_() {
       const routes = { lineups: '編成', profiles: 'プロフィール', groups: 'グループ', shares: '共有', proposals: '提案', gacha: '抽選記録', heroesDb: '武将DB', battleSim: '戦闘計算', settings: '設定' };
+      if (state.cloudUser) routes.family = '一門';
       return '<select class="select route-select" data-route-select aria-label="ページ選択">' + Object.keys(routes).map(function(key) { return '<option value="' + key + '"' + (state.route === key ? ' selected' : '') + '>' + routes[key] + '</option>'; }).join('') + '</select>';
     }
 
@@ -420,7 +423,7 @@
      * @returns {string} HTML。
      */
     function page_() {
-      const pages = { profiles: profilesPage_, groups: groupsPage_, shares: sharesPage_, proposals: proposalsPage_, gacha: gachaPage_, heroesDb: heroesDbPage_, battleSim: battleSimPage_, settings: settingsPage_ };
+      const pages = { family: familyPage_, profiles: profilesPage_, groups: groupsPage_, shares: sharesPage_, proposals: proposalsPage_, gacha: gachaPage_, heroesDb: heroesDbPage_, battleSim: battleSimPage_, settings: settingsPage_ };
       return '<main class="page">' + (pages[state.route] ? pages[state.route]() : lineupsPage_()) + '</main>';
     }
 
@@ -430,6 +433,39 @@
      */
     function lineupsPage_() {
       return '<section class="empty-panel">編成作業台を選択してください。</section>';
+    }
+
+    /**
+     * 一門内で公開された編成を閲覧する画面を描画する。
+     * @returns {string} HTML。
+     */
+    function familyPage_() {
+      if (!state.cloudUser) return pageHead_('一門', '一門の編成を閲覧するにはログインが必要です。', '<button class="btn primary" data-action="cloud-login">ログイン・登録</button>') + '<section class="empty-panel">ログイン後に一門を作成するか、招待IDで参加できます。</section>';
+      if (!state.family) return pageHead_('一門', '一門に参加すると、同じ一門の公開編成だけを閲覧・コメントできます。') + '<section class="page-grid"><article class="panel"><h2>一門を作成</h2><p>最初の一門員として一門名を登録し、発行される招待IDをメンバーへ渡します。</p><button class="btn primary" data-action="family-create">一門を作成</button></article><article class="panel"><h2>招待IDで参加</h2><p>一門長から受け取った招待IDを入力して参加します。</p><button class="btn" data-action="family-join">一門へ参加</button></article></section>';
+      const isOwner = state.family.owner_id === state.cloudUser.id;
+      const members = state.familyMembers.map(function(member) { return '<span class="tag">' + escape_(member.display_name) + (member.role === 'owner' ? '（一門長）' : '') + '</span>'; }).join('');
+      const lineups = state.familyLineups.map(function(lineup) { return '<article class="panel family-lineup"><h2>' + escape_(lineup.title) + '</h2><small>作成者：' + escape_(lineup.display_name) + '　更新：' + escape_(formatDateTime_(lineup.updated_at)) + '</small><div class="actions"><button class="btn" data-family-view="' + escape_(lineup.id) + '">閲覧</button><button class="btn" data-family-comments="' + escape_(lineup.id) + '">コメント (' + familyCommentCount_(lineup.id) + ')</button></div></article>'; }).join('');
+      const actions = '<button class="btn primary" data-action="family-publish">現在の部隊を一門へ公開</button><button class="btn" data-action="family-refresh">更新</button>';
+      return pageHead_('一門：' + state.family.name, '一門員の編成は閲覧・コメントのみです。自分の部隊だけ編集・公開できます。', actions) + '<section class="panel"><h2>メンバー</h2><div class="family-member-list">' + (members || '<span class="tag">メンバーなし</span>') + '</div>' + (isOwner ? '<div class="family-meta"><span>招待ID</span><code class="family-code">' + escape_(state.family.invite_code) + '</code></div>' : '') + '</section><section class="page-grid" style="margin-top:14px">' + (lineups || '<div class="empty-panel">公開された編成はまだありません。</div>') + '</section>';
+    }
+
+    /**
+     * 指定編成に投稿されたコメント数を取得する。
+     * @param {string} lineupId 一門編成ID。
+     * @returns {number} コメント数。
+     */
+    function familyCommentCount_(lineupId) {
+      return state.familyComments.filter(function(comment) { return comment.family_lineup_id === lineupId; }).length;
+    }
+
+    /**
+     * ISO日時を画面表示用へ変換する。
+     * @param {string} value ISO日時。
+     * @returns {string} 表示日時。
+     */
+    function formatDateTime_(value) {
+      const date = new Date(value || '');
+      return Number.isNaN(date.getTime()) ? '日時不明' : date.toLocaleString('ja-JP');
     }
 
     /**
@@ -531,6 +567,8 @@
       if (state.modal.indexOf('stats:') === 0) return statAllocationModal_(Number(state.modal.slice(6)));
       if (state.modal === 'auth') return authModal_();
       if (state.modal === 'account') return accountModal_();
+      if (state.modal.indexOf('family-lineup:') === 0) return familyLineupModal_(state.modal.slice(14));
+      if (state.modal.indexOf('family-comments:') === 0) return familyCommentsModal_(state.modal.slice(16));
       if (state.modal !== 'inventory') return '';
       const isHero = state.tab === 'heroes';
       const key = isHero ? 'heroIds' : 'tacticIds';
@@ -552,6 +590,35 @@
      */
     function accountModal_() {
       return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true"><h2>アカウント</h2><p>ログイン名：' + escape_(currentUserDisplayName_()) + '<br>メールアドレス：' + escape_(state.cloudUser ? state.cloudUser.email || '' : '') + '</p><div class="modal-actions"><button class="btn" data-close-modal>閉じる</button><button class="btn danger" data-auth-signout>ログアウト</button></div></section></div>';
+    }
+
+    /**
+     * 一門編成を閲覧専用で表示するモーダルを描画する。
+     * @param {string} lineupId 一門編成ID。
+     * @returns {string} HTML。
+     */
+    function familyLineupModal_(lineupId) {
+      const lineup = state.familyLineups.find(function(item) { return item.id === lineupId; });
+      if (!lineup) return '';
+      const team = (lineup.payload || {}).team || {};
+      const members = Array.isArray(team.members) ? team.members.map(function(member, index) {
+        const hero = hero_(member.heroId);
+        const tacticNames = (member.tacticIds || []).map(function(id) { const tactic = tactic_(id); return tactic ? tactic.name : ''; }).filter(Boolean).join(' ／ ');
+        return '<div class="record"><span><strong>' + escape_(ROLES[index] || '武将') + '：' + escape_(hero ? hero.name : '未設定') + '</strong><small>' + escape_(tacticNames || '戦法未設定') + '</small></span></div>';
+      }).join('') : '';
+      return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true"><h2>' + escape_(lineup.title) + '</h2><p>作成者：' + escape_(lineup.display_name) + '。閲覧専用です。</p><div class="record-list">' + (members || '<div class="empty">編成データがありません。</div>') + '</div><div class="modal-actions"><button class="btn" data-family-comments="' + escape_(lineup.id) + '">コメントを見る</button><button class="btn primary" data-close-modal>閉じる</button></div></section></div>';
+    }
+
+    /**
+     * 一門編成へのコメントモーダルを描画する。
+     * @param {string} lineupId 一門編成ID。
+     * @returns {string} HTML。
+     */
+    function familyCommentsModal_(lineupId) {
+      const lineup = state.familyLineups.find(function(item) { return item.id === lineupId; });
+      if (!lineup) return '';
+      const comments = state.familyComments.filter(function(comment) { return comment.family_lineup_id === lineupId; }).map(function(comment) { return '<article class="comment"><strong>' + escape_(comment.display_name) + ' <small>' + escape_(formatDateTime_(comment.created_at)) + '</small></strong><p>' + escape_(comment.body) + '</p></article>'; }).join('');
+      return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true"><h2>' + escape_(lineup.title) + 'へのコメント</h2><div class="comment-list">' + (comments || '<div class="empty">コメントはまだありません。</div>') + '</div><div class="comment-form"><textarea data-family-comment maxlength="500" placeholder="編成へのアドバイスを入力…"></textarea><div class="modal-actions"><button class="btn" data-close-modal>閉じる</button><button class="btn primary" data-family-comment-submit="' + escape_(lineupId) + '">コメントを投稿</button></div></div></section></div>';
     }
 
     /**
@@ -606,6 +673,9 @@
       all_('[data-inventory]', function(element) { element.onchange = function() { const values = element.dataset.inventory.split(':'); const ids = state.inventory[values[0]]; state.inventory[values[0]] = element.checked ? Array.from(new Set(ids.concat(values[1]))) : ids.filter(function(id) { return id !== values[1]; }); }; });
       all_('[data-auth-submit]', function(element) { element.onclick = function() { void submitAuth_(element.dataset.authSubmit); }; });
       all_('[data-auth-signout]', function(element) { element.onclick = function() { void signOut_(); }; });
+      all_('[data-family-view]', function(element) { element.onclick = function() { state.modal = 'family-lineup:' + element.dataset.familyView; render(); }; });
+      all_('[data-family-comments]', function(element) { element.onclick = function() { state.modal = 'family-comments:' + element.dataset.familyComments; render(); }; });
+      all_('[data-family-comment-submit]', function(element) { element.onclick = function() { void postFamilyComment_(element.dataset.familyCommentSubmit); }; });
       all_('[data-import-file]', function(element) { element.onchange = function() { if (element.files && element.files[0]) importBackup_(element.files[0]); }; });
       all_('[data-remove-hero]', function(element) { element.onclick = function() { removeHero_(Number(element.dataset.removeHero)); }; });
       all_('[data-remove-tactic]', function(element) { element.onclick = function() { const values = element.dataset.removeTactic.split(':').map(Number); removeTactic_(values[0], values[1]); }; });
@@ -675,6 +745,10 @@
       if (name === 'import-data') { const input = document.querySelector('[data-import-file]'); if (input) input.click(); }
       if (name === 'clear-data') clearData_();
       if (name === 'cloud-login') cloudLogin_();
+      if (name === 'family-create') void createFamily_();
+      if (name === 'family-join') void joinFamily_();
+      if (name === 'family-publish') void publishActiveTeamToFamily_();
+      if (name === 'family-refresh') void loadFamily_();
       persist_();
       render();
     }
@@ -697,7 +771,7 @@
           showToast_('共有URLの内容を読み込めませんでした。');
         }
       }
-      const allowed = ['lineups', 'profiles', 'groups', 'shares', 'proposals', 'gacha', 'heroesDb', 'battleSim', 'settings'];
+      const allowed = ['lineups', 'family', 'profiles', 'groups', 'shares', 'proposals', 'gacha', 'heroesDb', 'battleSim', 'settings'];
       if (allowed.includes(value)) state.route = value;
     }
 
@@ -741,9 +815,18 @@
         supabaseClient = window.supabase.createClient(CONFIG.SUPABASE_URL, CONFIG.SUPABASE_PUBLISHABLE_KEY);
         const result = await supabaseClient.auth.getUser();
         state.cloudUser = result.data.user || null;
+        if (state.cloudUser) await loadFamily_();
         supabaseClient.auth.onAuthStateChange(function(event, session) {
           state.cloudUser = session ? session.user : null;
-          if (state.cloudUser) scheduleCloudSync_();
+          if (state.cloudUser) {
+            scheduleCloudSync_();
+            void loadFamily_();
+          } else {
+            state.family = null;
+            state.familyMembers = [];
+            state.familyLineups = [];
+            state.familyComments = [];
+          }
           render();
         });
       } catch (error) {
@@ -798,6 +881,95 @@
       state.cloudUser = null;
       state.modal = '';
       showToast_('ログアウトしました。');
+      render();
+    }
+
+    /**
+     * ログイン中ユーザーの一門・公開編成・コメントを読み込む。
+     * @returns {Promise<void>} 読込完了時に解決するPromise。
+     */
+    async function loadFamily_() {
+      state.family = null;
+      state.familyMembers = [];
+      state.familyLineups = [];
+      state.familyComments = [];
+      if (!supabaseClient || !state.cloudUser) return;
+      const memberResult = await supabaseClient.from('family_members').select('family_id, display_name, role').eq('user_id', state.cloudUser.id).maybeSingle();
+      if (memberResult.error || !memberResult.data) return;
+      const familyId = memberResult.data.family_id;
+      const results = await Promise.all([
+        supabaseClient.from('families').select('id, name, invite_code, owner_id').eq('id', familyId).maybeSingle(),
+        supabaseClient.from('family_members').select('user_id, display_name, role').eq('family_id', familyId).order('joined_at'),
+        supabaseClient.from('family_lineups').select('id, user_id, display_name, title, payload, updated_at').eq('family_id', familyId).order('updated_at', { ascending: false }),
+        supabaseClient.from('family_lineup_comments').select('id, family_lineup_id, user_id, display_name, body, created_at').order('created_at')
+      ]);
+      if (results[0].error || !results[0].data) return;
+      state.family = results[0].data;
+      state.familyMembers = results[1].data || [];
+      state.familyLineups = results[2].data || [];
+      state.familyComments = results[3].data || [];
+      render();
+    }
+
+    /**
+     * ログイン中ユーザーを一門長として新しい一門を作成する。
+     * @returns {Promise<void>} 作成完了時に解決するPromise。
+     */
+    async function createFamily_() {
+      if (!supabaseClient || !state.cloudUser) return showToast_('一門を作成するにはログインが必要です。');
+      const name = window.prompt('一門名を入力してください（40文字以内）');
+      if (!name) return;
+      const result = await supabaseClient.rpc('create_family', { family_name: name.trim() });
+      if (result.error) return showToast_('一門を作成できませんでした。すでに所属している可能性があります。');
+      await loadFamily_();
+      showToast_('一門を作成しました。招待IDをメンバーへ渡してください。');
+    }
+
+    /**
+     * 招待IDを使って一門へ参加する。
+     * @returns {Promise<void>} 参加完了時に解決するPromise。
+     */
+    async function joinFamily_() {
+      if (!supabaseClient || !state.cloudUser) return showToast_('一門へ参加するにはログインが必要です。');
+      const inviteCode = window.prompt('一門の招待IDを入力してください');
+      if (!inviteCode) return;
+      const result = await supabaseClient.rpc('join_family_by_invite', { input_invite_code: inviteCode.trim() });
+      if (result.error) return showToast_('参加できませんでした。招待IDを確認してください。');
+      await loadFamily_();
+      showToast_('一門へ参加しました。');
+    }
+
+    /**
+     * 現在の部隊を一門向けの閲覧専用データとして公開する。
+     * @returns {Promise<void>} 公開完了時に解決するPromise。
+     */
+    async function publishActiveTeamToFamily_() {
+      if (!supabaseClient || !state.cloudUser || !state.family) return showToast_('一門への参加後に公開できます。');
+      const team = activeTeam_();
+      const title = window.prompt('一門内で表示する部隊名', team.name);
+      if (!title) return;
+      const payload = { team: JSON.parse(JSON.stringify(team)), inventory: JSON.parse(JSON.stringify(state.inventory)) };
+      const result = await supabaseClient.from('family_lineups').upsert({ family_id: state.family.id, user_id: state.cloudUser.id, display_name: currentUserDisplayName_(), source_team_id: String(team.id), title: title.slice(0, 80), payload: payload }, { onConflict: 'family_id,user_id,source_team_id' });
+      if (result.error) return showToast_('一門へ公開できませんでした。');
+      await loadFamily_();
+      showToast_('現在の部隊を一門へ公開しました。');
+    }
+
+    /**
+     * 一門編成へコメントを投稿する。
+     * @param {string} lineupId 一門編成ID。
+     * @returns {Promise<void>} 投稿完了時に解決するPromise。
+     */
+    async function postFamilyComment_(lineupId) {
+      if (!supabaseClient || !state.cloudUser || !state.family) return showToast_('コメントには一門への参加が必要です。');
+      const input = document.querySelector('[data-family-comment]');
+      const body = String(input ? input.value : '').trim();
+      if (!body) return showToast_('コメントを入力してください。');
+      const result = await supabaseClient.from('family_lineup_comments').insert({ family_lineup_id: lineupId, user_id: state.cloudUser.id, display_name: currentUserDisplayName_(), body: body.slice(0, 500) });
+      if (result.error) return showToast_('コメントを投稿できませんでした。');
+      await loadFamily_();
+      state.modal = 'family-comments:' + lineupId;
+      showToast_('コメントを投稿しました。');
       render();
     }
 
