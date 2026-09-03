@@ -36,6 +36,7 @@
     - 2026-09-03: 一門限定の編成閲覧・コメント・招待ID画面を追加。
     - 2026-09-03: 既存アカウント向けのパスワード再設定メール送信・更新画面を追加。
     - 2026-09-03: 再設定メールから戻った直後に更新画面を確実に開くよう改善。
+    - 2026-09-03: ログイン画面と新規登録画面を分離し、表示名を新規登録時だけ入力するよう改善。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -138,7 +139,7 @@
      * @returns {Object} アプリ状態。
      */
     function makeState_() {
-      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], customHeroes: [], customTactics: [], family: null, familyMembers: [], familyLineups: [], familyComments: [], route: 'lineups', mode: 'free', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '', cloudUser: null, passwordRecoveryRequested: false };
+      return { teams: [], activeTeam: 0, selected: { role: 0, kind: 'hero', slot: 0 }, inventory: { heroIds: [], tacticIds: [] }, profiles: [], groups: [], savedShares: [], proposals: [], gachaLogs: [], customHeroes: [], customTactics: [], family: null, familyMembers: [], familyLineups: [], familyComments: [], route: 'lineups', mode: 'free', tab: 'heroes', query: '', cost: '', faction: '', rarity: '', ownedOnly: false, modal: '', toast: '', cloudUser: null, passwordRecoveryRequested: false, authMode: 'login' };
     }
 
     /**
@@ -585,7 +586,13 @@
      * @returns {string} HTML。
      */
     function authModal_() {
-      return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="auth-title"><div class="role-line"><div><h2 id="auth-title">アカウント登録・ログイン</h2><p>登録後は別の端末でも同じデータを利用できます。</p></div><button class="clear" data-close-modal aria-label="閉じる">×</button></div><div class="auth-form"><label>表示名<input type="text" data-auth-name maxlength="30" autocomplete="nickname" placeholder="例：くまねこ"></label><label>メールアドレス<input type="email" data-auth-email autocomplete="email" placeholder="name@example.com"></label><label>パスワード<input type="password" data-auth-password minlength="8" autocomplete="current-password" placeholder="8文字以上"></label></div><p class="auth-note">新規登録では表示名も入力してください。以前に同じメールアドレスで利用していた場合は、下の再設定を使用してください。</p><div class="modal-actions"><button class="btn" data-auth-reset>パスワードを再設定</button><button class="btn" data-close-modal>キャンセル</button><button class="btn" data-auth-submit="login">ログイン</button><button class="btn primary" data-auth-submit="signup">新規登録</button></div></section></div>';
+      const isSignup = state.authMode === 'signup';
+      const nameField = isSignup ? '<label>表示名<input type="text" data-auth-name maxlength="30" autocomplete="nickname" placeholder="例：くまねこ"></label>' : '';
+      const note = isSignup ? '表示名は一門内で表示されます。登録後、確認メールが届く場合があります。' : 'メールアドレスとパスワードを入力してログインしてください。';
+      const actions = isSignup
+        ? '<button class="btn" data-auth-mode="login">ログインへ戻る</button><button class="btn primary" data-auth-submit="signup">新規登録</button>'
+        : '<button class="btn" data-auth-reset>パスワードを再設定</button><button class="btn" data-auth-mode="signup">新規登録</button><button class="btn primary" data-auth-submit="login">ログイン</button>';
+      return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="auth-title"><div class="role-line"><div><h2 id="auth-title">' + (isSignup ? '新規登録' : 'ログイン') + '</h2><p>' + (isSignup ? 'アカウントを作成します。' : '保存済みデータを読み込みます。') + '</p></div><button class="clear" data-close-modal aria-label="閉じる">×</button></div><div class="auth-form">' + nameField + '<label>メールアドレス<input type="email" data-auth-email autocomplete="email" placeholder="name@example.com"></label><label>パスワード<input type="password" data-auth-password minlength="8" autocomplete="' + (isSignup ? 'new-password' : 'current-password') + '" placeholder="8文字以上"></label></div><p class="auth-note">' + note + '</p><div class="modal-actions"><button class="btn" data-close-modal>キャンセル</button>' + actions + '</div></section></div>';
     }
 
     /**
@@ -684,6 +691,7 @@
       all_('[data-tactic]', function(element) { element.onclick = function() { chooseTactic_(element.dataset.tactic); }; });
       all_('[data-inventory]', function(element) { element.onchange = function() { const values = element.dataset.inventory.split(':'); const ids = state.inventory[values[0]]; state.inventory[values[0]] = element.checked ? Array.from(new Set(ids.concat(values[1]))) : ids.filter(function(id) { return id !== values[1]; }); }; });
       all_('[data-auth-submit]', function(element) { element.onclick = function() { void submitAuth_(element.dataset.authSubmit); }; });
+      all_('[data-auth-mode]', function(element) { element.onclick = function() { state.authMode = element.dataset.authMode === 'signup' ? 'signup' : 'login'; render(); }; });
       all_('[data-auth-reset]', function(element) { element.onclick = function() { void requestPasswordReset_(); }; });
       all_('[data-recovery-submit]', function(element) { element.onclick = function() { void updatePassword_(); }; });
       all_('[data-auth-signout]', function(element) { element.onclick = function() { void signOut_(); }; });
@@ -869,6 +877,7 @@
         state.modal = 'account';
         return render();
       }
+      state.authMode = 'login';
       state.modal = 'auth';
       render();
     }
@@ -883,7 +892,8 @@
       const name = String((document.querySelector('[data-auth-name]') || {}).value || '').trim();
       const email = String((document.querySelector('[data-auth-email]') || {}).value || '').trim();
       const password = String((document.querySelector('[data-auth-password]') || {}).value || '');
-      if (!email || !password || (mode === 'signup' && !name)) return showToast_('表示名・メールアドレス・パスワードを入力してください。');
+      if (!email || !password) return showToast_('メールアドレスとパスワードを入力してください。');
+      if (mode === 'signup' && !name) return showToast_('表示名を入力してください。');
       if (password.length < 8) return showToast_('パスワードは8文字以上で入力してください。');
       const result = mode === 'signup'
         ? await supabaseClient.auth.signUp({ email: email, password: password, options: { data: { display_name: name }, emailRedirectTo: location.origin + location.pathname } })
