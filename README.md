@@ -98,6 +98,18 @@ GoogleスプレッドシートとGASを管理用マスタとして使用し、CS
 
 追加環境では既存の schema.sql の後に supabase/land-reports.sql を適用してください。実データと画像は公開リポジトリに含めません。
 
+### 繰り返し取込の自動化
+
+`tools/land-report-import.mjs` は、画像を解析して確認用JSONを作成し、兵数の整合性を検査して連戦を自動で紐づけるローカル用ツールです。画像の読取りには外部の画像対応モデルを使いますが、APIキーは環境変数で渡し、出力・Git・ブラウザへ保存しません。確認用JSONで武将名・凸数・初攻略を直して `needsReview` をすべて `false` にした後だけ、同じツールで一門限定の保存先へ登録できます。
+
+```powershell
+node tools/land-report-import.mjs analyze --input C:\battle-images --output review.json --model <画像対応モデル>
+node tools/land-report-import.mjs validate --input review.json --output plan.json
+node tools/land-report-import.mjs commit --input plan.json --images C:\battle-images --family <一門UUID> --start-number <開始番号>
+```
+
+`validate` は開始兵数と残兵・戦死・負傷の合計を照合し、投稿者・守備軍・敵残兵数→次戦の敵開始兵数が一致する引分／敗北後の記録に `attemptId` を付けます。異なる部隊での再戦は別部隊として保持し、初攻略の育成平均には混ぜません。
+
 ### 土地レベル別の初攻略集計
 
 土地4〜10の切替、シーズン別表示、初攻略の勝利だけを対象にした平均レベル・兵数・レベル範囲・凸分布を表示します。平均レベルは各部隊の開始時3武将平均を部隊数で平均します。不明な凸数は集計から除外します。初攻略以外・未確認・引分は「すべて」で閲覧できます。

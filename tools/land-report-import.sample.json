@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "records": [
+    {
+      "sourceImage": "report-001.png",
+      "author": "投稿者名",
+      "team": ["武将A", "武将B", "武将C"],
+      "levels": [15, 15, 15],
+      "troops": 4500,
+      "remaining": 3200,
+      "dead": 800,
+      "wounded": 500,
+      "enemy": "守備軍名",
+      "enemyTroops": 9000,
+      "enemyRemaining": 1200,
+      "morale": 100,
+      "result": "勝利",
+      "landLevel": 5,
+      "enemyLevel": 27,
+      "skills": ["戦法A", "戦法B", "戦法C"],
+      "confidence": 0.85,
+      "needsReview": true
+    }
+  ]
+}
