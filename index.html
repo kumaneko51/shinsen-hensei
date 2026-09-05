@@ -97,11 +97,13 @@
     @media(max-width:1300px) { .slot .hero .portrait { height:270px; } }
     @media(max-width:720px) { .slot .hero .portrait { height:290px; } }
   </style>
+  <link rel="stylesheet" href="land-reports.css">
 </head>
 <body>
   <div id="app"></div>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
+  <script src="land-reports.js"></script>
   <script>
     'use strict';
 
@@ -446,11 +448,12 @@
     function familyPage_() {
       if (!state.cloudUser) return pageHead_('一門', '一門の編成を閲覧するにはログインが必要です。', '<button class="btn primary" data-action="cloud-login">ログイン・登録</button>') + '<section class="empty-panel">ログイン後に一門を作成するか、招待IDで参加できます。</section>';
       if (!state.family) return pageHead_('一門', '一門に参加すると、同じ一門の公開編成だけを閲覧・コメントできます。') + '<section class="page-grid"><article class="panel"><h2>一門を作成</h2><p>最初の一門員として一門名を登録し、発行される招待IDをメンバーへ渡します。</p><button class="btn primary" data-action="family-create">一門を作成</button></article><article class="panel"><h2>招待IDで参加</h2><p>一門長から受け取った招待IDを入力して参加します。</p><button class="btn" data-action="family-join">一門へ参加</button></article></section>';
+      if (familySection === 'land') return landReportsPage_();
       const isOwner = state.family.owner_id === state.cloudUser.id;
       const members = state.familyMembers.map(function(member) { return '<span class="tag">' + escape_(member.display_name) + (member.role === 'owner' ? '（一門長）' : '') + '</span>'; }).join('');
       const lineups = state.familyLineups.map(function(lineup) { return '<article class="panel family-lineup"><h2>' + escape_(lineup.title) + '</h2><small>作成者：' + escape_(lineup.display_name) + '　更新：' + escape_(formatDateTime_(lineup.updated_at)) + '</small><div class="actions"><button class="btn" data-family-view="' + escape_(lineup.id) + '">閲覧</button><button class="btn" data-family-comments="' + escape_(lineup.id) + '">コメント (' + familyCommentCount_(lineup.id) + ')</button></div></article>'; }).join('');
       const actions = '<button class="btn primary" data-action="family-publish">現在の部隊を一門へ公開</button><button class="btn" data-action="family-refresh">更新</button>';
-      return pageHead_('一門：' + state.family.name, '一門員の編成は閲覧・コメントのみです。自分の部隊だけ編集・公開できます。', actions) + '<section class="panel"><h2>メンバー</h2><div class="family-member-list">' + (members || '<span class="tag">メンバーなし</span>') + '</div>' + (isOwner ? '<div class="family-meta"><span>招待ID</span><code class="family-code">' + escape_(state.family.invite_code) + '</code></div>' : '') + '</section><section class="page-grid" style="margin-top:14px">' + (lineups || '<div class="empty-panel">公開された編成はまだありません。</div>') + '</section>';
+      return pageHead_('一門：' + state.family.name, '一門員の編成は閲覧・コメントのみです。自分の部隊だけ編集・公開できます。', actions) + familyTabs_() + '<section class="panel"><h2>メンバー</h2><div class="family-member-list">' + (members || '<span class="tag">メンバーなし</span>') + '</div>' + (isOwner ? '<div class="family-meta"><span>招待ID</span><code class="family-code">' + escape_(state.family.invite_code) + '</code></div>' : '') + '</section><section class="page-grid" style="margin-top:14px">' + (lineups || '<div class="empty-panel">公開された編成はまだありません。</div>') + '</section>';
     }
 
     /**
@@ -568,6 +571,7 @@
      * @returns {string} HTML。
      */
     function modal_() {
+      if (state.modal.indexOf('land-report:') === 0) return landReportModal_(state.modal.slice(12));
       if (state.modal.indexOf('stats:') === 0) return statAllocationModal_(Number(state.modal.slice(6)));
       if (state.modal === 'auth') return authModal_();
       if (state.modal === 'account') return accountModal_();
@@ -671,8 +675,8 @@
       all_('[data-team-select]', function(element) { element.onchange = function() { state.activeTeam = Number(element.value); state.selected = { role: 0, kind: 'hero', slot: 0 }; render(); }; });
       all_('[data-team-name]', function(element) { element.onchange = function() { activeTeam_().name = element.value; persist_(); render(); }; });
       all_('[data-select-team]', function(element) { element.onclick = function() { state.activeTeam = Number(element.dataset.selectTeam); render(); }; });
-      all_('[data-modal]', function(element) { element.onclick = function() { state.modal = element.dataset.modal; render(); }; });
-      all_('[data-close-modal]', function(element) { element.onclick = function() { state.modal = ''; render(); }; });
+      all_('[data-modal]', function(element) { element.onclick = function() { clearLandImage_(); state.modal = element.dataset.modal; render(); if (state.modal.startsWith('land-report:')) void loadLandImage_(state.modal.slice(12)); }; });
+      all_('[data-close-modal]', function(element) { element.onclick = function() { clearLandImage_(); state.modal = ''; render(); }; });
       all_('[data-action]', function(element) { element.onclick = function() { action_(element.dataset.action); }; });
       all_('[data-focus-hero]', function(element) { element.onclick = function() { state.selected = { role: Number(element.dataset.focusHero), kind: 'hero', slot: 0 }; state.tab = 'heroes'; render(); }; });
       all_('[data-focus-tactic]', function(element) { element.onclick = function() { const values = element.dataset.focusTactic.split(':').map(Number); state.selected = { role: values[0], kind: 'tactic', slot: values[1] }; state.tab = 'tactics'; render(); }; });
@@ -695,6 +699,10 @@
       all_('[data-auth-reset]', function(element) { element.onclick = function() { void requestPasswordReset_(); }; });
       all_('[data-recovery-submit]', function(element) { element.onclick = function() { void updatePassword_(); }; });
       all_('[data-auth-signout]', function(element) { element.onclick = function() { void signOut_(); }; });
+      all_('[data-family-section]', function(element) { element.onclick = function() { familySection = element.dataset.familySection; render(); if (familySection === 'land') void loadLandReports_(); }; });
+      all_('[data-land-retry]', function(element) { element.onclick = function() { void loadLandReports_(); }; });
+      const landSelect = document.getElementById('land-filter');
+      if (landSelect) landSelect.onchange = function() { landFilter = landSelect.value; render(); };
       all_('[data-family-view]', function(element) { element.onclick = function() { state.modal = 'family-lineup:' + element.dataset.familyView; render(); }; });
       all_('[data-family-comments]', function(element) { element.onclick = function() { state.modal = 'family-comments:' + element.dataset.familyComments; render(); }; });
       all_('[data-family-comment-submit]', function(element) { element.onclick = function() { void postFamilyComment_(element.dataset.familyCommentSubmit); }; });
@@ -849,6 +857,7 @@
         if (state.cloudUser) await loadFamily_();
         if (state.cloudUser && state.passwordRecoveryRequested) state.modal = 'password-recovery';
         supabaseClient.auth.onAuthStateChange(function(event, session) {
+          resetLandReports_();
           state.cloudUser = session ? session.user : null;
           if (event === 'PASSWORD_RECOVERY') state.modal = 'password-recovery';
           if (state.cloudUser) {
@@ -945,6 +954,7 @@
       if (!supabaseClient) return;
       const result = await supabaseClient.auth.signOut();
       if (result.error) return showToast_('ログアウトできませんでした。');
+      resetLandReports_();
       state.cloudUser = null;
       state.modal = '';
       showToast_('ログアウトしました。');
@@ -956,6 +966,7 @@
      * @returns {Promise<void>} 読込完了時に解決するPromise。
      */
     async function loadFamily_() {
+      resetLandReports_();
       state.family = null;
       state.familyMembers = [];
       state.familyLineups = [];
@@ -975,6 +986,7 @@
       state.familyMembers = results[1].data || [];
       state.familyLineups = results[2].data || [];
       state.familyComments = results[3].data || [];
+      if (familySection === 'land') void loadLandReports_();
       render();
     }
 
