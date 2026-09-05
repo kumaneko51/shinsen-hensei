@@ -701,8 +701,11 @@
       all_('[data-auth-signout]', function(element) { element.onclick = function() { void signOut_(); }; });
       all_('[data-family-section]', function(element) { element.onclick = function() { familySection = element.dataset.familySection; render(); if (familySection === 'land') void loadLandReports_(); }; });
       all_('[data-land-retry]', function(element) { element.onclick = function() { void loadLandReports_(); }; });
-      const landSelect = document.getElementById('land-filter');
-      if (landSelect) landSelect.onchange = function() { landFilter = landSelect.value; render(); };
+      all_('[data-land-level]', function(element) { element.onclick = function() { landLevel = Number(element.dataset.landLevel); render(); }; });
+      const landScopeSelect = document.getElementById('land-scope');
+      if (landScopeSelect) landScopeSelect.onchange = function() { landScope = landScopeSelect.value; render(); };
+      const landSeasonSelect = document.getElementById('land-season');
+      if (landSeasonSelect) landSeasonSelect.onchange = function() { landSeason = landSeasonSelect.value; render(); };
       all_('[data-family-view]', function(element) { element.onclick = function() { state.modal = 'family-lineup:' + element.dataset.familyView; render(); }; });
       all_('[data-family-comments]', function(element) { element.onclick = function() { state.modal = 'family-comments:' + element.dataset.familyComments; render(); }; });
       all_('[data-family-comment-submit]', function(element) { element.onclick = function() { void postFamilyComment_(element.dataset.familyCommentSubmit); }; });
