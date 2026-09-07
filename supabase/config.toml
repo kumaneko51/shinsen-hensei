@@ -8,6 +8,3 @@
 
 [functions.qookka-import]
 verify_jwt = false
-
-[functions.land-report-vision]
-verify_jwt = true
