@@ -13,6 +13,43 @@ function familyTabs_() {
 let landLevel = 5;
 let landScope = 'all';
 let landSeason = 'all';
+let landEnemy = 'all';
+// S4 reference, checked 2026-09-07. Actual reports remain in the private table.
+const LAND_DIFFICULTY = {
+  4: [['脇坂安治','足軽',2,'簡単'],['安藤守就','弓兵',3,'簡単寄り'],['池田輝政','騎兵',2,'普通'],['毛利輝元','弓兵',2,'普通'],['水原親憲','鉄砲',2,'普通'],['武田義信','騎兵',4,'普通'],['栗山善助','鉄砲',4,'やや難'],['稲葉重通','足軽',4,'困難']],
+  5: [['宍戸隆家','弓兵',2,'簡単'],['山内一豊','騎兵',2,'簡単寄り'],['仙石権兵衛','足軽',2,'普通'],['下方貞清','足軽',3,'普通'],['新発田重家','鉄砲',2,'普通'],['穴山信君','騎兵',4,'普通'],['大野治房','鉄砲',4,'やや難'],['織田信清','弓兵',5,'困難']]
+};
+function landEnemyKey_(r) { return r.enemy || '相手未確認'; }
+function landEnemyLosses_(rows) {
+  const groups = new Map();
+  rows.forEach(r => {
+    const key = landEnemyKey_(r);
+    if (!groups.has(key)) groups.set(key, []);
+    groups.get(key).push(r);
+  });
+  return new Map([...groups].map(([key, reports]) => {
+    const valid = reports.filter(r => Number.isFinite(r.dead) && r.dead>=0 && Number.isFinite(r.wounded) && r.wounded>=0);
+    const sum = field => valid.reduce((n,r)=>n+r[field],0);
+    const rated = valid.filter(r => Number.isFinite(r.troops) && r.troops>0);
+    const troops = rated.reduce((n,r)=>n+r.troops,0);
+    return [key, {count:reports.length, wins:reports.filter(r=>r.result==='勝利').length, draws:reports.filter(r=>r.result==='引分').length, defeats:reports.filter(r=>r.result==='敗北').length, lossCount:valid.length,
+      dead:valid.length?sum('dead')/valid.length:null, wounded:valid.length?sum('wounded')/valid.length:null,
+      loss:valid.length?(sum('dead')+sum('wounded'))/valid.length:null,
+      rate:troops?rated.reduce((n,r)=>n+r.dead+r.wounded,0)/troops*100:null}];
+  }));
+}
+function landDifficultyPanel_(rows) {
+  const reference = LAND_DIFFICULTY[landLevel] || [], groups = landEnemyLosses_(rows);
+  const names = new Set(reference.map(r=>r[0]));
+  const entries = reference.concat([...groups.keys()].filter(n=>!names.has(n)).sort().map(n=>[n,'',null,'掲載なし']));
+  return '<section class="land-enemies"><h2>土地難易度・相手別の兵損</h2><p class="land-footnote">難易度はS4の参考評価です。戦報は選択中の土地・シーズンを集計します。シーズン未確認の記録はS4と確定していません。<br>出典：<a href="https://www.sanguo-zhi.com/entry/s4-joban/#index_id5" target="_blank" rel="noopener">はてなの真戦ブログ「S4序盤攻略」</a>（2026年9月7日確認）</p>'+
+    (!reference.length?'<p>この記事に土地'+landLevel+'の難易度表はありません。登録戦報の兵損を表示します。</p>':'')+
+    (entries.length?'<div class="land-table-wrap"><table class="land-table"><thead><tr><th>守備軍大将</th><th>S4参考難易度</th><th>兵種・兵種Lv</th><th>戦報数</th><th>勝／引分／敗</th><th>平均兵損</th><th>平均戦死／負傷</th><th>兵損率</th></tr></thead><tbody>'+entries.map(([name,type,level,difficulty])=>{
+      const g=groups.get(name);
+      return '<tr><td>'+name+'</td><td>'+difficulty+'</td><td>'+(type?type+' Lv.'+level:'—')+'</td><td>'+(g?g.count:0)+'</td><td>'+(g?g.wins+'／'+g.draws+'／'+g.defeats:'—')+'</td><td>'+(g?landValue_(g.loss,0):'—')+'</td><td>'+(g?landValue_(g.dead,0)+'／'+landValue_(g.wounded,0):'—')+'</td><td>'+(g&&g.rate!==null?landValue_(g.rate)+'%':'—')+'</td></tr>';
+    }).join('')+'</tbody></table></div>':'<p>戦報がまだありません。</p>')+
+    '<p class="land-footnote">兵損＝戦死＋負傷。平均は勝利・引分・敗北を含む1戦ごと、兵損率は兵損合計÷開始兵数合計です。連戦も各戦闘を1件として扱います。未登録は「—」です。編成・レベル・兵種相性で変わるため、件数と戦報も併せて確認してください。</p></section>';
+}
 function landRows_() {
   return LAND_REPORTS.filter(r => r.landLevel === landLevel && (landSeason === 'all' || r.season === landSeason));
 }
@@ -46,7 +83,8 @@ function landReportsPage_() {
   const head = pageHead_('土地攻略データ', '一門：'+state.family.name+' · 土地レベル別に初攻略時の育成状況を確認') + familyTabs_();
   if (landStatus !== 'ready') return head + '<section class="empty-panel">' + (landStatus === 'error' ? '攻略データを取得できませんでした。<button class="btn" data-land-retry>再読み込み</button>' : '攻略データを読み込んでいます…') + '</section>';
   const allRows = landRows_(), winningRows = landWinningAttempts_(allRows);
-  const rows = landScope === 'all' ? allRows : allRows.filter(r=>r.result===landScope);
+  const rows = allRows.filter(r=>(landScope === 'all' || r.result===landScope) && (landEnemy === 'all' || landEnemyKey_(r)===landEnemy));
+  const enemies = [...new Set(allRows.map(landEnemyKey_))].sort();
   const stats = landSummary_(winningRows);
   const seasons = [...new Set(LAND_REPORTS.map(r => r.season))];
   const levels = [4,5,6,7,8,9,10].map(level => '<button class="land-level '+(landLevel===level?'active':'')+'" data-land-level="'+level+'" aria-pressed="'+(landLevel===level)+'"><strong>土地 '+level+'</strong><small>'+LAND_REPORTS.filter(r=>r.landLevel===level).length+'件</small></button>').join('');
@@ -56,8 +94,9 @@ function landReportsPage_() {
   '<p class="land-footnote">登録された戦報はすべて初攻略として扱い、成功例を集計します。引分→勝利は1攻略として、最初の戦闘のレベル・兵数を使います。別部隊での再戦と敗北のみの記録は平均に含めません。不明な凸数は0凸として数えません。</p>'+
   (stats.count===0?'<div class="notice">集計対象の成功例がまだありません。</div>':'')+
   '<section class="panel land-break-panel"><h2>武将の凸状況</h2><p>初攻略時に使われた武将の内訳。確認済み '+stats.breakCount+'／'+(stats.count*3)+'枠</p><div class="land-break-bars">'+[0,1,2,3,4,5].map(n=>{const count=winningRows.flatMap(r=>r.breakthroughs).filter(x=>x===n).length;return '<div><span>'+n+'凸</span><meter min="0" max="'+Math.max(1,stats.breakCount)+'" value="'+count+'">'+count+'</meter><b>'+count+'人</b></div>';}).join('')+'</div></section>'+
-  '<div class="land-toolbar"><div><h2>攻略記録</h2><p>'+['勝利','引分','敗北'].map(v=>v+' '+allRows.filter(r=>r.result===v).length+'件').join(' ／ ')+'</p></div><label>表示 <select class="filter" id="land-scope">'+[['all','すべて'],['勝利','勝利'],['引分','引き分け'],['敗北','敗北']].map(([v,label])=>'<option value="'+v+'" '+(landScope===v?'selected':'')+'>'+label+'</option>').join('')+'</select></label></div>'+
-  (rows.length?'<div class="land-table-wrap"><table class="land-table"><thead><tr><th>編成・凸状況</th><th>開始時Lv</th><th>兵数</th><th>結果</th><th>戦報</th></tr></thead><tbody>'+rows.map(r=>'<tr><td>'+r.team.split('・').map((name,i)=>'<div>'+name+' <small>'+ (r.breakthroughs[i]===null?'凸未確認':r.breakthroughs[i]+'凸')+'</small></div>').join('')+'</td><td>'+r.levels+'<small>部隊平均 '+landValue_(r.heroLevels.length===3?r.heroLevels.reduce((a,b)=>a+b,0)/3:null)+'</small></td><td>'+r.troops.toLocaleString()+'<small>減少 '+(r.troops?((r.dead+r.wounded)/r.troops*100).toFixed(1):'—')+'%</small></td><td>'+r.result+(r.attemptId?'<small>連戦 '+r.sequence+'戦目</small>':'')+'</td><td><button class="btn" data-modal="land-report:'+r.id+'">画像・詳細</button></td></tr>').join('')+'</tbody></table></div>':'<section class="empty-panel">'+(allRows.length?'この表示条件に合う記録はありません。「すべて」で全戦報を確認できます。':'この土地レベルのデータはまだありません。')+'</section>');
+  landDifficultyPanel_(allRows)+
+  '<div class="land-toolbar"><div><h2>攻略記録</h2><p>'+['勝利','引分','敗北'].map(v=>v+' '+allRows.filter(r=>r.result===v).length+'件').join(' ／ ')+'</p></div><label>相手 <select class="filter" id="land-enemy"><option value="all">すべて</option>'+enemies.map(n=>'<option value="'+n+'" '+(landEnemy===n?'selected':'')+'>'+n+'</option>').join('')+'</select></label><label>表示 <select class="filter" id="land-scope">'+[['all','すべて'],['勝利','勝利'],['引分','引き分け'],['敗北','敗北']].map(([v,label])=>'<option value="'+v+'" '+(landScope===v?'selected':'')+'>'+label+'</option>').join('')+'</select></label></div>'+
+  (rows.length?'<div class="land-table-wrap"><table class="land-table"><thead><tr><th>編成・凸状況</th><th>守備軍大将</th><th>開始時Lv</th><th>兵数</th><th>兵損（戦死＋負傷）</th><th>結果</th><th>戦報</th></tr></thead><tbody>'+rows.map(r=>'<tr><td>'+r.team.split('・').map((name,i)=>'<div>'+name+' <small>'+ (r.breakthroughs[i]===null?'凸未確認':r.breakthroughs[i]+'凸')+'</small></div>').join('')+'</td><td>'+landEnemyKey_(r)+'</td><td>'+r.levels+'<small>部隊平均 '+landValue_(r.heroLevels.length===3?r.heroLevels.reduce((a,b)=>a+b,0)/3:null)+'</small></td><td>'+r.troops.toLocaleString()+'<small>減少 '+(r.troops?((r.dead+r.wounded)/r.troops*100).toFixed(1):'—')+'%</small></td><td>'+(r.dead+r.wounded).toLocaleString()+'<small>戦死 '+r.dead.toLocaleString()+'／負傷 '+r.wounded.toLocaleString()+'</small></td><td>'+r.result+(r.attemptId?'<small>連戦 '+r.sequence+'戦目</small>':'')+'</td><td><button class="btn" data-modal="land-report:'+r.id+'">画像・詳細</button></td></tr>').join('')+'</tbody></table></div>':'<section class="empty-panel">'+(allRows.length?'この表示条件に合う記録はありません。「すべて」で全戦報を確認できます。':'この土地レベルのデータはまだありません。')+'</section>');
 }
 function landLinkedReports_(r) {
   const sequence = landSequence_(r);
@@ -68,7 +107,7 @@ function landReportModal_(id) {
   if (!state.cloudUser || !state.family) return '';
   const r=LAND_REPORTS.find(x=>x.id===Number(id));
   if (!r) return '';
-  return '<div class="backdrop"><section class="modal land-modal" role="dialog" aria-modal="true" aria-label="土地攻略事例の詳細"><div class="land-card-top"><h2>攻略記録 '+r.id+' · 土地Lv'+r.landLevel+'</h2><button class="btn" data-close-modal>閉じる</button></div>'+landLinkedReports_(r)+'<div class="land-detail"><div><h3>画像から確認した実績</h3><p>投稿者：'+r.author+'</p><p>'+r.team+'</p><dl class="land-facts"><dt>シーズン</dt><dd>'+escape_(r.season)+'</dd><dt>凸状況</dt><dd>'+r.breakthroughs.map(n=>n===null?'未確認':n+'凸').join('・')+'</dd><dt>開始時Lv</dt><dd>'+r.levels+'</dd><dt>開始 → 残存兵数</dt><dd>'+r.troops.toLocaleString()+' → '+r.remaining.toLocaleString()+'</dd><dt>戦死／負傷</dt><dd>'+r.dead.toLocaleString()+'／'+r.wounded.toLocaleString()+'</dd><dt>士気</dt><dd>'+r.morale+'</dd><dt>守備軍</dt><dd>'+r.enemy+'隊 · Lv'+(r.enemyLevel ?? '未確認')+' · '+(r.enemyTroops===null?'兵数未確認':r.enemyTroops.toLocaleString()+'兵')+'</dd><dt>敵残兵数</dt><dd>'+(r.enemyRemaining===null?'未確認':r.enemyRemaining.toLocaleString())+'</dd><dt>結果</dt><dd>'+r.result+'</dd></dl><h3>装備戦法（武将順）</h3>'+r.skills.map((s,i)=>'<p><strong>'+r.team.split('・')[i]+'</strong><br>'+s+'</p>').join('')+'<h3>解説・暫定評価</h3><span class="land-rating" data-rating="'+r.rating+'">'+r.rating+'</span><p class="land-explanation">'+r.note+'</p><p>出典：提供された戦報画像 '+(r.sourceImageNumber||r.id)+'。シーズン・撮影日・戦法レベルは未確認です。</p></div><figure>'+(landImageUrl ? '<a href="'+landImageUrl+'" target="_blank" rel="noopener"><img src="'+landImageUrl+'" alt="事例'+r.id+'の土地Lv'+r.landLevel+'戦報"></a><figcaption>画像を押すと原寸で開きます</figcaption>' : '<p>'+(landImageStatus === 'error' ? '画像を取得できませんでした。詳細を開き直してください。' : '戦報画像を読み込んでいます…')+'</p>')+'</figure></div></section></div>';
+  return '<div class="backdrop"><section class="modal land-modal" role="dialog" aria-modal="true" aria-label="土地攻略事例の詳細"><div class="land-card-top"><h2>攻略記録 '+r.id+' · 土地Lv'+r.landLevel+'</h2><button class="btn" data-close-modal>閉じる</button></div>'+landLinkedReports_(r)+'<div class="land-detail"><div><h3>画像から確認した実績</h3><p>投稿者：'+r.author+'</p><p>'+r.team+'</p><dl class="land-facts"><dt>シーズン</dt><dd>'+escape_(r.season)+'</dd><dt>凸状況</dt><dd>'+r.breakthroughs.map(n=>n===null?'未確認':n+'凸').join('・')+'</dd><dt>開始時Lv</dt><dd>'+r.levels+'</dd><dt>開始 → 残存兵数</dt><dd>'+r.troops.toLocaleString()+' → '+r.remaining.toLocaleString()+'</dd><dt>兵損（戦死＋負傷）</dt><dd>'+(r.dead+r.wounded).toLocaleString()+'</dd><dt>戦死／負傷</dt><dd>'+r.dead.toLocaleString()+'／'+r.wounded.toLocaleString()+'</dd><dt>士気</dt><dd>'+r.morale+'</dd><dt>守備軍</dt><dd>'+r.enemy+'隊 · Lv'+(r.enemyLevel ?? '未確認')+' · '+(r.enemyTroops===null?'兵数未確認':r.enemyTroops.toLocaleString()+'兵')+'</dd><dt>敵残兵数</dt><dd>'+(r.enemyRemaining===null?'未確認':r.enemyRemaining.toLocaleString())+'</dd><dt>結果</dt><dd>'+r.result+'</dd></dl><h3>装備戦法（武将順）</h3>'+r.skills.map((s,i)=>'<p><strong>'+r.team.split('・')[i]+'</strong><br>'+s+'</p>').join('')+'<h3>解説・暫定評価</h3><span class="land-rating" data-rating="'+r.rating+'">'+r.rating+'</span><p class="land-explanation">'+r.note+'</p><p>出典：提供された戦報画像 '+(r.sourceImageNumber||r.id)+'。シーズン・撮影日・戦法レベルは未確認です。</p></div><figure>'+(landImageUrl ? '<a href="'+landImageUrl+'" target="_blank" rel="noopener"><img src="'+landImageUrl+'" alt="事例'+r.id+'の土地Lv'+r.landLevel+'戦報"></a><figcaption>画像を押すと原寸で開きます</figcaption>' : '<p>'+(landImageStatus === 'error' ? '画像を取得できませんでした。詳細を開き直してください。' : '戦報画像を読み込んでいます…')+'</p>')+'</figure></div></section></div>';
 }
 
 function clearLandImage_() {
