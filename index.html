@@ -596,8 +596,8 @@
       const nameField = isSignup ? '<label>表示名<input type="text" data-auth-name maxlength="30" autocomplete="nickname" placeholder="例：くまねこ"></label>' : '';
       const identityField = isLegacy
         ? '<label>以前のメールアドレス<input type="email" data-auth-email autocomplete="email" placeholder="name@example.com"></label>'
-        : '<label>ログインID<input type="text" data-auth-login-id minlength="3" maxlength="24" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="半角英数字・_・-"></label>';
-      const note = isSignup ? 'メールアドレスは不要です。ログインIDは3〜24文字で、あとから変更できます。パスワードを忘れた場合は現在復旧できないため、安全な場所に控えてください。' : isLegacy ? '以前のメールアドレスで一度ログインし、アカウント画面からログインIDを設定してください。' : 'ログインIDとパスワードを入力してください。';
+        : '<label>ログインID<input type="text" data-auth-login-id minlength="2" maxlength="24" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="日本語・英数字・_・-"></label>';
+      const note = isSignup ? 'メールアドレスは不要です。ログインIDは日本語・英数字・_・-の2〜24文字で、あとから変更できます。パスワードを忘れた場合は現在復旧できないため、安全な場所に控えてください。' : isLegacy ? '以前のメールアドレスで一度ログインし、アカウント画面からログインIDを設定してください。' : 'ログインIDとパスワードを入力してください。';
       const actions = isSignup
         ? '<button class="btn" data-auth-mode="login">ログインへ戻る</button><button class="btn primary" data-auth-submit="signup">新規登録</button>'
         : isLegacy
@@ -621,7 +621,7 @@
     function accountModal_() {
       const metadata = state.cloudUser && state.cloudUser.user_metadata ? state.cloudUser.user_metadata : {};
       const loginId = String(metadata.login_id || '');
-      const migration = loginId ? '<p>ログインID：<strong>' + escape_(loginId) + '</strong></p>' : '<div class="auth-form"><label>ログインIDを設定<input type="text" data-account-login-id minlength="3" maxlength="24" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="半角英数字・_・-"></label></div><p class="auth-note">設定後はメールアドレスを使わずログインできます。</p><button class="btn primary" data-account-login-id-submit>ログインIDを設定</button>';
+      const migration = loginId ? '<p>ログインID：<strong>' + escape_(loginId) + '</strong></p>' : '<div class="auth-form"><label>ログインIDを設定<input type="text" data-account-login-id minlength="2" maxlength="24" autocomplete="username" autocapitalize="none" spellcheck="false" placeholder="日本語・英数字・_・-"></label></div><p class="auth-note">設定後はメールアドレスを使わずログインできます。</p><button class="btn primary" data-account-login-id-submit>ログインIDを設定</button>';
       return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true"><h2>アカウント</h2><p>表示名：' + escape_(currentUserDisplayName_()) + '</p>' + migration + '<div class="modal-actions"><button class="btn" data-close-modal>閉じる</button><button class="btn danger" data-auth-signout>ログアウト</button></div></section></div>';
     }
 
@@ -851,11 +851,21 @@
       return String(metadata.display_name || metadata.login_id || 'ログイン済み');
     }
 
-    /** ログインIDを検証してSupabase内部用アドレスへ変換する。 */
-    function loginIdEmail_(value) {
-      const loginId = String(value || '').trim().toLowerCase();
-      if (!/^[a-z0-9_-]{3,24}$/.test(loginId)) return '';
-      return loginId + '@login.shinsen-hensei.invalid';
+    /** ログインIDを正規化して検証する。 */
+    function normalizeLoginId_(value) {
+      const loginId = String(value || '').normalize('NFKC').trim().toLowerCase();
+      if (Array.from(loginId).length < 2 || Array.from(loginId).length > 24) return '';
+      return /^[\p{L}\p{N}_-]+$/u.test(loginId) ? loginId : '';
+    }
+
+    /** ログインIDをSupabase内部用の固定アドレスへ安全に変換する。 */
+    async function loginIdEmail_(value) {
+      const loginId = normalizeLoginId_(value);
+      if (!loginId) return '';
+      const bytes = new TextEncoder().encode(loginId);
+      const digest = await crypto.subtle.digest('SHA-256', bytes);
+      const hash = Array.from(new Uint8Array(digest)).map(function(byte) { return byte.toString(16).padStart(2, '0'); }).join('');
+      return hash + '@id.kumaneko51.github.io';
     }
 
     /**
@@ -922,11 +932,11 @@
     async function submitAuth_(mode) {
       if (!supabaseClient) return showToast_('クラウド同期の設定を読み込めませんでした。');
       const name = String((document.querySelector('[data-auth-name]') || {}).value || '').trim();
-      const loginId = String((document.querySelector('[data-auth-login-id]') || {}).value || '').trim().toLowerCase();
+      const loginId = normalizeLoginId_(String((document.querySelector('[data-auth-login-id]') || {}).value || ''));
       const legacyEmail = String((document.querySelector('[data-auth-email]') || {}).value || '').trim();
-      const email = mode === 'legacy' ? legacyEmail : loginIdEmail_(loginId);
+      const email = mode === 'legacy' ? legacyEmail : await loginIdEmail_(loginId);
       const password = String((document.querySelector('[data-auth-password]') || {}).value || '');
-      if (mode !== 'legacy' && !email) return showToast_('ログインIDは半角英数字・_・-の3〜24文字で入力してください。');
+      if (mode !== 'legacy' && !email) return showToast_('ログインIDは日本語・英数字・_・-の2〜24文字で入力してください。');
       if (mode === 'legacy' && !email) return showToast_('以前のメールアドレスを入力してください。');
       if (!password) return showToast_('パスワードを入力してください。');
       if (mode === 'signup' && !name) return showToast_('表示名を入力してください。');
@@ -943,9 +953,9 @@
     /** 既存メールアカウントへログインIDを設定し、ユーザーIDと保存データを維持する。 */
     async function setAccountLoginId_() {
       if (!supabaseClient || !state.cloudUser) return;
-      const loginId = String((document.querySelector('[data-account-login-id]') || {}).value || '').trim().toLowerCase();
-      const email = loginIdEmail_(loginId);
-      if (!email) return showToast_('ログインIDは半角英数字・_・-の3〜24文字で入力してください。');
+      const loginId = normalizeLoginId_(String((document.querySelector('[data-account-login-id]') || {}).value || ''));
+      const email = await loginIdEmail_(loginId);
+      if (!email) return showToast_('ログインIDは日本語・英数字・_・-の2〜24文字で入力してください。');
       const metadata = state.cloudUser.user_metadata || {};
       const result = await supabaseClient.auth.updateUser({ email: email, data: { ...metadata, login_id: loginId } });
       if (result.error) return showToast_('ログインIDを設定できませんでした。使用済みでないか確認してください。');
