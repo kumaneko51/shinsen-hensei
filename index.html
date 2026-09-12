@@ -38,6 +38,7 @@
     - 2026-09-03: 再設定メールから戻った直後に更新画面を確実に開くよう改善。
     - 2026-09-03: ログイン画面と新規登録画面を分離し、表示名を新規登録時だけ入力するよう改善。
     - 2026-09-09: メールアドレス不要のログインID認証と既存アカウント移行を追加。
+    - 2026-09-12: 戦法検索の連続入力と種別フィルターの突撃表示・状態保持を修正。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -396,7 +397,7 @@
       const tacticCount = state.mode === 'inventory' ? state.inventory.tacticIds.length : tactics_().length;
       const factionOptions = unique_(heroes_(), 'faction').map(function(value) { return '<option value="' + escape_(value) + '"' + (state.faction === value ? ' selected' : '') + '>' + escape_(value) + '</option>'; }).join('');
       const rarityOptions = unique_(isHero ? heroes_() : tactics_(), 'rarity').map(function(value) { return '<option value="' + escape_(value) + '"' + (state.rarity === value ? ' selected' : '') + '>' + escape_(value) + '</option>'; }).join('');
-      return '<section class="library ' + (isHero ? '' : 'tactics-pane') + '"><div class="tabs"><button class="tab ' + (isHero ? 'active' : '') + '" data-tab="heroes">武将庫 <small>' + heroCount + '</small></button><button class="tab ' + (!isHero ? 'active' : '') + '" data-tab="tactics">戦法庫 <small>' + tacticCount + '</small></button></div><div class="tools"><input class="search" type="search" data-query value="' + escape_(state.query) + '" placeholder="' + (isHero ? '武将名・固有戦法を検索…' : '戦法名を検索…') + '"><select class="filter" data-cost><option value="">コスト：すべて</option><option value="7"' + (state.cost === '7' ? ' selected' : '') + '>7C</option><option value="6"' + (state.cost === '6' ? ' selected' : '') + '>6C</option><option value="5"' + (state.cost === '5' ? ' selected' : '') + '>5C</option><option value="4"' + (state.cost === '4' ? ' selected' : '') + '>4C以下</option></select>' + (isHero ? '<select class="filter" data-faction><option value="">勢力：すべて</option>' + factionOptions + '</select>' : '<select class="filter" data-type><option value="">種別：すべて</option><option value="指揮">指揮</option><option value="能動">能動</option><option value="受動">受動</option><option value="追撃">追撃</option></select>') + '<select class="filter" data-rarity><option value="">レア度：すべて</option>' + rarityOptions + '</select><label class="switch"><input type="checkbox" data-owned-filter' + (state.ownedOnly ? ' checked' : '') + '> 所持のみ</label></div><div class="cards ' + (isHero ? '' : 'tactic-list') + '">' + (items.map(isHero ? heroCard_ : tacticCard_).join('') || '<div class="empty">条件に一致するデータがありません。</div>') + '</div></section>';
+      return '<section class="library ' + (isHero ? '' : 'tactics-pane') + '"><div class="tabs"><button class="tab ' + (isHero ? 'active' : '') + '" data-tab="heroes">武将庫 <small>' + heroCount + '</small></button><button class="tab ' + (!isHero ? 'active' : '') + '" data-tab="tactics">戦法庫 <small>' + tacticCount + '</small></button></div><div class="tools"><input class="search" type="search" data-query value="' + escape_(state.query) + '" placeholder="' + (isHero ? '武将名・固有戦法を検索…' : '戦法名を検索…') + '"><select class="filter" data-cost><option value="">コスト：すべて</option><option value="7"' + (state.cost === '7' ? ' selected' : '') + '>7C</option><option value="6"' + (state.cost === '6' ? ' selected' : '') + '>6C</option><option value="5"' + (state.cost === '5' ? ' selected' : '') + '>5C</option><option value="4"' + (state.cost === '4' ? ' selected' : '') + '>4C以下</option></select>' + (isHero ? '<select class="filter" data-faction><option value="">勢力：すべて</option>' + factionOptions + '</select>' : '<select class="filter" data-type><option value=""' + (!state.faction ? ' selected' : '') + '>種別：すべて</option><option value="指揮"' + (state.faction === '指揮' ? ' selected' : '') + '>指揮</option><option value="能動"' + (state.faction === '能動' ? ' selected' : '') + '>能動</option><option value="受動"' + (state.faction === '受動' ? ' selected' : '') + '>受動</option><option value="突撃"' + (state.faction === '突撃' ? ' selected' : '') + '>突撃</option></select>') + '<select class="filter" data-rarity><option value="">レア度：すべて</option>' + rarityOptions + '</select><label class="switch"><input type="checkbox" data-owned-filter' + (state.ownedOnly ? ' checked' : '') + '> 所持のみ</label></div><div class="cards ' + (isHero ? '' : 'tactic-list') + '">' + (items.map(isHero ? heroCard_ : tacticCard_).join('') || '<div class="empty">条件に一致するデータがありません。</div>') + '</div></section>';
     }
 
     /**
@@ -695,7 +696,11 @@
       all_('[data-stat-adjust]', function(element) { element.onclick = function() { const values = element.dataset.statAdjust.split(':'); changeStatBonus_(Number(values[0]), values[1], Number(values[2])); }; });
       all_('[data-stat-reset]', function(element) { element.onclick = function() { resetStatBonus_(Number(element.dataset.statReset)); }; });
       all_('[data-tab]', function(element) { element.onclick = function() { state.tab = element.dataset.tab; state.query = ''; state.cost = ''; state.faction = ''; state.rarity = ''; render(); }; });
-      all_('[data-query]', function(element) { element.oninput = function() { state.query = element.value; render(); }; });
+      all_('[data-query]', function(element) {
+        element.oncompositionstart = function() { element.dataset.composing = '1'; };
+        element.oncompositionend = function() { delete element.dataset.composing; refreshSearch_(element.value); };
+        element.oninput = function() { state.query = element.value; if (!element.dataset.composing) refreshSearch_(element.value); };
+      });
       all_('[data-cost]', function(element) { element.onchange = function() { state.cost = element.value; render(); }; });
       all_('[data-faction]', function(element) { element.onchange = function() { state.faction = element.value; render(); }; });
       all_('[data-type]', function(element) { element.onchange = function() { state.faction = element.value; render(); }; });
@@ -752,6 +757,16 @@
      * @returns {void}
      */
     function all_(selector, callback) { document.querySelectorAll(selector).forEach(callback); }
+
+    /** 検索結果を更新し、再描画後も検索欄へ続けて入力できるようにする。 */
+    function refreshSearch_(value) {
+      state.query = value;
+      render();
+      const input = document.querySelector('[data-query]');
+      if (!input) return;
+      input.focus();
+      input.setSelectionRange(input.value.length, input.value.length);
+    }
 
     /**
      * 操作ボタンを処理する。
