@@ -7,7 +7,7 @@ let landImageStatus = "idle";
 let landImageGeneration = 0;
 let familySection = 'lineups';
 function familyTabs_() {
-  return '<nav class="land-tabs" aria-label="一門内の画面"><button class="btn '+(familySection==='lineups'?'primary':'')+'" data-family-section="lineups" aria-pressed="'+(familySection==='lineups')+'">共有編成</button><button class="btn '+(familySection==='land'?'primary':'')+'" data-family-section="land" aria-pressed="'+(familySection==='land')+'">土地攻略データ</button></nav>';
+  return '<nav class="land-tabs" aria-label="一門内の画面"><button class="btn '+(familySection==='lineups'?'primary':'')+'" data-family-section="lineups" aria-pressed="'+(familySection==='lineups')+'">共有編成</button><button class="btn '+(familySection==='members'?'primary':'')+'" data-family-section="members" aria-pressed="'+(familySection==='members')+'">参加メンバー</button><button class="btn '+(familySection==='land'?'primary':'')+'" data-family-section="land" aria-pressed="'+(familySection==='land')+'">土地攻略データ</button></nav>';
 }
 
 let landLevel = 5;

@@ -49,6 +49,7 @@
     - 2026-09-12: 槍弾正の戦法レア度をAへ修正。
     - 2026-09-12: 共有URLから所持一覧を除外し、チャットへ直接貼れる長さに短縮。
     - 2026-09-12: スマホ表示を最適化し、左メニューを開閉式に変更。
+    - 2026-09-13: 一門に参加しているメンバーの一覧画面を追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -104,7 +105,7 @@
     .stat-editor-row > span { color:#94a3b8; text-align:right; }
     .stat-editor-row .stat-adjust { width:28px; height:28px; font-size:14px; }
     .auth-form { display:grid; gap:10px; margin-top:16px; }.auth-form label { display:grid; gap:5px; color:#475569; font-size:12px; font-weight:700; }.auth-form input { width:100%; padding:9px 10px; border:1px solid var(--line); border-radius:7px; color:var(--ink); background:#fff; }.auth-note { margin-top:12px; padding:9px 10px; border-radius:7px; color:#475569; background:#f8fafc; font-size:11px; line-height:1.6; }
-    .family-meta { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:12px 0; }.family-code { padding:7px 10px; border:1px dashed #93b4ec; border-radius:7px; color:#174ea6; background:#f6f9ff; font-family:ui-monospace,monospace; font-weight:800; }.family-member-list { display:flex; flex-wrap:wrap; gap:6px; margin:10px 0; }.family-lineup { display:grid; gap:8px; }.family-lineup small { color:var(--muted); }.comment-list { display:grid; gap:8px; margin:14px 0; }.comment { padding:9px 10px; border-radius:7px; background:#f8fafc; }.comment strong { display:block; margin-bottom:4px; font-size:12px; }.comment p { margin:0; color:#475569; white-space:pre-wrap; }.comment-form { display:grid; gap:8px; }.comment-form textarea { min-height:88px; resize:vertical; padding:9px 10px; border:1px solid var(--line); border-radius:7px; font:inherit; }
+    .family-meta { display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:12px 0; }.family-code { padding:7px 10px; border:1px dashed #93b4ec; border-radius:7px; color:#174ea6; background:#f6f9ff; font-family:ui-monospace,monospace; font-weight:800; }.family-member-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:8px; margin:10px 0; }.family-member { padding:11px 12px; border:1px solid var(--line); border-radius:8px; background:#f8fafc; }.family-member strong,.family-member small { display:block; }.family-member small { margin-top:4px; color:var(--muted); }.family-lineup { display:grid; gap:8px; }.family-lineup small { color:var(--muted); }.comment-list { display:grid; gap:8px; margin:14px 0; }.comment { padding:9px 10px; border-radius:7px; background:#f8fafc; }.comment strong { display:block; margin-bottom:4px; font-size:12px; }.comment p { margin:0; color:#475569; white-space:pre-wrap; }.comment-form { display:grid; gap:8px; }.comment-form textarea { min-height:88px; resize:vertical; padding:9px 10px; border:1px solid var(--line); border-radius:7px; font:inherit; }
     .stat-reset { margin-right:auto; }
     @media(max-width:1300px) { .slot .hero .portrait { height:270px; } }
     @media(max-width:720px) { .slot .hero .portrait { height:290px; } }
@@ -500,10 +501,11 @@
       if (!state.family) return pageHead_('一門', '一門に参加すると、同じ一門の公開編成だけを閲覧・コメントできます。') + '<section class="page-grid"><article class="panel"><h2>一門を作成</h2><p>最初の一門員として一門名を登録し、発行される招待IDをメンバーへ渡します。</p><button class="btn primary" data-action="family-create">一門を作成</button></article><article class="panel"><h2>招待IDで参加</h2><p>一門長から受け取った招待IDを入力して参加します。</p><button class="btn" data-action="family-join">一門へ参加</button></article></section>';
       if (familySection === 'land') return landReportsPage_();
       const isOwner = state.family.owner_id === state.cloudUser.id;
-      const members = state.familyMembers.map(function(member) { return '<span class="tag">' + escape_(member.display_name) + (member.role === 'owner' ? '（一門長）' : '') + '</span>'; }).join('');
+      const members = state.familyMembers.map(function(member) { return '<article class="family-member"><strong>' + escape_(member.display_name || '名前未設定') + (member.user_id === state.cloudUser.id ? '（自分）' : '') + '</strong><small>' + (member.role === 'owner' ? '一門長' : '一門員') + ' · 参加日 ' + escape_(formatDateTime_(member.joined_at)) + '</small></article>'; }).join('');
       const lineups = state.familyLineups.map(function(lineup) { return '<article class="panel family-lineup"><h2>' + escape_(lineup.title) + '</h2><small>作成者：' + escape_(lineup.display_name) + '　更新：' + escape_(formatDateTime_(lineup.updated_at)) + '</small><div class="actions"><button class="btn" data-family-view="' + escape_(lineup.id) + '">閲覧</button><button class="btn" data-family-comments="' + escape_(lineup.id) + '">コメント (' + familyCommentCount_(lineup.id) + ')</button></div></article>'; }).join('');
       const actions = '<button class="btn primary" data-action="family-publish">現在の部隊を一門へ公開</button><button class="btn" data-action="family-refresh">更新</button>';
-      return pageHead_('一門：' + state.family.name, '一門員の編成は閲覧・コメントのみです。自分の部隊だけ編集・公開できます。', actions) + familyTabs_() + '<section class="panel"><h2>メンバー</h2><div class="family-member-list">' + (members || '<span class="tag">メンバーなし</span>') + '</div>' + (isOwner ? '<div class="family-meta"><span>招待ID</span><code class="family-code">' + escape_(state.family.invite_code) + '</code></div>' : '') + '</section><section class="page-grid" style="margin-top:14px">' + (lineups || '<div class="empty-panel">公開された編成はまだありません。</div>') + '</section>';
+      if (familySection === 'members') return pageHead_('一門：' + state.family.name, '現在この一門に参加しているメンバーを確認できます。', '<button class="btn" data-action="family-refresh">最新の状態に更新</button>') + familyTabs_() + '<section class="panel"><h2>参加メンバー（' + state.familyMembers.length + '人）</h2><div class="family-member-list">' + (members || '<div class="empty">メンバーはいません。</div>') + '</div>' + (isOwner ? '<div class="family-meta"><span>招待ID</span><code class="family-code">' + escape_(state.family.invite_code) + '</code></div>' : '') + '</section>';
+      return pageHead_('一門：' + state.family.name, '一門員の編成は閲覧・コメントのみです。自分の部隊だけ編集・公開できます。', actions) + familyTabs_() + '<section class="page-grid" style="margin-top:14px">' + (lineups || '<div class="empty-panel">公開された編成はまだありません。</div>') + '</section>';
     }
 
     /**
@@ -1093,7 +1095,7 @@
       const familyId = memberResult.data.family_id;
       const results = await Promise.all([
         supabaseClient.from('families').select('id, name, invite_code, owner_id').eq('id', familyId).maybeSingle(),
-        supabaseClient.from('family_members').select('user_id, display_name, role').eq('family_id', familyId).order('joined_at'),
+        supabaseClient.from('family_members').select('user_id, display_name, role, joined_at').eq('family_id', familyId).order('joined_at'),
         supabaseClient.from('family_lineups').select('id, user_id, display_name, title, payload, updated_at').eq('family_id', familyId).order('updated_at', { ascending: false }),
         supabaseClient.from('family_lineup_comments').select('id, family_lineup_id, user_id, display_name, body, created_at').order('created_at')
       ]);
