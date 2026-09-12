@@ -11021,7 +11021,7 @@
       "name": "槍弾正",
       "sourceName": "槍彈正",
       "type": "能動",
-      "rarity": "S",
+      "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "35%",
       "learnable": true,
