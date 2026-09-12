@@ -44,6 +44,7 @@
     - 2026-09-12: 同じ武将を複数の部隊へ重複配置できないよう修正。
     - 2026-09-12: 三河武士・威風凛々・大器の萌芽を戦法庫で検索・選択できるよう修正。
     - 2026-09-12: 習得可能なのに選択不可だった15戦法を復旧し、陣法フィルターと伝授戦法名の表記補正を追加。
+    - 2026-09-12: 同じ戦法を複数の部隊へ重複配置できないよう修正。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -425,10 +426,12 @@
     function tacticCard_(tactic) {
       const owned = state.inventory.tacticIds.includes(tactic.id);
       const unique = !tactic.learnable;
+      const used = isTacticUsed_(tactic.id);
+      const unavailable = unique || used;
       const summary = tactic.summary || ((tactic.type || '戦法') + '戦法。対象：' + (tactic.target || '未設定') + '。発動率：' + (tactic.activationRate || '未設定') + '。');
       const effect = localizedText_(tactic.effect || '効果本文は準備中です。');
       const tags = (tactic.tags || []).slice(0, 5).map(function(tag) { return '<span class="tag">' + escape_(tag) + '</span>'; }).join('');
-      return '<button class="card tactic-card ' + (unique ? 'disabled unique' : '') + '"' + (unique ? ' aria-disabled="true"' : ' data-tactic="' + escape_(tactic.id) + '" data-drag-tactic="' + escape_(tactic.id) + '" draggable="true"') + '>' + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(tactic.rarity || '') + '</span><span class="tag">' + escape_(tactic.type || '') + '</span><h3>' + escape_(tactic.name) + '</h3><p>' + escape_(tactic.target || '') + '　発動 ' + escape_(tactic.activationRate || '') + '</p><p>' + (unique ? '固有戦法（選択不可）' : '習得可能') + '</p>' + (tags ? '<div class="tactic-tags">' + tags + '</div>' : '') + '<span class="tip" tabindex="0" aria-label="戦法効果">ⓘ<span class="tipbox">' + escape_(summary) + '<strong>戦法効果（日本語補正）</strong>' + escape_(effect) + '</span></span></button>';
+      return '<button class="card tactic-card ' + (unavailable ? 'disabled ' : '') + (unique ? 'unique' : '') + '"' + (unavailable ? ' aria-disabled="true"' : ' data-tactic="' + escape_(tactic.id) + '" data-drag-tactic="' + escape_(tactic.id) + '" draggable="true"') + '>' + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(tactic.rarity || '') + '</span><span class="tag">' + escape_(tactic.type || '') + '</span><h3>' + escape_(tactic.name) + '</h3><p>' + escape_(tactic.target || '') + '　発動 ' + escape_(tactic.activationRate || '') + '</p><p>' + (unique ? '固有戦法（選択不可）' : used ? '編成済み' : '習得可能') + '</p>' + (tags ? '<div class="tactic-tags">' + tags + '</div>' : '') + '<span class="tip" tabindex="0" aria-label="戦法効果">ⓘ<span class="tipbox">' + escape_(summary) + '<strong>戦法効果（日本語補正）</strong>' + escape_(effect) + '</span></span></button>';
     }
 
     /**
@@ -1466,8 +1469,8 @@
     function chooseTactic_(id) {
       if (state.selected.kind !== 'tactic') return showToast_('先に武将枠内の「戦法を習得」を選択してください。');
       if (state.mode === 'inventory' && !state.inventory.tacticIds.includes(id)) return showToast_('所持品編成では、所持戦法だけを設定できます。');
-      const duplicate = activeTeam_().members.some(function(member, role) { return member.tacticIds.some(function(tacticId, slot) { return tacticId === id && (role !== state.selected.role || slot !== state.selected.slot); }); });
-      if (duplicate) return showToast_('同じ戦法は1部隊内に重複して設定できません。');
+      const duplicate = isTacticUsed_(id, state.activeTeam, state.selected.role, state.selected.slot);
+      if (duplicate) return showToast_('同じ戦法は複数の部隊に重複して設定できません。');
       activeTeam_().members[state.selected.role].tacticIds[state.selected.slot] = id;
       persist_();
       render();
@@ -1701,6 +1704,25 @@
         return team.members.some(function(member, roleIndex) {
           const excluded = teamIndex === excludedTeamIndex && roleIndex === excludedRoleIndex;
           return !excluded && member.heroId === heroId;
+        });
+      });
+    }
+
+    /**
+     * 戦法がいずれかの部隊に配置済みか確認する。
+     * @param {string} tacticId 戦法ID。
+     * @param {number} excludedTeamIndex 重複確認から除外する部隊番号。
+     * @param {number} excludedRoleIndex 重複確認から除外する役割番号。
+     * @param {number} excludedSlotIndex 重複確認から除外する戦法枠番号。
+     * @returns {boolean} 配置済みならtrue。
+     */
+    function isTacticUsed_(tacticId, excludedTeamIndex, excludedRoleIndex, excludedSlotIndex) {
+      return state.teams.some(function(team, teamIndex) {
+        return team.members.some(function(member, roleIndex) {
+          return member.tacticIds.some(function(memberTacticId, slotIndex) {
+            const excluded = teamIndex === excludedTeamIndex && roleIndex === excludedRoleIndex && slotIndex === excludedSlotIndex;
+            return !excluded && memberTacticId === tacticId;
+          });
         });
       });
     }
