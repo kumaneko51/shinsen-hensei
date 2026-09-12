@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-09-02",
+  "updatedAt": "2026-09-12",
   "sourceNote": "編成に必要な基本データ。肖像は外部参照。戦法効果は参照データを基にした日本語機械翻訳。",
   "heroes": [
     {
@@ -3921,14 +3921,14 @@
     },
     {
       "id": "hero-073",
-      "name": "一条信竜",
-      "sourceName": "一條信龍",
+      "name": "一条信龍",
+      "sourceName": "一条信龙",
       "faction": "武田",
       "clan": "武田家",
       "cost": 5,
       "rarity": "S",
       "gender": "男",
-      "uniqueSkill": "堅韌不拔",
+      "uniqueSkill": "不屈の精神",
       "teachableSkill": "甲斐弓騎兵",
       "assemblySkill": "石材増産",
       "stats": {
@@ -3970,7 +3970,7 @@
           "affinity": null
         }
       ],
-      "portrait": "https://img.game8.jp/12055689/fc65f0be8d27018794a7caacfb36e06e.webp/original",
+      "portrait": "https://p11386-media-cdn.qookkagames.com/P11386/sns/public_config/release/res/card/hero/yitiaoxinlong.png",
       "detailUrl": "https://game8.jp/nobunaga-shinsen/747935"
     },
     {
@@ -7988,60 +7988,6 @@
       ],
       "portrait": "https://img.game8.jp/12059222/f056b1e127c2804576823379688f2233.webp/original",
       "detailUrl": "https://game8.jp/nobunaga-shinsen/748022"
-    },
-    {
-      "id": "hero-156",
-      "name": "一条信龍",
-      "sourceName": "一条信龙",
-      "faction": "武田",
-      "clan": "武田家",
-      "cost": 5,
-      "rarity": "B",
-      "gender": "男",
-      "uniqueSkill": "不屈の精神",
-      "teachableSkill": "甲斐弓騎兵・拓",
-      "assemblySkill": "",
-      "stats": {
-        "leadership": 153,
-        "valor": 156,
-        "intelligence": 125,
-        "politics": 120,
-        "charisma": 128,
-        "speed": 90
-      },
-      "traits": [
-        {
-          "name": "弓術Ⅱ",
-          "rank": "B",
-          "active": true,
-          "affinity": {
-            "troopTypes": [
-              "弓兵"
-            ],
-            "level": 2
-          }
-        },
-        {
-          "name": "統帥Ⅱ",
-          "rank": "B",
-          "active": true,
-          "affinity": null
-        },
-        {
-          "name": "防護Ⅱ",
-          "rank": "B",
-          "active": true,
-          "affinity": null
-        },
-        {
-          "name": "剛猛Ⅰ",
-          "rank": "C",
-          "active": true,
-          "affinity": null
-        }
-      ],
-      "portrait": "https://p11386-media-cdn.qookkagames.com/P11386/sns/public_config/release/res/card/hero/yitiaoxinlong.png",
-      "detailUrl": ""
     }
   ],
   "tactics": [
@@ -10326,7 +10272,7 @@
       "target": "自己",
       "activationRate": "35%",
       "learnable": false,
-      "uniqueHero": "一条信竜",
+      "uniqueHero": "一条信龍",
       "tags": [
         "武勇ダメージ",
         "強化",
@@ -10335,7 +10281,7 @@
         "能動発動",
         "武勇系"
       ],
-      "summary": "能動戦法。対象：自己。発動率：35%。一条信竜の固有戦法。",
+      "summary": "能動戦法。対象：自己。発動率：35%。一条信龍の固有戦法。",
       "effect": "2ターン内，自身獲得反撃，受ける普通攻撃時敵に攻撃者施加1次反撃（ダメージ率0.74～1.48）。 反撃持続期間内受ける普通攻撃2次時，武勇增加18～36點（可重疊，持続至戰鬥結束）。"
     },
     {
@@ -10354,7 +10300,7 @@
         "速度系"
       ],
       "summary": "兵種戦法。対象：我軍全体(3人)。発動率：100%。習得可能な戦法。",
-      "effect": "弓兵進化為精妙射術的甲斐弓騎兵。部隊行軍速度增加5%～50%。 味方全体配置順為第一時，主動戰法発動率增加4%～8%（準備型戰法增加6%～12%）。 一条信竜裝備時，発動率增加值受速度影響。"
+      "effect": "弓兵進化為精妙射術的甲斐弓騎兵。部隊行軍速度增加5%～50%。 味方全体配置順為第一時，主動戰法発動率增加4%～8%（準備型戰法增加6%～12%）。 一条信龍裝備時，発動率增加值受速度影響。"
     },
     {
       "id": "tactic-113",

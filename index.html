@@ -3,7 +3,7 @@
   アプリの概要: 信長の野望・真戦の部隊を武将・戦法マスターから組み立てる公開用編成作業台。
   主な機能: 最大10部隊、主将・副将、突破、武将／戦法ライブラリ、所持管理、共有URL。
   関連ファイル／構成: index.html（GitHub Pages公開画面）、master.json（武将・戦法マスター）。
-  更新日: 2026-09-03
+  更新日: 2026-09-12
   更新履歴:
     - 2026-08-24: 参照アプリの作業台構成に合わせた日本語版レイアウトを作成。
     - 2026-08-30: プロフィール、部隊グループ、共有一覧、提案、抽選記録、設定の端末内管理画面を追加。
@@ -39,6 +39,7 @@
     - 2026-09-03: ログイン画面と新規登録画面を分離し、表示名を新規登録時だけ入力するよう改善。
     - 2026-09-09: メールアドレス不要のログインID認証と既存アカウント移行を追加。
     - 2026-09-12: 戦法検索の連続入力と種別フィルターの突撃表示・状態保持を修正。
+    - 2026-09-12: 重複登録された一条信龍を既存カードへ統合し、旧ID・表記ゆれを自動補正。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -128,7 +129,7 @@
       QOOKKA_IMPORT_URL: ((window.SUPABASE_CONFIG || {}).url || '') + '/functions/v1/qookka-import',
       CLOUD_FORMATION_NAME: '作業台自動保存',
       CLOUD_SYNC_DELAY_MS: 1200,
-      LEGACY_HERO_ID_MAP: Object.freeze({ 'hero-157': 'hero-081' })
+      LEGACY_HERO_ID_MAP: Object.freeze({ 'hero-156': 'hero-073', 'hero-157': 'hero-081' })
     };
 
     const ROLES = ['主将', '副将', '副将'];
@@ -1595,7 +1596,7 @@
      * @returns {string} 照合用の名称。
      */
     function normalizeExternalName_(value) {
-      return String(value || '').normalize('NFKC').replace(/[\s　・・]/g, '').replace(/之/g, 'の').replace(/ヶ/g, 'ケ');
+      return String(value || '').normalize('NFKC').replace(/[\s　・・]/g, '').replace(/之/g, 'の').replace(/ヶ/g, 'ケ').replace(/條/g, '条').replace(/竜/g, '龍').replace(/龙/g, '龍');
     }
 
     /**
