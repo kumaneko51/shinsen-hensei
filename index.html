@@ -42,6 +42,7 @@
     - 2026-09-12: 重複登録された一条信龍を既存カードへ統合し、旧ID・表記ゆれを自動補正。
     - 2026-09-12: 戦法庫の種別フィルターに兵種を追加。
     - 2026-09-12: 同じ武将を複数の部隊へ重複配置できないよう修正。
+    - 2026-09-12: 三河武士・威風凛々・大器の萌芽を戦法庫で検索・選択できるよう修正。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -1598,7 +1599,7 @@
      * @returns {string} 照合用の名称。
      */
     function normalizeExternalName_(value) {
-      return String(value || '').normalize('NFKC').replace(/[\s　・・]/g, '').replace(/之/g, 'の').replace(/ヶ/g, 'ケ').replace(/條/g, '条').replace(/竜/g, '龍').replace(/龙/g, '龍');
+      return String(value || '').normalize('NFKC').replace(/[\s　・・]/g, '').replace(/之/g, 'の').replace(/ヶ/g, 'ケ').replace(/條/g, '条').replace(/竜/g, '龍').replace(/龙/g, '龍').replace(/凜/g, '凛');
     }
 
     /**

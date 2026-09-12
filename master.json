@@ -1265,7 +1265,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "鬼義重",
-      "teachableSkill": "威風凜凜",
+      "teachableSkill": "威風凛々",
       "assemblySkill": "",
       "stats": {
         "leadership": 172,
@@ -3394,7 +3394,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "風流武者",
-      "teachableSkill": "威風凜凜",
+      "teachableSkill": "威風凛々",
       "assemblySkill": "",
       "stats": {
         "leadership": 164.5,
@@ -12333,7 +12333,7 @@
       "rarity": "A",
       "target": "我軍群体(2人)",
       "activationRate": "100%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "回復",
@@ -12549,13 +12549,13 @@
     },
     {
       "id": "tactic-229",
-      "name": "三河武士隊",
+      "name": "三河武士",
       "sourceName": "三河武士队",
       "type": "兵種",
       "rarity": "S",
       "target": "自軍全体",
       "activationRate": "100%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "強化",
@@ -12718,7 +12718,7 @@
     },
     {
       "id": "tactic-237",
-      "name": "威風凜々",
+      "name": "威風凛々",
       "sourceName": "威风凛凛",
       "type": "突撃",
       "rarity": "S",
