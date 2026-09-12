@@ -47,6 +47,7 @@
     - 2026-09-12: 同じ戦法を複数の部隊へ重複配置できないよう修正。
     - 2026-09-12: 一条信龍の表示できなくなった肖像URLを修正。
     - 2026-09-12: 槍弾正の戦法レア度をAへ修正。
+    - 2026-09-12: 共有URLから所持一覧を除外し、チャットへ直接貼れる長さに短縮。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -1291,7 +1292,7 @@
     function copySavedShare_(id) {
       const item = findRecord_('savedShares', id);
       if (!item) return;
-      copyShareUrl_(item.team, item.inventory);
+      copyShareUrl_(item.team);
     }
 
     /**
@@ -1555,7 +1556,7 @@
      * @returns {void}
      */
     function share_() {
-      copyShareUrl_(activeTeam_(), state.inventory);
+      copyShareUrl_(activeTeam_());
     }
 
     /**
@@ -1667,11 +1668,10 @@
     /**
      * 部隊情報を埋め込んだ共有URLをコピーする。
      * @param {Object} team 共有する部隊。
-     * @param {Object} inventory 共有する所持品。
      * @returns {void}
      */
-    function copyShareUrl_(team, inventory) {
-      const data = { team: team, inventory: inventory };
+    function copyShareUrl_(team) {
+      const data = { team: team };
       const url = location.origin + location.pathname + '#share=' + btoa(unescape(encodeURIComponent(JSON.stringify(data))));
       if (navigator.clipboard) navigator.clipboard.writeText(url);
       showToast_('共有URLをクリップボードにコピーしました。');
