@@ -18,8 +18,9 @@ test('ページを選ぶとスマホメニューが閉じる', () => {
   assert.match(html, /href="#\/lineups" data-route="lineups"/);
 });
 
-test('スマホ幅では編成画面とカード一覧を一列中心に整える', () => {
+test('スマホ幅では武将を三列、戦法を一列で表示する', () => {
   assert.match(html, /@media\(max-width:720px\)/);
+  assert.match(html, /\.library \.cards\s*\{\s*grid-template-columns:repeat\(3,minmax\(0,1fr\)\)/);
   assert.match(html, /\.library\.tactics-pane \.cards\s*\{\s*grid-template-columns:1fr/);
   assert.match(html, /\.page-grid\s*\{\s*grid-template-columns:1fr/);
   assert.match(html, /\.tools \.search\s*\{\s*flex-basis:100%/);

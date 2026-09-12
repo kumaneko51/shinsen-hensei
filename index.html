@@ -127,9 +127,11 @@
       .slots,.library { padding:10px; }
       .tools .search { flex-basis:100%; min-width:0; }
       .filter { flex:1 1 130px; min-width:0; }
-      .library .cards { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      .library .cards { grid-template-columns:repeat(3,minmax(0,1fr)); gap:6px; }
       .library.tactics-pane .cards { grid-template-columns:1fr; }
-      .library .card-photo { height:165px; }
+      .library:not(.tactics-pane) .card { padding:7px; }
+      .library:not(.tactics-pane) .card-photo { width:calc(100% + 14px); height:145px; margin:-7px -7px 6px; }
+      .library:not(.tactics-pane) .card h3 { margin-top:5px; font-size:12px; }
       .slot .hero .portrait { height:min(92vw,420px); }
       .page { padding:16px 10px; }
       .page-grid { grid-template-columns:1fr; }
