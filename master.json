@@ -12,7 +12,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "武田之赤備",
-      "teachableSkill": "縦橫馳突",
+      "teachableSkill": "縦横馳突",
       "assemblySkill": "別働奇襲",
       "stats": {
         "leadership": 169,
@@ -66,7 +66,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "如水",
-      "teachableSkill": "智者楽水",
+      "teachableSkill": "知者楽水",
       "assemblySkill": "包囲戦術",
       "stats": {
         "leadership": 167,
@@ -1052,7 +1052,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "表裡比興",
-      "teachableSkill": "瞬息万變",
+      "teachableSkill": "瞬息万変",
       "assemblySkill": "六文錢之誓",
       "stats": {
         "leadership": 176,
@@ -1914,7 +1914,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "無想掃討",
-      "teachableSkill": "気勢沖天",
+      "teachableSkill": "気勢衝天",
       "assemblySkill": "兵役増強",
       "stats": {
         "leadership": 155,
@@ -2131,7 +2131,7 @@
       "rarity": "S",
       "gender": "女",
       "uniqueSkill": "東国戰華",
-      "teachableSkill": "前後夾撃",
+      "teachableSkill": "前後挟撃",
       "assemblySkill": "城塁固守",
       "stats": {
         "leadership": 146,
@@ -2354,7 +2354,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "疾風怒濤",
-      "teachableSkill": "乘勝追撃",
+      "teachableSkill": "乗勝追撃",
       "assemblySkill": "鉄砲教練",
       "stats": {
         "leadership": 148,
@@ -2408,7 +2408,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "三楽犬",
-      "teachableSkill": "百戰磨煉",
+      "teachableSkill": "百戦錬磨",
       "assemblySkill": "城塁固守",
       "stats": {
         "leadership": 160,
@@ -3117,7 +3117,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "旋乾轉坤",
-      "teachableSkill": "薩摩鉄炮隊",
+      "teachableSkill": "薩摩鉄砲兵",
       "assemblySkill": "鉄砲補給",
       "stats": {
         "leadership": 161,
@@ -3339,7 +3339,7 @@
       "rarity": "S",
       "gender": "女",
       "uniqueSkill": "松柏之操",
-      "teachableSkill": "奇策縦橫",
+      "teachableSkill": "奇策縦横",
       "assemblySkill": "姬武者同心",
       "stats": {
         "leadership": 158,
@@ -4412,7 +4412,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "月盈中天",
-      "teachableSkill": "百戰磨煉",
+      "teachableSkill": "百戦錬磨",
       "assemblySkill": "軍事重視",
       "stats": {
         "leadership": 165,
@@ -4466,7 +4466,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "鬼十河",
-      "teachableSkill": "前後夾撃",
+      "teachableSkill": "前後挟撃",
       "assemblySkill": "足軽教練",
       "stats": {
         "leadership": 124,
@@ -4520,7 +4520,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "津田流炮術",
-      "teachableSkill": "鉄炮僧兵隊",
+      "teachableSkill": "鉄砲僧兵",
       "assemblySkill": "鉄砲補給",
       "stats": {
         "leadership": 146,
@@ -4787,7 +4787,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "股肱之臣",
-      "teachableSkill": "荷馱崩",
+      "teachableSkill": "荷駄崩し",
       "assemblySkill": "",
       "stats": {
         "leadership": 153,
@@ -5108,7 +5108,7 @@
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "天神山残照",
-      "teachableSkill": "荷馱崩",
+      "teachableSkill": "荷駄崩し",
       "assemblySkill": "",
       "stats": {
         "leadership": 111,
@@ -5330,7 +5330,7 @@
       "rarity": "A",
       "gender": "男",
       "uniqueSkill": "鉄炮猛撃",
-      "teachableSkill": "鉄炮猛撃",
+      "teachableSkill": "鉄砲猛撃",
       "assemblySkill": "鉄砲教練",
       "stats": {
         "leadership": 149,
@@ -6050,7 +6050,7 @@
       "rarity": "A",
       "gender": "男",
       "uniqueSkill": "掩護射撃",
-      "teachableSkill": "掩護射撃",
+      "teachableSkill": "援護射撃",
       "assemblySkill": "農産拡張",
       "stats": {
         "leadership": 168,
@@ -12254,7 +12254,7 @@
       "rarity": "S",
       "target": "我軍単体",
       "activationRate": "40%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "強化",
@@ -12272,7 +12272,7 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "武勇ダメージ",
@@ -12291,7 +12291,7 @@
       "rarity": "S",
       "target": "敵軍群体(2-3人)",
       "activationRate": "35%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "智略ダメージ",
@@ -12312,7 +12312,7 @@
       "rarity": "S",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "行動妨害",
@@ -12353,7 +12353,7 @@
       "rarity": "S",
       "target": "敵軍全体(3人)",
       "activationRate": "40%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "行動妨害",
@@ -12373,7 +12373,7 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "40%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "武勇ダメージ",
@@ -12394,7 +12394,7 @@
       "rarity": "A",
       "target": "敵軍単体",
       "activationRate": "35%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "智略ダメージ",
@@ -12414,7 +12414,7 @@
       "rarity": "A",
       "target": "敵軍群体(2人)",
       "activationRate": "35%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "智略ダメージ",
@@ -12435,7 +12435,7 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "強化",
@@ -12455,7 +12455,7 @@
       "rarity": "A",
       "target": "我軍群体(2-3人)",
       "activationRate": "50%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "回復",
@@ -12475,7 +12475,7 @@
       "rarity": "S",
       "target": "自己",
       "activationRate": "100%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "強化",
@@ -12495,7 +12495,7 @@
       "rarity": "S",
       "target": "我軍群体(2人)",
       "activationRate": "30%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "強化",
@@ -12515,7 +12515,7 @@
       "rarity": "S",
       "target": "我軍全体(3人)",
       "activationRate": "100%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "強化",
@@ -12535,7 +12535,7 @@
       "rarity": "S",
       "target": "自身",
       "activationRate": "100%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "強化",
@@ -12576,7 +12576,7 @@
       "rarity": "S",
       "target": "自軍全体",
       "activationRate": "100%",
-      "learnable": false,
+      "learnable": true,
       "uniqueHero": "",
       "tags": [
         "強化",
