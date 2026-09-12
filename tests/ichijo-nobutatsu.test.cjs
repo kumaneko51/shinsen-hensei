@@ -12,6 +12,7 @@ test('一条信龍 is represented by one canonical hero and old saved data migra
   assert.equal(heroes.length, 1);
   assert.equal(heroes[0].id, 'hero-073');
   assert.equal(heroes[0].name, '一条信龍');
+  assert.equal(heroes[0].portrait, 'https://img.game8.jp/12055689/fc65f0be8d27018794a7caacfb36e06e.webp/original');
   assert.match(html, /'hero-156': 'hero-073'/);
 });
 
