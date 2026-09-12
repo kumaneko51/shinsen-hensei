@@ -41,6 +41,7 @@
     - 2026-09-12: 戦法検索の連続入力と種別フィルターの突撃表示・状態保持を修正。
     - 2026-09-12: 重複登録された一条信龍を既存カードへ統合し、旧ID・表記ゆれを自動補正。
     - 2026-09-12: 戦法庫の種別フィルターに兵種を追加。
+    - 2026-09-12: 同じ武将を複数の部隊へ重複配置できないよう修正。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -408,7 +409,7 @@
      * @returns {string} HTML。
      */
     function heroCard_(hero) {
-      const used = activeTeam_().members.some(function(member) { return member.heroId === hero.id; });
+      const used = isHeroUsed_(hero.id);
       const owned = state.inventory.heroIds.includes(hero.id);
       const image = hero.portrait ? '<img class="card-photo" src="' + escape_(hero.portrait) + '" alt="' + escape_(hero.name) + 'の肖像" loading="lazy" referrerpolicy="no-referrer">' : '';
       return '<button class="card ' + (used ? 'disabled' : '') + '" data-hero="' + escape_(hero.id) + '" data-drag-hero="' + escape_(hero.id) + '" draggable="' + (!used) + '">' + image + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><h3>' + escape_(hero.name) + '</h3><p>' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '</p><p>' + (used ? '編成済み' : escape_(hero.uniqueSkill || '')) + '</p></button>';
@@ -1446,8 +1447,8 @@
      */
     function chooseHero_(id) {
       if (state.mode === 'inventory' && !state.inventory.heroIds.includes(id)) return showToast_('所持品編成では、所持武将だけを設定できます。');
-      const duplicate = activeTeam_().members.some(function(member, index) { return member.heroId === id && index !== state.selected.role; });
-      if (duplicate) return showToast_('同じ武将は1部隊に重複して設定できません。');
+      const duplicate = isHeroUsed_(id, state.activeTeam, state.selected.role);
+      if (duplicate) return showToast_('同じ武将は複数の部隊に重複して設定できません。');
       const member = activeTeam_().members[state.selected.role];
       member.heroId = id;
       member.tacticIds = ['', ''];
@@ -1685,6 +1686,22 @@
      * @returns {Object} 部隊。
      */
     function activeTeam_() { return state.teams[state.activeTeam]; }
+
+    /**
+     * 武将がいずれかの部隊に配置済みか確認する。
+     * @param {string} heroId 武将ID。
+     * @param {number} excludedTeamIndex 重複確認から除外する部隊番号。
+     * @param {number} excludedRoleIndex 重複確認から除外する役割番号。
+     * @returns {boolean} 配置済みならtrue。
+     */
+    function isHeroUsed_(heroId, excludedTeamIndex, excludedRoleIndex) {
+      return state.teams.some(function(team, teamIndex) {
+        return team.members.some(function(member, roleIndex) {
+          const excluded = teamIndex === excludedTeamIndex && roleIndex === excludedRoleIndex;
+          return !excluded && member.heroId === heroId;
+        });
+      });
+    }
 
     /**
      * 武将をIDから取得する。
