@@ -194,6 +194,12 @@ create table if not exists public.family_lineup_comments (
   created_at timestamptz not null default now()
 );
 
+-- 既存環境にも後から追加した公開表示名列を反映する。
+alter table public.family_lineups
+  add column if not exists display_name text not null default '';
+alter table public.family_lineup_comments
+  add column if not exists display_name text not null default '';
+
 create or replace function public.is_family_member_(family_uuid uuid)
 returns boolean
 language sql
