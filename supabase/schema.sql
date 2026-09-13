@@ -255,6 +255,26 @@ begin
 end;
 $$;
 
+create or replace function public.update_my_display_name(new_display_name text)
+returns void
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  clean_name text := trim(coalesce(new_display_name, ''));
+begin
+  if auth.uid() is null then raise exception 'ログインが必要です'; end if;
+  if char_length(clean_name) not between 1 and 30 or position('@' in clean_name) > 0 then
+    raise exception '表示名はメールアドレスを含めず1〜30文字で入力してください';
+  end if;
+  update public.family_members set display_name = clean_name where user_id = auth.uid();
+  update public.family_lineups set display_name = clean_name where user_id = auth.uid();
+  update public.family_lineup_comments set display_name = clean_name where user_id = auth.uid();
+  update public.user_profiles set display_name = clean_name where user_id = auth.uid();
+end;
+$$;
+
 drop trigger if exists families_set_updated_at on public.families;
 create trigger families_set_updated_at
 before update on public.families
@@ -329,3 +349,5 @@ revoke all on function public.create_family(text) from public;
 grant execute on function public.create_family(text) to authenticated;
 revoke all on function public.join_family_by_invite(text) from public;
 grant execute on function public.join_family_by_invite(text) to authenticated;
+revoke all on function public.update_my_display_name(text) from public;
+grant execute on function public.update_my_display_name(text) to authenticated;
