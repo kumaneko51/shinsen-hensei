@@ -52,6 +52,7 @@
     - 2026-09-13: 一門に参加しているメンバーの一覧画面を追加。
     - 2026-09-13: アカウント画面と一門画面から公開表示名を変更できるよう改善。
     - 2026-09-19: 編成武将ごとに兵学の系統・奇・正2枠を選択できる機能を追加。
+    - 2026-09-19: 九州争覇の新武将6人（吉岡妙林ほか）を武将庫へ追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -402,7 +403,7 @@
       const heigakuSummary = heigaku.group
         ? '<div class="heigaku-summary"><span>' + escape_(heigaku.group) + '</span><span>奇：' + escape_(heigaku.qi || '未設定') + '</span><span>正：' + escape_(heigaku.sei[0] || '未設定') + '</span><span>正：' + escape_(heigaku.sei[1] || '未設定') + '</span></div>'
         : '<div class="heigaku-summary"><span>未設定</span></div>';
-      const stats = Object.keys(STAT_LABELS).map(function(key) { const bonus = Number((member.bonuses || {})[key] || 0); const value = Number((hero.stats || {})[key] || 0) + bonus; return '<div class="stat"><span>' + STAT_LABELS[key] + '</span><b>' + value + '</b><small>' + (bonus ? '＋' + bonus : '') + '</small></div>'; }).join('');
+      const stats = Object.keys(STAT_LABELS).map(function(key) { const base = (hero.stats || {})[key]; const known = base !== null && base !== undefined && base !== ''; const bonus = Number((member.bonuses || {})[key] || 0); const value = known ? Number(base) + bonus : '—'; return '<div class="stat"><span>' + STAT_LABELS[key] + '</span><b>' + value + '</b><small>' + (known && bonus ? '＋' + bonus : '') + '</small></div>'; }).join('');
       const traits = (hero.traits || []).slice(0, 4).map(function(trait) { return '<span class="tag ' + (trait.rank === 'S' ? 's' : '') + '">' + escape_(trait.name) + '</span>'; }).join('');
       const skills = member.tacticIds.map(function(id, index) { const tactic = tactic_(id); const active = selected && state.selected.kind === 'tactic' && state.selected.slot === index; return '<div class="skill-row"><button class="skill ' + (active ? 'active' : '') + '" data-focus-tactic="' + role + ':' + index + '" data-drop-tactic="' + role + ':' + index + '">' + (tactic ? escape_(tactic.name) + '　<small>' + escape_(tactic.type || '') + '</small>' : '＋ 戦法を習得') + '</button>' + (tactic ? '<button class="clear" data-remove-tactic="' + role + ':' + index + '" aria-label="' + escape_(tactic.name) + 'を解除">×</button>' : '') + '</div>'; }).join('');
       return '<article class="slot ' + (selected ? 'selected' : '') + '" data-drop-role="' + role + '"><div class="role role-line"><span>' + ROLES[role] + (role === 0 ? '　大将技' : '') + '</span><button class="clear" data-remove-hero="' + role + '" aria-label="' + escape_(hero.name) + 'を解除">×</button></div><button class="hero" data-focus-hero="' + role + '" data-drag-member="' + role + '" draggable="true"><span class="portrait">' + visual + '</span><span><span class="hero-name">' + escape_(hero.name) + '</span><span class="meta">' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '　' + hero.cost + 'C</span></span></button><div class="stars">' + stars_(role, member.breakthrough) + '</div><span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><span class="tag">' + escape_(hero.uniqueSkill || '固有戦法未設定') + '</span><div class="stat-allocation"><button class="stat-open" data-stat-modal="' + role + '">能力振分</button><b>' + allocatedPoints + ' / ' + statBonusLimit + '</b></div><div class="stats">' + stats + '</div><div class="traits">' + traits + '</div><div class="heigaku"><div class="heigaku-head"><b>兵学</b><button data-heigaku-modal="' + role + '">選択</button></div>' + heigakuSummary + '</div>' + skills + '</article>';
@@ -757,10 +758,13 @@
       const allocated = allocatedStatPoints_(member);
       const limit = statBonusLimit_(member);
       const rows = Object.keys(STAT_LABELS).map(function(key) {
-        const base = Number((hero.stats || {})[key] || 0);
+        const rawBase = (hero.stats || {})[key];
+        const known = rawBase !== null && rawBase !== undefined && rawBase !== '';
+        const base = known ? Number(rawBase) : 0;
         const bonus = Number((member.bonuses || {})[key] || 0);
-        const value = base + bonus;
-        return '<div class="stat-editor-row"><b>' + STAT_LABELS[key] + '</b><span>' + base + '</span><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':-10" aria-label="' + STAT_LABELS[key] + 'を10下げる">−10</button><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':-1" aria-label="' + STAT_LABELS[key] + 'を1下げる">−</button><span>＋' + bonus + '</span><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':1" aria-label="' + STAT_LABELS[key] + 'を1上げる">＋</button><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':10" aria-label="' + STAT_LABELS[key] + 'を10上げる">＋10</button><b>' + value + '</b></div>';
+        const value = known ? base + bonus : '—';
+        const disabled = known ? '' : ' disabled';
+        return '<div class="stat-editor-row"><b>' + STAT_LABELS[key] + '</b><span>' + (known ? base : '未確認') + '</span><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':-10" aria-label="' + STAT_LABELS[key] + 'を10下げる"' + disabled + '>−10</button><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':-1" aria-label="' + STAT_LABELS[key] + 'を1下げる"' + disabled + '>−</button><span>' + (known ? '＋' + bonus : '—') + '</span><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':1" aria-label="' + STAT_LABELS[key] + 'を1上げる"' + disabled + '>＋</button><button class="stat-adjust" data-stat-adjust="' + role + ':' + key + ':10" aria-label="' + STAT_LABELS[key] + 'を10上げる"' + disabled + '>＋10</button><b>' + value + '</b></div>';
       }).join('');
       return '<div class="backdrop"><section class="modal stat-modal" role="dialog" aria-modal="true"><div class="role-line"><div><h2>自由属性加点</h2><p>' + escape_(hero.name) + 'の能力値を振り分けます。</p></div><button class="clear" data-close-modal aria-label="閉じる">×</button></div><div class="stat-summary"><span>残りの配分可能点</span><b>' + (limit - allocated) + ' / ' + limit + '</b></div><div class="stat-editor">' + rows + '</div><div class="modal-actions"><button class="btn stat-reset" data-stat-reset="' + role + '">リセット</button><button class="btn" data-close-modal>キャンセル</button><button class="btn primary" data-close-modal>確定</button></div></section></div>';
     }
