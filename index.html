@@ -3,7 +3,7 @@
   アプリの概要: 信長の野望・真戦の部隊を武将・戦法マスターから組み立てる公開用編成作業台。
   主な機能: 最大10部隊、主将・副将、突破、武将／戦法ライブラリ、所持管理、共有URL。
   関連ファイル／構成: index.html（GitHub Pages公開画面）、master.json（武将・戦法マスター）。
-  更新日: 2026-09-12
+  更新日: 2026-09-19
   更新履歴:
     - 2026-08-24: 参照アプリの作業台構成に合わせた日本語版レイアウトを作成。
     - 2026-08-30: プロフィール、部隊グループ、共有一覧、提案、抽選記録、設定の端末内管理画面を追加。
@@ -51,6 +51,7 @@
     - 2026-09-12: スマホ表示を最適化し、左メニューを開閉式に変更。
     - 2026-09-13: 一門に参加しているメンバーの一覧画面を追加。
     - 2026-09-13: アカウント画面と一門画面から公開表示名を変更できるよう改善。
+    - 2026-09-19: 編成武将ごとに兵学の系統・奇・正2枠を選択できる機能を追加。
   メンテナンスメモ: 画像・説明文は権利確認済みのものだけを追加する。公開マスターを常に優先する。
 -->
 <html lang="ja">
@@ -91,6 +92,16 @@
     .skill-row .skill small { display:block; margin-top:2px; color:#64748b; }
     .stat-allocation { display:flex; justify-content:space-between; align-items:center; margin:7px 0 3px; color:#64748b; font-size:10px; font-weight:700; }
     .stat-allocation b { color:#1d4ed8; font-size:11px; }
+    .heigaku { margin:7px 0; padding:7px; border:1px solid #e5dcc4; border-radius:7px; background:#fffdf7; }
+    .heigaku-head { display:flex; gap:7px; align-items:center; justify-content:space-between; }
+    .heigaku-head b { color:#8a6418; font-size:11px; }
+    .heigaku-head button { padding:4px 7px; border:1px solid #d9c89f; border-radius:5px; color:#76510d; background:#fff; font-size:10px; font-weight:800; }
+    .heigaku-summary { display:flex; flex-wrap:wrap; gap:4px; margin-top:5px; }
+    .heigaku-summary span { padding:3px 5px; border-radius:4px; color:#6b5528; background:#f5ecd5; font-size:9px; font-weight:700; }
+    .heigaku-form { display:grid; gap:12px; margin:16px 0; }
+    .heigaku-form label { display:grid; gap:5px; color:#475569; font-size:12px; font-weight:800; }
+    .heigaku-form select { width:100%; min-height:42px; padding:7px 9px; border:1px solid var(--line); border-radius:7px; color:var(--ink); background:#fff; }
+    .heigaku-help { padding:10px; border-radius:7px; color:#6b5528; background:#fff8e8; font-size:11px; line-height:1.6; }
     .stat { min-height:57px; }
     .stat-value { display:flex; align-items:center; justify-content:center; gap:4px; margin-top:2px; }
     .stat-adjust { display:grid; place-items:center; width:17px; height:17px; padding:0; border:1px solid #cbd5e1; border-radius:4px; color:#334155; background:#fff; font-size:13px; line-height:1; }
@@ -176,6 +187,12 @@
 
     const ROLES = ['主将', '副将', '副将'];
     const STAT_LABELS = { leadership: '統', valor: '武', intelligence: '智', politics: '政', charisma: '魅', speed: '速' };
+    const HEIGAKU = Object.freeze({
+      '武略': { qi: ['表裏一体', '舟中敵国', '当意即妙', '冷静沈着', '兵勢連鎖', '智勇兼備'], sei: ['剛力', '豪勇', '妙策', '突貫', '奇謀', '胆力', '活路', '警戒'] },
+      '陣立': { qi: ['先陣誘導', '陽動の策', '勇猛果敢', '右往左往', '返り討ちの計', '気勢崩し', '生々流転'], sei: ['慧眼', '俊才', '才気', '乱戦', '逆境', '不敵', '兵心', '恩顧'] },
+      '機略': { qi: ['臨機応変', '離間の計', '七転八起', '詭計百出', '軍律擾乱', '破陣の勢い'], sei: ['神算', '鬼気', '大勇', '早駆', '練磨', '神秘', '多謀', '強靭'] },
+      '臨戦': { qi: ['手当の心得', '鼓舞激励', '脱兎の如し', '心頭滅却', '達人大観', '殿軍救護', '搦手の策'], sei: ['果敢', '兵家', '機動', '協同', '仁愛', '天時', '地利', '内助', '明鏡', '不惑'] }
+    });
     let master = { heroes: [], tactics: [] };
     let state = makeState_();
     let supabaseClient = null;
@@ -194,7 +211,7 @@
      * @returns {Object} 武将枠。
      */
     function makeMember_() {
-      return { heroId: '', breakthrough: 0, tacticIds: ['', ''], bonuses: { leadership: 0, valor: 0, intelligence: 0, politics: 0, charisma: 0, speed: 0 } };
+      return { heroId: '', breakthrough: 0, tacticIds: ['', ''], heigaku: { group: '', qi: '', sei: ['', ''] }, bonuses: { leadership: 0, valor: 0, intelligence: 0, politics: 0, charisma: 0, speed: 0 } };
     }
 
     /**
@@ -262,10 +279,27 @@
     function normalizeTeam_(team) {
       const members = Array.isArray(team.members) ? team.members.slice(0, 3).map(function(member) {
         const base = makeMember_();
-        return { ...base, ...member, heroId: normalizeHeroId_(member.heroId), tacticIds: [((member.tacticIds || [])[0] || ''), ((member.tacticIds || [])[1] || '')], bonuses: { ...base.bonuses, ...(member.bonuses || member.stats || {}) } };
+        return { ...base, ...member, heroId: normalizeHeroId_(member.heroId), tacticIds: [((member.tacticIds || [])[0] || ''), ((member.tacticIds || [])[1] || '')], heigaku: normalizeHeigaku_(member.heigaku), bonuses: { ...base.bonuses, ...(member.bonuses || member.stats || {}) } };
       }) : [];
       while (members.length < 3) members.push(makeMember_());
       return { id: team.id || String(Date.now()), name: String(team.name || '部隊'), members: members };
+    }
+
+    /**
+     * 保存済みの兵学データを現行形式へ補正する。
+     * @param {Object} value 兵学データ。
+     * @returns {Object} 補正済み兵学データ。
+     */
+    function normalizeHeigaku_(value) {
+      const source = value || {};
+      const group = Object.prototype.hasOwnProperty.call(HEIGAKU, source.group) ? source.group : '';
+      const choices = group ? HEIGAKU[group] : { qi: [], sei: [] };
+      const sei = Array.isArray(source.sei) ? source.sei : [source.z1 || '', source.z2 || ''];
+      return {
+        group: group,
+        qi: choices.qi.includes(source.qi) ? source.qi : '',
+        sei: [choices.sei.includes(sei[0]) ? sei[0] : '', choices.sei.includes(sei[1]) ? sei[1] : '']
+      };
     }
 
     /**
@@ -364,10 +398,14 @@
       const visual = hero.portrait ? fallback + '<img src="' + escape_(hero.portrait) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : fallback;
       const allocatedPoints = allocatedStatPoints_(member);
       const statBonusLimit = statBonusLimit_(member);
+      const heigaku = normalizeHeigaku_(member.heigaku);
+      const heigakuSummary = heigaku.group
+        ? '<div class="heigaku-summary"><span>' + escape_(heigaku.group) + '</span><span>奇：' + escape_(heigaku.qi || '未設定') + '</span><span>正：' + escape_(heigaku.sei[0] || '未設定') + '</span><span>正：' + escape_(heigaku.sei[1] || '未設定') + '</span></div>'
+        : '<div class="heigaku-summary"><span>未設定</span></div>';
       const stats = Object.keys(STAT_LABELS).map(function(key) { const bonus = Number((member.bonuses || {})[key] || 0); const value = Number((hero.stats || {})[key] || 0) + bonus; return '<div class="stat"><span>' + STAT_LABELS[key] + '</span><b>' + value + '</b><small>' + (bonus ? '＋' + bonus : '') + '</small></div>'; }).join('');
       const traits = (hero.traits || []).slice(0, 4).map(function(trait) { return '<span class="tag ' + (trait.rank === 'S' ? 's' : '') + '">' + escape_(trait.name) + '</span>'; }).join('');
       const skills = member.tacticIds.map(function(id, index) { const tactic = tactic_(id); const active = selected && state.selected.kind === 'tactic' && state.selected.slot === index; return '<div class="skill-row"><button class="skill ' + (active ? 'active' : '') + '" data-focus-tactic="' + role + ':' + index + '" data-drop-tactic="' + role + ':' + index + '">' + (tactic ? escape_(tactic.name) + '　<small>' + escape_(tactic.type || '') + '</small>' : '＋ 戦法を習得') + '</button>' + (tactic ? '<button class="clear" data-remove-tactic="' + role + ':' + index + '" aria-label="' + escape_(tactic.name) + 'を解除">×</button>' : '') + '</div>'; }).join('');
-      return '<article class="slot ' + (selected ? 'selected' : '') + '" data-drop-role="' + role + '"><div class="role role-line"><span>' + ROLES[role] + (role === 0 ? '　大将技' : '') + '</span><button class="clear" data-remove-hero="' + role + '" aria-label="' + escape_(hero.name) + 'を解除">×</button></div><button class="hero" data-focus-hero="' + role + '" data-drag-member="' + role + '" draggable="true"><span class="portrait">' + visual + '</span><span><span class="hero-name">' + escape_(hero.name) + '</span><span class="meta">' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '　' + hero.cost + 'C</span></span></button><div class="stars">' + stars_(role, member.breakthrough) + '</div><span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><span class="tag">' + escape_(hero.uniqueSkill || '固有戦法未設定') + '</span><div class="stat-allocation"><button class="stat-open" data-stat-modal="' + role + '">能力振分</button><b>' + allocatedPoints + ' / ' + statBonusLimit + '</b></div><div class="stats">' + stats + '</div><div class="traits">' + traits + '</div>' + skills + '</article>';
+      return '<article class="slot ' + (selected ? 'selected' : '') + '" data-drop-role="' + role + '"><div class="role role-line"><span>' + ROLES[role] + (role === 0 ? '　大将技' : '') + '</span><button class="clear" data-remove-hero="' + role + '" aria-label="' + escape_(hero.name) + 'を解除">×</button></div><button class="hero" data-focus-hero="' + role + '" data-drag-member="' + role + '" draggable="true"><span class="portrait">' + visual + '</span><span><span class="hero-name">' + escape_(hero.name) + '</span><span class="meta">' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '　' + hero.cost + 'C</span></span></button><div class="stars">' + stars_(role, member.breakthrough) + '</div><span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><span class="tag">' + escape_(hero.uniqueSkill || '固有戦法未設定') + '</span><div class="stat-allocation"><button class="stat-open" data-stat-modal="' + role + '">能力振分</button><b>' + allocatedPoints + ' / ' + statBonusLimit + '</b></div><div class="stats">' + stats + '</div><div class="traits">' + traits + '</div><div class="heigaku"><div class="heigaku-head"><b>兵学</b><button data-heigaku-modal="' + role + '">選択</button></div>' + heigakuSummary + '</div>' + skills + '</article>';
     }
 
     /**
@@ -626,6 +664,7 @@
     function modal_() {
       if (state.modal.indexOf('land-report:') === 0) return landReportModal_(state.modal.slice(12));
       if (state.modal.indexOf('stats:') === 0) return statAllocationModal_(Number(state.modal.slice(6)));
+      if (state.modal.indexOf('heigaku:') === 0) return heigakuModal_(Number(state.modal.slice(8)));
       if (state.modal === 'auth') return authModal_();
       if (state.modal === 'account') return accountModal_();
       if (state.modal === 'password-recovery') return passwordRecoveryModal_();
@@ -727,6 +766,24 @@
     }
 
     /**
+     * 兵学選択モーダルを描画する。
+     * @param {number} role 武将枠の番号。
+     * @returns {string} HTML。
+     */
+    function heigakuModal_(role) {
+      const member = activeTeam_().members[role];
+      const hero = member ? hero_(member.heroId) : null;
+      if (!member || !hero) return '';
+      const value = normalizeHeigaku_(member.heigaku);
+      const choices = value.group ? HEIGAKU[value.group] : { qi: [], sei: [] };
+      const option = function(name, selected) { return '<option value="' + escape_(name) + '"' + (name === selected ? ' selected' : '') + '>' + escape_(name) + '</option>'; };
+      const groupOptions = Object.keys(HEIGAKU).map(function(name) { return option(name, value.group); }).join('');
+      const qiOptions = choices.qi.map(function(name) { return option(name, value.qi); }).join('');
+      const seiOptions = function(selected) { return choices.sei.map(function(name) { return option(name, selected); }).join(''); };
+      return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true"><div class="role-line"><div><h2>兵学を選択</h2><p>' + escape_(hero.name) + 'の兵学を設定します。</p></div><button class="clear" data-close-modal aria-label="閉じる">×</button></div><div class="heigaku-help">系統を選び、「奇」1枠と「正」2枠を設定できます。同じ「正」を2枠選ぶ設定にも対応しています。</div><div class="heigaku-form"><label>兵学の系統<select data-heigaku-group="' + role + '"><option value="">未選択</option>' + groupOptions + '</select></label><label>奇<select data-heigaku-choice="' + role + ':qi"' + (value.group ? '' : ' disabled') + '><option value="">未選択</option>' + qiOptions + '</select></label><label>正 1<select data-heigaku-choice="' + role + ':0"' + (value.group ? '' : ' disabled') + '><option value="">未選択</option>' + seiOptions(value.sei[0]) + '</select></label><label>正 2<select data-heigaku-choice="' + role + ':1"' + (value.group ? '' : ' disabled') + '><option value="">未選択</option>' + seiOptions(value.sei[1]) + '</select></label></div><div class="modal-actions"><button class="btn" data-heigaku-reset="' + role + '">リセット</button><button class="btn primary" data-close-modal>確定</button></div></section></div>';
+    }
+
+    /**
      * DOMイベントを登録する。
      * @returns {void}
      */
@@ -745,6 +802,10 @@
       all_('[data-focus-tactic]', function(element) { element.onclick = function() { const values = element.dataset.focusTactic.split(':').map(Number); state.selected = { role: values[0], kind: 'tactic', slot: values[1] }; state.tab = 'tactics'; render(); }; });
       all_('[data-star]', function(element) { element.onclick = function() { const values = element.dataset.star.split(':').map(Number); const member = activeTeam_().members[values[0]]; member.breakthrough = member.breakthrough === values[1] ? 0 : values[1]; persist_(); render(); }; });
       all_('[data-stat-modal]', function(element) { element.onclick = function() { state.modal = 'stats:' + Number(element.dataset.statModal); render(); }; });
+      all_('[data-heigaku-modal]', function(element) { element.onclick = function() { state.modal = 'heigaku:' + Number(element.dataset.heigakuModal); render(); }; });
+      all_('[data-heigaku-group]', function(element) { element.onchange = function() { changeHeigakuGroup_(Number(element.dataset.heigakuGroup), element.value); }; });
+      all_('[data-heigaku-choice]', function(element) { element.onchange = function() { const values = element.dataset.heigakuChoice.split(':'); changeHeigakuChoice_(Number(values[0]), values[1], element.value); }; });
+      all_('[data-heigaku-reset]', function(element) { element.onclick = function() { resetHeigaku_(Number(element.dataset.heigakuReset)); }; });
       all_('[data-stat-adjust]', function(element) { element.onclick = function() { const values = element.dataset.statAdjust.split(':'); changeStatBonus_(Number(values[0]), values[1], Number(values[2])); }; });
       all_('[data-stat-reset]', function(element) { element.onclick = function() { resetStatBonus_(Number(element.dataset.statReset)); }; });
       all_('[data-tab]', function(element) { element.onclick = function() { state.tab = element.dataset.tab; state.query = ''; state.cost = ''; state.faction = ''; state.rarity = ''; render(); }; });
@@ -1527,6 +1588,60 @@
       const member = activeTeam_().members[state.selected.role];
       member.heroId = id;
       member.tacticIds = ['', ''];
+      member.heigaku = normalizeHeigaku_();
+      persist_();
+      render();
+    }
+
+    /**
+     * 武将の兵学系統を変更する。
+     * @param {number} role 武将枠の番号。
+     * @param {string} group 兵学系統。
+     * @returns {void}
+     */
+    function changeHeigakuGroup_(role, group) {
+      const member = activeTeam_().members[role];
+      if (!member) return;
+      member.heigaku = Object.prototype.hasOwnProperty.call(HEIGAKU, group)
+        ? { group: group, qi: '', sei: ['', ''] }
+        : normalizeHeigaku_();
+      persist_();
+      render();
+    }
+
+    /**
+     * 武将の兵学「奇」「正」を変更する。
+     * @param {number} role 武将枠の番号。
+     * @param {string} slot qi または正の枠番号。
+     * @param {string} name 選択名。
+     * @returns {void}
+     */
+    function changeHeigakuChoice_(role, slot, name) {
+      const member = activeTeam_().members[role];
+      if (!member) return;
+      const value = normalizeHeigaku_(member.heigaku);
+      const choices = value.group ? HEIGAKU[value.group] : null;
+      if (!choices) return;
+      if (slot === 'qi') value.qi = choices.qi.includes(name) ? name : '';
+      else {
+        const index = Number(slot);
+        if (index !== 0 && index !== 1) return;
+        value.sei[index] = choices.sei.includes(name) ? name : '';
+      }
+      member.heigaku = value;
+      persist_();
+      render();
+    }
+
+    /**
+     * 武将の兵学を未設定に戻す。
+     * @param {number} role 武将枠の番号。
+     * @returns {void}
+     */
+    function resetHeigaku_(role) {
+      const member = activeTeam_().members[role];
+      if (!member) return;
+      member.heigaku = normalizeHeigaku_();
       persist_();
       render();
     }
