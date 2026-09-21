@@ -38,4 +38,8 @@ test('兵学選択は武将カード、モーダル、保存処理に接続さ�
   assert.match(html, /function changeHeigakuGroup_\(role, group\)/);
   assert.match(html, /function changeHeigakuChoice_\(role, slot, name\)/);
   assert.match(html, /member\.heigaku = value;\s+persist_\(\);/);
+  assert.match(html, /class="heigaku-tabs"/);
+  assert.match(html, /data-heigaku-option=/);
+  assert.match(html, /function changeHeigakuOption_\(role, type, name\)/);
+  assert.match(html, /class="heigaku-options"/);
 });
