@@ -198,6 +198,7 @@
 
     const ROLES = ['主将', '副将', '副将'];
     const STAT_LABELS = { leadership: '統', valor: '武', intelligence: '智', politics: '政', charisma: '魅', speed: '速' };
+    const TRAIT_UNLOCK_BREAKTHROUGHS = [0, 1, 3, 5];
     const HEIGAKU = Object.freeze({
       '武略': { qi: ['表裏一体', '舟中敵国', '当意即妙', '冷静沈着', '兵勢連鎖', '智勇兼備'], sei: ['剛力', '豪勇', '妙策', '突貫', '奇謀', '胆力', '活路', '警戒'] },
       '陣立': { qi: ['先陣誘導', '陽動の策', '勇猛果敢', '右往左往', '返り討ちの計', '気勢崩し', '生々流転'], sei: ['慧眼', '俊才', '才気', '乱戦', '逆境', '不敵', '兵心', '恩顧'] },
@@ -416,8 +417,9 @@
         : '<div class="heigaku-summary"><span>未設定</span></div>';
       const stats = Object.keys(STAT_LABELS).map(function(key) { const base = (hero.stats || {})[key]; const known = base !== null && base !== undefined && base !== ''; const bonus = Number((member.bonuses || {})[key] || 0); const value = known ? Number(base) + bonus : '—'; return '<div class="stat"><span>' + STAT_LABELS[key] + '</span><b>' + value + '</b><small>' + (known && bonus ? '＋' + bonus : '') + '</small></div>'; }).join('');
       const traits = (hero.traits || []).slice(0, 4).map(function(trait, index) {
-        const unlocked = index <= member.breakthrough;
-        const condition = index === 0 ? '初期から有効' : index + '凸で解放';
+        const requiredBreakthrough = TRAIT_UNLOCK_BREAKTHROUGHS[index];
+        const unlocked = member.breakthrough >= requiredBreakthrough;
+        const condition = requiredBreakthrough === 0 ? '無凸で解放' : requiredBreakthrough + '凸で解放';
         const affinity = trait.affinity && trait.affinity.troopTypes && trait.affinity.troopTypes.length
           ? '対象兵種：' + trait.affinity.troopTypes.join('・') + (trait.affinity.level ? '（Lv.' + trait.affinity.level + '）' : '')
           : '武将固有の特性効果';
@@ -2013,7 +2015,7 @@
      */
     function troopSummary_(team) {
       const result = { foot: 0, bow: 0, cavalry: 0, gun: 0 };
-      team.members.forEach(function(member) { const hero = hero_(member.heroId); (hero && hero.traits || []).forEach(function(trait, index) { if (index > member.breakthrough) return; (trait.affinity && trait.affinity.troopTypes || []).forEach(function(type) { if (type === '歩兵') result.foot += 1; if (type === '弓兵') result.bow += 1; if (type === '騎兵') result.cavalry += 1; if (type === '鉄砲') result.gun += 1; }); }); });
+      team.members.forEach(function(member) { const hero = hero_(member.heroId); (hero && hero.traits || []).slice(0, 4).forEach(function(trait, index) { if (member.breakthrough < TRAIT_UNLOCK_BREAKTHROUGHS[index]) return; (trait.affinity && trait.affinity.troopTypes || []).forEach(function(type) { if (type === '歩兵') result.foot += 1; if (type === '弓兵') result.bow += 1; if (type === '騎兵') result.cavalry += 1; if (type === '鉄砲') result.gun += 1; }); }); });
       return result;
     }
 

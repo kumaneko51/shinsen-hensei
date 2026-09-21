@@ -9,8 +9,9 @@ test('能力値は6項目をコンパクトな一段で表示する', () => {
 });
 
 test('特性は突破数に応じて解放表示が変わる', () => {
-  assert.match(html, /const unlocked = index <= member\.breakthrough/);
-  assert.match(html, /index \+ '凸で解放'/);
+  assert.match(html, /const TRAIT_UNLOCK_BREAKTHROUGHS = \[0, 1, 3, 5\]/);
+  assert.match(html, /member\.breakthrough >= requiredBreakthrough/);
+  assert.match(html, /requiredBreakthrough \+ '凸で解放'/);
   assert.match(html, /trait-chip[\s\S]*locked/);
 });
 
