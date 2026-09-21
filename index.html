@@ -408,7 +408,8 @@
       const selected = state.selected.role === role;
       if (!hero) return '<article class="slot ' + (selected ? 'selected' : '') + '" data-drop-role="' + role + '"><div class="role">' + ROLES[role] + '</div><button class="btn" data-focus-hero="' + role + '">＋ 武将を選択</button><div class="skill">武将を選択すると戦法を設定できます</div></article>';
       const fallback = '<span class="portrait-fallback" aria-hidden="true">' + escape_(hero.name.slice(0, 1)) + '</span>';
-      const visual = hero.portrait ? fallback + '<img src="' + escape_(hero.portrait) + '" alt="" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()">' : fallback;
+      const portraitStyle = hero.portraitPosition ? ' style="object-position:' + escape_(hero.portraitPosition) + '"' : '';
+      const visual = hero.portrait ? fallback + '<img src="' + escape_(hero.portrait) + '" alt="" loading="lazy" referrerpolicy="no-referrer"' + portraitStyle + ' onerror="this.remove()">' : fallback;
       const allocatedPoints = allocatedStatPoints_(member);
       const statBonusLimit = statBonusLimit_(member);
       const heigaku = normalizeHeigaku_(member.heigaku);
@@ -515,7 +516,8 @@
     function heroCard_(hero) {
       const used = isHeroUsed_(hero.id);
       const owned = state.inventory.heroIds.includes(hero.id);
-      const image = hero.portrait ? '<img class="card-photo" src="' + escape_(hero.portrait) + '" alt="' + escape_(hero.name) + 'の肖像" loading="lazy" referrerpolicy="no-referrer">' : '';
+      const portraitStyle = hero.portraitPosition ? ' style="object-position:' + escape_(hero.portraitPosition) + '"' : '';
+      const image = hero.portrait ? '<img class="card-photo" src="' + escape_(hero.portrait) + '" alt="' + escape_(hero.name) + 'の肖像" loading="lazy" referrerpolicy="no-referrer"' + portraitStyle + '>' : '';
       return '<button class="card ' + (used ? 'disabled' : '') + '" data-hero="' + escape_(hero.id) + '" data-drag-hero="' + escape_(hero.id) + '" draggable="' + (!used) + '">' + image + (owned ? '<span class="owned"></span>' : '') + '<span class="tag s">' + escape_(hero.rarity || '') + '</span><span class="tag">' + hero.cost + 'C</span><h3>' + escape_(hero.name) + '</h3><p>' + escape_(hero.faction) + ' · ' + escape_(hero.clan || '') + '</p><p>' + (used ? '編成済み' : escape_(hero.uniqueSkill || '')) + '</p></button>';
     }
 
