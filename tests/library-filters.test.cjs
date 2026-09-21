@@ -10,7 +10,9 @@ assert.doesNotMatch(html, /option value="追撃"/);
 assert.match(html, /state\.faction === '突撃' \? ' selected'/);
 assert.match(html, /state\.faction === '兵種' \? ' selected'/);
 assert.match(html, /oncompositionstart/);
-assert.match(html, /refreshSearch_\(element\.value\)/);
+assert.match(html, /oncompositionend[\s\S]*queueSearchRefresh_\(element\.value\)/);
+assert.match(html, /oninput[\s\S]*queueSearchRefresh_\(element\.value\)/);
+assert.match(html, /setTimeout\(function\(\) \{ refreshSearch_\(value\); \}, 650\)/);
 assert.match(html, /input\.setSelectionRange/);
 
 const learnableTypes = new Set(master.tactics.filter(function(item) { return item.learnable; }).map(function(item) { return item.type; }));

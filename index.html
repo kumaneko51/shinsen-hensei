@@ -198,6 +198,7 @@
     let state = makeState_();
     let supabaseClient = null;
     let cloudSyncTimer = null;
+    let searchRefreshTimer = null;
 
     /**
      * 初期状態を作成する。
@@ -814,9 +815,10 @@
       all_('[data-stat-reset]', function(element) { element.onclick = function() { resetStatBonus_(Number(element.dataset.statReset)); }; });
       all_('[data-tab]', function(element) { element.onclick = function() { state.tab = element.dataset.tab; state.query = ''; state.cost = ''; state.faction = ''; state.rarity = ''; render(); }; });
       all_('[data-query]', function(element) {
-        element.oncompositionstart = function() { element.dataset.composing = '1'; };
-        element.oncompositionend = function() { delete element.dataset.composing; refreshSearch_(element.value); };
-        element.oninput = function() { state.query = element.value; if (!element.dataset.composing) refreshSearch_(element.value); };
+        element.oncompositionstart = function() { element.dataset.composing = '1'; clearTimeout(searchRefreshTimer); };
+        element.oncompositionend = function() { delete element.dataset.composing; state.query = element.value; queueSearchRefresh_(element.value); };
+        element.oninput = function() { state.query = element.value; if (!element.dataset.composing) queueSearchRefresh_(element.value); };
+        element.onkeydown = function(event) { if (event.key === 'Enter' && !element.dataset.composing) { event.preventDefault(); clearTimeout(searchRefreshTimer); refreshSearch_(element.value); } };
       });
       all_('[data-cost]', function(element) { element.onchange = function() { state.cost = element.value; render(); }; });
       all_('[data-faction]', function(element) { element.onchange = function() { state.faction = element.value; render(); }; });
@@ -875,8 +877,16 @@
      */
     function all_(selector, callback) { document.querySelectorAll(selector).forEach(callback); }
 
+    /** 日本語入力が確定する前に検索欄を作り直さないよう、入力停止後に検索する。 */
+    function queueSearchRefresh_(value) {
+      clearTimeout(searchRefreshTimer);
+      searchRefreshTimer = setTimeout(function() { refreshSearch_(value); }, 650);
+    }
+
     /** 検索結果を更新し、再描画後も検索欄へ続けて入力できるようにする。 */
     function refreshSearch_(value) {
+      clearTimeout(searchRefreshTimer);
+      searchRefreshTimer = null;
       state.query = value;
       render();
       const input = document.querySelector('[data-query]');
