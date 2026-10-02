@@ -20,3 +20,19 @@ for (const flag of ['true','false','null','undefined']) {
   vm.runInContext(`LAND_REPORTS[3].firstClear=${flag}`,ctx);
   assert.equal(vm.runInContext('landWinningAttempts_(LAND_REPORTS).length',ctx),2);
 }
+
+vm.runInContext(`
+LAND_REPORTS=[
+ sample(110,{landLevel:6,enemy:'小幡景憲',remaining:5469,dead:1500,wounded:831,attemptId:'land6-a',sequence:1}),
+ sample(111,{landLevel:6,enemy:'山内一豊',troops:5469,remaining:4021,dead:1168,wounded:280,attemptId:'land6-a',sequence:2}),
+ sample(112,{landLevel:6,enemy:'山内一豊',remaining:4000,dead:100,wounded:50,attemptId:'land6-b',sequence:1})
+];
+`,ctx);
+assert.equal(vm.runInContext('landDataRows_(LAND_REPORTS,6).length',ctx),2);
+assert.equal(vm.runInContext('landDataRows_(LAND_REPORTS,5).length',ctx),3);
+assert.equal(vm.runInContext('landDataRows_(LAND_REPORTS,6)[0].enemy',ctx),'小幡景憲 → 山内一豊');
+assert.equal(vm.runInContext('landDataRows_(LAND_REPORTS,6)[0].dead',ctx),2668);
+assert.equal(vm.runInContext('landDataRows_(LAND_REPORTS,6)[0].wounded',ctx),1111);
+assert.equal(vm.runInContext('landDataRows_(LAND_REPORTS,6)[0].remaining',ctx),4021);
+assert.equal(vm.runInContext("landMatchesEnemy_(landDataRows_(LAND_REPORTS,6)[0],'山内一豊')",ctx),true);
+console.log('PASS: land 6+ linked battles are displayed as one data row');
