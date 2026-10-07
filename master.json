@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-05",
+  "updatedAt": "2026-10-07",
   "sourceNote": "編成に必要な基本データ。肖像は外部参照。戦法効果は参照データを基に日本語化。PK2の戦法は日本版で確認できた名称を優先。",
   "heroes": [
     {
@@ -7995,7 +7995,7 @@
       "sourceName": "島津義久",
       "faction": "群雄",
       "clan": "島津家",
-      "cost": 7,
+      "cost": 6,
       "rarity": "S",
       "gender": "男",
       "uniqueSkill": "三州総大将",
