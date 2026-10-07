@@ -14,12 +14,17 @@ test('九州争覇の新武将6人を選択できる',()=>{
 test('新武将IDは既存IDと旧ID移行先に重複しない',()=>{
   const ids=master.heroes.map(x=>x.id); assert.equal(new Set(ids).size,ids.length); for(const name of expected.map(x=>x[0])){const hero=master.heroes.find(x=>x.name===name);assert.doesNotMatch(html,new RegExp(`'${hero.id}':`));}
 });
-test('武将庫は新武将を含めてコストの高い順に並ぶ',()=>{
+test('武将庫はレアリティごとにまとめ、その中で新武将を含めてコストの高い順に並ぶ',()=>{
   const source = html.match(/function filteredHeroes_\(\) \{[\s\S]*?\n    \}/)?.[0];
   assert.ok(source);
   const state = { query:'', cost:'', faction:'', rarity:'', ownedOnly:false, mode:'lineup', inventory:{heroIds:[]} };
   const listed = vm.runInNewContext(source + '\nfilteredHeroes_()', { state, heroes_:()=>master.heroes });
-  for(let i=1;i<listed.length;i++) assert.ok(Number(listed[i-1].cost)>=Number(listed[i].cost));
+  const rarityOrder = { S: 0, A: 1, B: 2 };
+  for(let i=1;i<listed.length;i++) {
+    const previous = listed[i-1], current = listed[i];
+    assert.ok(rarityOrder[previous.rarity] <= rarityOrder[current.rarity]);
+    if(previous.rarity === current.rarity) assert.ok(Number(previous.cost) >= Number(current.cost));
+  }
   const newNames = new Set(expected.map(x=>x[0]));
   assert.deepEqual(Array.from(listed.filter(hero=>newNames.has(hero.name)), hero=>hero.name),
     ['龍造寺隆信','島津義久','石川数正','相良義陽','種子島時堯','吉岡妙林']);

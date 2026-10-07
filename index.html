@@ -2027,7 +2027,10 @@
      */
     function filteredHeroes_() {
       const query = state.query.toLowerCase();
-      return heroes_().filter(function(hero) { return (!query || (hero.name + hero.uniqueSkill + hero.clan).toLowerCase().includes(query)) && (!state.cost || (state.cost === '4' ? Number(hero.cost) <= 4 : String(hero.cost) === state.cost)) && (!state.faction || hero.faction === state.faction) && (!state.rarity || hero.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.heroIds.includes(hero.id)); }).sort(function(a, b) { return Number(b.cost) - Number(a.cost); });
+      const rarityOrder = { S: 0, A: 1, B: 2 };
+      return heroes_().filter(function(hero) { return (!query || (hero.name + hero.uniqueSkill + hero.clan).toLowerCase().includes(query)) && (!state.cost || (state.cost === '4' ? Number(hero.cost) <= 4 : String(hero.cost) === state.cost)) && (!state.faction || hero.faction === state.faction) && (!state.rarity || hero.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.heroIds.includes(hero.id)); }).sort(function(a, b) {
+        return (rarityOrder[a.rarity] ?? 99) - (rarityOrder[b.rarity] ?? 99) || Number(b.cost) - Number(a.cost);
+      });
     }
 
     /**
