@@ -2027,7 +2027,7 @@
      */
     function filteredHeroes_() {
       const query = state.query.toLowerCase();
-      return heroes_().filter(function(hero) { return (!query || (hero.name + hero.uniqueSkill + hero.clan).toLowerCase().includes(query)) && (!state.cost || (state.cost === '4' ? Number(hero.cost) <= 4 : String(hero.cost) === state.cost)) && (!state.faction || hero.faction === state.faction) && (!state.rarity || hero.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.heroIds.includes(hero.id)); });
+      return heroes_().filter(function(hero) { return (!query || (hero.name + hero.uniqueSkill + hero.clan).toLowerCase().includes(query)) && (!state.cost || (state.cost === '4' ? Number(hero.cost) <= 4 : String(hero.cost) === state.cost)) && (!state.faction || hero.faction === state.faction) && (!state.rarity || hero.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.heroIds.includes(hero.id)); }).sort(function(a, b) { return Number(b.cost) - Number(a.cost); });
     }
 
     /**
@@ -2036,7 +2036,7 @@
      */
     function filteredTactics_() {
       const query = state.query.toLowerCase();
-      return tactics_().filter(function(tactic) { return tactic.learnable && (!query || (tactic.name + tactic.type + tactic.target).toLowerCase().includes(query)) && (!state.faction || tactic.type === state.faction) && (!state.rarity || tactic.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.tacticIds.includes(tactic.id)); });
+      return tactics_().filter(function(tactic) { return (!query || (tactic.name + tactic.type + tactic.target).toLowerCase().includes(query)) && (!state.faction || tactic.type === state.faction) && (!state.rarity || tactic.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.tacticIds.includes(tactic.id)); });
     }
 
     /**
