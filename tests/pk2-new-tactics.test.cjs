@@ -10,14 +10,20 @@ const newTactics = master.tactics.filter((tactic) => {
   return id >= 248 && id <= 259;
 });
 
-test('固有戦法も戦法庫で検索でき、編成枠には装着できない', () => {
-  const source = html.match(/function filteredTactics_\(\) \{[\s\S]*?\n    \}/)?.[0];
-  assert.ok(source);
-  const state = { query: '懐刀の謀臣', faction: '', rarity: '', ownedOnly: false, mode: 'lineup', inventory: { tacticIds: [] } };
-  const results = vm.runInNewContext(source + '\nfilteredTactics_()', { state, tactics_: () => master.tactics });
-  assert.equal(results.length, 1);
-  assert.equal(results[0].name, '懐刀の謀臣');
-  assert.equal(results[0].learnable, false);
+test('戦法庫には習得可能な戦法だけを表示する', () => {
+  const availableSource = html.match(/function learnableTactics_\(\) \{[\s\S]*?\n    \}/)?.[0];
+  const filterSource = html.match(/function filteredTactics_\(\) \{[\s\S]*?\n    \}/)?.[0];
+  assert.ok(availableSource && filterSource);
+  const state = { query: '', faction: '', rarity: '', ownedOnly: false, mode: 'lineup', inventory: { tacticIds: [] } };
+  const context = { state, tactics_: () => master.tactics };
+  const source = availableSource + '\n' + filterSource + '\nfilteredTactics_()';
+  const listed = vm.runInNewContext(source, context);
+  assert.ok(listed.length > 0);
+  assert.ok(listed.every((tactic) => tactic.learnable));
+  state.query = '懐刀の謀臣';
+  assert.equal(vm.runInNewContext(source, context).length, 0);
+  state.query = '百術千慮';
+  assert.equal(vm.runInNewContext(source, context)[0].name, '百術千慮');
   assert.match(html, /const unavailable = unique \|\| used/);
 });
 

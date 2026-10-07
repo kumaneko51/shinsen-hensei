@@ -502,9 +502,10 @@
       const isHero = state.tab === 'heroes';
       const items = isHero ? filteredHeroes_() : filteredTactics_();
       const heroCount = state.mode === 'inventory' ? state.inventory.heroIds.length : heroes_().length;
-      const tacticCount = state.mode === 'inventory' ? state.inventory.tacticIds.length : tactics_().length;
+      const availableTactics = learnableTactics_();
+      const tacticCount = state.mode === 'inventory' ? availableTactics.filter(function(tactic) { return state.inventory.tacticIds.includes(tactic.id); }).length : availableTactics.length;
       const factionOptions = unique_(heroes_(), 'faction').map(function(value) { return '<option value="' + escape_(value) + '"' + (state.faction === value ? ' selected' : '') + '>' + escape_(value) + '</option>'; }).join('');
-      const rarityOptions = unique_(isHero ? heroes_() : tactics_(), 'rarity').map(function(value) { return '<option value="' + escape_(value) + '"' + (state.rarity === value ? ' selected' : '') + '>' + escape_(value) + '</option>'; }).join('');
+      const rarityOptions = unique_(isHero ? heroes_() : availableTactics, 'rarity').map(function(value) { return '<option value="' + escape_(value) + '"' + (state.rarity === value ? ' selected' : '') + '>' + escape_(value) + '</option>'; }).join('');
       return '<section class="library ' + (isHero ? '' : 'tactics-pane') + '"><div class="tabs"><button class="tab ' + (isHero ? 'active' : '') + '" data-tab="heroes">武将庫 <small>' + heroCount + '</small></button><button class="tab ' + (!isHero ? 'active' : '') + '" data-tab="tactics">戦法庫 <small>' + tacticCount + '</small></button></div><div class="tools"><input class="search" type="search" data-query value="' + escape_(state.query) + '" placeholder="' + (isHero ? '武将名・固有戦法を検索…' : '戦法名を検索…') + '"><select class="filter" data-cost><option value="">コスト：すべて</option><option value="7"' + (state.cost === '7' ? ' selected' : '') + '>7C</option><option value="6"' + (state.cost === '6' ? ' selected' : '') + '>6C</option><option value="5"' + (state.cost === '5' ? ' selected' : '') + '>5C</option><option value="4"' + (state.cost === '4' ? ' selected' : '') + '>4C以下</option></select>' + (isHero ? '<select class="filter" data-faction><option value="">勢力：すべて</option>' + factionOptions + '</select>' : '<select class="filter" data-type><option value=""' + (!state.faction ? ' selected' : '') + '>種別：すべて</option><option value="指揮"' + (state.faction === '指揮' ? ' selected' : '') + '>指揮</option><option value="能動"' + (state.faction === '能動' ? ' selected' : '') + '>能動</option><option value="受動"' + (state.faction === '受動' ? ' selected' : '') + '>受動</option><option value="突撃"' + (state.faction === '突撃' ? ' selected' : '') + '>突撃</option><option value="兵種"' + (state.faction === '兵種' ? ' selected' : '') + '>兵種</option><option value="陣法"' + (state.faction === '陣法' ? ' selected' : '') + '>陣法</option></select>') + '<select class="filter" data-rarity><option value="">レア度：すべて</option>' + rarityOptions + '</select><label class="switch"><input type="checkbox" data-owned-filter' + (state.ownedOnly ? ' checked' : '') + '> 所持のみ</label></div><div class="cards ' + (isHero ? '' : 'tactic-list') + '">' + (items.map(isHero ? heroCard_ : tacticCard_).join('') || '<div class="empty">条件に一致するデータがありません。</div>') + '</div></section>';
     }
 
@@ -696,7 +697,7 @@
       if (state.modal !== 'inventory') return '';
       const isHero = state.tab === 'heroes';
       const key = isHero ? 'heroIds' : 'tacticIds';
-      const items = isHero ? heroes_() : tactics_();
+      const items = isHero ? heroes_() : learnableTactics_();
       return '<div class="backdrop"><section class="modal" role="dialog" aria-modal="true"><h2>所持管理</h2><p>' + (isHero ? '所持している武将を選択してください。' : '所持している戦法を選択してください。') + '</p><div class="inventory">' + items.map(function(item) { return '<label><input type="checkbox" data-inventory="' + key + ':' + escape_(item.id) + '"' + (state.inventory[key].includes(item.id) ? ' checked' : '') + '><span>' + escape_(item.name) + '</span></label>'; }).join('') + '</div><div class="modal-actions"><button class="btn" data-close-modal>閉じる</button><button class="btn primary" data-action="save">保存</button></div></section></div>';
     }
 
@@ -2004,6 +2005,12 @@
     function tactics_() { return (master.tactics || []).concat(state.customTactics || []); }
 
     /**
+     * 戦法庫で扱う習得可能な戦法を取得する。
+     * @returns {Array<Object>} 習得可能な戦法一覧。
+     */
+    function learnableTactics_() { return tactics_().filter(function(tactic) { return tactic.learnable; }); }
+
+    /**
      * 部隊の合計コストを取得する。
      * @param {Object} team 部隊。
      * @returns {number} 合計コスト。
@@ -2039,7 +2046,7 @@
      */
     function filteredTactics_() {
       const query = state.query.toLowerCase();
-      return tactics_().filter(function(tactic) { return (!query || (tactic.name + tactic.type + tactic.target).toLowerCase().includes(query)) && (!state.faction || tactic.type === state.faction) && (!state.rarity || tactic.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.tacticIds.includes(tactic.id)); });
+      return learnableTactics_().filter(function(tactic) { return (!query || (tactic.name + tactic.type + tactic.target).toLowerCase().includes(query)) && (!state.faction || tactic.type === state.faction) && (!state.rarity || tactic.rarity === state.rarity) && (!(state.ownedOnly || state.mode === 'inventory') || state.inventory.tacticIds.includes(tactic.id)); });
     }
 
     /**
